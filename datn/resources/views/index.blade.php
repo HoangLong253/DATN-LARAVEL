@@ -25,7 +25,6 @@
 
 </head>
 <!-- Body -->
-
 <body>
     <div class="containerr">
         <div class="main">
@@ -265,13 +264,12 @@
                 <div class="main-title-text">ĐỐI TÁC CỦA CHÚNG TÔI <img class="offcial-img"src="./assets/images/ho-tro/offical.png" alt=""></div>
                     <div class="wrap-slide-partner ">
                         <div class="owl-partner owl-carousel owlCarousel ">
-                            <div><img class="" src="./assets/images/doi-tac/brand-1-5394-2516.jpg" alt=""></div>
-                            <div><img class="" src="./assets/images/doi-tac/brand-2-9477-7504.jpg" alt=""></div>
-                            <div><img class="" src="./assets/images/doi-tac/brand-3-1828-5079.jpg" alt=""></div>
-                            <div><img class="" src="./assets/images/doi-tac/brand-4-3020-1744.jpg" alt=""></div>
-                            <div><img class="" src="./assets/images/doi-tac/brand-5-3471-2234.jpg" alt=""></div>
-                            <div><img class="" src="./assets/images/doi-tac/brand-6-8551-1039.jpg" alt=""></div>
-                            <div><img class="" src="./assets/images/doi-tac/brand-7-2941-8624.jpg" alt=""></div>
+                            <div><img class="" src="./assets/images/doi-tac/DHQGHN.jpg" alt=""></div>
+                            <div><img class="" src="./assets/images/doi-tac/DN.jpg" alt=""></div>
+                            <div><img class="" src="./assets/images/doi-tac/KD.jpg" alt=""></div>
+                            <div><img class="" src="./assets/images/doi-tac/THTPHCM.jpg" alt=""></div>
+                            <div><img class="" src="./assets/images/doi-tac/TN.jpg" alt=""></div>
+                            <div><img class="" src="./assets/images/doi-tac/Tre.jpg" alt=""></div>
                         </div>
                     </div>
                 </div>
@@ -283,17 +281,90 @@
         <div class="main-title-text">SẢN PHẨM NỔI BẬT</div>
         <div class="wrap-slide-spnb">
             <div class="owl-spnb owl-carousel owlCarousel">
-                
+                @foreach ($noibats as $noibat)
+                <a href="#" class="box-product">
+                    <div class="">
+                        <img alt="ảnh lỗi" src="{{ asset('./assets/images/sach/GK/' . $noibat->HinhAnh)}}" width="200" height="300"></img>
+                    </div>
+                    <div class="infor-product">
+                        <div class="name-product">{{$noibat->TenSach}}</div>
+                        <div class="price-product">{{$noibat->DonGia}}đ</div>
+                    </div>
+                </a>
+                @endforeach
             </div>
         </div>
     </div>
 </div>
-<div class="wrap-content">
+<!--Sach giao khoa-->
+<div class="wrap-spnb">
+    <div class="wrap-content">
+        <div class="main-title-text">SACH GIAO KHOA</div>
+        <div class="wrap-slide-spnb">
+            <div class="owl-spnb owl-carousel owlCarousel">
+                @foreach ($sgks as $noibat)
+                <a href="#" class="box-product">
+                    <div class="">
+                        <img alt="ảnh lỗi" src="{{ asset('./assets/images/sach/GK/' . $noibat->HinhAnh)}}" width="200" height="300"></img>
+                    </div>
+                    <div class="infor-product">
+                        <div class="name-product">{{$noibat->TenSach}}</div>
+                        <div class="price-product">{{$noibat->DonGia}}đ</div>
+                    </div>
+                </a>
+                @endforeach
+            </div>
+        </div>
+    </div>
+</div>
+<!--Sach giao khoa-->
+<div class="wrap-spnb">
+    <div class="wrap-content">
+        <div class="main-title-text">SÁCH GIÁO KHOA</div>
+        <div class="wrap-slide-spnb">
+            <div class="owl-spnb owl-carousel owlCarousel">
+                @foreach ($sgks as $sgk)
+                <a href="#" class="box-product">
+                    <div class="">
+                        <img alt="ảnh lỗi" src="{{ asset('./assets/images/sach/GK/' . $sgk->HinhAnh)}}" width="200" height="300"></img>
+                    </div>
+                    <div class="infor-product">
+                        <div class="name-product">{{$sgk->TenSach}}</div>
+                        <div class="price-product">{{$sgk->DonGia}}đ</div>
+                    </div>
+                </a>
+                @endforeach
+            </div>
+        </div>
+    </div>
+</div>
+<!--Sach giao khoa-->
+<div class="wrap-spnb">
+    <div class="wrap-content">
+        <div class="main-title-text">SÁCH THAM KHẢO</div>
+        <div class="wrap-slide-spnb">
+            <div class="owl-spnb owl-carousel owlCarousel">
+                @foreach ($thamkhaos as $noibat)
+                <a href="#" class="box-product">
+                    <div class="">
+                        <img alt="ảnh lỗi" src="{{ asset('./assets/images/sach/TK/' . $noibat->HinhAnh)}}" width="200" height="300"></img>
+                    </div>
+                    <div class="infor-product">
+                        <div class="name-product">{{$noibat->TenSach}}</div>
+                        <div class="price-product">{{$noibat->DonGia}}đ</div>
+                    </div>
+                </a>
+                @endforeach
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div class="wrap-content">
 <div>STYLE SẢN PHẨM CỦA CHÚNG TA TUI NGHĨ NÊN LÀM THẾ NÀY</div>
 <div>LONG LO VỤ TRUY VẤN RA CÁC TÊN DANH MỤC CẤP 1 KÈM SẢN PHẨM CỦA NÓ HA</div>
  <img src="./assets/images/Capture.PNG" alt="">
  <DIV>CÒN PHÂN TRANG HAY NÚT "XEM TẤT CẢ" KHI >8 SẢN PHẨM MÌNH BÀN SAU</DIV>
-</div>
+</div>-->
 <!-- Video News -->
 <div class="wrap-video-news">
  <div class="wrap-content">
@@ -302,12 +373,10 @@
     <div class="wrap-video">
         <div class="fotorama" data-nav="thumbs" data-autoplay="true" data-width="100%"
      data-height="100%" data-thumbwidth="145" data-thumbheight="90" >
-            <a href="https://www.youtube.com/watch?v=-7sISWuTdj0"></a>
-            <a href="https://www.youtube.com/watch?v=vNV3Jvcij90"></a>
-            <a href="https://www.youtube.com/watch?v=4qNALNWoGmI"></a>
-            <a href="https://www.youtube.com/watch?v=e-ORhEE9VVg"></a>
-            <a href="https://www.youtube.com/watch?v=QkZBz2xfXtk"></a>
-            <a href="https://www.youtube.com/watch?v=vNV3Jvcij90"></a>
+            <a href="https://youtu.be/Q2T2JuQgob4"></a>
+            <a href="https://youtu.be/WdCMqN2ukaA"></a>
+            <a href="https://youtu.be/kWCEaNgTCdY"></a>
+            <a href="https://youtu.be/CyKmrNhXM3o"></a>
         </div>
     </div>
     <div class="wrap-news">
@@ -498,10 +567,6 @@ $('.owl-carousel').owlCarousel({
         
     });
 </script>
-
-
-</html>
-
 
 
 </html>
