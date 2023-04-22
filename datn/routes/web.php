@@ -19,3 +19,7 @@ Route::get('dangnhap', function () {
 Route::get('dangki', function () {
     return view('DangKy');
 })->name('dangki');
+
+/*Route::post('validate_registration', 'validate_registration')->name('logreg.validate_registration');
+
+Route::post('validate_login', 'validate_login')->name('logreg.validate_login');*/
