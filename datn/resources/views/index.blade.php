@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="../assets/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
 <link rel="stylesheet" href="../assets/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-<link  href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
 <script src="../assets/OwlCarousel2-2.3.4/docs/assets/vendors/jquery.min.js"></script>
@@ -110,10 +110,18 @@
                             Trợ Giúp
                         </a>
                     </li>
-                    <li class="header__navbar-item header__navbar-item-bold header__navbar-item--separate">Đăng
-                        Ký
-                    </li>
-                    <li class="header__navbar-item header__navbar-item-bold">Đăng Nhập</li>
+                    <!-- đăng kí đăng nhập Tú làm sao hover vô nó đậm lên nhá, 
+                        với lại làm cái separate đừng trùng với tên nút đăng nhập luôn-->
+                    <a href="{{ route('dangki') }}">
+                        <li class="header__navbar-item header__navbar-item--separate">
+                            Đăng Ký
+                        </li>
+                    </a>
+                    <a href="{{ route('dangnhap') }}">
+                        <li class="header__navbar-item">
+                            Đăng Nhập
+                        </li>
+                    </a>
                 </ul>
             </div>
         </div>
@@ -299,27 +307,6 @@
 <!--Sach giao khoa-->
 <div class="wrap-spnb">
     <div class="wrap-content">
-        <div class="main-title-text">SACH GIAO KHOA</div>
-        <div class="wrap-slide-spnb">
-            <div class="owl-spnb owl-carousel owlCarousel">
-                @foreach ($sgks as $noibat)
-                <a href="#" class="box-product">
-                    <div class="">
-                        <img alt="ảnh lỗi" src="{{ asset('./assets/images/sach/GK/' . $noibat->HinhAnh)}}" width="200" height="300"></img>
-                    </div>
-                    <div class="infor-product">
-                        <div class="name-product">{{$noibat->TenSach}}</div>
-                        <div class="price-product">{{$noibat->DonGia}}đ</div>
-                    </div>
-                </a>
-                @endforeach
-            </div>
-        </div>
-    </div>
-</div>
-<!--Sach giao khoa-->
-<div class="wrap-spnb">
-    <div class="wrap-content">
         <div class="main-title-text">SÁCH GIÁO KHOA</div>
         <div class="wrap-slide-spnb">
             <div class="owl-spnb owl-carousel owlCarousel">
@@ -338,7 +325,7 @@
         </div>
     </div>
 </div>
-<!--Sach giao khoa-->
+<!--Sach tham khao-->
 <div class="wrap-spnb">
     <div class="wrap-content">
         <div class="main-title-text">SÁCH THAM KHẢO</div>
