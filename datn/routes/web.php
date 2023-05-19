@@ -23,7 +23,8 @@ Route::get('dangki', function () {
 Route::get('taphop', function () {
     return view('taphop');
 })->name('taphop');
-
+/* Tu */
+ 
 //này là taphop/cái gì đó vd taphop/sach-giao-khoa
 
 /*Route::get('taphop', function () {
