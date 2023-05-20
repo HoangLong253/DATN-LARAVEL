@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BooksController;
+use App\Http\Controllers\CartController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,6 +30,8 @@ Route::get('dangki', function () {
 Route::get('/collections', [BooksController::class, 'collections'])->name('collections');
 
 Route::get('/collections/sach-giao-khoa/lop-6/am-nhac-va-mi-thuat-lop-6', [BooksController::class, 'amnhac6'])->name('amnhac6');
+
+Route::get('/giohang', [CartController::class, 'giohang'])->name('giohang');
 
 
 //này là taphop/cái gì đó vd taphop/sach-giao-khoa

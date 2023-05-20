@@ -56,6 +56,7 @@ class BooksController extends Controller
             ["MaLoaiSach", "=", "GK"],
             ["TrangThai", "=", 1,],
         ])
+        ->take(10)
         ->get();
         return view('amnhac6', [
             'sgks' => $sgks,

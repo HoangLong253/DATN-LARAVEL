@@ -173,83 +173,86 @@
                             </div>
                             <!-- Cart -->
                             <!-- FadeIn chưa chuẩn -->
-                            <div class="header__cart">
-                                <div class="header__cart-wrap"><i
-                                        class="header__cart-icon fa-solid fa-cart-shopping"></i>
-                                    <span class="header__cart-notice">
-                                        3
-                                    </span>
-                                    <!-- No cart: header__cart-list-no-cart-->
-                                    <div class="header__cart-list ">
-                                        <img src="./assets/images/chi-tiet/no-cart.png" alt=""
-                                            class="header__cart-no-cart-img">
-                                        <span class="header__cart-list-no-cart-msg">Chưa có sản phẩm</span>
-
-                                        <h4 class="header__cart-heading">Sản phẩm đã thêm</h4>
-                                        <ul class="header__cart-list-item">
-                                            <!-- Cart item -->
-                                            <li class="header__cart-item">
-                                                <img src="https://salt.tikicdn.com/cache/100x100/ts/review/9e/80/22/ff1656d3fbc597360c5cce278d4b838c.jpg.webp"
-                                                    alt="" class="header__cart-img">
-                                                <div class="header__cart-item-info -wrap">
-                                                    <div class="header__cart-item-head">
-                                                        <div class="header__cart-item-name">Thương nhớ Trà Long</div>
-                                                        <div class="header__cart-item-price-wrap">
-                                                            <span class="header__cart-item-price">100.000vnd</span>
-                                                            <span class="header__cart-item-x">x</span>
-                                                            <span class="header__cart-item-qnt">2</span>
+                            
+                                <div class="header__cart">
+                                    <a href="http://127.0.0.1:8000/giohang">
+                                    <div class="header__cart-wrap"><i
+                                            class="header__cart-icon fa-solid fa-cart-shopping"></i>
+                                        <span class="header__cart-notice">
+                                            3
+                                        </span>
+                                        <!-- No cart: header__cart-list-no-cart-->
+                                        <div class="header__cart-list ">
+                                            <img src="./assets/images/chi-tiet/no-cart.png" alt=""
+                                                class="header__cart-no-cart-img">
+                                            <span class="header__cart-list-no-cart-msg">Chưa có sản phẩm</span>
+    
+                                            <h4 class="header__cart-heading">Sản phẩm đã thêm</h4>
+                                            <ul class="header__cart-list-item">
+                                                <!-- Cart item -->
+                                                <li class="header__cart-item">
+                                                    <img src="https://salt.tikicdn.com/cache/100x100/ts/review/9e/80/22/ff1656d3fbc597360c5cce278d4b838c.jpg.webp"
+                                                        alt="" class="header__cart-img">
+                                                    <div class="header__cart-item-info -wrap">
+                                                        <div class="header__cart-item-head">
+                                                            <div class="header__cart-item-name">Thương nhớ Trà Long</div>
+                                                            <div class="header__cart-item-price-wrap">
+                                                                <span class="header__cart-item-price">100.000vnd</span>
+                                                                <span class="header__cart-item-x">x</span>
+                                                                <span class="header__cart-item-qnt">2</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="header__cart-item-body">
+                                                            <span class="header__cart-item-desc">Loại sản phẩm: Tiểu
+                                                                thuyết</span>
+                                                            <span class="header__cart-item-remove">Xóa</span>
                                                         </div>
                                                     </div>
-                                                    <div class="header__cart-item-body">
-                                                        <span class="header__cart-item-desc">Loại sản phẩm: Tiểu
-                                                            thuyết</span>
-                                                        <span class="header__cart-item-remove">Xóa</span>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="header__cart-item">
-                                                <img src="https://salt.tikicdn.com/cache/100x100/ts/review/9e/80/22/ff1656d3fbc597360c5cce278d4b838c.jpg.webp"
-                                                    alt="" class="header__cart-img ">
-                                                <div class="header__cart-item-info -wrap">
-                                                    <div class="header__cart-item-head">
-                                                        <div class="header__cart-item-name">Thương nhớ Trà Long</div>
-                                                        <div class="header__cart-item-price-wrap">
-                                                            <span class="header__cart-item-price">100.000vnd</span>
-                                                            <span class="header__cart-item-x">x</span>
-                                                            <span class="header__cart-item-qnt">2</span>
+                                                </li>
+                                                <li class="header__cart-item">
+                                                    <img src="https://salt.tikicdn.com/cache/100x100/ts/review/9e/80/22/ff1656d3fbc597360c5cce278d4b838c.jpg.webp"
+                                                        alt="" class="header__cart-img ">
+                                                    <div class="header__cart-item-info -wrap">
+                                                        <div class="header__cart-item-head">
+                                                            <div class="header__cart-item-name">Thương nhớ Trà Long</div>
+                                                            <div class="header__cart-item-price-wrap">
+                                                                <span class="header__cart-item-price">100.000vnd</span>
+                                                                <span class="header__cart-item-x">x</span>
+                                                                <span class="header__cart-item-qnt">2</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="header__cart-item-body">
+                                                            <span class="header__cart-item-desc">Loại sản phẩm: Tiểu
+                                                                thuyết</span>
+                                                            <span class="header__cart-item-remove">Xóa</span>
                                                         </div>
                                                     </div>
-                                                    <div class="header__cart-item-body">
-                                                        <span class="header__cart-item-desc">Loại sản phẩm: Tiểu
-                                                            thuyết</span>
-                                                        <span class="header__cart-item-remove">Xóa</span>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="header__cart-item">
-                                                <img src="https://salt.tikicdn.com/cache/100x100/ts/review/9e/80/22/ff1656d3fbc597360c5cce278d4b838c.jpg.webp"
-                                                    alt="" class="header__cart-img">
-                                                <div class="header__cart-item-info -wrap">
-                                                    <div class="header__cart-item-head">
-                                                        <div class="header__cart-item-name">Thương nhớ Trà Long</div>
-                                                        <div class="header__cart-item-price-wrap">
-                                                            <span class="header__cart-item-price">100.000vnd</span>
-                                                            <span class="header__cart-item-x">x</span>
-                                                            <span class="header__cart-item-qnt">2</span>
+                                                </li>
+                                                <li class="header__cart-item">
+                                                    <img src="https://salt.tikicdn.com/cache/100x100/ts/review/9e/80/22/ff1656d3fbc597360c5cce278d4b838c.jpg.webp"
+                                                        alt="" class="header__cart-img">
+                                                    <div class="header__cart-item-info -wrap">
+                                                        <div class="header__cart-item-head">
+                                                            <div class="header__cart-item-name">Thương nhớ Trà Long</div>
+                                                            <div class="header__cart-item-price-wrap">
+                                                                <span class="header__cart-item-price">100.000vnd</span>
+                                                                <span class="header__cart-item-x">x</span>
+                                                                <span class="header__cart-item-qnt">2</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="header__cart-item-body">
+                                                            <span class="header__cart-item-desc">Loại sản phẩm: Tiểu
+                                                                thuyết</span>
+                                                            <span class="header__cart-item-remove">Xóa</span>
                                                         </div>
                                                     </div>
-                                                    <div class="header__cart-item-body">
-                                                        <span class="header__cart-item-desc">Loại sản phẩm: Tiểu
-                                                            thuyết</span>
-                                                        <span class="header__cart-item-remove">Xóa</span>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <a href="#" class="header__cart-view-cart btn btn-primary">Xem Giỏ Hàng</a>
+                                                </li>
+                                            </ul>
+                                            <a href="http://127.0.0.1:8000/giohang" class="header__cart-view-cart btn btn-primary">Xem Giỏ Hàng</a>
+                                        </div>
                                     </div>
+                                    </a>
                                 </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -310,15 +313,27 @@
                         <div class="owl-spnb owl-carousel owlCarousel">
                             @foreach ($noibats as $noibat)
                             <a href="#" class="box-product">
-                                <div class="scale-img img_hover">
+                                @if($noibat->PhanTramGiam != 0)
+                                    <div class="product-sale-oustanding ">
+                                        <span class="sale-lb img_hover">{{$noibat->PhanTramGiam * 100}}%</span>
+                                    </div>
+                                @endif
+                                <div class=" scale-img img_hover">
                                     <img alt="ảnh lỗi" src="{{ asset('./assets/images/sach/GK/' . $noibat->HinhAnh)}}"
                                         width="200" height="300"></img>
                                 </div>
                                 <div class="infor-product">
                                     
                                 </div>
-                                <div class="name-product">{{$noibat->TenSach}}</div>
-                                <div class="price-product">@convert($noibat->DonGia,0)đ</div>
+                                @if($noibat->PhanTramGiam != 0)
+                                    <div class="name-product">{{$noibat->TenSach}}</div>
+                                    <div class="price-product">@convert($noibat->DonGia - ($noibat->DonGia * $noibat->PhanTramGiam),0)đ</div> 
+                                    <div class="price-product"><del>@convert($noibat->DonGia,0)đ</del></div> 
+                                @else
+                                    <div class="name-product">{{$noibat->TenSach}}</div>
+                                    <div class="price-product">@convert($noibat->DonGia,0)đ</div>
+                                @endif
+                                
                             </a>
                             @endforeach
                         </div>
@@ -331,17 +346,29 @@
                     <div class="main-title-text">SÁCH GIÁO KHOA</div>
                     <div class="wrap-slide-spnb">
                         <div class="owl-spnb owl-carousel owlCarousel">
-                            @foreach ($sgks as $sgk)
+                            @foreach ($sgks as $sgks)
                             <a href="#" class="box-product">
-                                <div class="scale-img img_hover">
-                                    <img alt="ảnh lỗi" src="{{ asset('./assets/images/sach/GK/' . $sgk->HinhAnh)}}"
+                                @if($sgks->PhanTramGiam != 0)
+                                    <div class="product-sale-oustanding ">
+                                        <span class="sale-lb img_hover">{{$sgks->PhanTramGiam * 100}}%</span>
+                                    </div>
+                                @endif
+                                <div class=" scale-img img_hover">
+                                    <img alt="ảnh lỗi" src="{{ asset('./assets/images/sach/GK/' . $sgks->HinhAnh)}}"
                                         width="200" height="300"></img>
                                 </div>
                                 <div class="infor-product">
                                     
                                 </div>
-                                <div class="name-product">{{$sgk->TenSach}}</div>
-                                <div class="price-product">@convert($sgk->DonGia,0)đ</div>
+                                @if($sgks->PhanTramGiam != 0)
+                                    <div class="name-product">{{$sgks->TenSach}}</div>
+                                    <div class="price-product">@convert($sgks->DonGia - ($sgks->DonGia * $sgks->PhanTramGiam),0)đ</div> 
+                                    <div class="price-product"><del>@convert($sgks->DonGia,0)đ</del></div> 
+                                @else
+                                    <div class="name-product">{{$sgks->TenSach}}</div>
+                                    <div class="price-product">@convert($sgks->DonGia,0)đ</div>
+                                @endif
+                                
                             </a>
                             @endforeach
                         </div>
@@ -354,17 +381,29 @@
                     <div class="main-title-text">SÁCH THAM KHẢO</div>
                     <div class="wrap-slide-spnb">
                         <div class="owl-spnb owl-carousel owlCarousel">
-                            @foreach ($thamkhaos as $noibat)
+                            @foreach ($thamkhaos as $thamkhao)
                             <a href="#" class="box-product">
-                                <div class="scale-img img_hover">
-                                    <img alt="ảnh lỗi" src="{{ asset('./assets/images/sach/TK/' . $noibat->HinhAnh)}}"
+                                @if($thamkhao->PhanTramGiam != 0)
+                                    <div class="product-sale-oustanding ">
+                                        <span class="sale-lb img_hover">{{$thamkhao->PhanTramGiam * 100}}%</span>
+                                    </div>
+                                @endif
+                                <div class=" scale-img img_hover">
+                                    <img alt="ảnh lỗi" src="{{ asset('./assets/images/sach/' . $thamkhao->MaLoaiSach . '/' . $thamkhao->HinhAnh)}}"
                                         width="200" height="300"></img>
                                 </div>
                                 <div class="infor-product">
                                     
                                 </div>
-                                <div class="name-product">{{$noibat->TenSach}}</div>
-                                <div class="price-product">@convert($noibat->DonGia,0)đ</div>
+                                @if($thamkhao->PhanTramGiam != 0)
+                                    <div class="name-product">{{$thamkhao->TenSach}}</div>
+                                    <div class="price-product">@convert($thamkhao->DonGia - ($noibat->DonGia * $thamkhao->PhanTramGiam),0)đ</div> 
+                                    <div class="price-product"><del>@convert($thamkhao->DonGia,0)đ</del></div> 
+                                @else
+                                    <div class="name-product">{{$thamkhao->TenSach}}</div>
+                                    <div class="price-product">@convert($thamkhao->DonGia,0)đ</div>
+                                @endif
+                                
                             </a>
                             @endforeach
                         </div>
