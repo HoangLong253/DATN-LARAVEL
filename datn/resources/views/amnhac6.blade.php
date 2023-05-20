@@ -295,6 +295,8 @@
                                 <img src="http://127.0.0.1:8000/assets/images/sach/GK/an-v6.jpg"
                                     alt="sach-giao-khoa">
                             </div>
+                            <!--đọc thử ở đây-->
+                            
                             <div class="slide-product">
                                 <div class="wrap-slide-product">
                                     <div class="owl-product owl-carousel owlCarousel">
