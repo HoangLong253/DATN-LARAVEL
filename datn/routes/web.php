@@ -26,7 +26,9 @@ Route::get('dangki', function () {
     return view('taphop');
 })->name('taphop');*/
 
-Route::get('/taphop', [BooksController::class, 'taphop'])->name('taphop');
+Route::get('/collections', [BooksController::class, 'collections'])->name('collections');
+
+Route::get('/collections/sach-giao-khoa/lop-6/am-nhac-va-mi-thuat-lop-6', [BooksController::class, 'amnhac6'])->name('amnhac6');
 
 
 //này là taphop/cái gì đó vd taphop/sach-giao-khoa

@@ -35,9 +35,9 @@ class BooksController extends Controller
         ]);
     }
 
-    public function taphop() {
+    public function collections() {
         $all = DB::table("sach")->get();
-        return view('taphop',[
+        return view('collections',[
             'all' => $all,
         ]);
     }
@@ -48,6 +48,10 @@ class BooksController extends Controller
         return view('home',[
             'alls' => $alls,
         ]);
+    }
+
+    public function amnhac6() {
+        return view('amnhac6');
     }
     use HasFactory;
 }

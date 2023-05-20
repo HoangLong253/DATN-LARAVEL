@@ -12,15 +12,15 @@
     <link rel="stylesheet" href="../assets/bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/bootstrap-5.0.2-dist/js/bootstrap.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/base.css">
-    <link rel="stylesheet" href="./assets/css/fonts.css">
-    <link rel="stylesheet" href="./assets/css/preview.css">
-    <link rel="stylesheet" href="./assets/css/style_book.css">
-    <link rel="stylesheet" href="./assets/css/wow_book.css">
-    <link rel="stylesheet" href="./assets/fontawesome-free-6.3.0-web/css/all.min.css">
-    <link rel="stylesheet" href="./assets/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="./assets/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/fonts.css">
+    <link rel="stylesheet" href="../assets/css/preview.css">
+    <link rel="stylesheet" href="../assets/css/style_book.css">
+    <link rel="stylesheet" href="../assets/css/wow_book.css">
+    <link rel="stylesheet" href="../assets/fontawesome-free-6.3.0-web/css/all.min.css">
+    <link rel="stylesheet" href="../assets/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="../assets/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -144,7 +144,7 @@
                 <div class="header-bottom">
                     <div class="wrap-content">
                         <div class="header-with-search ">
-                            <a href="http://localhost/DATN/web/DATN-MAIN">
+                            <a href="http://127.0.0.1:8000/">
                                 <div class="header__logo d-flex ">
                                     <img class="header__logo-img " src="./assets/images/logo/logo.png" alt="">
                                     <div class="header__cpnname">Delicate Dragon BookStore </div>
@@ -258,11 +258,11 @@
             <div class="wrap-menu">
                 <div class="wrap-content">
                     <ul class="d-flex justify-content-between align-items-center">
-                        <li><a href="http://127.0.0.1:8000" class="active">Trang chủ</a></li>
+                        <li><a href="http://127.0.0.1:8000" >Trang chủ</a></li>
                         <li class="line"></li>
                         <li><a href="">Giới Thiệu</a></li>
                         <li class="line"></li>
-                        <li><a href="http://127.0.0.1:8000/collections">Sản Phẩm</a></li>
+                        <li><a href="http://127.0.0.1:8000/collections" class="active">Sản Phẩm</a></li>
                         <li class="line"></li>
                         <li><a href="">Tin Tức</a></li>
                         <li class="line"></li>
@@ -274,194 +274,43 @@
                     </ul>
                 </div>
             </div>
-            <!-- slide -->
-            <div class="wrap-slideshow">
-                <div class="owl-slideshow owl-carousel owlCarousel">
-                    <div><img src="./assets/images/slideshow/slide.png" alt=""></div>
-                    <div><img src="./assets/images/slideshow/banner_02.png" alt=""></div>
-                    <div><img src="./assets/images/slideshow/slide1.png" alt=""></div>
-                    <div><img src="./assets/images/slideshow/slideshow_02.png" alt=""></div>
-                </div>
-            </div>
-            <!-- Đối tác -->
-            <div class="wrap-partner">
-                <div class="wrap-content">
-                    <div class="main-title-text">ĐỐI TÁC CỦA CHÚNG TÔI <img class="offcial-img"
-                            src="./assets/images/ho-tro/offical.png" alt=""></div>
-                    <div class="wrap-slide-partner ">
-                        <div class="owl-partner owl-carousel owlCarousel ">
-                            <div><img class="scale-img img_hover" src="./assets/images/doi-tac/DHQGHN.jpg" alt=""></div>
-                            <div><img class="scale-img img_hover" src="./assets/images/doi-tac/DN.jpg" alt=""></div>
-                            <div><img class="scale-img img_hover" src="./assets/images/doi-tac/KD.jpg" alt=""></div>
-                            <div><img class="scale-img img_hover" src="./assets/images/doi-tac/THTPHCM.jpg" alt="">
-                            </div>
-                            <div><img class="scale-img img_hover" src="./assets/images/doi-tac/TN.jpg" alt=""></div>
-                            <div><img class="scale-img img_hover" src="./assets/images/doi-tac/Tre.jpg" alt=""></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <!-- Main -->
-            <!-- Sản phẩm nổi bật -->
-            <div class="wrap-spnb">
-                <div class="wrap-content">
-                    <div class="main-title-text">SẢN PHẨM NỔI BẬT</div>
-                    <div class="wrap-slide-spnb">
-                        <div class="owl-spnb owl-carousel owlCarousel">
-                            @foreach ($noibats as $noibat)
+
+            <!-- bỏ all sản phẩm, bên trái là danh mục sản phẩm, 
+                 ở dưới có thể có tìm theo mức giá, dưới nữa có thể 
+                 lọc theo nhà xuất bản bla bla, bên phải là sản phẩm -->
+
+            <!--Bên trái-->
+
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="http://127.0.0.1:8000">Trang chủ</a></li>
+                  <li class="breadcrumb-item"><a href="http://127.0.0.1:8000/collections">Danh mục</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Tất cả các sách</li>
+                </ol>
+            </nav>
+                
+            <!--Bên phải-->         
+            <div class="all-right">
+                <div class="wrap-product padding50">
+                    <div class="wrap-content">
+                        <div class="product-list">
+                            @foreach ($all as $all)
                             <a href="#" class="box-product">
-                                <div class="scale-img img_hover">
-                                    <img alt="ảnh lỗi" src="{{ asset('./assets/images/sach/GK/' . $noibat->HinhAnh)}}"
+                                <div class="scale-img">
+                                    <img alt="ảnh lỗi" src="{{ asset('./assets/images/sach/' . $all->MaLoaiSach . '/' . $all->HinhAnh)}}"
                                         width="200" height="300"></img>
                                 </div>
                                 <div class="infor-product">
-                                    <div class="name-product">{{$noibat->TenSach}}</div>
-                                    <div class="price-product">{{$noibat->DonGia}}đ</div>
+                                    <div class="name-product">{{$all->TenSach}}</div>
+                                    <div class="price-product">{{$all->DonGia}}đ</div>
                                 </div>
                             </a>
                             @endforeach
                         </div>
                     </div>
-                </div>
+                 </div>
             </div>
-            <!--Sach giao khoa-->
-            <div class="wrap-spnb">
-                <div class="wrap-content">
-                    <div class="main-title-text">SÁCH GIÁO KHOA</div>
-                    <div class="wrap-slide-spnb">
-                        <div class="owl-spnb owl-carousel owlCarousel">
-                            @foreach ($sgks as $sgk)
-                            <a href="#" class="box-product">
-                                <div class="scale-img img_hover">
-                                    <img alt="ảnh lỗi" src="{{ asset('./assets/images/sach/GK/' . $sgk->HinhAnh)}}"
-                                        width="200" height="300"></img>
-                                </div>
-                                <div class="infor-product">
-                                    <div class="name-product">{{$sgk->TenSach}}</div>
-                                    <div class="price-product">{{$sgk->DonGia}}đ</div>
-                                </div>
-                            </a>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--Sach tham khao-->
-            <div class="wrap-spnb">
-                <div class="wrap-content">
-                    <div class="main-title-text">SÁCH THAM KHẢO</div>
-                    <div class="wrap-slide-spnb">
-                        <div class="owl-spnb owl-carousel owlCarousel">
-                            @foreach ($thamkhaos as $noibat)
-                            <a href="#" class="box-product">
-                                <div class="scale-img img_hover">
-                                    <img alt="ảnh lỗi" src="{{ asset('./assets/images/sach/TK/' . $noibat->HinhAnh)}}"
-                                        width="200" height="300"></img>
-                                </div>
-                                <div class="infor-product">
-                                    <div class="name-product">{{$noibat->TenSach}}</div>
-                                    <div class="price-product">{{$noibat->DonGia}}đ</div>
-                                </div>
-                            </a>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Video News -->
-            <div class="wrap-video-news">
-                <div class="wrap-content">
-                    <div class="main-title-text">TIN TỨC & VIDEO</div>
-                    <div class="wrap-vidnews-items">
-                        <div class="wrap-video">
-                            <div class="fotorama" data-nav="thumbs" data-autoplay="true" data-width="100%"
-                                data-height="100%" data-thumbwidth="145" data-thumbheight="90">
-                                <a href="https://youtu.be/Q2T2JuQgob4"></a>
-                                <a href="https://youtu.be/WdCMqN2ukaA"></a>
-                                <a href="https://youtu.be/kWCEaNgTCdY"></a>
-                                <a href="https://youtu.be/CyKmrNhXM3o"></a>
-                            </div>
-                        </div>
-                        <div class="wrap-news">
-                            <div class="news-slick">
-                                <div class="news-box">
-                                    <div class="news-img"><img
-                                            src="https://thumbs.dreamstime.com/b/beautiful-sunset-over-water-tree-silhouette-nature-landscape-amazing-orange-yellow-sky-night-scene-wallpaper-birds-flying-154424473.jpg"
-                                            alt=""></div>
-                                    <div class="news-text">
-                                        <div class="news-name">Lorem ipsum dolor sit amet.</div>
-                                        <div class="news-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                            Eius repellat aliquam quidem, voluptatem sed nostrum recusandae.</div>
-                                        <!-- <div class="news-content"></div> -->
-                                    </div>
-                                </div>
-                                <div class="news-box">
-                                    <div class="news-img"><img
-                                            src="https://thumbs.dreamstime.com/b/beautiful-sunset-over-water-tree-silhouette-nature-landscape-amazing-orange-yellow-sky-night-scene-wallpaper-birds-flying-154424473.jpg"
-                                            alt=""></div>
-                                    <div class="news-text">
-                                        <div class="news-name">Lorem ipsum dolor sit amet.</div>
-                                        <div class="news-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                            Eius repellat aliquam quidem, voluptatem sed nostrum recusandae.</div>
-                                        <!-- <div class="news-content"></div> -->
-                                    </div>
-                                </div>
-                                <div class="news-box">
-                                    <div class="news-img"><img
-                                            src="https://thumbs.dreamstime.com/b/beautiful-sunset-over-water-tree-silhouette-nature-landscape-amazing-orange-yellow-sky-night-scene-wallpaper-birds-flying-154424473.jpg"
-                                            alt=""></div>
-                                    <div class="news-text">
-                                        <div class="news-name">Lorem ipsum dolor sit amet.</div>
-                                        <div class="news-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                            Eius repellat aliquam quidem, voluptatem sed nostrum recusandae.</div>
-                                        <!-- <div class="news-content"></div> -->
-                                    </div>
-                                </div>
-                                <div class="news-box">
-                                    <div class="news-img"><img
-                                            src="https://thumbs.dreamstime.com/b/beautiful-sunset-over-water-tree-silhouette-nature-landscape-amazing-orange-yellow-sky-night-scene-wallpaper-birds-flying-154424473.jpg"
-                                            alt=""></div>
-                                    <div class="news-text">
-                                        <div class="news-name">Lorem ipsum dolor sit amet.</div>
-                                        <div class="news-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                            Eius repellat aliquam quidem, voluptatem sed nostrum recusandae.</div>
-                                        <!-- <div class="news-content"></div> -->
-                                    </div>
-                                </div>
-                                <div class="news-box">
-                                    <div class="news-img"><img
-                                            src="https://thumbs.dreamstime.com/b/beautiful-sunset-over-water-tree-silhouette-nature-landscape-amazing-orange-yellow-sky-night-scene-wallpaper-birds-flying-154424473.jpg"
-                                            alt=""></div>
-                                    <div class="news-text">
-                                        <div class="news-name">Lorem ipsum dolor sit amet.</div>
-                                        <div class="news-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                            Eius repellat aliquam quidem, voluptatem sed nostrum recusandae.</div>
-                                        <!-- <div class="news-content"></div> -->
-                                    </div>
-                                </div>
-                                <div class="news-box">
-                                    <div class="news-img"><img
-                                            src="https://thumbs.dreamstime.com/b/beautiful-sunset-over-water-tree-silhouette-nature-landscape-amazing-orange-yellow-sky-night-scene-wallpaper-birds-flying-154424473.jpg"
-                                            alt=""></div>
-                                    <div class="news-text">
-                                        <div class="news-name">Lorem ipsum dolor sit amet.</div>
-                                        <div class="news-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                            Eius repellat aliquam quidem, voluptatem sed nostrum recusandae.</div>
-                                        <!-- <div class="news-content"></div> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
-
 
             <!-- Footer -->
 
@@ -523,7 +372,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </body>
 
