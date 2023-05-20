@@ -34,5 +34,20 @@ class BooksController extends Controller
             'thamkhaos' => $thamkhaos
         ]);
     }
+
+    public function taphop() {
+        $all = DB::table("sach")->get();
+        return view('taphop',[
+            'all' => $all,
+        ]);
+    }
+    public function home() {
+        $alls = DB::table("sach")
+                    ->join("nhaxuatban", "sach.MaNXB", "=", "nhaxuatban.MaNXB")
+                    ->get();
+        return view('home',[
+            'alls' => $alls,
+        ]);
+    }
     use HasFactory;
 }

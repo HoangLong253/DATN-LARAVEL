@@ -278,6 +278,33 @@
                  ở dưới có thể có tìm theo mức giá, dưới nữa có thể 
                  lọc theo nhà xuất bản bla bla, bên phải là sản phẩm -->
 
+            <!--Bên trái-->
+
+            <div class="all-left">
+                
+            </div>
+                
+            <!--Bên phải-->         
+            <div class="all-right">
+                <div class="wrap-product padding50">
+                    <div class="wrap-content">
+                        <div class="product-list">
+                            @foreach ($all as $all)
+                            <a href="#" class="box-product">
+                                <div class="scale-img">
+                                    <img alt="ảnh lỗi" src="{{ asset('./assets/images/sach/' . $all->MaLoaiSach . '/' . $all->HinhAnh)}}"
+                                        width="200" height="300"></img>
+                                </div>
+                                <div class="infor-product">
+                                    <div class="name-product">{{$all->TenSach}}</div>
+                                    <div class="price-product">{{$all->DonGia}}đ</div>
+                                </div>
+                            </a>
+                            @endforeach
+                        </div>
+                    </div>
+                 </div>
+            </div>
             <!-- IDEAD1 -->
             <div class="wrap-idea">
                 <div class="wrap-content">
@@ -434,7 +461,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </body>
 
