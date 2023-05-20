@@ -51,7 +51,15 @@ class BooksController extends Controller
     }
 
     public function amnhac6() {
-        return view('amnhac6');
+        $sgks = DB::table("sach")
+        ->where([
+            ["MaLoaiSach", "=", "GK"],
+            ["TrangThai", "=", 1,],
+        ])
+        ->get();
+        return view('amnhac6', [
+            'sgks' => $sgks,
+        ]);
     }
     use HasFactory;
 }

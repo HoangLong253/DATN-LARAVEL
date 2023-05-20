@@ -315,9 +315,10 @@
                                         width="200" height="300"></img>
                                 </div>
                                 <div class="infor-product">
-                                    <div class="name-product">{{$noibat->TenSach}}</div>
-                                    <div class="price-product">{{$noibat->DonGia}}đ</div>
+                                    
                                 </div>
+                                <div class="name-product">{{$noibat->TenSach}}</div>
+                                <div class="price-product">@convert($noibat->DonGia,0)đ</div>
                             </a>
                             @endforeach
                         </div>
@@ -337,9 +338,10 @@
                                         width="200" height="300"></img>
                                 </div>
                                 <div class="infor-product">
-                                    <div class="name-product">{{$sgk->TenSach}}</div>
-                                    <div class="price-product">{{$sgk->DonGia}}đ</div>
+                                    
                                 </div>
+                                <div class="name-product">{{$sgk->TenSach}}</div>
+                                <div class="price-product">@convert($sgk->DonGia,0)đ</div>
                             </a>
                             @endforeach
                         </div>
@@ -359,9 +361,10 @@
                                         width="200" height="300"></img>
                                 </div>
                                 <div class="infor-product">
-                                    <div class="name-product">{{$noibat->TenSach}}</div>
-                                    <div class="price-product">{{$noibat->DonGia}}đ</div>
+                                    
                                 </div>
+                                <div class="name-product">{{$noibat->TenSach}}</div>
+                                <div class="price-product">@convert($noibat->DonGia,0)đ</div>
                             </a>
                             @endforeach
                         </div>
@@ -369,6 +372,10 @@
                 </div>
             </div>
             
+            <!--Xem thêm-->
+            <a href="http://127.0.0.1:8000/collections" class="btn btn-success"> Xem thêm</a>
+            <!--<button type="button" href="http://127.0.0.1:8000/collections" class="btn btn-success" >Xem thêm</button>-->
+
             <!-- Video News -->
             <div class="wrap-video-news">
                 <div class="wrap-content">

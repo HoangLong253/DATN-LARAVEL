@@ -258,7 +258,7 @@
             <div class="wrap-menu">
                 <div class="wrap-content">
                     <ul class="d-flex justify-content-between align-items-center">
-                        <li><a href="http://127.0.0.1:8000" class="active">Trang chủ</a></li>
+                        <li><a href="http://127.0.0.1:8000">Trang chủ</a></li>
                         <li class="line"></li>
                         <li><a href="">Giới Thiệu</a></li>
                         <li class="line"></li>
@@ -277,7 +277,7 @@
             
             <!--Chi tiết sách-->
             
-            <div class="wrap-product-page">
+            <div class="">
                 <div class="wrap-content">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
@@ -292,23 +292,23 @@
                     <div class="product-images-info">
                         <div class="img-product">
                             <div class="img-main-product">
-                                <img src="https://sachvip.net/wp-content/uploads/2020/11/sach-giao-khoa-ngu-van-lop-6-.jpg"
+                                <img src="http://127.0.0.1:8000/assets/images/sach/GK/an-v6.jpg"
                                     alt="sach-giao-khoa">
                             </div>
                             <div class="slide-product">
                                 <div class="wrap-slide-product">
                                     <div class="owl-product owl-carousel owlCarousel">
                                         <div class="owl-product-items"><img
-                                                src="https://sachvip.net/wp-content/uploads/2020/11/sach-giao-khoa-ngu-van-lop-6-.jpg"
+                                                src="http://127.0.0.1:8000/assets/images/sach/GK/an-v6.jpg"
                                                 alt=""></div>
                                         <div class="owl-product-items"><img
-                                                src="https://sachvip.net/wp-content/uploads/2020/11/sach-giao-khoa-ngu-van-lop-6-.jpg"
+                                                src="http://127.0.0.1:8000/assets/images/sach/GK/an-v6.jpg"
                                                 alt=""></div>
                                         <div class="owl-product-items"><img
-                                                src="https://sachvip.net/wp-content/uploads/2020/11/sach-giao-khoa-ngu-van-lop-6-.jpg"
+                                                src="http://127.0.0.1:8000/assets/images/sach/GK/an-v6.jpg"
                                                 alt=""></div>
                                         <div class="owl-product-items"><img
-                                                src="https://sachvip.net/wp-content/uploads/2020/11/sach-giao-khoa-ngu-van-lop-6-.jpg"
+                                                src="http://127.0.0.1:8000/assets/images/sach/GK/an-v6.jpg"
                                                 alt=""></div>
                                     </div>
                                 </div>
@@ -316,9 +316,9 @@
                         </div>
                         <div class="infor-product">
                             <div class="infor-product-left">
-                                <div class="title-product">Ngữ văn 6 tập 1</div>
-                                <div class="share-product-icon">
-                                    <!-- Thay bằng ảnh -->
+                                <div class="title-product">Âm nhạc và mĩ thuật lớp 6</div>
+                                <!--<div class="share-product-icon">
+                                    
                                     <span class="share-icon-items"><a href=""><i
                                                 class="fa-brands fa-square-facebook"></i></a></span>
                                     <span class="share-icon-items"><a href=""><i
@@ -327,7 +327,7 @@
                                                 class="fa-brands fa-square-twitter"></i></a></span>
                                     <span class="share-icon-items"><a href=""><i
                                                 class="fa-brands fa-square-youtube"></i></a></span>
-                                </div>
+                                </div>-->
                                 <div class="infor-product-inter">
                                     <div class="infor-product-inter-title">Thông tin chung:</div>
                                     <div class="grid-info-product">
@@ -348,10 +348,10 @@
                                     </div>
                                     <div class="flex-price-product">
                                         <span class="price-new">Giá khuyến mãi: <span
-                                                class="price-bold">50.000đ</span></span>
+                                                class="price-bold">5.000đ</span></span>
                                         <!-- Format monney tự cách hoặc chấm + Auto set "Đ" sau giá -->
                                         <span class="price-old">Giá gốc: <span
-                                                class="price-strikethrough">70.000đ</span></span>
+                                                class="price-strikethrough">7.000đ</span></span>
                                     </div>
                                     <div class="quantity-pick">Số lượng:
                                         <span class="buttons_added">
@@ -393,7 +393,7 @@
                                 </div>
                             </div>
                             <div class="infor-product-right">
-                                <div>IDEA </div>
+                                <div></div>
                             </div>
                         </div>
                     </div>
@@ -446,8 +446,8 @@
                             </div>
                             <div class="cus-rate-whole">
                                 <div class="cus-rate-img">
-                                    <img src="https://cand.com.vn/Files/Image/linhchi/2016/09/19/47ca7ab5-f6d4-43ac-a6dd-24c48bd0647c.jpg"
-                                        alt="">
+                                    <img src="http://127.0.0.1:8000/assets/images/no-avatar.png"
+                                        alt="avatar">
                                 </div>
                                 <div class="cus-rate-info">
                                     <div class="cus-rate-name">Nguyễn Nhật Ánh
@@ -467,13 +467,11 @@
                                         Sản phẩm tuyệt vời
                                     </div>
                                     <div class="cus-rate-post-img   ">
-                                        <img src="https://sachvip.net/wp-content/uploads/2020/11/sach-giao-khoa-ngu-van-lop-6-.jpg"
+                                        <img src="http://127.0.0.1:8000/assets/images/sach/GK/an-v6.jpg"
                                             alt="">
-                                        <img src="https://sachvip.net/wp-content/uploads/2020/11/sach-giao-khoa-ngu-van-lop-6-.jpg"
+                                        <img src="http://127.0.0.1:8000/assets/images/sach/GK/an-v6.jpg"
                                             alt="">
-                                        <img src="https://sachvip.net/wp-content/uploads/2020/11/sach-giao-khoa-ngu-van-lop-6-.jpg"
-                                            alt="">
-                                        <img src="https://sachvip.net/wp-content/uploads/2020/11/sach-giao-khoa-ngu-van-lop-6-.jpg"
+                                        <img src="http://127.0.0.1:8000/assets/images/sach/GK/an-v6.jpg"
                                             alt="">
                                     </div>
     
@@ -482,8 +480,27 @@
     
                         </div>
                         <div class="wrap-product-same">
-                            <div class="wrap-product-same-title">
-                                Sản phẩm cùng loại
+                            <div class="wrap-spnb">
+                                <div class="wrap-content">
+                                    <div class="main-title-text">SẢN PHẨM TƯƠNG TỰ</div>
+                                    <div class="wrap-slide-spnb">
+                                        <div class="owl-spnb owl-carousel owlCarousel">
+                                            @foreach ($sgks as $sgk)
+                                            <a href="#" class="box-product">
+                                                <div class="scale-img img_hover">
+                                                    <img alt="ảnh lỗi" src="{{ asset('./assets/images/sach/GK/' . $sgk->HinhAnh)}}"
+                                                        width="200" height="300"></img>
+                                                </div>
+                                                <div class="infor-product">
+                                                    
+                                                </div>
+                                                <div class="name-product">{{$sgk->TenSach}}</div>
+                                                <div class="price-product">@convert($sgk->DonGia,0)đ</div>
+                                            </a>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="wrap-product-same-grid grid-4">
                                 

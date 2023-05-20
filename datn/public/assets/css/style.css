@@ -115,7 +115,7 @@ to{opacity:1;transform:scale(1);}
 .header__search-history-items:hover{background-color:#fafafa;}
 .header__search-history-items a{text-decoration:none;line-height:38px;font-size:14px;color:var(--text-color);display:block;}
 /* menu */
-.wrap-menu{background-color: green;}
+.wrap-menu{background-color:green;}
 .wrap-menu ul{list-style:none;padding:0px;margin:0px;}
 .wrap-menu ul li{margin:0px;width:160px;}
 .wrap-menu ul li.line{width:1px;height:15px;background-color:#fff;}
@@ -144,17 +144,15 @@ to{opacity:1;transform:scale(1);}
 .price-after{color:red;padding:0 5px;}
 .price-before{text-decoration:line-through;color:#66666691;padding:0 5px;}
 /* Video News */
-
-.wrap-vidnews-items{display: flex;justify-content: space-between;margin-top: 5px;}
-.wrap-news{width: 49%;}
-.wrap-video{width: 49%;}
-
-.news-box{width: 50%; display: flex !important;}
-.news-img{width: 50%;}
-.news-img img{width: 100%;height: 180px;}
-.news-text{width: 50%;margin-left: 10px;}
-.news-name{font-size: 20px;color: #000000;font-weight: bold;}
-.news-desc{font-size: 16px;color: #285430;}
+.wrap-vidnews-items{display:flex;justify-content:space-between;margin-top:5px;}
+.wrap-news{width:49%;}
+.wrap-video{width:49%;}
+.news-box{width:50%;display:flex !important;}
+.news-img{width:50%;}
+.news-img img{width:100%;height:180px;}
+.news-text{width:50%;margin-left:10px;}
+.news-name{font-size:20px;color:#000000;font-weight:bold;}
+.news-desc{font-size:16px;color:#285430;}
 /* Footer */
 .footer-article{padding:30px 0;background:#EDF1F2;}
 .footer-title-text{font-family:'Mulish-ExtraBold';color:#538D22;}
@@ -167,34 +165,82 @@ to{opacity:1;transform:scale(1);}
 .footer-policy ul{list-style:none;}
 .footer-policy ul li a{color:#000000;}
 .footer-policy ul li a:hover{color:#ee4d2d;}
-
 /* 3D BOX */
-figure {
-    float: left;
-    height: 6em;
-    margin: 1.5em;
-    width: 12em;
-    -webkit-transform: perspective(500);
-    -webkit-transform-style: preserve-3d;
-    -webkit-transition: .5s;
+figure{float:left;height:6em;margin:1.5em;width:12em;-webkit-transform:perspective(500);-webkit-transform-style:preserve-3d;-webkit-transition:.5s;}
+figure:hover{-webkit-transform:perspective(500) rotateX(90deg) translateY(-3em) translateZ(3em);}
+figure:hover img{box-shadow:none;}
+figcaption{background-color:#222;color:#fff;padding:1.5em;-webkit-transform:rotateX(-90deg);-webkit-transform-origin:100% 0;-webkit-transition:.5s;}
+figure:hover figcaption{box-shadow:0 20px 15px -10px hsla(0,0%,0%,.25);background:#ccc;}
+/* Product */
+.wrap-product-page a{text-decoration:none;color:#000;font-family:'';font-size:15px;font-weight:bold;}
+.wrap-product-whole{padding:50px 0px;}
+.product-images-info{display:flex;justify-content:space-between;}
+.img-product{width:30%;text-align:center;}
+.infor-product{width:65%;display:flex;justify-content:space-between;}
+.img-main-product img{width:340px !important;height:475px !important;}
+.wrap-slide-product img{width:100px !important;height:120px !important;padding:10px;}
+.slide-product{margin-top:10px;}
+.title-product{font-size:32px;font-weight:bold;}
+.owl-product-items{border:solid 1px #ccc;border-radius:5px;}
+.share-icon-items i{font-size:30px;}
+.grid-info-product{grid-template-columns:repeat(2,1fr);gap:10px;display:grid;padding:10px 0px;}
+.share-product-icon{padding:10px 0px;}
+.infor-product-inter-title{font-size:18px;font-weight:bold;}
+.name-text1{font-weight:bold;font-size:16px;}
+.name-text-infor{font-size:15px;font-weight:normal !important;}
+.infor-product-left{width:55%;}
+.infor-product-right{width:40%;}
+.price-old{margin-left:20px;font-size:20px;color:#000;font-weight:bold;}
+.price-new{font-size:20px;color:#000;font-weight:bold;}
+.price-bold{color:red;font-size:25px;font-weight:bold;}
+.price-strikethrough{color:#ccc;font-size:20px;text-decoration:line-through;}
+.flex-price-product{padding:10px 0px;}
+/* Quantity pick begin */
+.buttons_added{opacity:1;display:inline-block;display:-ms-inline-flexbox;display:inline-flex;white-space:nowrap;}
+.is-form{overflow:hidden;position:relative;background-color:#000;height:2.2rem;width:1.9rem;padding:0;text-shadow:1px 1px 1px #fff;border:1px solid #ddd;}
+.is-form:focus,.input-text:focus{outline:none;}
+.is-form.minus{border-radius:4px 0 0 4px;}
+.is-form.plus{border-radius:0 4px 4px 0;}
+.input-qty{background-color:#000;height:2.2rem;text-align:center;font-size:1rem;display:inline-block;vertical-align:top;margin:0;border-top:1px solid #ddd;border-bottom:1px solid #ddd;border-left:0;border-right:0;padding:0;color:#fff;}
+.input-qty::-webkit-outer-spin-button,.input-qty::-webkit-inner-spin-button{-webkit-appearance:none;margin:0;}
+/* Quantity pick end */
+.flex-btn-product{display:flex;gap:20px;padding:10px 0px;}
+.plc-gw{color:blueviolet !important;}
+.plc-gw:hover{color:greenyellow !important;}
+.wrap-product-comment-infor{padding:50px 0px;}
+.wrap-product-infor {
+    margin-bottom: 20px;
 }
-figure:hover {
-    -webkit-transform: perspective(500) rotateX(90deg) translateY(-3em) translateZ(3em);
+.wrap-product-comment {
+margin-bottom: 20px;
 }
-figure:hover img {
-    box-shadow: none;
+.wrap-product-infor_title{font-weight:bold;font-size:18px;}
+.wrap-product-comment_title{font-weight:bold;font-size:18px;padding: 10px 0px;}
+.stars-product-text{font-weight:bold;font-size:16px;}
+.stars-product-num{color:yellow !important;}
+.cus-rate-whole{display: flex;gap: 20px;padding: 10px 0px;} 
+.cus-rate-img{border-radius: 100%;}
+.cus-rate-img img{border-radius: 100%; width: 60px !important;height: 60px !important;}
+.cus-rate-post-img img{width: 68px !important;height: 88px !important;}
+.cus-rate-name {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 0px;
 }
-figcaption {
-    background-color: #222;
-    color: #fff;
-    padding: 1.5em;
-    -webkit-transform: rotateX(-90deg);
-    -webkit-transform-origin: 100% 0;
-    -webkit-transition: .5s;
+.cus-rate-star    {
+   
+padding: 5px 0px;
+   
+color: yellow;
 }
-figure:hover figcaption {
-    box-shadow: 0 20px 15px -10px hsla(0,0%,0%,.25);
-    background: #ccc;
+.cus-rate-date    {
+    
+    padding: 5px 0px;
 }
-
-
+.cus-rate-comment   {
+     
+    padding: 5px 0px;
+}
+.rate-stars {
+    font-size: 30px;
+}

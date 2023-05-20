@@ -296,15 +296,16 @@
                     <div class="wrap-content">
                         <div class="product-list">
                             @foreach ($all as $all)
-                            <a href="#" class="box-product">
+                            <a href="./collections/sach-giao-khoa/lop-6/am-nhac-va-mi-thuat-lop-6" class="box-product">
                                 <div class="scale-img">
                                     <img alt="ảnh lỗi" src="{{ asset('./assets/images/sach/' . $all->MaLoaiSach . '/' . $all->HinhAnh)}}"
                                         width="200" height="300"></img>
                                 </div>
-                                <div class="infor-product">
-                                    <div class="name-product">{{$all->TenSach}}</div>
-                                    <div class="price-product">{{$all->DonGia}}đ</div>
-                                </div>
+                                <!-- lỗi ở infor-product -->
+                                <div class="infor-product"></div>
+                                <div class="name-product">{{$all->TenSach}}</div>
+                                <!--<div class="price-product">{{$all->DonGia}}đ</div>-->
+                                <div class="price-product">@convert($all->DonGia, 0)đ</div>
                             </a>
                             @endforeach
                         </div>
