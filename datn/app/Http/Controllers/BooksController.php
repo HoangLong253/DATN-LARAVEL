@@ -34,5 +34,33 @@ class BooksController extends Controller
             'thamkhaos' => $thamkhaos
         ]);
     }
+
+    public function collections() {
+        $all = DB::table("sach")->get();
+        return view('collections',[
+            'all' => $all,
+        ]);
+    }
+    public function home() {
+        $alls = DB::table("sach")
+                    ->join("nhaxuatban", "sach.MaNXB", "=", "nhaxuatban.MaNXB")
+                    ->get();
+        return view('home',[
+            'alls' => $alls,
+        ]);
+    }
+
+    public function amnhac6() {
+        $sgks = DB::table("sach")
+        ->where([
+            ["MaLoaiSach", "=", "GK"],
+            ["TrangThai", "=", 1,],
+        ])
+        ->take(10)
+        ->get();
+        return view('amnhac6', [
+            'sgks' => $sgks,
+        ]);
+    }
     use HasFactory;
 }

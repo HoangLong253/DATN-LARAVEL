@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Starter</title>
+  <title>AdminLTE 3 | Dedicated Dragon BookStore</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -19,90 +19,75 @@
 @include('partials.header')
 @include('partials.sliderbar')
 
-
-  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Starter Page</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Starter Page</li>
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
+            <h1 class="m-0">Sản phẩm</h1>
+            <a href="#" class="btn btn-success pull-right"><i class="fa fa-plus"></i>Thêm</a>
+          </div>
+        </div>
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Hình ảnh</th>
+              <th>Tên sách</th>
+              <th>Nhà xuất bản</th>
+              <th>Nổi bật</th> 
+              <th>Đơn giá</th>
+              <th>Phần trăm giảm</th>
+              <th>Giá giảm</th>
+              <th>Trạng thái</th>
+              <th>Chức năng</th> 
+            </tr>
+          </thead>
+          <tbody>
+            @foreach($alls as $all)
+            <tr>
+              <td>
+                <img alt="ảnh lỗi" src="{{ asset('./assets/images/sach/' . $all->MaLoaiSach . '/' . $all->HinhAnh)}}" width="70" height="100"></img>
+              </td>
+              <td> {{$all->TenSach}} </td>
+              <td> {{$all->TenNXB}} </td>
+              @if($all->NoiBat)
+                <td>
+                  <input type="checkbox" id="NoiBat" name="NoiBat" value="yes" checked onclick="return false;"/>
+                </td>
+              @else
+                <td>
+                  <input type="checkbox" id="NoiBat" name="NoiBat" value="yes" onclick="return false;"/>
+                </td>
+              @endif
+              <td> {{$all->DonGia}} </td>
+              <td> {{$all->PhanTramGiam * 100}} </td>
+              <td> {{$all->DonGia - $all->DonGia * $all->PhanTramGiam}} </td>
+              @if($all->TrangThai)
+                <td>
+                  <input type="checkbox" id="TrangThai" name="TrangThai" value="yes" checked onclick="return false;"/>
+                </td>
+              @else
+                <td>
+                  <input type="checkbox" id="TrangThai" name="TrangThai" value="yes" onclick="return false;"/>
+                </td>
+              @endif
+              <td>
+                <a href="" class="mr-3 func_icon !important" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>
+                <a id="del_btn" href="./del_func.php" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>
+              </td>
+            </tr>
+            @endforeach
+          </tbody>
+        </table>
+      </div>
     </div>
-    <!-- /.content-header -->
-
-    <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the card's
-                  content.
-                </p>
-
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-              </div>
-            </div>
-
-            <div class="card card-primary card-outline">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the card's
-                  content.
-                </p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-              </div>
-            </div><!-- /.card -->
-          </div>
-          <!-- /.col-md-6 -->
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="m-0">Featured</h5>
-              </div>
-              <div class="card-body">
-                <h6 class="card-title">Special title treatment</h6>
-
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-
-            <div class="card card-primary card-outline">
-              <div class="card-header">
-                <h5 class="m-0">Featured</h5>
-              </div>
-              <div class="card-body">
-                <h6 class="card-title">Special title treatment</h6>
-
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-          <!-- /.col-md-6 -->
-        </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
+        
+      </div>
     </div>
+
+
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->

@@ -8,17 +8,19 @@
     <meta name="viewport" content="width=1366">
     <title>BookStore</title>
     <!-- <link rel="stylesheet" href="../assets/font/.."> -->
-    <link rel="stylesheet" href="../assets/bootstrap-5.0.2-dist/..">
+    <link rel="stylesheet" href="../assets/bootstrap-5.0.2-dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap-5.0.2-dist/js/bootstrap.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/base.css">
-    <link rel="stylesheet" href="../assets/css/fonts.css">
-    <link rel="stylesheet" href="../assets/css/preview.css">
-    <link rel="stylesheet" href="../assets/css/style_book.css">
-    <link rel="stylesheet" href="../assets/css/wow_book.css">
-    <link rel="stylesheet" href="../assets/fontawesome-free-6.3.0-web/css/all.min.css">
-    <link rel="stylesheet" href="../assets/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="../assets/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/fonts.css">
+    <link rel="stylesheet" href="./assets/css/preview.css">
+    <link rel="stylesheet" href="./assets/css/style_book.css">
+    <link rel="stylesheet" href="./assets/css/wow_book.css">
+    <link rel="stylesheet" href="./assets/fontawesome-free-6.3.0-web/css/all.min.css">
+    <link rel="stylesheet" href="./assets/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="./assets/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -171,83 +173,86 @@
                             </div>
                             <!-- Cart -->
                             <!-- FadeIn chưa chuẩn -->
-                            <div class="header__cart">
-                                <div class="header__cart-wrap"><i
-                                        class="header__cart-icon fa-solid fa-cart-shopping"></i>
-                                    <span class="header__cart-notice">
-                                        3
-                                    </span>
-                                    <!-- No cart: header__cart-list-no-cart-->
-                                    <div class="header__cart-list ">
-                                        <img src="./assets/images/chi-tiet/no-cart.png" alt=""
-                                            class="header__cart-no-cart-img">
-                                        <span class="header__cart-list-no-cart-msg">Chưa có sản phẩm</span>
-
-                                        <h4 class="header__cart-heading">Sản phẩm đã thêm</h4>
-                                        <ul class="header__cart-list-item">
-                                            <!-- Cart item -->
-                                            <li class="header__cart-item">
-                                                <img src="https://salt.tikicdn.com/cache/100x100/ts/review/9e/80/22/ff1656d3fbc597360c5cce278d4b838c.jpg.webp"
-                                                    alt="" class="header__cart-img">
-                                                <div class="header__cart-item-info -wrap">
-                                                    <div class="header__cart-item-head">
-                                                        <div class="header__cart-item-name">Thương nhớ Trà Long</div>
-                                                        <div class="header__cart-item-price-wrap">
-                                                            <span class="header__cart-item-price">100.000vnd</span>
-                                                            <span class="header__cart-item-x">x</span>
-                                                            <span class="header__cart-item-qnt">2</span>
+                            
+                                <div class="header__cart">
+                                    <a href="http://127.0.0.1:8000/giohang">
+                                    <div class="header__cart-wrap"><i
+                                            class="header__cart-icon fa-solid fa-cart-shopping"></i>
+                                        <span class="header__cart-notice">
+                                            3
+                                        </span>
+                                        <!-- No cart: header__cart-list-no-cart-->
+                                        <div class="header__cart-list ">
+                                            <img src="./assets/images/chi-tiet/no-cart.png" alt=""
+                                                class="header__cart-no-cart-img">
+                                            <span class="header__cart-list-no-cart-msg">Chưa có sản phẩm</span>
+    
+                                            <h4 class="header__cart-heading">Sản phẩm đã thêm</h4>
+                                            <ul class="header__cart-list-item">
+                                                <!-- Cart item -->
+                                                <li class="header__cart-item">
+                                                    <img src="https://salt.tikicdn.com/cache/100x100/ts/review/9e/80/22/ff1656d3fbc597360c5cce278d4b838c.jpg.webp"
+                                                        alt="" class="header__cart-img">
+                                                    <div class="header__cart-item-info -wrap">
+                                                        <div class="header__cart-item-head">
+                                                            <div class="header__cart-item-name">Thương nhớ Trà Long</div>
+                                                            <div class="header__cart-item-price-wrap">
+                                                                <span class="header__cart-item-price">100.000vnd</span>
+                                                                <span class="header__cart-item-x">x</span>
+                                                                <span class="header__cart-item-qnt">2</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="header__cart-item-body">
+                                                            <span class="header__cart-item-desc">Loại sản phẩm: Tiểu
+                                                                thuyết</span>
+                                                            <span class="header__cart-item-remove">Xóa</span>
                                                         </div>
                                                     </div>
-                                                    <div class="header__cart-item-body">
-                                                        <span class="header__cart-item-desc">Loại sản phẩm: Tiểu
-                                                            thuyết</span>
-                                                        <span class="header__cart-item-remove">Xóa</span>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="header__cart-item">
-                                                <img src="https://salt.tikicdn.com/cache/100x100/ts/review/9e/80/22/ff1656d3fbc597360c5cce278d4b838c.jpg.webp"
-                                                    alt="" class="header__cart-img ">
-                                                <div class="header__cart-item-info -wrap">
-                                                    <div class="header__cart-item-head">
-                                                        <div class="header__cart-item-name">Thương nhớ Trà Long</div>
-                                                        <div class="header__cart-item-price-wrap">
-                                                            <span class="header__cart-item-price">100.000vnd</span>
-                                                            <span class="header__cart-item-x">x</span>
-                                                            <span class="header__cart-item-qnt">2</span>
+                                                </li>
+                                                <li class="header__cart-item">
+                                                    <img src="https://salt.tikicdn.com/cache/100x100/ts/review/9e/80/22/ff1656d3fbc597360c5cce278d4b838c.jpg.webp"
+                                                        alt="" class="header__cart-img ">
+                                                    <div class="header__cart-item-info -wrap">
+                                                        <div class="header__cart-item-head">
+                                                            <div class="header__cart-item-name">Thương nhớ Trà Long</div>
+                                                            <div class="header__cart-item-price-wrap">
+                                                                <span class="header__cart-item-price">100.000vnd</span>
+                                                                <span class="header__cart-item-x">x</span>
+                                                                <span class="header__cart-item-qnt">2</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="header__cart-item-body">
+                                                            <span class="header__cart-item-desc">Loại sản phẩm: Tiểu
+                                                                thuyết</span>
+                                                            <span class="header__cart-item-remove">Xóa</span>
                                                         </div>
                                                     </div>
-                                                    <div class="header__cart-item-body">
-                                                        <span class="header__cart-item-desc">Loại sản phẩm: Tiểu
-                                                            thuyết</span>
-                                                        <span class="header__cart-item-remove">Xóa</span>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="header__cart-item">
-                                                <img src="https://salt.tikicdn.com/cache/100x100/ts/review/9e/80/22/ff1656d3fbc597360c5cce278d4b838c.jpg.webp"
-                                                    alt="" class="header__cart-img">
-                                                <div class="header__cart-item-info -wrap">
-                                                    <div class="header__cart-item-head">
-                                                        <div class="header__cart-item-name">Thương nhớ Trà Long</div>
-                                                        <div class="header__cart-item-price-wrap">
-                                                            <span class="header__cart-item-price">100.000vnd</span>
-                                                            <span class="header__cart-item-x">x</span>
-                                                            <span class="header__cart-item-qnt">2</span>
+                                                </li>
+                                                <li class="header__cart-item">
+                                                    <img src="https://salt.tikicdn.com/cache/100x100/ts/review/9e/80/22/ff1656d3fbc597360c5cce278d4b838c.jpg.webp"
+                                                        alt="" class="header__cart-img">
+                                                    <div class="header__cart-item-info -wrap">
+                                                        <div class="header__cart-item-head">
+                                                            <div class="header__cart-item-name">Thương nhớ Trà Long</div>
+                                                            <div class="header__cart-item-price-wrap">
+                                                                <span class="header__cart-item-price">100.000vnd</span>
+                                                                <span class="header__cart-item-x">x</span>
+                                                                <span class="header__cart-item-qnt">2</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="header__cart-item-body">
+                                                            <span class="header__cart-item-desc">Loại sản phẩm: Tiểu
+                                                                thuyết</span>
+                                                            <span class="header__cart-item-remove">Xóa</span>
                                                         </div>
                                                     </div>
-                                                    <div class="header__cart-item-body">
-                                                        <span class="header__cart-item-desc">Loại sản phẩm: Tiểu
-                                                            thuyết</span>
-                                                        <span class="header__cart-item-remove">Xóa</span>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <a href="#" class="header__cart-view-cart btn btn-primary">Xem Giỏ Hàng</a>
+                                                </li>
+                                            </ul>
+                                            <a href="http://127.0.0.1:8000/giohang" class="header__cart-view-cart btn btn-primary">Xem Giỏ Hàng</a>
+                                        </div>
                                     </div>
+                                    </a>
                                 </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -256,11 +261,11 @@
             <div class="wrap-menu">
                 <div class="wrap-content">
                     <ul class="d-flex justify-content-between align-items-center">
-                        <li><a href="" class="active">Trang chủ</a></li>
+                        <li><a href="http://127.0.0.1:8000" class="active">Trang chủ</a></li>
                         <li class="line"></li>
                         <li><a href="">Giới Thiệu</a></li>
                         <li class="line"></li>
-                        <li><a href="">Danh Mục</a></li>
+                        <li><a href="http://127.0.0.1:8000/collections">Sản Phẩm</a></li>
                         <li class="line"></li>
                         <li><a href="">Tin Tức</a></li>
                         <li class="line"></li>
@@ -308,14 +313,27 @@
                         <div class="owl-spnb owl-carousel owlCarousel">
                             @foreach ($noibats as $noibat)
                             <a href="#" class="box-product">
-                                <div class="scale-img img_hover">
+                                @if($noibat->PhanTramGiam != 0)
+                                    <div class="product-sale-oustanding ">
+                                        <span class="sale-lb img_hover">{{$noibat->PhanTramGiam * 100}}%</span>
+                                    </div>
+                                @endif
+                                <div class=" scale-img img_hover">
                                     <img alt="ảnh lỗi" src="{{ asset('./assets/images/sach/GK/' . $noibat->HinhAnh)}}"
                                         width="200" height="300"></img>
                                 </div>
                                 <div class="infor-product">
-                                    <div class="name-product">{{$noibat->TenSach}}</div>
-                                    <div class="price-product">{{$noibat->DonGia}}đ</div>
+                                    
                                 </div>
+                                @if($noibat->PhanTramGiam != 0)
+                                    <div class="name-product">{{$noibat->TenSach}}</div>
+                                    <div class="price-product">@convert($noibat->DonGia - ($noibat->DonGia * $noibat->PhanTramGiam),0)đ</div> 
+                                    <div class="price-product"><del>@convert($noibat->DonGia,0)đ</del></div> 
+                                @else
+                                    <div class="name-product">{{$noibat->TenSach}}</div>
+                                    <div class="price-product">@convert($noibat->DonGia,0)đ</div>
+                                @endif
+                                
                             </a>
                             @endforeach
                         </div>
@@ -328,16 +346,29 @@
                     <div class="main-title-text">SÁCH GIÁO KHOA</div>
                     <div class="wrap-slide-spnb">
                         <div class="owl-spnb owl-carousel owlCarousel">
-                            @foreach ($sgks as $sgk)
+                            @foreach ($sgks as $sgks)
                             <a href="#" class="box-product">
-                                <div class="scale-img img_hover">
-                                    <img alt="ảnh lỗi" src="{{ asset('./assets/images/sach/GK/' . $sgk->HinhAnh)}}"
+                                @if($sgks->PhanTramGiam != 0)
+                                    <div class="product-sale-oustanding ">
+                                        <span class="sale-lb img_hover">{{$sgks->PhanTramGiam * 100}}%</span>
+                                    </div>
+                                @endif
+                                <div class=" scale-img img_hover">
+                                    <img alt="ảnh lỗi" src="{{ asset('./assets/images/sach/GK/' . $sgks->HinhAnh)}}"
                                         width="200" height="300"></img>
                                 </div>
                                 <div class="infor-product">
-                                    <div class="name-product">{{$sgk->TenSach}}</div>
-                                    <div class="price-product">{{$sgk->DonGia}}đ</div>
+                                    
                                 </div>
+                                @if($sgks->PhanTramGiam != 0)
+                                    <div class="name-product">{{$sgks->TenSach}}</div>
+                                    <div class="price-product">@convert($sgks->DonGia - ($sgks->DonGia * $sgks->PhanTramGiam),0)đ</div> 
+                                    <div class="price-product"><del>@convert($sgks->DonGia,0)đ</del></div> 
+                                @else
+                                    <div class="name-product">{{$sgks->TenSach}}</div>
+                                    <div class="price-product">@convert($sgks->DonGia,0)đ</div>
+                                @endif
+                                
                             </a>
                             @endforeach
                         </div>
@@ -350,116 +381,40 @@
                     <div class="main-title-text">SÁCH THAM KHẢO</div>
                     <div class="wrap-slide-spnb">
                         <div class="owl-spnb owl-carousel owlCarousel">
-                            @foreach ($thamkhaos as $noibat)
+                            @foreach ($thamkhaos as $thamkhao)
                             <a href="#" class="box-product">
-                                <div class="scale-img img_hover">
-                                    <img alt="ảnh lỗi" src="{{ asset('./assets/images/sach/TK/' . $noibat->HinhAnh)}}"
+                                @if($thamkhao->PhanTramGiam != 0)
+                                    <div class="product-sale-oustanding ">
+                                        <span class="sale-lb img_hover">{{$thamkhao->PhanTramGiam * 100}}%</span>
+                                    </div>
+                                @endif
+                                <div class=" scale-img img_hover">
+                                    <img alt="ảnh lỗi" src="{{ asset('./assets/images/sach/' . $thamkhao->MaLoaiSach . '/' . $thamkhao->HinhAnh)}}"
                                         width="200" height="300"></img>
                                 </div>
                                 <div class="infor-product">
-                                    <div class="name-product">{{$noibat->TenSach}}</div>
-                                    <div class="price-product">{{$noibat->DonGia}}đ</div>
+                                    
                                 </div>
+                                @if($thamkhao->PhanTramGiam != 0)
+                                    <div class="name-product">{{$thamkhao->TenSach}}</div>
+                                    <div class="price-product">@convert($thamkhao->DonGia - ($noibat->DonGia * $thamkhao->PhanTramGiam),0)đ</div> 
+                                    <div class="price-product"><del>@convert($thamkhao->DonGia,0)đ</del></div> 
+                                @else
+                                    <div class="name-product">{{$thamkhao->TenSach}}</div>
+                                    <div class="price-product">@convert($thamkhao->DonGia,0)đ</div>
+                                @endif
+                                
                             </a>
                             @endforeach
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- IDEAD1 -->
-            <div class="wrap-idea">
-                <div class="wrap-content">
+            
+            <!--Xem thêm-->
+            <a href="http://127.0.0.1:8000/collections" class="btn btn-success"> Xem thêm</a>
+            <!--<button type="button" href="http://127.0.0.1:8000/collections" class="btn btn-success" >Xem thêm</button>-->
 
-                    <!-- Để 3D BOX ở đây có thể dùng thay đổi cho slick tin tức -->
-                    <div class="wrap-news-test">
-
-                        <figure>
-                            <img src="https://thumbs.dreamstime.com/b/beautiful-sunset-over-water-tree-silhouette-nature-landscape-amazing-orange-yellow-sky-night-scene-wallpaper-birds-flying-154424473.jpg"
-                                alt="">
-                            <figcaption>
-                                <div class="news-name">Lorem ipsum dolor sit amet.</div>
-                                <div class="news-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius
-                                    repellat aliquam quidem, voluptatem sed nostrum recusandae.</div>
-                            </figcaption>
-                        </figure>
-
-                        <figure>
-                            <img src="https://thumbs.dreamstime.com/b/beautiful-sunset-over-water-tree-silhouette-nature-landscape-amazing-orange-yellow-sky-night-scene-wallpaper-birds-flying-154424473.jpg"
-                                alt="">
-                            <figcaption>
-                                <div class="news-name">Lorem ipsum dolor sit amet.</div>
-                                <div class="news-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius
-                                    repellat aliquam quidem, voluptatem sed nostrum recusandae.</div>
-                            </figcaption>
-                        </figure>
-
-                        <figure>
-                            <img src="https://thumbs.dreamstime.com/b/beautiful-sunset-over-water-tree-silhouette-nature-landscape-amazing-orange-yellow-sky-night-scene-wallpaper-birds-flying-154424473.jpg"
-                                alt="">
-                            <figcaption>
-                                <div class="news-name">Lorem ipsum dolor sit amet.</div>
-                                <div class="news-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius
-                                    repellat aliquam quidem, voluptatem sed nostrum recusandae.</div>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-            <!-- IDEA2 -->
-            <div class="wrap-thuc-don padding50">
-                <div class="wrap-content">
-                    <div class="wrap_title">
-                        <div class="title-main-thuc-don"><span>BOOK</span></div>
-                    </div>
-                    <div class="book-menu position-relative padding30">
-                        <div id="container">
-                            <div id="main">
-                                <div id="features">
-                                    <div><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOna8GciazzxZlbgxWKQYgqPejv04aWjSawqwJs-IyaiWMXo-h3wNfLg-mjFVFPPpnqiyT94eQLbVLrboiAtSl8l-jeTiSrsaWlBq1kRQL22GwrK5aVBuPKyA31EeWFLftabwtpnpZAQnYaUxzTyJbXCQcwsSZ1x-jCO_-NN1ZRcbUYDlKR_pRO7xxiw/s1600/Conan-1108-02.jpg" alt=""></div>
-                                    <div><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiuaspUxyjr6dvSBll1BsLiFEeQvus8TPEHp8zbuDOYvV7L4wPEL6AK0PdTAiGDL9mN1i1w9qKBuIi7mFH4PjykTOgFHyDI8Z7xul5csbLHNTMtH55GbCQTl3b4xFOglH45_8PaeBITTtsYOWbs-fBNqJy2psnU2KwexF0wsGKm5quef8dx4bauXrzucg/s1600/Conan-1108-03.jpg" alt=""></div>
-                                    <div><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg6ae33uwoYrArQPGf4ZyVzf144dHBtpOeS7dsK1q2lzFDwCUiVXb_f_z2Qe8F-1KJXZrC0x_0dBIGQ0xWrMDqfNerv_rxfr1qEDJuRrTocD5WGg0wTK6B1X7TfxuDN5VLbM5hG_IbInR0ahHCEf8CwrG_OmJxXgag6Rp2Y2RG4ioGafd5jIeInuoGb9w/s1600/Conan-1108-04.jpg  " alt=""></div>
-                                    <div><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjNnpbRBTFNId1EaevqLgf8gtoV8qEG_3SNKrs8MCSaX8aEKva9Bg8MeKHVHeF4jPU1BQEJoDVMQK4V0idwApMidiijpod_29d3J14_z7ZFOC2O6uLYhb9irbXoBfmMvXFsZpRh3hWGz_WzO8fGdjFIqbbzkhJUa8wbuaEyfZTC7KpsoTGkrLCcWnIwBA/s1600/Conan-1108-05.jpg" alt=""></div>
-                                    <div><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgx0g7AnwTl3wJtp71ffFvkM1VndO08mWkNIXnFtsqto5Lh4pQcVAzGSCLi40mOY3LCA6UgXgsTE_BvL8_JQmmnkSORxwhkpJpAoRzZNyyp_3kAZ5nRJBzAzQqr4ZgpGTcdQ44IH1GXb6afXyivaByUFXxNW8UcfBZoV-mWa9-Z6NQuuw45lYmjFkBWbQ/s1600/Conan-1108-06.jpg" alt=""></div>
-                                    <div><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh9zV3bElMW6KBAfhu6pcUYrWErfOl7tdD6eZyrvCEOimIg4t5nL0mzLh0ghkOrguID6lMI6z3l7m1_l1CEdNlJTBljIWpUl9oGRfkdWPvn32xwK_xZ-YnMnQBQqdW71tzp3oPxX2bHBJOFl9B3a9H2Ls89mQMf1Q54rkAj_o1WYdBKqgB6pnW0c5Z3lA/s1600/Conan-1108-07.jpg" alt=""></div>
-                                    <div><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh9zV3bElMW6KBAfhu6pcUYrWErfOl7tdD6eZyrvCEOimIg4t5nL0mzLh0ghkOrguID6lMI6z3l7m1_l1CEdNlJTBljIWpUl9oGRfkdWPvn32xwK_xZ-YnMnQBQqdW71tzp3oPxX2bHBJOFl9B3a9H2Ls89mQMf1Q54rkAj_o1WYdBKqgB6pnW0c5Z3lA/s1600/Conan-1108-07.jpg" alt=""></div>
-                                    <div><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjVz8R2j9UYqYJxEGHFkyr9LLZdUgcLlUUqHdDKQMFLvjqBr2e26ieBsrUPKfS5YVX3cWZvvzgh-mzoFl9ohVea7IosmKE3vehhTnIcxhWqGx6nCLiEpzoHEwInUfudIuxa5R3gX8AvfAWD-iXWPJ6Cz27pikzr0ZldhzCNni9WzSGb_YzsI4iBOfFMmQ/s1600/Conan-1108-08.jpg" alt=""></div>
-                                    <div><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh2cG4lg0U_7kacovrT2PqGkyLxwIXQX2GtQ5uzfQoPgcYz_qY7Fe3qBTZaSesNbefJQ23BIY-LXLvs-FpTCyocE3BVbdst7Q6V1pgM_S0OC6vRtSJpthbeiM6z_Z0ePczKaok1nW8-PRe_4Rp0V7Uapgvauf2j0cOcIwnnw84CNfG72elemc8OIi90aw/s1600/Conan-1108-09.jpg" alt=""></div>
-                                    <div><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgjTi0B1_PX4FTz8WPrW4bKbtygcMiVVaHTMUk84gGN-6boFYfZ9ZMjmzpUdVkcta3pxKr1uwL_m_lOKOAMjr1KB2mxnZlb3g9J4ozLcs8D1ax5hbnnVBjtVm_7vhEfv1W5_XAN2elbOKj-0TzjOHW0945Qbpd9WA46NfGt71vi5z-Ivfe3ysY39U7HUw/s1600/Conan-1108-10.jpg" alt=""></div>
-                                    <div><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj48CBRDs8QJpvZqrIc0rWfpo4d0nHWn-0VvRxx_nmiTv2v-plU2akYSOknds4b1MmxrTYP0m0-03SV4tBYBPtqeHqCfLR8CvIfSGG2a2sk3aU43GjqWF5LsJG_cxjW-C2ChIWs7cPa5AwZ31TG2wZXWahloWIAL9MorcsdPR9o06EAJ0nMzR7YHelSww/s1600/Conan-1108-11.jpg" alt=""></div>
-                                </div>
-                            </div>
-                        </div>
-                        <nav class="book-nav">
-                            <ul>
-                                <li><a id='first' href="#" title='goto first page'>First page</a></li>
-                                <li><a id='back' href="#" title='go back one page'>Back</a></li>
-                                <li><a id='next' href="#" title='go foward one page'>Next</a></li>
-                                <li><a id='last' href="#" title='goto last page'>last page</a></li>
-                                <li><a id='zoomin' href="#" title='zoom in'>Zoom In</a></li>
-                                <li><a id='zoomout' href="#" title='zoom out'>Zoom Out</a></li>
-                                <li><a id='slideshow' href="#" title='start slideshow'>Slide Show</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-
-                    <!-- <div class="book-menu-mobile padding30">
-                        <div class="owl-page owl-carousel owl-theme" data-xsm-items="1:0" data-sm-items="1:0"
-                            data-md-items="1:0" data-lg-items="1:0" data-xlg-items="1:0" data-rewind="1"
-                            data-autoplay="1" data-loop="0" data-lazyload="0" data-mousedrag="1" data-touchdrag="1"
-                            data-smartspeed="800" data-autoplayspeed="800" data-autoplaytimeout="5000" data-dots="0"
-                            data-animations="animate__fadeInDown, animate__backInUp, animate__backInRight, animate__zoomInUp, animate__backInLeft, animate__backInDown, animate__zoomInDown, animate__fadeInUp, animate__zoomIn"
-                            data-nav="1"
-                            data-navtext="<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-arrow-narrow-left' width='50' height='37' viewBox='0 0 24 24' stroke-width='1' stroke='#ffffff' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><line x1='5' y1='12' x2='19' y2='12' /><line x1='5' y1='12' x2='9' y2='16' /><line x1='5' y1='12' x2='9' y2='8' /></svg>|<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-arrow-narrow-right' width='50' height='37' viewBox='0 0 24 24' stroke-width='1' stroke='#ffffff' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><line x1='5' y1='12' x2='19' y2='12' /><line x1='15' y1='16' x2='19' y2='12' /><line x1='15' y1='8' x2='19' y2='12' /></svg>"
-                            data-navcontainer=".control-video">
-                            <div><img src="./assets/images/slideshow/slide.png" alt=""></div>
-                            <div><img src="./assets/images/slideshow/banner_02.png" alt=""></div>
-                            <div><img src="./assets/images/slideshow/slide1.png" alt=""></div>
-                            <div><img src="./assets/images/slideshow/slideshow_02.png" alt=""></div>
-                        </div>
-                    </div> -->
-                </div>
-
-            </div>
             <!-- Video News -->
             <div class="wrap-video-news">
                 <div class="wrap-content">

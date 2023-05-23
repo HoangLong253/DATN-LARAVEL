@@ -8,24 +8,26 @@
     <meta name="viewport" content="width=1366">
     <title>BookStore</title>
     <!-- <link rel="stylesheet" href="../assets/font/.."> -->
-    <link rel="stylesheet" href="../assets/bootstrap-5.0.2-dist/..">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/assets/bootstrap-5.0.2-dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/assets/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/assets/bootstrap-5.0.2-dist/js/bootstrap.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/base.css">
-    <link rel="stylesheet" href="../assets/css/fonts.css">
-    <link rel="stylesheet" href="../assets/css/preview.css">
-    <link rel="stylesheet" href="../assets/css/style_book.css">
-    <link rel="stylesheet" href="../assets/css/wow_book.css">
-    <link rel="stylesheet" href="../assets/fontawesome-free-6.3.0-web/css/all.min.css">
-    <link rel="stylesheet" href="../assets/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="../assets/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/assets/css/style.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/assets/css/base.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/assets/css/fonts.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/assets/css/preview.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/assets/css/style_book.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/assets/css/wow_book.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/assets/fontawesome-free-6.3.0-web/css/all.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/assets/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/assets/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
-    <script src="../assets/OwlCarousel2-2.3.4/docs/assets/vendors/jquery.min.js"></script>
-    <script src="../assets/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
-    <script src="../assets/js/wow_book.min.js"></script>
+    <script src="http://127.0.0.1:8000/assets/OwlCarousel2-2.3.4/docs/assets/vendors/jquery.min.js"></script>
+    <script src="http://127.0.0.1:8000/assets/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+    <script src="http://127.0.0.1:8000/assets/js/wow_book.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 </head>
@@ -73,7 +75,7 @@
                                             <li class="header__notify-item header__notify-item--viewed">
                                                 <a class="header__notify-link" href="">
                                                     <span> <img class="header__notify-img"
-                                                            src="./assets/images/logo/logo.png" alt=""
+                                                            src="http://127.0.0.1:8000/assets/images/logo/logo.png" alt=""
                                                             class="header__notify-img">
                                                     </span>
                                                     <div class="header__notify-infor">
@@ -86,7 +88,7 @@
                                             <li class="header__notify-item header__notify-item--viewed">
                                                 <a class="header__notify-link" href="">
                                                     <span> <img class="header__notify-img"
-                                                            src="./assets/images/logo/logo.png" alt=""
+                                                            src="http://127.0.0.1:8000/assets/images/logo/logo.png" alt=""
                                                             class="header__notify-img">
                                                     </span>
                                                     <div class="header__notify-infor">
@@ -99,7 +101,7 @@
                                             <li class="header__notify-item header__notify-item--viewed">
                                                 <a class="header__notify-link" href="">
                                                     <span> <img class="header__notify-img"
-                                                            src="./assets/images/logo/logo.png" alt=""
+                                                            src="http://127.0.0.1:8000/assets/images/logo/logo.png" alt=""
                                                             class="header__notify-img">
                                                     </span>
                                                     <div class="header__notify-infor">
@@ -142,9 +144,9 @@
                 <div class="header-bottom">
                     <div class="wrap-content">
                         <div class="header-with-search ">
-                            <a href="http://127.0.0.1:8000/">
+                            <a href="http://localhost/DATN/web/DATN-MAIN">
                                 <div class="header__logo d-flex ">
-                                    <img class="header__logo-img " src="./assets/images/logo/logo.png" alt="">
+                                    <img class="header__logo-img " src="http://127.0.0.1:8000/assets/images/logo/logo.png" alt="">
                                     <div class="header__cpnname">Delicate Dragon BookStore </div>
                                 </div>
                             </a>
@@ -179,7 +181,7 @@
                                     </span>
                                     <!-- No cart: header__cart-list-no-cart-->
                                     <div class="header__cart-list ">
-                                        <img src="./assets/images/chi-tiet/no-cart.png" alt=""
+                                        <img src="http://127.0.0.1:8000/assets/images/chi-tiet/no-cart.png" alt=""
                                             class="header__cart-no-cart-img">
                                         <span class="header__cart-list-no-cart-msg">Chưa có sản phẩm</span>
 
@@ -256,11 +258,11 @@
             <div class="wrap-menu">
                 <div class="wrap-content">
                     <ul class="d-flex justify-content-between align-items-center">
-                        <li><a href="" class="active">Trang chủ</a></li>
+                        <li><a href="http://127.0.0.1:8000">Trang chủ</a></li>
                         <li class="line"></li>
                         <li><a href="">Giới Thiệu</a></li>
                         <li class="line"></li>
-                        <li><a href="">Danh Mục</a></li>
+                        <li><a href="http://127.0.0.1:8000/collections">Sản Phẩm</a></li>
                         <li class="line"></li>
                         <li><a href="">Tin Tức</a></li>
                         <li class="line"></li>
@@ -272,107 +274,248 @@
                     </ul>
                 </div>
             </div>
-            <!-- Main -->
-
-            <!-- bỏ all sản phẩm, bên trái là danh mục sản phẩm, 
-                 ở dưới có thể có tìm theo mức giá, dưới nữa có thể 
-                 lọc theo nhà xuất bản bla bla, bên phải là sản phẩm -->
-
-            <!-- IDEAD1 -->
-            <div class="wrap-idea">
+            
+            <!--Chi tiết sách-->
+            
+            <div class="">
                 <div class="wrap-content">
-
-                    <!-- Để 3D BOX ở đây có thể dùng thay đổi cho slick tin tức -->
-                    <div class="wrap-news-test">
-
-                        <figure>
-                            <img src="https://thumbs.dreamstime.com/b/beautiful-sunset-over-water-tree-silhouette-nature-landscape-amazing-orange-yellow-sky-night-scene-wallpaper-birds-flying-154424473.jpg"
-                                alt="">
-                            <figcaption>
-                                <div class="news-name">Lorem ipsum dolor sit amet.</div>
-                                <div class="news-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius
-                                    repellat aliquam quidem, voluptatem sed nostrum recusandae.</div>
-                            </figcaption>
-                        </figure>
-
-                        <figure>
-                            <img src="https://thumbs.dreamstime.com/b/beautiful-sunset-over-water-tree-silhouette-nature-landscape-amazing-orange-yellow-sky-night-scene-wallpaper-birds-flying-154424473.jpg"
-                                alt="">
-                            <figcaption>
-                                <div class="news-name">Lorem ipsum dolor sit amet.</div>
-                                <div class="news-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius
-                                    repellat aliquam quidem, voluptatem sed nostrum recusandae.</div>
-                            </figcaption>
-                        </figure>
-
-                        <figure>
-                            <img src="https://thumbs.dreamstime.com/b/beautiful-sunset-over-water-tree-silhouette-nature-landscape-amazing-orange-yellow-sky-night-scene-wallpaper-birds-flying-154424473.jpg"
-                                alt="">
-                            <figcaption>
-                                <div class="news-name">Lorem ipsum dolor sit amet.</div>
-                                <div class="news-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius
-                                    repellat aliquam quidem, voluptatem sed nostrum recusandae.</div>
-                            </figcaption>
-                        </figure>
-                    </div>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item"><a href="http://127.0.0.1:8000">Trang chủ</a></li>
+                          <li class="breadcrumb-item"><a href="#">Sách giáo khoa</a></li>
+                          <li class="breadcrumb-item"><a href="#">Lớp 6</a></li>
+                          <li class="breadcrumb-item active" aria-current="page">Âm nhạc và mĩ thuật lớp 6</li>
+                        </ol>
+                    </nav>
                 </div>
-            </div>
-            <!-- IDEA2 -->
-            <div class="wrap-thuc-don padding50">
-                <div class="wrap-content">
-                    <div class="wrap_title">
-                        <div class="title-main-thuc-don"><span>BOOK</span></div>
-                    </div>
-                    <div class="book-menu position-relative padding30">
-                        <div id="container">
-                            <div id="main">
-                                <div id="features">
-                                    <div><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOna8GciazzxZlbgxWKQYgqPejv04aWjSawqwJs-IyaiWMXo-h3wNfLg-mjFVFPPpnqiyT94eQLbVLrboiAtSl8l-jeTiSrsaWlBq1kRQL22GwrK5aVBuPKyA31EeWFLftabwtpnpZAQnYaUxzTyJbXCQcwsSZ1x-jCO_-NN1ZRcbUYDlKR_pRO7xxiw/s1600/Conan-1108-02.jpg" alt=""></div>
-                                    <div><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiuaspUxyjr6dvSBll1BsLiFEeQvus8TPEHp8zbuDOYvV7L4wPEL6AK0PdTAiGDL9mN1i1w9qKBuIi7mFH4PjykTOgFHyDI8Z7xul5csbLHNTMtH55GbCQTl3b4xFOglH45_8PaeBITTtsYOWbs-fBNqJy2psnU2KwexF0wsGKm5quef8dx4bauXrzucg/s1600/Conan-1108-03.jpg" alt=""></div>
-                                    <div><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg6ae33uwoYrArQPGf4ZyVzf144dHBtpOeS7dsK1q2lzFDwCUiVXb_f_z2Qe8F-1KJXZrC0x_0dBIGQ0xWrMDqfNerv_rxfr1qEDJuRrTocD5WGg0wTK6B1X7TfxuDN5VLbM5hG_IbInR0ahHCEf8CwrG_OmJxXgag6Rp2Y2RG4ioGafd5jIeInuoGb9w/s1600/Conan-1108-04.jpg  " alt=""></div>
-                                    <div><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjNnpbRBTFNId1EaevqLgf8gtoV8qEG_3SNKrs8MCSaX8aEKva9Bg8MeKHVHeF4jPU1BQEJoDVMQK4V0idwApMidiijpod_29d3J14_z7ZFOC2O6uLYhb9irbXoBfmMvXFsZpRh3hWGz_WzO8fGdjFIqbbzkhJUa8wbuaEyfZTC7KpsoTGkrLCcWnIwBA/s1600/Conan-1108-05.jpg" alt=""></div>
-                                    <div><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgx0g7AnwTl3wJtp71ffFvkM1VndO08mWkNIXnFtsqto5Lh4pQcVAzGSCLi40mOY3LCA6UgXgsTE_BvL8_JQmmnkSORxwhkpJpAoRzZNyyp_3kAZ5nRJBzAzQqr4ZgpGTcdQ44IH1GXb6afXyivaByUFXxNW8UcfBZoV-mWa9-Z6NQuuw45lYmjFkBWbQ/s1600/Conan-1108-06.jpg" alt=""></div>
-                                    <div><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh9zV3bElMW6KBAfhu6pcUYrWErfOl7tdD6eZyrvCEOimIg4t5nL0mzLh0ghkOrguID6lMI6z3l7m1_l1CEdNlJTBljIWpUl9oGRfkdWPvn32xwK_xZ-YnMnQBQqdW71tzp3oPxX2bHBJOFl9B3a9H2Ls89mQMf1Q54rkAj_o1WYdBKqgB6pnW0c5Z3lA/s1600/Conan-1108-07.jpg" alt=""></div>
-                                    <div><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh9zV3bElMW6KBAfhu6pcUYrWErfOl7tdD6eZyrvCEOimIg4t5nL0mzLh0ghkOrguID6lMI6z3l7m1_l1CEdNlJTBljIWpUl9oGRfkdWPvn32xwK_xZ-YnMnQBQqdW71tzp3oPxX2bHBJOFl9B3a9H2Ls89mQMf1Q54rkAj_o1WYdBKqgB6pnW0c5Z3lA/s1600/Conan-1108-07.jpg" alt=""></div>
-                                    <div><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjVz8R2j9UYqYJxEGHFkyr9LLZdUgcLlUUqHdDKQMFLvjqBr2e26ieBsrUPKfS5YVX3cWZvvzgh-mzoFl9ohVea7IosmKE3vehhTnIcxhWqGx6nCLiEpzoHEwInUfudIuxa5R3gX8AvfAWD-iXWPJ6Cz27pikzr0ZldhzCNni9WzSGb_YzsI4iBOfFMmQ/s1600/Conan-1108-08.jpg" alt=""></div>
-                                    <div><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh2cG4lg0U_7kacovrT2PqGkyLxwIXQX2GtQ5uzfQoPgcYz_qY7Fe3qBTZaSesNbefJQ23BIY-LXLvs-FpTCyocE3BVbdst7Q6V1pgM_S0OC6vRtSJpthbeiM6z_Z0ePczKaok1nW8-PRe_4Rp0V7Uapgvauf2j0cOcIwnnw84CNfG72elemc8OIi90aw/s1600/Conan-1108-09.jpg" alt=""></div>
-                                    <div><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgjTi0B1_PX4FTz8WPrW4bKbtygcMiVVaHTMUk84gGN-6boFYfZ9ZMjmzpUdVkcta3pxKr1uwL_m_lOKOAMjr1KB2mxnZlb3g9J4ozLcs8D1ax5hbnnVBjtVm_7vhEfv1W5_XAN2elbOKj-0TzjOHW0945Qbpd9WA46NfGt71vi5z-Ivfe3ysY39U7HUw/s1600/Conan-1108-10.jpg" alt=""></div>
-                                    <div><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj48CBRDs8QJpvZqrIc0rWfpo4d0nHWn-0VvRxx_nmiTv2v-plU2akYSOknds4b1MmxrTYP0m0-03SV4tBYBPtqeHqCfLR8CvIfSGG2a2sk3aU43GjqWF5LsJG_cxjW-C2ChIWs7cPa5AwZ31TG2wZXWahloWIAL9MorcsdPR9o06EAJ0nMzR7YHelSww/s1600/Conan-1108-11.jpg" alt=""></div>
+                <div class="wrap-product-whole">
+                    <div class="product-images-info">
+                        <div class="img-product">
+                            <div class="img-main-product">
+                                <img src="http://127.0.0.1:8000/assets/images/sach/GK/an-v6.jpg"
+                                    alt="sach-giao-khoa">
+                            </div>
+                            <!--đọc thử ở đây-->
+                            
+                            <div class="slide-product">
+                                <div class="wrap-slide-product">
+                                    <div class="owl-product owl-carousel owlCarousel">
+                                        <div class="owl-product-items"><img
+                                                src="http://127.0.0.1:8000/assets/images/sach/GK/an-v6.jpg"
+                                                alt=""></div>
+                                        <div class="owl-product-items"><img
+                                                src="http://127.0.0.1:8000/assets/images/sach/GK/an-v6.jpg"
+                                                alt=""></div>
+                                        <div class="owl-product-items"><img
+                                                src="http://127.0.0.1:8000/assets/images/sach/GK/an-v6.jpg"
+                                                alt=""></div>
+                                        <div class="owl-product-items"><img
+                                                src="http://127.0.0.1:8000/assets/images/sach/GK/an-v6.jpg"
+                                                alt=""></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <nav class="book-nav">
-                            <ul>
-                                <li><a id='first' href="#" title='goto first page'>First page</a></li>
-                                <li><a id='back' href="#" title='go back one page'>Back</a></li>
-                                <li><a id='next' href="#" title='go foward one page'>Next</a></li>
-                                <li><a id='last' href="#" title='goto last page'>last page</a></li>
-                                <li><a id='zoomin' href="#" title='zoom in'>Zoom In</a></li>
-                                <li><a id='zoomout' href="#" title='zoom out'>Zoom Out</a></li>
-                                <li><a id='slideshow' href="#" title='start slideshow'>Slide Show</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-
-                    <!-- <div class="book-menu-mobile padding30">
-                        <div class="owl-page owl-carousel owl-theme" data-xsm-items="1:0" data-sm-items="1:0"
-                            data-md-items="1:0" data-lg-items="1:0" data-xlg-items="1:0" data-rewind="1"
-                            data-autoplay="1" data-loop="0" data-lazyload="0" data-mousedrag="1" data-touchdrag="1"
-                            data-smartspeed="800" data-autoplayspeed="800" data-autoplaytimeout="5000" data-dots="0"
-                            data-animations="animate__fadeInDown, animate__backInUp, animate__backInRight, animate__zoomInUp, animate__backInLeft, animate__backInDown, animate__zoomInDown, animate__fadeInUp, animate__zoomIn"
-                            data-nav="1"
-                            data-navtext="<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-arrow-narrow-left' width='50' height='37' viewBox='0 0 24 24' stroke-width='1' stroke='#ffffff' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><line x1='5' y1='12' x2='19' y2='12' /><line x1='5' y1='12' x2='9' y2='16' /><line x1='5' y1='12' x2='9' y2='8' /></svg>|<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-arrow-narrow-right' width='50' height='37' viewBox='0 0 24 24' stroke-width='1' stroke='#ffffff' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><line x1='5' y1='12' x2='19' y2='12' /><line x1='15' y1='16' x2='19' y2='12' /><line x1='15' y1='8' x2='19' y2='12' /></svg>"
-                            data-navcontainer=".control-video">
-                            <div><img src="./assets/images/slideshow/slide.png" alt=""></div>
-                            <div><img src="./assets/images/slideshow/banner_02.png" alt=""></div>
-                            <div><img src="./assets/images/slideshow/slide1.png" alt=""></div>
-                            <div><img src="./assets/images/slideshow/slideshow_02.png" alt=""></div>
+                        <div class="infor-product">
+                            <div class="infor-product-left">
+                                <div class="title-product">Âm nhạc và mĩ thuật lớp 6</div>
+                                <!--<div class="share-product-icon">
+                                    
+                                    <span class="share-icon-items"><a href=""><i
+                                                class="fa-brands fa-square-facebook"></i></a></span>
+                                    <span class="share-icon-items"><a href=""><i
+                                                class="fa-brands fa-square-instagram"></i></a></span>
+                                    <span class="share-icon-items"><a href=""><i
+                                                class="fa-brands fa-square-twitter"></i></a></span>
+                                    <span class="share-icon-items"><a href=""><i
+                                                class="fa-brands fa-square-youtube"></i></a></span>
+                                </div>-->
+                                <div class="infor-product-inter">
+                                    <div class="infor-product-inter-title">Thông tin chung:</div>
+                                    <div class="grid-info-product">
+                                        <div class="name-text1"> Tên tác giả: <span class="name-text-infor">Nhiều tác
+                                                giả</span>
+                                        </div>
+                                        <div class="name-text1"> Nhà xuất bản: <span class="name-text-infor">Giáo dục</span>
+                                        </div>
+                                        <div class="name-text1"> Năm xuất bản: <span class="name-text-infor">2023</span>
+                                        </div>
+                                        <div class="name-text1"> Loại sách: <span class="name-text-infor">Sách giáo
+                                                khoa</span>
+                                        </div>
+                                        <div class="name-text1"> Tình trạng: <span class="name-text-infor">Còn hàng</span>
+                                        </div>
+                                        <div class="name-text1"> Kích thước: <span class="name-text-infor">Kích thước</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-price-product">
+                                        <span class="price-new">Giá khuyến mãi: <span
+                                                class="price-bold">2.500đ</span></span>
+                                        <!-- Format monney tự cách hoặc chấm + Auto set "Đ" sau giá -->
+                                        <span class="price-old">Giá gốc: <span
+                                                class="price-strikethrough">5.000đ</span></span>
+                                    </div>
+                                    <div class="quantity-pick">Số lượng:
+                                        <span class="buttons_added">
+                                            <input class="minus is-form" type="button" value="-">
+                                            <input aria-label="quantity" class="input-qty" max="10" min="1" name=""
+                                                type="number" value="1">
+                                            <input class="plus is-form" type="button" value="+">
+                                        </span>
+                                    </div>
+                                    <div class="flex-btn-product">
+                                        <div class="add-cart-btn"><button type="button" class="btn btn-danger">Thêm vào giỏ
+                                                hàng
+                                                <i class="fa-solid fa-bag-shopping"></i></button></div>
+                                        <button type="button" class="btn btn-primary">Mua ngay <i
+                                                class="fa-solid fa-credit-card"></i></button>
+                                    </div>
+                                    <div class="policy-go-with">
+                                        <div class="policy-go-with-title">
+                                            Chính sách của chúng tôi
+                                        </div>
+                                        <div class="policy-gw-items">
+                                            <i class="fa-solid fa-check"></i> <a class="plc-gw" href="">Bookcare</a> Sách
+                                            bọc
+                                            màng có bảo vệ + đóng hộp carton 3 lớp
+                                        </div>
+                                        <div class="policy-gw-items">
+                                            <i class="fa-solid fa-check"></i> Được <a <a class="plc-gw" href="">Kiểm tra
+                                                hàng</a> trước khi nhận
+                                        </div>
+                                        <div class="policy-gw-items">
+                                            <i class="fa-solid fa-check"></i> Hoàn tiền <a <a class="plc-gw"
+                                                href="">100%</a> nếu sản phẩm lỗi
+                                        </div>
+                                        <div class="policy-gw-items">
+                                            <i class="fa-solid fa-check"></i> Hỗ trợ xuất hóa đơn <a <a class="plc-gw"
+                                                href="">VAT </a> theo yêu cầu
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="infor-product-right">
+                                <div></div>
+                            </div>
                         </div>
-                    </div> -->
+                    </div>
+                    <div class="wrap-product-comment-infor">
+                        <div class="wrap-product-infor">
+                            <div class="wrap-product-infor_title">Thông tin chi tiết</div>
+                            <div class="wrap-product-content">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis venenatis elit.
+                                Cras a eros vel lectus placerat maximus eget non velit. Pelle
+                                ntesque et convallis erat. In tristique, quam at luctus viverra, augue nibh volutpat nisl,
+                                nec euismod nisi ex vel sem. Nulla facilisi. Vivamus at mauris d
+                                ignissim, varius eros sed, euismod nisi. Mauris in elit congue, fermentum ligula sagittis,
+                                pulvinar erat. In fringilla pulvinar consequat. Pellentesque in s
+                                apien arcu. Donec posuere est ut pharetra ultricies. Vestibulum posuere libero vitae odio
+                                mattis, non pellentesque nulla rhoncus. Duis pharetra felis vel odio elementum rutrum.
+                                Proin imperdiet odio justo, vitae sodales augue tempus eget. Ut lobortis turpis ut
+                                ullamcorper molestie. Pellentesque consectetur iaculis odio, id
+                                scelerisque purus fringilla a. Pellentesque eget nibh iaculis magna malesuada rhoncus quis
+                                quis est. Nunc non purus id nulla sollicitudin pulvinar. Aen
+                                ean id placerat orci. Duis efficitur rhoncus magna sed faucibus. Aenean porta velit lacus,
+                                at venenatis ex suscipit a. Nulla nibh purus, aliquam porttitor urna id, auctor gravid
+                                a lacus. Maecenas id rhoncus sem. Maecenas sit amet pretium massa. Nunc eros dolor,
+                                tincidunt a euismod a, auctor ac nunc. Pellentesque placerat nec ante ut accumsan.
+                                Suspendisse ac tempor sapien.
+                                Cras nec purus fermentum, lobortis lectus vel, pulvinar ex. Cras ullamcorper placerat leo,
+                                blandit mollis odio vehicula at. Proin condimentu
+                                m porta diam non varius. Cras sed varius sapien. Maecenas et enim vel quam auctor aliquam.
+                                Aliquam interdum nec sem laoreet laoreet.
+                                Nullam auctor, odio sed condimentum eleifend, sem ligula semper massa, in sollicitudin magna
+                                magna sit amet turpis.
+                                Nullam imperdiet condimentum ultricies. Mauris venenatis pharetra elit, et placerat dui
+                                mattis quis. Nam vulputate vestibulum sodales. Do
+                                nec non ultricies magna, id vestibulum mauris. Nulla vel nisl et enim mattis finibus.
+                                Aliquam erat volutpat. Nulla facilisi.
+                            </div>
+                        </div>
+                        <div class="wrap-product-comment">
+                            <div class="wrap-product-comment_title">Đánh giá sản phẩm</div>
+                            <div class="whole-stars-product">
+                                <div class="rate-stars">
+                                    <span class="stars-product-text">4.7 Trên 5
+                                    </span> <span class="stars-product-num">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="cus-rate-whole">
+                                <div class="cus-rate-img">
+                                    <img src="http://127.0.0.1:8000/assets/images/no-avatar.png"
+                                        alt="avatar">
+                                </div>
+                                <div class="cus-rate-info">
+                                    <div class="cus-rate-name">Nguyễn Nhật Ánh
+    
+                                    </div>
+                                    <div class="cus-rate-star   ">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                    </div>
+                                    <div class="cus-rate-date   ">
+                                        Thời gian: 20:30 ngày 11 tháng 09 năm 2023
+                                    </div>
+                                    <div class="cus-rate-comment   ">
+                                        Sản phẩm tuyệt vời
+                                    </div>
+                                    <div class="cus-rate-post-img   ">
+                                        <img src="http://127.0.0.1:8000/assets/images/sach/GK/an-v6.jpg"
+                                            alt="">
+                                        <img src="http://127.0.0.1:8000/assets/images/sach/GK/an-v6.jpg"
+                                            alt="">
+                                        <img src="http://127.0.0.1:8000/assets/images/sach/GK/an-v6.jpg"
+                                            alt="">
+                                    </div>
+    
+                                </div>
+                            </div>
+    
+                        </div>
+                        <div class="wrap-product-same">
+                            <div class="wrap-spnb">
+                                <div class="wrap-content">
+                                    <div class="main-title-text">SẢN PHẨM TƯƠNG TỰ</div>
+                                    <div class="wrap-slide-spnb">
+                                        <div class="owl-spnb owl-carousel owlCarousel">
+                                            @foreach ($sgks as $sgk)
+                                            <a href="#" class="box-product">
+                                                <div class="scale-img img_hover">
+                                                    <img alt="ảnh lỗi" src="{{ asset('./assets/images/sach/GK/' . $sgk->HinhAnh)}}"
+                                                        width="200" height="300"></img>
+                                                </div>
+                                                <div class="infor-product">
+                                                    
+                                                </div>
+                                                <div class="name-product">{{$sgk->TenSach}}</div>
+                                                <div class="price-product">@convert($sgk->DonGia,0)đ</div>
+                                            </a>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wrap-product-same-grid grid-4">
+                                
+    
+                            </div>
+                        </div>
+    
+                    </div>
+    
+    
+    
                 </div>
-
             </div>
-            <!-- Video News -->
 
             <!-- Footer -->
 

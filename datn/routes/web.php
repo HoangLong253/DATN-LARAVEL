@@ -2,14 +2,17 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BooksController;
+use App\Http\Controllers\CartController;
 
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/home', function () {
+
+Route::get('/home', [BooksController::class, 'home'])->name('home');
+/*Route::get('/home', function () {
     return view('home');
 });
-
+*/
 Route::get('/', [BooksController::class, 'index'])->name('index');
 
 Route::get('dangnhap', function () {
@@ -20,11 +23,10 @@ Route::get('dangki', function () {
     return view('DangKy');
 })->name('dangki');
 
-Route::get('taphop', function () {
+/*Route::get('taphop', function () {
     return view('taphop');
 })->name('taphop');
-/* Tu */
- 
+
 //này là taphop/cái gì đó vd taphop/sach-giao-khoa
 
 /*Route::get('taphop', function () {
