@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/fonts.css">
     <link rel="stylesheet" href="../assets/css/cart.css">
+    <link rel="stylesheet" href="../assets/css/account.css">
     <link rel="stylesheet" href="../assets/css/animate.min.css">
     <link rel="stylesheet" href="../assets/css/adminlte.css">
     <link rel="stylesheet" href="../assets/css/animate.min.css">
@@ -2660,8 +2661,127 @@
             </form>
         </div>
     </div>
-    <!-- Btn Buy -->
      
+     <!-- Đăng ký -->
+     <div class="wrap-user">
+        <div class="title-user">
+            <span>Đăng ký</span>
+        </div>
+        <form class="form-user validation-user" novalidate="" method="post" action="account/dang-ky" enctype="multipart/form-data">
+                    <label>Họ tên</label>
+            <div class="input-group input-user">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fa fa-user"></i></div>
+                </div>
+                <input type="text" class="form-control text-sm" id="fullname" name="fullname" placeholder="Nhập họ tên của bạn" value="" required="">
+                <div class="invalid-feedback">Vui lòng nhập họ và tên</div>
+            </div>
+            <label>Tài khoản</label>
+            <div class="input-group input-user">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fa fa-user"></i></div>
+                </div>
+                <input type="text" class="form-control text-sm" id="username" name="username" placeholder="Nhập tài khoản của bạn" value="" required="">
+                <div class="invalid-feedback">Vui lòng nhập tài khoản</div>
+            </div>
+            <label>Mật khẩu</label>
+            <div class="input-group input-user">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fa fa-lock"></i></div>
+                </div>
+                <input type="password" class="form-control text-sm" id="password" name="password" placeholder="Nhập mật khẩu (5-15 ký tự)" required="">
+                <div class="invalid-feedback">Vui lòng nhập mật khẩu</div>
+            </div>
+            <label>Nhập lại mật khẩu</label>
+            <div class="input-group input-user">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fa fa-lock"></i></div>
+                </div>
+                <input type="password" class="form-control text-sm" id="repassword" name="repassword" placeholder="Nhập lại mật khẩu" required="">
+                <div class="invalid-feedback">Vui lòng nhập lại mật khẩu</div>
+            </div>
+            <label>Giới tính</label>
+            <div class="input-group input-user">
+                            <div class="radio-user custom-control custom-radio">
+                    <input type="radio" id="nam" name="gender" class="custom-control-input" value="1" required="">
+                    <label class="custom-control-label" for="nam">Nam</label>
+                </div>
+                <div class="radio-user custom-control custom-radio">
+                    <input type="radio" id="nu" name="gender" class="custom-control-input" value="2" required="">
+                    <label class="custom-control-label" for="nu">Nữ</label>
+                </div>
+            </div>
+            <label>Ngày sinh</label>
+            <div class="input-group input-user">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fa fa-lock"></i></div>
+                </div>
+                <input type="text" class="form-control text-sm" id="birthday" name="birthday" placeholder="Nhập ngày sinh" value="" required="" autocomplete="off">
+                <div class="invalid-feedback">Vui lòng nhập số điện thoại</div>
+            </div>
+            <label>Email</label>
+            <div class="input-group input-user">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fa fa-envelope"></i></div>
+                </div>
+                <input type="email" class="form-control text-sm" id="email" name="email" placeholder="Nhập địa chỉ email của bạn" value="" required="">
+                <div class="invalid-feedback">Vui lòng nhập địa chỉ email</div>
+            </div>
+            <label>Điện thoại</label>
+            <div class="input-group input-user">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fa fa-phone-square"></i></div>
+                </div>
+                <input type="number" class="form-control text-sm" id="phone" name="phone" placeholder="Nhập số điện thoại" value="" required="">
+                <div class="invalid-feedback">Vui lòng nhập số điện thoại</div>
+            </div>
+            <label>Địa chỉ</label>
+            <div class="input-group input-user">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fa fa-map"></i></div>
+                </div>
+                <input type="text" class="form-control text-sm" id="address" name="address" placeholder="Nhập địa chỉ của bạn" value="" required="">
+                <div class="invalid-feedback">Vui lòng nhập địa chỉ</div>
+            </div>
+            <div class="button-user">
+                <input type="submit" class="btn btn-primary btn-block" name="registration-user" value="Đăng ký">
+            </div>
+        </form>
+    </div>
+    <!-- login -->
+    <div class="wrap-user">
+        <div class="title-user d-flex align-items-end justify-content-between">
+            <span>Đăng nhập</span>
+            <a href=" " title="Quên mật khẩu">Quên mật khẩu</a>
+        </div>
+        <form class="form-user validation-user" novalidate="" method="post" action="account/dang-nhap" enctype="multipart/form-data">
+                    <div class="input-group input-user">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fa fa-user"></i></div>
+                </div>
+                <input type="text" class="form-control text-sm" id="username" name="username" placeholder="Tài khoản" required="">
+                <div class="invalid-feedback">Vui lòng nhập tài khoản</div>
+            </div>
+            <div class="input-group input-user">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fa fa-lock"></i></div>
+                </div>
+                <input type="password" class="form-control text-sm" id="password" name="password" placeholder="Mật khẩu" required="">
+                <div class="invalid-feedback">Vui lòng nhập mật khẩu</div>
+            </div>
+            <div class="button-user d-flex align-items-center justify-content-between">
+                <input type="submit" class="btn btn-primary" name="login-user" value="Đăng nhập">
+                <div class="checkbox-user custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" name="remember-user" id="remember-user" value="1">
+                    <label class="custom-control-label" for="remember-user">Nhớ mật khẩu</label>
+                </div>
+            </div>
+            <div class="note-user">
+                <span>Bạn chưa có tài khoản  ! </span>
+                <a href="account/dang-ky" title="Đăng ký">Đăng ký</a>
+            </div>
+        </form>
+    </div>
 </body>
 <script>
     $('.owl-product').owlCarousel({
