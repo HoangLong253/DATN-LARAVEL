@@ -50,6 +50,13 @@ class BooksController extends Controller
         ]);
     }
 
+    public function add() {
+        $alls = DB::table("sach")
+        ->join("nhaxuatban", "sach.MaNXB", "=", "nhaxuatban.MaNXB")
+        ->get();
+        return view('add');
+    }
+
     public function amnhac6() {
         $sgks = DB::table("sach")
         ->where([

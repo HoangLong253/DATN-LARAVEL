@@ -10,6 +10,9 @@ Route::get('/', function () {
 });
 
 Route::get('/home', [BooksController::class, 'home'])->name('home');
+
+Route::get('/home/add', [BooksController::class, 'add'])->name('add');
+
 /*Route::get('/home', function () {
     return view('home');
 });
