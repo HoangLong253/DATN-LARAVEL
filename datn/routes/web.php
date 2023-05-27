@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BooksController;
 use App\Http\Controllers\CartController;
+use Illuminate\Support\Facades\DB;
 
 Route::get('/', function () {
     return view('welcome');
@@ -32,6 +33,12 @@ Route::get('/collections', [BooksController::class, 'collections'])->name('colle
 Route::get('/collections/sach-giao-khoa/lop-6/am-nhac-va-mi-thuat-lop-6', [BooksController::class, 'amnhac6'])->name('amnhac6');
 
 Route::get('/giohang', [CartController::class, 'giohang'])->name('giohang');
+
+Route::get('/collections/{loai}/{tensach}', function($loai, $tensach){
+    $loai = DB::table('sach')->where('MaSach', '=', $loai)->where('TenSach', '=', $tensach)->get();
+
+    return view();
+})->name('chitietsach');
 
 
 //này là taphop/cái gì đó vd taphop/sach-giao-khoa
