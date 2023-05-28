@@ -265,7 +265,7 @@
                         <li class="line"></li>
                         <li><a href="">Giới Thiệu</a></li>
                         <li class="line"></li>
-                        <li><a href="http://127.0.0.1:8000/collections">Sản Phẩm</a></li>
+                        <li><a href="{{route('collections')}}">Sản Phẩm</a></li>
                         <li class="line"></li>
                         <li><a href="">Tin Tức</a></li>
                         <li class="line"></li>
