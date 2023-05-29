@@ -10,21 +10,14 @@
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/fonts.css">
     <link rel="stylesheet" href="../assets/css/cart.css">
-    <link rel="stylesheet" href="../assets/css/account.css">
-    <link rel="stylesheet" href="../assets/css/animate.min.css">
+    <link rel="stylesheet" href="../assets/css/account.css"> 
     <link rel="stylesheet" href="../assets/css/adminlte.css">
     <link rel="stylesheet" href="../assets/css/animate.min.css">
     <link rel="stylesheet" href="../assets/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="../assets/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="../assets/bootstrap-5.0.2-dist/..">
-
-
-
-
-    <link rel="stylesheet" href="../assets/fontawesome-free-6.3.0-web/css/all.min.css">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="../assets/bootstrap-5.0.2-dist/.."> 
+    <link rel="stylesheet" href="../assets/fontawesome-free-6.3.0-web/css/all.min.css"> 
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -73,8 +66,93 @@
         </div>
     </nav>
     <div class="container mt-5">
-
-        <div class="row justify-content-center">
+<!-- Đăng ký -->
+<div class="wrap-user">
+        <div class="title-user">
+            <span>Đăng ký</span>
+        </div>
+        <form class="form-user validation-user" novalidate="" method="post" action="account/dang-ky" enctype="multipart/form-data">
+                    <label>Họ tên</label>
+            <div class="input-group input-user">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fa fa-user"></i></div>
+                </div>
+                <input type="text" class="form-control text-sm" id="fullname" name="fullname" placeholder="Nhập họ tên của bạn" value="" required="">
+                <div class="invalid-feedback">Vui lòng nhập họ và tên</div>
+            </div>
+            <label>Tài khoản</label>
+            <div class="input-group input-user">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fa fa-user"></i></div>
+                </div>
+                <input type="text" class="form-control text-sm" id="username" name="username" placeholder="Nhập tài khoản của bạn" value="" required="">
+                <div class="invalid-feedback">Vui lòng nhập tài khoản</div>
+            </div>
+            <label>Mật khẩu</label>
+            <div class="input-group input-user">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fa fa-lock"></i></div>
+                </div>
+                <input type="password" class="form-control text-sm" id="password" name="password" placeholder="Nhập mật khẩu (5-15 ký tự)" required="">
+                <div class="invalid-feedback">Vui lòng nhập mật khẩu</div>
+            </div>
+            <label>Nhập lại mật khẩu</label>
+            <div class="input-group input-user">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fa fa-lock"></i></div>
+                </div>
+                <input type="password" class="form-control text-sm" id="repassword" name="repassword" placeholder="Nhập lại mật khẩu" required="">
+                <div class="invalid-feedback">Vui lòng nhập lại mật khẩu</div>
+            </div>
+            <label>Giới tính</label>
+            <div class="input-group input-user">
+                            <div class="radio-user custom-control custom-radio">
+                    <input type="radio" id="nam" name="gender" class="custom-control-input" value="1" required="">
+                    <label class="custom-control-label" for="nam">Nam</label>
+                </div>
+                <div class="radio-user custom-control custom-radio">
+                    <input type="radio" id="nu" name="gender" class="custom-control-input" value="2" required="">
+                    <label class="custom-control-label" for="nu">Nữ</label>
+                </div>
+            </div>
+            <label>Ngày sinh</label>
+            <div class="input-group input-user">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fa fa-lock"></i></div>
+                </div>
+                <input type="text" class="form-control text-sm" id="birthday" name="birthday" placeholder="Nhập ngày sinh" value="" required="" autocomplete="off">
+                <div class="invalid-feedback">Vui lòng nhập số điện thoại</div>
+            </div>
+            <label>Email</label>
+            <div class="input-group input-user">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fa fa-envelope"></i></div>
+                </div>
+                <input type="email" class="form-control text-sm" id="email" name="email" placeholder="Nhập địa chỉ email của bạn" value="" required="">
+                <div class="invalid-feedback">Vui lòng nhập địa chỉ email</div>
+            </div>
+            <label>Điện thoại</label>
+            <div class="input-group input-user">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fa fa-phone-square"></i></div>
+                </div>
+                <input type="number" class="form-control text-sm" id="phone" name="phone" placeholder="Nhập số điện thoại" value="" required="">
+                <div class="invalid-feedback">Vui lòng nhập số điện thoại</div>
+            </div>
+            <label>Địa chỉ</label>
+            <div class="input-group input-user">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fa fa-map"></i></div>
+                </div>
+                <input type="text" class="form-control text-sm" id="address" name="address" placeholder="Nhập địa chỉ của bạn" value="" required="">
+                <div class="invalid-feedback">Vui lòng nhập địa chỉ</div>
+            </div>
+            <div class="button-user">
+                <input type="submit" class="btn btn-primary btn-block" name="registration-user" value="Đăng ký">
+            </div>
+        </form>
+    </div>
+        <!-- <div class="row justify-content-center">
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-header">Đăng Ký</div>
@@ -107,7 +185,7 @@
                 </div>
             </div>
 
-        </div>
+        </div> -->
         <div class="wrap-product-page">
             <div class="wrap-content">
                 <div class="wrap-breadcrumb"><span><a href="">Trang chủ</a></span> / <span><a href="">Sách giáo
@@ -2473,315 +2551,12 @@
 
 
 
-        <div class="fixed-contact">
-            <a class="cart-fixed text-decoration-none" href="gio-hang" title="Giỏ hàng">
-                <i class="fas fa-shopping-bag"></i>
-                <span class="count-cart"> </span>
-            </a>
-            <a class="btn-zalo btn-frame text-decoration-none" target="_blank" href=" ">
-                <div class="animated infinite zoomIn kenit-alo-circle"></div>
-                <div class="animated infinite pulse kenit-alo-circle-fill"></div>
-                <i> <img src="assets/images/icon/zl.png" alt=""></i>
-            </a>
-            <a class="btn-phone btn-frame text-decoration-none" href=" ">
-                <div class="animated infinite zoomIn kenit-alo-circle"></div>
-                <div class="animated infinite pulse kenit-alo-circle-fill"></div>
-                <i><img src="assets/images/icon/hl.png" alt=""> </i>
-            </a>
-        </div>
+        
     </div>
-    <!-- Cart -->
-    <div class="wrap-gio-hang">
-        <div class="wrap-content">
-            <div class="wrap-cart">
-                <div class="row">
-                    <div class="top-cart col-12 col-lg-7">
-                        <p class="title-cart">Giỏ hàng của bạn:</p>
-                        <div class="list-procart">
-                            <div class="procart procart-label">
-                                <div class="form-row">
-                                    <div class="pic-procart col-3 col-md-2">Hình ảnh</div>
-                                    <div class="info-procart col-6 col-md-5">Tên sản phẩm</div>
-                                    <div class="quantity-procart col-3 col-md-2">
-                                        <p>Số lượng</p>
-                                        <p>Thành tiền</p>
-                                    </div>
-                                    <div class="price-procart col-3 col-md-3">Thành tiền</div>
-                                </div>
-                            </div>
-                            <div class="procart  ">
-                                <div class="form-row">
-                                    <div class="pic-procart col-3 col-md-2">
-                                        <a class="text-decoration-none" href=" " target="_blank" title="ÁO THUN  ">
-                                            <img class="lazy loaded" onerror="this.src=' " data-was-processed="true">
-                                        </a>
-                                        <a class="del-procart text-decoration-none" data-code="">
-                                            <i class="fa fa-times-circle"></i>
-                                            <span>Xóa</span>
-                                        </a>
-                                    </div>
-                                    <div class="info-procart col-6 col-md-5">
-                                        <h3 class="name-procart"><a class="text-decoration-none" href="" target="_blank"
-                                                title="ÁO THUN ">ÁO THUN </a></h3>
-                                        <div class="properties-procart">
-                                        </div>
-                                    </div>
-                                    <div class="quantity-procart col-3 col-md-2">
-                                        <div class="price-procart price-procart-rp">
-                                            <p class="price-new-cart load-price-new-">
-                                                235.000₫ </p>
-                                            <p class="price-old-cart load-price-">
-                                                245.000₫ </p>
-                                        </div>
-                                        <div
-                                            class="quantity-counter-procart quantity-counter-procart- d-flex align-items-stretch justify-content-between">
-                                            <span class="counter-procart-minus counter-procart">-</span>
-                                            <input type="number" class="quantity-procart" min="1" value="1"
-                                                data-pid="17" data-code="">
-                                            <span class="counter-procart-plus counter-procart">+</span>
-                                        </div>
-                                    </div>
-                                    <div class="price-procart col-3 col-md-3">
-                                        <p class="price-new-cart load-price-new-">
-                                            235.000₫ </p>
-                                        <p class="price-old-cart load-price-">
-                                            245.000₫ </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="money-procart">
-                            <div class="total-procart d-flex align-items-center justify-content-between">
-                                <p>Tổng tiền:</p>
-                                <p class="total-price load-price-total">235.000₫</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bottom-cart col-12 col-lg-5">
-                        <div class="section-cart">
-                            <p class="title-cart">Hình thức thanh toán:</p>
-                            <div class="information-cart">
-                            </div>
-                            <p class="title-cart">THÔNG TIN NGƯỜI MUA:</p>
-                            <div class="information-cart">
-                                <div class="form-row">
-                                    <div class="input-cart col-md-6">
-                                        <input type="text" class="form-control text-sm" id="namemua"
-                                            name="dataOrder[namemua]" placeholder="Họ tên" value="" required="">
-                                        <div class="invalid-feedback">Vui lòng nhập họ và tên</div>
-                                    </div>
-                                    <div class="input-cart col-md-6">
-                                        <input type="number" class="form-control text-sm" id="phonemua"
-                                            name="dataOrder[phonemua]" placeholder="Số điện thoại" value="" required="">
-                                        <div class="invalid-feedback">Vui lòng nhập số điện thoại</div>
-                                    </div>
-                                </div>
-                                <div class="input-cart">
-                                    <input type="email" class="form-control text-sm" id="emailmua"
-                                        name="dataOrder[emailmua]" placeholder="Email" value="" required="">
-                                    <div class="invalid-feedback">Vui lòng nhập địa chỉ email</div>
-                                </div>
-                            </div>
-                            <p class="title-cart">THÔNG TIN NGƯỜI NHẬN:</p>
-                            <div class="information-cart">
-                                <div class="form-row">
-                                    <div class="input-cart col-md-6">
-                                        <input type="text" class="form-control text-sm" id="fullname"
-                                            name="dataOrder[fullname]" placeholder="Họ tên" value="" required="">
-                                        <div class="invalid-feedback">Vui lòng nhập họ và tên</div>
-                                    </div>
-                                    <div class="input-cart col-md-6">
-                                        <input type="number" class="form-control text-sm" id="phone"
-                                            name="dataOrder[phone]" placeholder="Số điện thoại" value="" required="">
-                                        <div class="invalid-feedback">Vui lòng nhập số điện thoại</div>
-                                    </div>
-                                </div>
-                                <div class="input-cart">
-                                    <input type="email" class="form-control text-sm" id="email" name="dataOrder[email]"
-                                        placeholder="Email" value="" required="">
-                                    <div class="invalid-feedback">Vui lòng nhập địa chỉ email</div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="input-cart col-md-4">
-                                        <select class="select-city-cart custom-select text-sm" required="" id="city"
-                                            name="dataOrder[city]">
-                                            <option value="">Tỉnh/thành phố</option>
-
-                                        </select>
-                                        <div class="invalid-feedback">Vui lòng chọn tỉnh thành</div>
-                                    </div>
-                                    <div class="input-cart col-md-4">
-                                        <select class="select-district-cart select-district custom-select text-sm"
-                                            required="" id="district" name="dataOrder[district]">
-                                            <option value="">Quận/huyện</option>
-                                        </select>
-                                        <div class="invalid-feedback">Vui lòng chọn quận huyện</div>
-                                    </div>
-                                    <div class="input-cart col-md-4">
-                                        <select class="select-ward-cart select-ward custom-select text-sm" required=""
-                                            id="ward" name="dataOrder[ward]">
-                                            <option value="">Phường/xã</option>
-                                        </select>
-                                        <div class="invalid-feedback">Vui lòng chọn phường xã</div>
-                                    </div>
-                                </div>
-                                <div class="input-cart">
-                                    <input type="text" class="form-control text-sm" id="address"
-                                        name="dataOrder[address]" placeholder="Địa chỉ" value="" required="">
-                                    <div class="invalid-feedback">Vui lòng nhập địa chỉ</div>
-                                </div>
-                                <div class="input-cart">
-                                    <textarea class="form-control text-sm" id="requirements"
-                                        name="dataOrder[requirements]"
-                                        placeholder="Yêu cầu khác (không bắt buộc)"></textarea>
-                                </div>
-                            </div>
-                            <input type="submit" class="btn-cart btn btn-primary btn-lg btn-block" name="thanhtoan"
-                                value="Thanh toán">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Cart no product -->
-    <div class="wrap-cart-no-product">
-        <div class="wrap-content">
-
-            <form class="form-cart validation-cart" novalidate="" method="post" action="" enctype="multipart/form-data">
-                <div class="wrap-cart">
-                    <div class="row">
-                        <a href="" class="empty-cart text-decoration-none w-100">
-                            <i class="fa fa-cart-arrow-down"></i>
-                            <p>Không tồn tại sản phẩm nào trong giỏ hàng !</p>
-                            <span>Về trang chủ</span>
-                        </a>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
+    
      
-     <!-- Đăng ký -->
-     <div class="wrap-user">
-        <div class="title-user">
-            <span>Đăng ký</span>
-        </div>
-        <form class="form-user validation-user" novalidate="" method="post" action="account/dang-ky" enctype="multipart/form-data">
-                    <label>Họ tên</label>
-            <div class="input-group input-user">
-                <div class="input-group-prepend">
-                    <div class="input-group-text"><i class="fa fa-user"></i></div>
-                </div>
-                <input type="text" class="form-control text-sm" id="fullname" name="fullname" placeholder="Nhập họ tên của bạn" value="" required="">
-                <div class="invalid-feedback">Vui lòng nhập họ và tên</div>
-            </div>
-            <label>Tài khoản</label>
-            <div class="input-group input-user">
-                <div class="input-group-prepend">
-                    <div class="input-group-text"><i class="fa fa-user"></i></div>
-                </div>
-                <input type="text" class="form-control text-sm" id="username" name="username" placeholder="Nhập tài khoản của bạn" value="" required="">
-                <div class="invalid-feedback">Vui lòng nhập tài khoản</div>
-            </div>
-            <label>Mật khẩu</label>
-            <div class="input-group input-user">
-                <div class="input-group-prepend">
-                    <div class="input-group-text"><i class="fa fa-lock"></i></div>
-                </div>
-                <input type="password" class="form-control text-sm" id="password" name="password" placeholder="Nhập mật khẩu (5-15 ký tự)" required="">
-                <div class="invalid-feedback">Vui lòng nhập mật khẩu</div>
-            </div>
-            <label>Nhập lại mật khẩu</label>
-            <div class="input-group input-user">
-                <div class="input-group-prepend">
-                    <div class="input-group-text"><i class="fa fa-lock"></i></div>
-                </div>
-                <input type="password" class="form-control text-sm" id="repassword" name="repassword" placeholder="Nhập lại mật khẩu" required="">
-                <div class="invalid-feedback">Vui lòng nhập lại mật khẩu</div>
-            </div>
-            <label>Giới tính</label>
-            <div class="input-group input-user">
-                            <div class="radio-user custom-control custom-radio">
-                    <input type="radio" id="nam" name="gender" class="custom-control-input" value="1" required="">
-                    <label class="custom-control-label" for="nam">Nam</label>
-                </div>
-                <div class="radio-user custom-control custom-radio">
-                    <input type="radio" id="nu" name="gender" class="custom-control-input" value="2" required="">
-                    <label class="custom-control-label" for="nu">Nữ</label>
-                </div>
-            </div>
-            <label>Ngày sinh</label>
-            <div class="input-group input-user">
-                <div class="input-group-prepend">
-                    <div class="input-group-text"><i class="fa fa-lock"></i></div>
-                </div>
-                <input type="text" class="form-control text-sm" id="birthday" name="birthday" placeholder="Nhập ngày sinh" value="" required="" autocomplete="off">
-                <div class="invalid-feedback">Vui lòng nhập số điện thoại</div>
-            </div>
-            <label>Email</label>
-            <div class="input-group input-user">
-                <div class="input-group-prepend">
-                    <div class="input-group-text"><i class="fa fa-envelope"></i></div>
-                </div>
-                <input type="email" class="form-control text-sm" id="email" name="email" placeholder="Nhập địa chỉ email của bạn" value="" required="">
-                <div class="invalid-feedback">Vui lòng nhập địa chỉ email</div>
-            </div>
-            <label>Điện thoại</label>
-            <div class="input-group input-user">
-                <div class="input-group-prepend">
-                    <div class="input-group-text"><i class="fa fa-phone-square"></i></div>
-                </div>
-                <input type="number" class="form-control text-sm" id="phone" name="phone" placeholder="Nhập số điện thoại" value="" required="">
-                <div class="invalid-feedback">Vui lòng nhập số điện thoại</div>
-            </div>
-            <label>Địa chỉ</label>
-            <div class="input-group input-user">
-                <div class="input-group-prepend">
-                    <div class="input-group-text"><i class="fa fa-map"></i></div>
-                </div>
-                <input type="text" class="form-control text-sm" id="address" name="address" placeholder="Nhập địa chỉ của bạn" value="" required="">
-                <div class="invalid-feedback">Vui lòng nhập địa chỉ</div>
-            </div>
-            <div class="button-user">
-                <input type="submit" class="btn btn-primary btn-block" name="registration-user" value="Đăng ký">
-            </div>
-        </form>
-    </div>
-    <!-- login -->
-    <div class="wrap-user">
-        <div class="title-user d-flex align-items-end justify-content-between">
-            <span>Đăng nhập</span>
-            <a href=" " title="Quên mật khẩu">Quên mật khẩu</a>
-        </div>
-        <form class="form-user validation-user" novalidate="" method="post" action="account/dang-nhap" enctype="multipart/form-data">
-                    <div class="input-group input-user">
-                <div class="input-group-prepend">
-                    <div class="input-group-text"><i class="fa fa-user"></i></div>
-                </div>
-                <input type="text" class="form-control text-sm" id="username" name="username" placeholder="Tài khoản" required="">
-                <div class="invalid-feedback">Vui lòng nhập tài khoản</div>
-            </div>
-            <div class="input-group input-user">
-                <div class="input-group-prepend">
-                    <div class="input-group-text"><i class="fa fa-lock"></i></div>
-                </div>
-                <input type="password" class="form-control text-sm" id="password" name="password" placeholder="Mật khẩu" required="">
-                <div class="invalid-feedback">Vui lòng nhập mật khẩu</div>
-            </div>
-            <div class="button-user d-flex align-items-center justify-content-between">
-                <input type="submit" class="btn btn-primary" name="login-user" value="Đăng nhập">
-                <div class="checkbox-user custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" name="remember-user" id="remember-user" value="1">
-                    <label class="custom-control-label" for="remember-user">Nhớ mật khẩu</label>
-                </div>
-            </div>
-            <div class="note-user">
-                <span>Bạn chưa có tài khoản  ! </span>
-                <a href="account/dang-ky" title="Đăng ký">Đăng ký</a>
-            </div>
-        </form>
-    </div>
+     
+    
 </body>
 <script>
     $('.owl-product').owlCarousel({

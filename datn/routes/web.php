@@ -3,7 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BooksController;
 use App\Http\Controllers\CartController;
-
+use App\Http\Controllers\GioithieuController;
+use App\Http\Controllers\TintucController;
+use App\Http\Controllers\DichvuController;
+use App\Http\Controllers\TieuchiController;
+use App\Http\Controllers\LienheController;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -22,6 +26,32 @@ Route::get('dangnhap', function () {
 Route::get('dangki', function () {
     return view('DangKy');
 })->name('dangki');
+
+Route::get('gioithieu', function () {
+    return view('GioiThieu');
+})->name('gioithieu');
+
+Route::get('tintuc', function () {
+    return view('TinTuc');
+})->name('tintuc');
+
+Route::get('dichvu', function () {
+    return view('DichVu');
+})->name('dichvu');
+
+Route::get('tieuchi', function () {
+    return view('TieuChi');
+})->name('tieuchi');
+
+Route::get('lienhe', function () {
+    return view('LienHe');
+})->name('lienhe');
+
+Route::get('giohang', function () {
+    return view('giohang');
+})->name('giohang');
+
+
 
 /*Route::get('taphop', function () {
     return view('taphop');

@@ -19,8 +19,7 @@
     <link rel="stylesheet" href="./assets/css/animate.min.css">
     <link rel="stylesheet" href="./assets/css/preview.css">
     <link rel="stylesheet" href="./assets/css/style_book.css">
-    <link rel="stylesheet" href="./assets/css/wow_book.css">
-    
+    <link rel="stylesheet" href="./assets/css/wow_book.css"> 
     <link rel="stylesheet" href="./assets/fontawesome-free-6.3.0-web/css/all.min.css">
     <link rel="stylesheet" href="./assets/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="./assets/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
@@ -114,6 +113,7 @@
                                                     </div>
                                                 </a>
                                             </li>
+                                            
                                         </ul>
                                         <div class="header__notify-footer">
                                             <a href="" class="header__notify-footer-btn">Xem tất cả</a>
@@ -266,17 +266,17 @@
                     <ul class="d-flex justify-content-between align-items-center">
                         <li><a href="http://127.0.0.1:8000" class="active">Trang chủ</a></li>
                         <li class="line"></li>
-                        <li><a href="">Giới Thiệu</a></li>
+                        <li><a href="http://127.0.0.1:8000/gioithieu">Giới Thiệu</a></li>
                         <li class="line"></li>
                         <li><a href="http://127.0.0.1:8000/collections">Sản Phẩm</a></li>
                         <li class="line"></li>
-                        <li><a href="">Tin Tức</a></li>
+                        <li><a href="http://127.0.0.1:8000/tintuc">Tin Tức</a></li>
                         <li class="line"></li>
-                        <li><a href="">Dịch Vụ</a></li>
+                        <li><a href="http://127.0.0.1:8000/dichvu">Dịch Vụ</a></li>
                         <li class="line"></li>
-                        <li><a href="">Tiêu Chí</a></li>
+                        <li><a href="http://127.0.0.1:8000/tieuchi">Tiêu Chí</a></li>
                         <li class="line"></li>
-                        <li><a href="">Liên hệ</a></li>
+                        <li><a href="http://127.0.0.1:8000/lienhe">Liên hệ</a></li>
                     </ul>
                 </div>
             </div>
@@ -570,6 +570,23 @@
                         width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
+                <!-- Contact -->
+                <div class="fixed-contact">
+            <a class="cart-fixed text-decoration-none" href="giohang" title="Giỏ hàng">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="count-cart"> </span>
+            </a>
+            <a class="btn-zalo btn-frame text-decoration-none" target="_blank" href=" ">
+                <div class="animated infinite zoomIn kenit-alo-circle"></div>
+                <div class="animated infinite pulse kenit-alo-circle-fill"></div>
+                <i> <img src="assets/images/icon/zl.png" alt=""></i>
+            </a>
+            <a class="btn-phone btn-frame text-decoration-none" href=" ">
+                <div class="animated infinite zoomIn kenit-alo-circle"></div>
+                <div class="animated infinite pulse kenit-alo-circle-fill"></div>
+                <i><img src="assets/images/icon/hl.png" alt=""> </i>
+            </a>
+        </div>
             </div>
         </div>
     </div>
