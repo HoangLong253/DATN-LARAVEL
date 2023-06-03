@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../assets/bootstrap-5.0.2-dist/js/bootstrap.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/animate.min.css">
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/fonts.css">
     <link rel="stylesheet" href="./assets/css/preview.css">
@@ -292,7 +293,7 @@
                     <div class="main-title-text">ĐỐI TÁC CỦA CHÚNG TÔI <img class="offcial-img"
                             src="./assets/images/ho-tro/offical.png" alt=""></div>
                     <div class="wrap-slide-partner ">
-                        <div class="owl-partner owl-carousel owlCarousel ">
+                        <div class="owl-partner owl-carousel owlCarousel " data-loop="1" data-autoplay="1" data-autoplayspeed="500" data-xlg-items="6:10">
                             <div><img class="scale-img img_hover" src="./assets/images/doi-tac/DHQGHN.jpg" alt=""></div>
                             <div><img class="scale-img img_hover" src="./assets/images/doi-tac/DN.jpg" alt=""></div>
                             <div><a href="{{route("GK")}}"><img class="scale-img img_hover" src="./assets/images/doi-tac/GD.jpg" alt=""></a></div>
@@ -421,7 +422,7 @@
                     <div class="main-title-text">TIN TỨC & VIDEO</div>
                     <div class="wrap-vidnews-items">
                         <div class="wrap-video">
-                            <div class="fotorama" data-nav="thumbs" data-autoplay="true" data-width="100%"
+                            <div class="fotorama" data-nav="thumbs" data-autoplay="false" data-width="100%"
                                 data-height="100%" data-thumbwidth="145" data-thumbheight="90">
                                 <a href="https://youtu.be/Q2T2JuQgob4"></a>
                                 <a href="https://youtu.be/WdCMqN2ukaA"></a>

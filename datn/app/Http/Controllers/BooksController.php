@@ -93,5 +93,17 @@ class BooksController extends Controller
             'tks' => $tks,
         ]);
     }
+
+    public function DHQGHN() {
+        $tks = DB::table("sach")
+        ->where([
+            ["MaLoaiSach", "=", "DHQGHN"]
+        ])
+        ->get();
+
+        return view('DHQGHN', [
+            'tks' => $tks,
+        ]);
+    }
     use HasFactory;
 }

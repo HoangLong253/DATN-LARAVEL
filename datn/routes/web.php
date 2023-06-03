@@ -79,6 +79,8 @@ Route::get('/collections/giaokhoa', [BooksController::class, 'GK'])->name('GK');
 
 Route::get('/collections/thamkhao', [BooksController::class, 'TK'])->name('TK');
 
+Route::get('/collections/nha-xuat-ban/dai-hoc-quoc-gia-ha-noi', [BooksController::class, 'TK'])->name('TK');
+
 //này là taphop/cái gì đó vd taphop/sach-giao-khoa
 
 /*Route::get('taphop', function () {
