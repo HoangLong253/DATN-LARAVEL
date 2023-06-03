@@ -295,7 +295,7 @@
                         <div class="owl-partner owl-carousel owlCarousel ">
                             <div><img class="scale-img img_hover" src="./assets/images/doi-tac/DHQGHN.jpg" alt=""></div>
                             <div><img class="scale-img img_hover" src="./assets/images/doi-tac/DN.jpg" alt=""></div>
-                            <div><img class="scale-img img_hover" src="./assets/images/doi-tac/KD.jpg" alt=""></div>
+                            <div><a href="{{route("GK")}}"><img class="scale-img img_hover" src="./assets/images/doi-tac/GD.jpg" alt=""></a></div>
                             <div><img class="scale-img img_hover" src="./assets/images/doi-tac/THTPHCM.jpg" alt="">
                             </div>
                             <div><img class="scale-img img_hover" src="./assets/images/doi-tac/TN.jpg" alt=""></div>

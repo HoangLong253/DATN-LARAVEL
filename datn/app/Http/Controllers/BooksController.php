@@ -69,5 +69,29 @@ class BooksController extends Controller
             'sgks' => $sgks,
         ]);
     }
+
+    public function GK() {
+        $gks = DB::table("sach")
+        ->where([
+            ["MaLoaiSach", "=", "GK"]
+        ])
+        ->get();
+
+        return view('GK', [
+            'gks' => $gks,
+        ]);
+    }
+
+    public function TK() {
+        $tks = DB::table("sach")
+        ->where([
+            ["MaLoaiSach", "=", "TK"]
+        ])
+        ->get();
+
+        return view('TK', [
+            'tks' => $tks,
+        ]);
+    }
     use HasFactory;
 }

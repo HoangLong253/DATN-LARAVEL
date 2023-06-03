@@ -3,6 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BooksController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\GioithieuController;
+use App\Http\Controllers\TintucController;
+use App\Http\Controllers\DichvuController;
+use App\Http\Controllers\TieuchiController;
+use App\Http\Controllers\LienheController;
 use Illuminate\Support\Facades\DB;
 
 Route::get('/', function () {
@@ -43,6 +48,33 @@ Route::get('/collections/{loai}/{tensach}', function($loai, $tensach){
     return view();
 })->name('chitietsach');
 
+Route::get('gioithieu', function () {
+    return view('GioiThieu');
+})->name('gioithieu');
+
+Route::get('tintuc', function () {
+    return view('TinTuc');
+})->name('tintuc');
+
+Route::get('dichvu', function () {
+    return view('DichVu');
+})->name('dichvu');
+
+Route::get('tieuchi', function () {
+    return view('TieuChi');
+})->name('tieuchi');
+
+Route::get('lienhe', function () {
+    return view('LienHe');
+})->name('lienhe');
+
+Route::get('giohang', function () {
+    return view('giohang');
+})->name('giohang');
+
+Route::get('/collections/giaokhoa', [BooksController::class, 'GK'])->name('GK');
+
+Route::get('/collections/thamkhao', [BooksController::class, 'TK'])->name('TK');
 
 //này là taphop/cái gì đó vd taphop/sach-giao-khoa
 
