@@ -16,6 +16,9 @@ Route::get('/', function () {
 
 Route::get('/home', [BooksController::class, 'home'])->name('home');
 
+Route::get('/admin', [BooksController::class, 'home'])->name('admin');
+
+
 Route::get('/home/add', [BooksController::class, 'add'])->name('add');
 
 /*Route::get('/home', function () {
