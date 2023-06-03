@@ -547,6 +547,22 @@
                         </div>
                     </div>
                 </div>
+                <div class="fixed-contact">
+                    <a class="cart-fixed text-decoration-none" href="giohang" title="Giỏ hàng">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="count-cart"> </span>
+                    </a>
+                    <a class="btn-zalo btn-frame text-decoration-none" target="_blank" href=" ">
+                        <div class="animated infinite zoomIn kenit-alo-circle"></div>
+                        <div class="animated infinite pulse kenit-alo-circle-fill"></div>
+                        <i> <img src="assets/images/icon/zl.png" alt=""></i>
+                    </a>
+                    <a class="btn-phone btn-frame text-decoration-none" href=" ">
+                        <div class="animated infinite zoomIn kenit-alo-circle"></div>
+                        <div class="animated infinite pulse kenit-alo-circle-fill"></div>
+                        <i><img src="assets/images/icon/hl.png" alt=""> </i>
+                    </a>
+                </div>
                 <div class="footer-tags"></div>
                 <div class="footer-powered ">
                     <div class="wrap-content ">
