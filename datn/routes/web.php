@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Request;
 use App\Http\Controllers\BooksController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\GioithieuController;
@@ -39,17 +40,17 @@ Route::get('dangki', function () {
     return view('taphop');
 })->name('taphop');*/
 
-Route::get('/collections', [BooksController::class, 'collections'])->name('collections');
+Route::get('/collections/tatca', [BooksController::class, 'collections'])->name('collections');
 
 Route::get('/collections/sach-giao-khoa/lop-6/am-nhac-va-mi-thuat-lop-6', [BooksController::class, 'amnhac6'])->name('amnhac6');
 
 Route::get('/giohang', [CartController::class, 'giohang'])->name('giohang');
 
-Route::get('/collections/{loai}/{tensach}', function($loai, $tensach){
+/*Route::get('/collections/{loai}/{tensach}', function($loai, $tensach){
     $loai = DB::table('sach')->where('MaSach', '=', $loai)->where('TenSach', '=', $tensach)->get();
 
     return view();
-})->name('chitietsach');
+})->name('chitietsach');*/
 
 Route::get('gioithieu', function () {
     return view('GioiThieu');
@@ -77,9 +78,13 @@ Route::get('giohang', function () {
 
 Route::get('/collections/giaokhoa', [BooksController::class, 'GK'])->name('GK');
 
-Route::get('/collections/thamkhao', [BooksController::class, 'TK'])->name('TK');
+Route::get('collections/nha-xuat-ban/giao-duc', [BooksController::class, 'GK'])->name('GK');
 
-Route::get('/collections/nha-xuat-ban/dai-hoc-quoc-gia-ha-noi', [BooksController::class, 'TK'])->name('TK');
+//Route::get('/collections/thamkhao', [BooksController::class, 'TK'])->name('TK');
+
+Route::get('/collections/nha-xuat-ban/dai-hoc-quoc-gia-ha-noi', [BooksController::class, 'DHQGHN'])->name('DHQGHN');
+
+//Route::get('/collections/nha-xuat-ban/dai-hoc-quoc-gia-ha-noi', [BooksController::class, 'TK'])->name('TK');
 
 //này là taphop/cái gì đó vd taphop/sach-giao-khoa
 

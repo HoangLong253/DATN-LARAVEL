@@ -95,14 +95,14 @@ class BooksController extends Controller
     }
 
     public function DHQGHN() {
-        $tks = DB::table("sach")
+        $hns = DB::table("sach")
         ->where([
-            ["MaLoaiSach", "=", "DHQGHN"]
+            ["MaNXB", "=", "DHQGHN"]
         ])
         ->get();
 
         return view('DHQGHN', [
-            'tks' => $tks,
+            'hns' => $hns,
         ]);
     }
     use HasFactory;
