@@ -8,6 +8,7 @@ use App\Http\Controllers\TintucController;
 use App\Http\Controllers\DichvuController;
 use App\Http\Controllers\TieuchiController;
 use App\Http\Controllers\LienheController;
+use App\Http\Controllers\product_detailController;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -51,7 +52,11 @@ Route::get('giohang', function () {
     return view('giohang');
 })->name('giohang');
 
+Route::get('product_detail', function () {
+    return view('product/product_detail');
+})->name('product_detail');
 
+ 
 
 /*Route::get('taphop', function () {
     return view('taphop');
