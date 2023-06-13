@@ -14,7 +14,7 @@
                     <div class="row mb-2">
                         <div class="col-sm-6">
                             <h1 class="m-0">Sản phẩm</h1>
-                            <a href="#" class="btn btn-success pull-right"><i class="fa fa-plus"></i>Thêm</a>
+                            <a href="{{ route('AddProduct')}}" class="btn btn-success pull-right"><i class="fa fa-plus"></i>Thêm</a>
                         </div>
                     </div>
                     <table class="table table-bordered table-striped">

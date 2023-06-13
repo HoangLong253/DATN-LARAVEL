@@ -9,7 +9,8 @@ use App\Http\Controllers\DichvuController;
 use App\Http\Controllers\TieuchiController;
 use App\Http\Controllers\LienheController;
 use App\Http\Controllers\product_detailController;
-use App\Http\Controllers\CollectionsController;
+use App\Http\Controllers\collectionsController;
+use App\Http\Controllers\AddProductController;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -20,7 +21,7 @@ Route::get('/home', [BooksController::class, 'home'])->name('home');
 });
 */
 Route::get('/', [BooksController::class, 'index'])->name('index');
-
+/* Login -Regis */
 Route::get('dangnhap', function () {
     return view('DangNhap');
 })->name('dangnhap');
@@ -28,7 +29,7 @@ Route::get('dangnhap', function () {
 Route::get('dangki', function () {
     return view('DangKy');
 })->name('dangki');
-
+/* Menu */
 Route::get('gioithieu', function () {
     return view('GioiThieu');
 })->name('gioithieu');
@@ -41,10 +42,7 @@ Route::get('dichvu', function () {
     return view('DichVu');
 })->name('dichvu');
 
-Route::get('tieuchi', function () {
-    return view('TieuChi');
-})->name('tieuchi');
-
+ 
 Route::get('lienhe', function () {
     return view('LienHe');
 })->name('lienhe');
@@ -53,14 +51,19 @@ Route::get('giohang', function () {
     return view('giohang');
 })->name('giohang');
 
+/* Product */
 Route::get('product_detail', function () {
     return view('product/product_detail');
 })->name('product_detail');
 
 Route::get('collections', function () {
     return view('collections');
-})->name('Collections');
+})->name('collections');
 
+/* Admin add product */
+Route::get('AddProduct', function () {
+    return view('adm_partials/add_product');
+})->name('AddProduct');
 
 /*Route::get('taphop', function () {
     return view('taphop');
