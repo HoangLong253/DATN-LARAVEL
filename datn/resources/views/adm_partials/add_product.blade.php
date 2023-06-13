@@ -49,13 +49,7 @@
                                                         href="#tabs-sluglang-vi" role="tab"
                                                         aria-controls="tabs-sluglang-vi" aria-selected="true">Tiếng
                                                         Việt</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link " id="tabs-lang" data-toggle="pill"
-                                                        href="#tabs-sluglang-en" role="tab"
-                                                        aria-controls="tabs-sluglang-en" aria-selected="true">Tiếng
-                                                        Anh</a>
-                                                </li>
+                                                </li> 
                                             </ul>
                                         </div>
                                         <div class="card-body">
@@ -63,13 +57,13 @@
                                                 <div class="tab-pane fade show active" id="tabs-sluglang-vi"
                                                     role="tabpanel" aria-labelledby="tabs-lang">
                                                     <div class="form-gourp mb-0">
-                                                        <label class="d-block">Đường dẫn mẫu (vi):<span
+                                                        <label class="d-block">Đường dẫn mẫu :<span
                                                                 class="pl-2 font-weight-normal"
                                                                 id="slugurlpreviewvi">http://localhost/masterpdo/<strong
                                                                     class="text-info"></strong></span></label>
                                                         <input type="text"
                                                             class="form-control slug-input no-validate text-sm"
-                                                            name="slugvi" id="slugvi" placeholder="Đường dẫn (vi)"
+                                                            name="slugvi" id="slugvi" placeholder="Đường dẫn "
                                                             value="" required="">
                                                         <input type="hidden" id="slug-defaultvi" value="">
                                                         <p class="alert-slugvi text-danger d-none mt-2 mb-0"
@@ -131,12 +125,7 @@
                                                     <a class="nav-link active" id="tabs-lang" data-toggle="pill"
                                                         href="#tabs-lang-vi" role="tab" aria-controls="tabs-lang-vi"
                                                         aria-selected="true">Tiếng Việt</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link " id="tabs-lang" data-toggle="pill"
-                                                        href="#tabs-lang-en" role="tab" aria-controls="tabs-lang-en"
-                                                        aria-selected="true">Tiếng Anh</a>
-                                                </li>
+                                                </li> 
                                             </ul>
                                         </div>
                                         <div class="card-body card-article">
@@ -144,22 +133,22 @@
                                                 <div class="tab-pane fade show active" id="tabs-lang-vi" role="tabpanel"
                                                     aria-labelledby="tabs-lang">
                                                     <div class="form-group">
-                                                        <label for="namevi">Tiêu đề (vi):</label>
+                                                        <label for="namevi">Tiêu đề :</label>
                                                         <input type="text" class="form-control for-seo text-sm"
-                                                            name="data[namevi]" id="namevi" placeholder="Tiêu đề (vi)"
+                                                            name="data[namevi]" id="namevi" placeholder="Tiêu đề "
                                                             value="" required="">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="descvi">Mô tả (vi):</label>
+                                                        <label for="descvi">Mô tả :</label>
                                                         <textarea class="form-control for-seo text-sm "
                                                             name="data[descvi]" id="descvi" rows="5"
-                                                            placeholder="Mô tả (vi)"></textarea>
+                                                            placeholder="Mô tả "></textarea>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="contentvi">Nội dung (vi):</label>
+                                                        <label for="contentvi">Nội dung :</label>
                                                         <textarea class="form-control for-seo text-sm "
                                                             name="data[descvi]" id="descvi" rows="5"
-                                                            placeholder="Nội dung (vi)"></textarea>
+                                                            placeholder="Nội dung "></textarea>
 
                                                     </div>
                                                 </div>
