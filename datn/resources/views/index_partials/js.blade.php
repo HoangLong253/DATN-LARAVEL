@@ -140,3 +140,115 @@ $(document).ready(function() {
 
 });
 </script>
+<!-- Chữ rung -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.header__cpnname').textillate({
+            in: {
+            effect: 'bounceIn'
+            },
+            out: {
+                effect: 'bounceOut'
+            },
+            loop: true
+        });
+
+        $('.company_desc').textillate({
+            in: {
+            effect: 'bounceIn'
+            },
+            out: {
+                effect: 'bounceOut'
+            },
+            loop: true
+        });
+
+    });
+</script>
+
+<script>
+    
+/* Menu */
+TL_JS.Menu = function(){
+    /* Menu remove empty ul */
+    if(isExist($('.menu')))
+    {
+        $('.menu ul li a').each(function(){
+            $this = $(this);
+
+            if(!isExist($this.next('ul').find('li')))
+            {
+                $this.next('ul').remove();
+                $this.removeClass('has-child');
+            }
+        });
+    }
+
+    /* Menu fixed */
+    if(isExist($(".menu")))
+    {
+        // $(window).scroll(function(){
+        //     if($(window).scrollTop() >= $(".header").height())
+        //     {
+        //         $(".menu").css({position:"fixed",left:'0px',right:'0px',top:'0px',zIndex:'100'});
+        //     }
+        //     else
+        //     {
+        //         $(".menu").css({position:"relative"});
+        //     }
+        // });
+
+        $(window).scroll(function(){
+            var height_scrol_fix = $(".header").outerHeight()+0.00000001;
+            if($(window).scrollTop() >= height_scrol_fix){$(".menu-res").addClass('fixed')}
+            else { $(".menu-res").removeClass('fixed')}
+    
+            if($(window).scrollTop() >= height_scrol_fix){ $(".menu").addClass('fixed'); $(".menu").removeClass('no-fixed');}
+            else { $(".menu").removeClass('fixed'); $(".menu").addClass('no-fixed'); }
+        });
+    }
+
+    /* Mmenu */
+    if(isExist($("nav#menu")))
+    {
+        $('nav#menu').mmenu({
+            extensions	: ['position-left','fx-menu-slide', 'shadow-panels', 'listview-large' ],
+            iconPanels	: false,
+            counters	: true,
+            keyboardNavigation : {
+                enable	: true,
+                enhance	: true
+            },
+            navbar : {
+                title : 'Menu'
+            },
+            navbars     : true
+        }, {
+            searchfield : {
+                clear : true,
+            }
+        });
+    }
+};
+
+TL_JS.FixMenu = function(){
+    $(window).scroll(function(){
+        var k =  $(".header-top").outerHeight()+$(".header-bottom1").outerHeight();
+        if($(this).scrollTop() > k)
+        {
+            $(".menu").addClass("fixed");
+            
+        }
+        else
+        {
+            $(".menu").removeClass("fixed");
+        }
+    });
+};
+/* Ready */
+$(document).ready(function(){
+    TL_JS.Menu();
+    TL_JS.FixMenu();
+});
+
+</script>

@@ -22,6 +22,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
     <script src="../assets/OwlCarousel2-2.3.4/docs/assets/vendors/jquery.min.js"></script>
     <script src="../assets/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+    <script src="../assets/js/jquery.lettering.js"></script>
+    <script src="../assets/js/jquery.textillate.js"></script>
     <script src="../assets/js/wow_book.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <!-- Google Font: Source Sans Pro -->
