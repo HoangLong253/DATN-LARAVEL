@@ -1,5 +1,5 @@
-<div class="menu"> 
-    <ul class="wrap-content d-flex justify-content-between align-items-center">
+<div class=" menu headeri" id="myHeader"  > 
+    <ul class="  d-flex justify-content-between align-items-center">
         <li><a href="http://127.0.0.1:8000" class="active">Trang chủ</a></li>
         <li class="line"></li>
         <li><a href="http://127.0.0.1:8000/gioithieu">Giới Thiệu</a></li>
