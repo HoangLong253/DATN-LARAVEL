@@ -115,7 +115,7 @@ to{opacity:1;transform:scale(1);}
 .header__search-history-items:hover{background-color:#fafafa;}
 .header__search-history-items a{text-decoration:none;line-height:38px;font-size:14px;color:var(--text-color);display:block;}
 /* menu */
-.menu{background-color:green;z-index:999;animation:slideInDown1 1s 0s;min-width:100%;margin:auto;position:fixed;}
+.menu{background-color:green;z-index:999;animation:slideInDown1 1s 0s;min-width:100%;margin:auto;}
 .menu ul{list-style:none;padding:0px;margin:0px;}
 .menu ul li{margin:0px;width:160px;}
 .menu ul li.line{width:1px;height:15px;background-color:#fff;}
@@ -123,14 +123,13 @@ to{opacity:1;transform:scale(1);}
 .menu ul li a.active,.menu ul li a:hover{background-color:#FFE600;color:#386FA4;}
 /* */
  /* Style the header */
-.headeri{padding:10px 16px;/* background:#555; */color:#f1f1f1;}
 /* Page content */
  .content{padding:16px;}
 /* The sticky class is added to the header with JS when it reaches its scroll position */
  .sticky{position:fixed;top:0;width:100%}
 /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
  .sticky + .content{padding-top:102px;}
-.sticky{position:fixed;top:0;width:100%;transition: 0.4s;}
+.sticky{position:fixed;top:0;width:100%;transition:0.4s;}
 .sticky + .content{padding-top:102px;}
 /* */
 /* slide */
@@ -235,3 +234,23 @@ figure:hover figcaption{box-shadow:0 20px 15px -10px hsla(0,0%,0%,.25);backgroun
 .cus-rate-date{padding:5px 0px;}
 .cus-rate-comment{padding:5px 0px;}
 .rate-stars{font-size:30px;}
+
+/*  */
+.wrap-main{margin: 20px 0px;}
+.title-main{text-align: center;margin-bottom: 30px;font-size: 30px;color: #000000;}
+.content-main{text-align: justify;}
+/* Product page */
+.grid-product{display: grid;grid-template-columns: repeat(4,1fr);gap: 20px;}
+/* News page */
+.grid-news{display: grid;grid-template-columns: repeat(2,1fr);gap: 20px;}
+.news-box-in{display:flex;gap: 15px;justify-content: space-between;}
+.news-img-in{width: 30%;}
+.news-text-in{width: 70%;}
+.news-name-in a{font-size: 16px;font-weight: bold;color: red;text-transform: uppercase;}
+.news-name-in a:hover{color: blue;transition: all 0.4s linear ;}
+.news-desc-in{font-size: 15px;text-align: justify;}
+
+/* LIEN HE */
+.contact-content{margin-bottom: 10px;}
+.contact-content{width: 50%;}
+.contact-form-whole{width: 50%;}

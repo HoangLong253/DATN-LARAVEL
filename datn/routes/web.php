@@ -9,6 +9,7 @@ use App\Http\Controllers\DichvuController;
 use App\Http\Controllers\TieuchiController;
 use App\Http\Controllers\LienheController;
 use App\Http\Controllers\product_detailController;
+use App\Http\Controllers\CollectionsController;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -56,7 +57,10 @@ Route::get('product_detail', function () {
     return view('product/product_detail');
 })->name('product_detail');
 
- 
+Route::get('collections', function () {
+    return view('collections');
+})->name('Collections');
+
 
 /*Route::get('taphop', function () {
     return view('taphop');
