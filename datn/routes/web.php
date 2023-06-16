@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', [BooksController::class, 'home'])->name('home');
+Route::get('/admin', [BooksController::class, 'admin'])->name('admin');
 /*Route::get('/home', function () {
     return view('home');
 });

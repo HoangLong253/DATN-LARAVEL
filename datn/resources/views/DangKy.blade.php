@@ -38,6 +38,17 @@
         <div class="title-user">
             <span>Đăng ký</span>
         </div>
+        <div class="fb-google-btn">
+                <a href="" class="fb-google-btn--fb btn btn--size-s btn--with-icon">
+                    <i class=" fb-google-btn-icon fa-brands fa-square-facebook"></i>
+                    <span class="fb-google-btn-title">Kết nối với Facebook</span>
+                </a>
+                <a href="" class="fb-google-btn--gg btn btn--size-s btn--with-icon">
+                    <i class="fb-google-btn-icon fa-brands fa-google"></i>
+                    <span class="fb-google-btn-title">Kết nối với Google</span>
+
+                </a>
+            </div>
         <form class="form-user validation-user" novalidate="" method="post" action="account/dang-ky" enctype="multipart/form-data">
                     <label>Họ tên</label>
             <div class="input-group input-user">
@@ -119,6 +130,7 @@
             </div>
         </form>
     </div>
+    
         <!-- <div class="row justify-content-center">
             <div class="col-md-4">
                 <div class="card">
