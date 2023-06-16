@@ -41,11 +41,11 @@ class BooksController extends Controller
             'all' => $all,
         ]);
     }
-    public function admin() {
+    public function home() {
         $alls = DB::table("sach")
                     ->join("nhaxuatban", "sach.MaNXB", "=", "nhaxuatban.MaNXB")
                     ->get();
-        return view('admin',[
+        return view('home',[
             'alls' => $alls,
         ]);
     }
