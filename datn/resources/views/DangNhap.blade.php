@@ -68,52 +68,9 @@
             </div>
             <div class="note-user">
                 <span>Bạn chưa có tài khoản  ! </span>
-                <a href="account/dang-ky" title="Đăng ký">Đăng ký</a>
+                <a href="{{route('validated-login')}}" title="Đăng ký">Đăng ký</a>
             </div>
         </form>
-    </div>
-        <!-- <div class="row justify-content-center">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header">Đăng nhập</div>
-                    <div class="card-body">
-                        <form action="#" method="post">
-                            @csrf
-                            <div class="form-group mb-3">
-                                <input type="text" name="email" class="form-control" placeholder="Địa chỉ email" />
-                                @if($errors->has('email'))
-                                    <span class="text-danger">{{ $errors->first('email') }}</span>
-                                @endif
-                            </div>
-                            <div class="form-group mb-3">
-                                <input type="password" name="password" class="form-control" placeholder="Mật khẩu" />
-                                @if($errors->has('password'))
-                                    <span class="text-danger">{{ $errors->first('password') }}</span>
-                                @endif
-                            </div>
-                            <div class="fb-google-btn">
-                                <a href="" class="fb-google-btn--fb btn btn--size-s btn--with-icon">
-                                    <i class=" fb-google-btn-icon fa-brands fa-square-facebook"></i>
-                                    <span class="fb-google-btn-title">Kết nối với Facebook</span>
-                                </a>
-                                <a href="" class="fb-google-btn--gg btn btn--size-s btn--with-icon">
-                                    <i class="fb-google-btn-icon fa-brands fa-google"></i>
-                                    <span class="fb-google-btn-title">Kết nối với Google</span>
-                
-                                </a>
-                            </div>
-                            <div class="d-grid mx-auto">
-                                <button type="subit" class="btn btn-dark btn-block">Đăng nhập</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div>
-
-                </div>
-            </div>
-        </div> -->
-        
     </div>
     
     
