@@ -16,11 +16,14 @@
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('index') }}" target="_blank" title="Xem website"><i class="fas fa-reply mr-2"></i>Xem website</a>
+      </li>
       <!-- Navbar Search -->
       <li class="nav-item">
         <a class="nav-link" data-widget="navbar-search" href="#" role="button">
           <i class="fas fa-search"></i>
-        </a>
+        </a> 
         <div class="navbar-search-block">
           <form class="form-inline">
             <div class="input-group input-group-sm">

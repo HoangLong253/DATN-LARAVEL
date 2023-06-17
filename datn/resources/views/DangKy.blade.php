@@ -1,36 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dedicated Dragon BookStore</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/base.css">
-    <link rel="stylesheet" href="../assets/css/fonts.css">
-    <link rel="stylesheet" href="../assets/css/cart.css">
-    <link rel="stylesheet" href="../assets/css/account.css"> 
-    <link rel="stylesheet" href="../assets/css/adminlte.css">
-    <link rel="stylesheet" href="../assets/css/animate.min.css">
-    <link rel="stylesheet" href="../assets/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="../assets/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"> 
-    <link rel="stylesheet" href="../assets/bootstrap-5.0.2-dist/.."> 
-    <link rel="stylesheet" href="../assets/fontawesome-free-6.3.0-web/css/all.min.css"> 
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
-    <script src="../assets/OwlCarousel2-2.3.4/docs/assets/vendors/jquery.min.js"></script>
-    <script src="../assets/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
-    <script src="../assets/js/wow_book.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-</head>
-
-<body>
-
+@include ('index_partials.head') 
+<body> 
     <nav class="navbar navbar-light navbar-expand-lg mb-5" style="background-color: #e3f2fd;">
         <div class="container">
             <a class="navbar-brand mr-auto" href="#">Dedicated Dragon BookStore</a>
@@ -51,17 +22,13 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('index') }}">Trang chủ</a>
-                    </li>
-
-                    @else
-
+                    </li> 
+                    @else 
                     <li class="nav-item">
                         <a class="nav-link" href="#">Đăng Xuất</a>
-                    </li>
-
+                    </li> 
                     @endguest
-                </ul>
-
+                </ul>  
             </div>
         </div>
     </nav>
@@ -71,6 +38,17 @@
         <div class="title-user">
             <span>Đăng ký</span>
         </div>
+        <div class="fb-google-btn">
+                <a href="" class="fb-google-btn--fb btn btn--size-s btn--with-icon">
+                    <i class=" fb-google-btn-icon fa-brands fa-square-facebook"></i>
+                    <span class="fb-google-btn-title">Kết nối với Facebook</span>
+                </a>
+                <a href="" class="fb-google-btn--gg btn btn--size-s btn--with-icon">
+                    <i class="fb-google-btn-icon fa-brands fa-google"></i>
+                    <span class="fb-google-btn-title">Kết nối với Google</span>
+
+                </a>
+            </div>
         <form class="form-user validation-user" novalidate="" method="post" action="account/dang-ky" enctype="multipart/form-data">
                     <label>Họ tên</label>
             <div class="input-group input-user">
@@ -152,6 +130,7 @@
             </div>
         </form>
     </div>
+    
         <!-- <div class="row justify-content-center">
             <div class="col-md-4">
                 <div class="card">
@@ -195,9 +174,18 @@
                     </div>
                 </div>
             </div>
-        </div>
+
+        </div> -->
+        
+        
+
+
+
         
     </div>
+    
+     
+     
     
 </body>
 <script>
