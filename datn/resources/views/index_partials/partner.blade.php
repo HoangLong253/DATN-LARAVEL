@@ -4,13 +4,36 @@
                 src="./assets/images/ho-tro/offical.png" alt=""></div>
         <div class="wrap-slide-partner ">
             <div class="owl-partner owl-carousel owlCarousel ">
-                <div><img class="scale-img img_hover" src="./assets/images/doi-tac/DHQGHN.jpg" alt=""></div>
-                <div><img class="scale-img img_hover" src="./assets/images/doi-tac/DN.jpg" alt=""></div>
-                <div><img class="scale-img img_hover" src="./assets/images/doi-tac/KD.jpg" alt=""></div>
-                <div><img class="scale-img img_hover" src="./assets/images/doi-tac/THTPHCM.jpg" alt="">
+                <div>
+                    <a href="{{route('DHQGHN')}}">
+                        <img class="scale-img img_hover" src="./assets/images/doi-tac/DHQGHN.jpg" alt="">
+                    </a>
                 </div>
-                <div><img class="scale-img img_hover" src="./assets/images/doi-tac/TN.jpg" alt=""></div>
-                <div><img class="scale-img img_hover" src="./assets/images/doi-tac/Tre.jpg" alt=""></div>
+                <div>
+                    <a href="">
+                        <img class="scale-img img_hover" src="./assets/images/doi-tac/DN.jpg" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="{{route("GK")}}">
+                        <img class="scale-img img_hover" src="./assets/images/doi-tac/GD.jpg" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img class="scale-img img_hover" src="./assets/images/doi-tac/THTPHCM.jpg" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img class="scale-img img_hover" src="./assets/images/doi-tac/TN.jpg" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img class="scale-img img_hover" src="./assets/images/doi-tac/Tre.jpg" alt="">
+                    </a>
+                </div>
             </div>
         </div>
     </div>

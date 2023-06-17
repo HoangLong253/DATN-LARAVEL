@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\DB;
 class BooksController extends Controller
 {
     public function index() {
+        if(!isset($_COOKIE['is_logged'])) {
+            setcookie('is_logged', 0, time() + 360000, '/');
+          }
+        
         $noibats = DB::table("sach")
                             ->where([
                                 ["NoiBat", "=", 1],
@@ -27,12 +31,24 @@ class BooksController extends Controller
                             ["TrangThai", "=", 1,],
                         ])
                         ->take(5)
-                        ->get();                
-        return view('index', [
-            'noibats' => $noibats,
-            'sgks' => $sgks,
-            'thamkhaos' => $thamkhaos
+                        ->get();
+        
+        if(isset($_COOKIE['is_logged'])&&$_COOKIE['is_logged']==1) {
+            $user = DB::table('nhanvien')->where('MaNV', $_COOKIE['id'])->get();
+            return view('index', [
+                'user' => $user,
+                'noibats' => $noibats,
+                'sgks' => $sgks,
+                'thamkhaos' => $thamkhaos
         ]);
+        } else {
+            return view('index', [
+                'noibats' => $noibats,
+                'sgks' => $sgks,
+                'thamkhaos' => $thamkhaos
+            ]);
+        }
+        
     }
 
     public function collections() {

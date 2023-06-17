@@ -12,6 +12,9 @@ use App\Http\Controllers\LienheController;
 use App\Http\Controllers\product_detailController;
 use App\Http\Controllers\collectionsController;
 use App\Http\Controllers\AddProductController;
+use App\Http\Controllers\LogregController;
+use App\Http\Controllers\DangNhapController;
+
 use Illuminate\Support\Facades\DB;
 
 Route::get('/', function () {
@@ -31,6 +34,7 @@ Route::get('/home/add', [BooksController::class, 'add'])->name('add');
 */
 Route::get('/', [BooksController::class, 'index'])->name('index');
 /* Login -Regis */
+
 Route::get('dangnhap', function () {
     return view('DangNhap');
 })->name('dangnhap');
@@ -38,6 +42,18 @@ Route::get('dangnhap', function () {
 Route::get('dangki', function () {
     return view('DangKy');
 })->name('dangki');
+
+Route::get('dangxuat', function () {
+    setcookie('is_logged', 0, time() - 360000, '/');
+    setcookie('is_logged', 0, time() + 360000, '/');
+    return redirect()->route('index');
+})->name('dangxuat');
+
+/*Xử lí chức năng đăng nhập đăng kí*/
+Route::post('validate_registration', [LogregController::class, 'validate_registration'])->name('validate_registration');
+
+Route::post('check_login', [DangNhapController::class, 'check_login'])->name('check_login');
+
 /* Menu */
 Route::get('gioithieu', function () {
     return view('GioiThieu');
@@ -136,6 +152,3 @@ Route::get('/collections/nha-xuat-ban/dai-hoc-quoc-gia-ha-noi', [BooksController
     return view('taphop');
 })->name('taphop');*/
 
-/*Route::post('validate_registration', 'validate_registration')->name('logreg.validate_registration');
-
-Route::post('validate_login', 'validate_login')->name('logreg.validate_login');*/

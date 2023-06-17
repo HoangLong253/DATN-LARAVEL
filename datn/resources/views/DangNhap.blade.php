@@ -37,15 +37,30 @@
         </div>
     </nav>
     <div class="container mt-5">
+        <div class="return">
+            @if ($message = Session::get('success'))
+                <div>
+                    <div style="color: #12c300;
+                font-size: 1.2em;font-weight: bold;">{{ $message }}</div>
+                </div>
+            @endif
+            @if ($message = Session::get('fail'))
+                <div>
+                    <div style="color: #dd0505;
+                font-size: 1.2em;font-weight: bold;">{{ $message }}</div>
+                </div>
+            @endif
+        </div>
 
         <!-- login -->
     <div class="wrap-user">
         <div class="title-user d-flex align-items-end justify-content-between">
             <span>Đăng nhập</span>
-            <a href=" " title="Quên mật khẩu">Quên mật khẩu</a>
+            <a href="" title="Quên mật khẩu">Quên mật khẩu</a>
         </div>
-        <form class="form-user validation-user" novalidate="" method="post" action="account/dang-nhap" enctype="multipart/form-data">
-                    <div class="input-group input-user">
+        <form class="form-user validation-user" novalidate="" method="post" action="{{route('check_login')}}" enctype="">
+            @csrf
+            <div class="input-group input-user">
                 <div class="input-group-prepend">
                     <div class="input-group-text"><i class="fa fa-user"></i></div>
                 </div>
@@ -57,10 +72,15 @@
                     <div class="input-group-text"><i class="fa fa-lock"></i></div>
                 </div>
                 <input type="password" class="form-control text-sm" id="password" name="password" placeholder="Mật khẩu" required="">
-                <div class="invalid-feedback">Vui lòng nhập mật khẩu</div>
+               
+                @error('username')
+                    <p class="">{{ $message }}</p>
+                @enderror
             </div>
             <div class="button-user d-flex align-items-center justify-content-between">
+                <!--nút đăng nhập-->
                 <input type="submit" class="btn btn-primary" name="login-user" value="Đăng nhập">
+                <!--nút nhớ mật khẩu-->
                 <div class="checkbox-user custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" name="remember-user" id="remember-user" value="1">
                     <label class="custom-control-label" for="remember-user">Nhớ mật khẩu</label>
@@ -68,7 +88,7 @@
             </div>
             <div class="note-user">
                 <span>Bạn chưa có tài khoản  ! </span>
-                <a href="{{route('validated-login')}}" title="Đăng ký">Đăng ký</a>
+                <a href="#" title="Đăng ký">Đăng ký</a>
             </div>
         </form>
     </div>

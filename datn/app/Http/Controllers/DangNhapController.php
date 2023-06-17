@@ -7,80 +7,8 @@ use Illuminate\Http\Response;
 
 use Illuminate\Support\Facades\DB;
 
-use Hash;
-use Session;
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
-
-class SampleController extends Controller
+class DangNhapController extends Controller
 {
-    /*function index()
-    {
-        return view('login');
-    }
-
-    function registration()
-    {
-        return view('registration');
-    }
-
-    function validate_registration(Request $request)
-    {
-        $request->validate([
-            'name'         =>   'required',
-            'email'        =>   'required|email|unique:users',
-            'password'     =>   'required|min:6'
-        ]);
-
-        $data = $request->all();
-
-        User::create([
-            'name'  =>  $data['name'],
-            'email' =>  $data['email'],
-            'password' => Hash::make($data['password'])
-        ]);
-
-        return redirect()->route('login')->with('success', 'Đăng nhập thành công');
-    }
-
-    function validate_login(Request $request)
-    {
-        $request->validate([
-            'email' =>  'required',
-            'password'  =>  'required'
-        ]);
-
-        $credentials = $request->only('email', 'password');
-
-        if(Auth::attempt($credentials))
-        {
-            return redirect('dashboard');
-        }
-
-        return redirect('login')->with('success', 'Login details are not valid');
-    }
-
-    function dashboard()
-    {
-        if(Auth::check())
-        {
-            return view('dashboard');
-        }
-
-        return redirect('login')->with('success', 'you are not allowed to access');
-    }
-
-    function logout()
-    {
-        Session::flush();
-
-        Auth::logout();
-
-        return Redirect('login');
-    }*/
-
-    //đăng nhập
-    
     public function check_login(Request $request)
     {
         $messages = [
@@ -97,14 +25,14 @@ class SampleController extends Controller
                         ->where("Email", $name)
                         ->where("MatKhau", $pass)
                         ->exists();
-        $nd = DB::table('nguoidung')
+        /*$nd = DB::table('nguoidung')
                         ->where("Email", $name)
                         ->where("MatKhau", $pass)
                         ->exists();
         $ship = DB::table('nggiaohang')
                         ->where("Email", $name)
                         ->where("MatKhau", $pass)
-                        ->exists();
+                        ->exists();*/
 
         if($nv) {
             $is_logged = 1;
@@ -117,7 +45,7 @@ class SampleController extends Controller
             setcookie('id', $id, time() + 360000, '/');
             //setcookie('id', $id, time() + 360000, '/');
             //tạo giỏ hàng nếu chưa có giỏ hàng
-            return redirect()->route('dangnhap');
+            return redirect()->route('index');
         } else {
             return redirect()->route('dangnhap')->with('fail', 'Tài khoản hoặc mật khẩu không chính xác.');
         }

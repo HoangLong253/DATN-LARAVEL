@@ -84,17 +84,30 @@
                     </li>
                     <!-- đăng kí đăng nhập Tú làm sao hover vô nó đậm lên nhá, 
                         với lại làm cái separate đừng trùng với tên nút đăng nhập luôn-->
-                    <a href="{{ route('dangki') }}">
-                        <li class="header__navbar-item header__navbar-item--separate">
-                            Đăng Ký
-                        </li>
-                    </a>
-                    <a href="{{ route('dangnhap') }}">
+                    @if (isset($_COOKIE['is_logged']) && $_COOKIE['is_logged']== 1)
+                        @if($user)
+                            <li class="header__navbar-item">
+                                <div href="" class="header__navbar-item">Xin chào: </div>
+                                <div class="header__navbar-item header__navbar-item--separate"></div>
+                                <a href="{{ route('dangxuat') }}" class="header__navbar-item">
+                                    Đăng xuất
+                                </a>
+                            </li>
+                        @endif
+                        @else
                         <li class="header__navbar-item">
-                            Đăng Nhập
+                            <a href="{{ route('dangki') }}" class="header__navbar-item">
+                                Đăng kí
+                            </a>
+                            <div class="header__navbar-item header__navbar-item--separate"></div>
+                            <a href="{{ route('dangnhap') }}" class="header__navbar-item">
+                                Đăng nhập
+                            </a>
                         </li>
-                    </a>
+                    
+                    @endif
                 </ul>
+                
             </div>
         </div>
     </div>
@@ -102,7 +115,7 @@
     <div class="header-bottom">
         <div class="wrap-content">
             <div class="header-with-search ">
-                <a href="http://localhost/DATN/web/DATN-MAIN">
+                <a href="http://127.0.0.1:8000">
                     <div class="header__logo d-flex ">
                         <img class="header__logo-img " src="./assets/images/logo/logo.png" alt="">
                         <div class="header__cpnname">Delicate Dragon BookStore </div>
