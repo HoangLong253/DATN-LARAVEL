@@ -148,7 +148,7 @@
                             <a href="http://localhost/DATN/web/DATN-MAIN">
                                 <div class="header__logo d-flex ">
                                     <img class="header__logo-img " src="./assets/images/logo/logo.png" alt="">
-                                    <div class="header__cpnname">Delicate Dragon BookStore </div>
+                                    <div class="header__cpnname">Long Tu BookStore </div>
                                 </div>
                             </a>
                             <div class="header__search">
@@ -264,17 +264,17 @@
                     <ul class="d-flex justify-content-between align-items-center">
                         <li><a href="http://127.0.0.1:8000" class="active">Trang chủ</a></li>
                         <li class="line"></li>
-                        <li><a href="">Giới Thiệu</a></li>
+                        <li><a href="{{ route('gioithieu')}}">Giới Thiệu</a></li>
                         <li class="line"></li>
                         <li><a href="{{route('collections')}}">Sản Phẩm</a></li>
                         <li class="line"></li>
-                        <li><a href="">Tin Tức</a></li>
+                        <li><a href="{{ route('tintuc')}}">Tin Tức</a></li>
                         <li class="line"></li>
-                        <li><a href="">Dịch Vụ</a></li>
+                        <li><a href="{{ route('dichvu')}}">Dịch Vụ</a></li>
                         <li class="line"></li>
-                        <li><a href="">Tiêu Chí</a></li>
+                        <li><a href="{{ route('tieuchi')}}">Tiêu Chí</a></li>
                         <li class="line"></li>
-                        <li><a href="">Liên hệ</a></li>
+                        <li><a href="{{ route('lienhe')}}">Liên hệ</a></li>
                     </ul>
                 </div>
             </div>
@@ -517,7 +517,7 @@
                     <div class="wrap-content">
                         <div class="footer-row d-flex justify-content-between align-items-center">
                             <div class="footer-news">
-                                <div class="footer-title-text">DELICATE DRAGON BOOKSTORE</div>
+                                <div class="footer-title-text">LONG TU BOOKSTORE</div>
                                 <div class="footer-text">Mã số doanh nghiệp: 315498634</div>
                                 <div class="footer-text">Địa chỉ: 65 Huỳnh Thúc Kháng, P Bến Nghé, Q 1, TP HCM</div>
                                 <div class="footer-text">Điện thoại: 0768848015 - 0768848014</div>

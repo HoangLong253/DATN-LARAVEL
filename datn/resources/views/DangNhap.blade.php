@@ -62,6 +62,17 @@
                                     <span class="text-danger">{{ $errors->first('password') }}</span>
                                 @endif
                             </div>
+                            <div class="fb-google-btn">
+                                <a href="" class="fb-google-btn--fb btn btn--size-s btn--with-icon">
+                                    <i class=" fb-google-btn-icon fa-brands fa-square-facebook"></i>
+                                    <span class="fb-google-btn-title">Kết nối với Facebook</span>
+                                </a>
+                                <a href="" class="fb-google-btn--gg btn btn--size-s btn--with-icon">
+                                    <i class="fb-google-btn-icon fa-brands fa-google"></i>
+                                    <span class="fb-google-btn-title">Kết nối với Google</span>
+                
+                                </a>
+                            </div>
                             <div class="d-grid mx-auto">
                                 <button type="subit" class="btn btn-dark btn-block">Đăng nhập</button>
                             </div>
