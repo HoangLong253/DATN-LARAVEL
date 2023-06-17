@@ -27,7 +27,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
     <script src="http://127.0.0.1:8000/assets/OwlCarousel2-2.3.4/docs/assets/vendors/jquery.min.js"></script>
     <script src="http://127.0.0.1:8000/assets/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
-    <script src="http://127.0.0.1:8000/assets/js/wow_book.min.js"></script>
+    <script src="../assets/js/wow_book.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 </head>
@@ -264,7 +264,7 @@
                         <li class="line"></li>
                         <li><a href="http://127.0.0.1:8000/collections" class="active">Sản Phẩm</a></li>
                         <li class="line"></li>
-                        <li><a href="{{ route('GK')}}">Tin Tức</a></li>
+                        <li><a href="">Tin Tức</a></li>
                         <li class="line"></li>
                         <li><a href="">Dịch Vụ</a></li>
                         <li class="line"></li>
@@ -296,7 +296,7 @@
                     <div class="wrap-content">
                         <div class="product-list">
                             
-                            @foreach ($all as $all)
+                            @foreach ($hns as $all)
                             <a href="./collections/sach-giao-khoa/lop-6/am-nhac-va-mi-thuat-lop-6" class="box-product">
                                 @if($all->PhanTramGiam != 0)
                                     <div class="product-sale-oustanding ">

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../assets/bootstrap-5.0.2-dist/js/bootstrap.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/animate.min.css">
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/fonts.css">
     <link rel="stylesheet" href="./assets/css/adminlte.css">
@@ -150,7 +151,7 @@
                             <a href="http://localhost/DATN/web/DATN-MAIN">
                                 <div class="header__logo d-flex ">
                                     <img class="header__logo-img " src="./assets/images/logo/logo.png" alt="">
-                                    <div class="header__cpnname">Delicate Dragon BookStore </div>
+                                    <div class="header__cpnname">Long Tu BookStore </div>
                                 </div>
                             </a>
                             <div class="header__search">
@@ -266,17 +267,17 @@
                     <ul class="d-flex justify-content-between align-items-center">
                         <li><a href="http://127.0.0.1:8000" class="active">Trang chủ</a></li>
                         <li class="line"></li>
-                        <li><a href="http://127.0.0.1:8000/gioithieu">Giới Thiệu</a></li>
+                        <li><a href="{{ route('gioithieu')}}">Giới Thiệu</a></li>
                         <li class="line"></li>
-                        <li><a href="http://127.0.0.1:8000/collections">Sản Phẩm</a></li>
+                        <li><a href="{{route('collections')}}">Sản Phẩm</a></li>
                         <li class="line"></li>
-                        <li><a href="http://127.0.0.1:8000/tintuc">Tin Tức</a></li>
+                        <li><a href="{{ route('tintuc')}}">Tin Tức</a></li>
                         <li class="line"></li>
-                        <li><a href="http://127.0.0.1:8000/dichvu">Dịch Vụ</a></li>
+                        <li><a href="{{ route('dichvu')}}">Dịch Vụ</a></li>
                         <li class="line"></li>
-                        <li><a href="http://127.0.0.1:8000/tieuchi">Tiêu Chí</a></li>
+                        <li><a href="{{ route('tieuchi')}}">Tiêu Chí</a></li>
                         <li class="line"></li>
-                        <li><a href="http://127.0.0.1:8000/lienhe">Liên hệ</a></li>
+                        <li><a href="{{ route('lienhe')}}">Liên hệ</a></li>
                     </ul>
                 </div>
             </div>
@@ -295,10 +296,10 @@
                     <div class="main-title-text">ĐỐI TÁC CỦA CHÚNG TÔI <img class="offcial-img"
                             src="./assets/images/ho-tro/offical.png" alt=""></div>
                     <div class="wrap-slide-partner ">
-                        <div class="owl-partner owl-carousel owlCarousel ">
+                        <div class="owl-partner owl-carousel owlCarousel " data-loop="1" data-autoplay="1" data-autoplayspeed="500" data-xlg-items="6:10">
                             <div><img class="scale-img img_hover" src="./assets/images/doi-tac/DHQGHN.jpg" alt=""></div>
                             <div><img class="scale-img img_hover" src="./assets/images/doi-tac/DN.jpg" alt=""></div>
-                            <div><img class="scale-img img_hover" src="./assets/images/doi-tac/KD.jpg" alt=""></div>
+                            <div><a href="{{route("GK")}}"><img class="scale-img img_hover" src="./assets/images/doi-tac/GD.jpg" alt=""></a></div>
                             <div><img class="scale-img img_hover" src="./assets/images/doi-tac/THTPHCM.jpg" alt="">
                             </div>
                             <div><img class="scale-img img_hover" src="./assets/images/doi-tac/TN.jpg" alt=""></div>
@@ -424,7 +425,7 @@
                     <div class="main-title-text">TIN TỨC & VIDEO</div>
                     <div class="wrap-vidnews-items">
                         <div class="wrap-video">
-                            <div class="fotorama" data-nav="thumbs" data-autoplay="true" data-width="100%"
+                            <div class="fotorama" data-nav="thumbs" data-autoplay="false" data-width="100%"
                                 data-height="100%" data-thumbwidth="145" data-thumbheight="90">
                                 <a href="https://youtu.be/Q2T2JuQgob4"></a>
                                 <a href="https://youtu.be/WdCMqN2ukaA"></a>
@@ -519,7 +520,7 @@
                     <div class="wrap-content">
                         <div class="footer-row d-flex justify-content-between align-items-center">
                             <div class="footer-news">
-                                <div class="footer-title-text">DELICATE DRAGON BOOKSTORE</div>
+                                <div class="footer-title-text">LONG TU BOOKSTORE</div>
                                 <div class="footer-text">Mã số doanh nghiệp: 315498634</div>
                                 <div class="footer-text">Địa chỉ: 65 Huỳnh Thúc Kháng, P Bến Nghé, Q 1, TP HCM</div>
                                 <div class="footer-text">Điện thoại: 0768848015 - 0768848014</div>
@@ -549,6 +550,22 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="fixed-contact">
+                    <a class="cart-fixed text-decoration-none" href="giohang" title="Giỏ hàng">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="count-cart"> </span>
+                    </a>
+                    <a class="btn-zalo btn-frame text-decoration-none" target="_blank" href=" ">
+                        <div class="animated infinite zoomIn kenit-alo-circle"></div>
+                        <div class="animated infinite pulse kenit-alo-circle-fill"></div>
+                        <i> <img src="assets/images/icon/zl.png" alt=""></i>
+                    </a>
+                    <a class="btn-phone btn-frame text-decoration-none" href=" ">
+                        <div class="animated infinite zoomIn kenit-alo-circle"></div>
+                        <div class="animated infinite pulse kenit-alo-circle-fill"></div>
+                        <i><img src="assets/images/icon/hl.png" alt=""> </i>
+                    </a>
                 </div>
                 <div class="footer-tags"></div>
                 <div class="footer-powered ">

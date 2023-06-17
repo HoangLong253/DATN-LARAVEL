@@ -50,6 +50,13 @@ class BooksController extends Controller
         ]);
     }
 
+    public function add() {
+        $alls = DB::table("sach")
+        ->join("nhaxuatban", "sach.MaNXB", "=", "nhaxuatban.MaNXB")
+        ->get();
+        return view('add');
+    }
+
     public function amnhac6() {
         $sgks = DB::table("sach")
         ->where([
@@ -60,6 +67,42 @@ class BooksController extends Controller
         ->get();
         return view('amnhac6', [
             'sgks' => $sgks,
+        ]);
+    }
+
+    public function GK() {
+        $gks = DB::table("sach")
+        ->where([
+            ["MaLoaiSach", "=", "GK"]
+        ])
+        ->get();
+
+        return view('GK', [
+            'gks' => $gks,
+        ]);
+    }
+
+    public function TK() {
+        $tks = DB::table("sach")
+        ->where([
+            ["MaLoaiSach", "=", "TK"]
+        ])
+        ->get();
+
+        return view('TK', [
+            'tks' => $tks,
+        ]);
+    }
+
+    public function DHQGHN() {
+        $hns = DB::table("sach")
+        ->where([
+            ["MaNXB", "=", "DHQGHN"]
+        ])
+        ->get();
+
+        return view('DHQGHN', [
+            'hns' => $hns,
         ]);
     }
     use HasFactory;
