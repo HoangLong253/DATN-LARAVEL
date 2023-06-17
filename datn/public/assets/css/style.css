@@ -17,8 +17,7 @@ a{text-decoration:unset;}
 .header__navbar-item-link:hover{opacity:.7;cursor:pointer;}
 .header__navbar-item,.header__navbar-item-link,.header__navbar-icon-link{display:inline-flex;align-items:center;}
 .header__navbar-item-bold{font-weight:600;}
-.header__navbar-item--separate::after{content:'';display:block;position:absolute;border-left:1px solid #defb86;height:12px;right:-9px;top:50%;transform:translateY(-50%);}
-.header__navbar-icon-link{text-decoration:none;color:var(--white-color);}
+ .header__navbar-icon-link{text-decoration:none;color:var(--white-color);}
 .header__navbar-icon{font-size:16px;margin:0px 4px;}
 .header__navbar-title--no-pointer{color:var(--white-color);cursor:text;}
 /* Header notify */

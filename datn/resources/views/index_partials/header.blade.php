@@ -88,7 +88,7 @@
                         @if($user)
                             <li class="header__navbar-item">
                                 <div href="" class="header__navbar-item">Xin chào: </div>
-                                <div class="header__navbar-item header__navbar-item--separate"></div>
+                                <div class="header__navbar-item header__navbar-item--separate">|</div>
                                 <a href="{{ route('dangxuat') }}" class="header__navbar-item">
                                     Đăng xuất
                                 </a>
@@ -99,7 +99,7 @@
                             <a href="{{ route('dangki') }}" class="header__navbar-item">
                                 Đăng kí
                             </a>
-                            <div class="header__navbar-item header__navbar-item--separate"></div>
+                            <div class="header__navbar-item header__navbar-item--separate">|</div>
                             <a href="{{ route('dangnhap') }}" class="header__navbar-item">
                                 Đăng nhập
                             </a>
@@ -166,7 +166,7 @@
                                                 <div class="header__cart-item-name">Thương nhớ Trà Long
                                                 </div>
                                                 <div class="header__cart-item-price-wrap">
-                                                    <span class="header__cart-item-price">100.000vnd</span>
+                                                    <span class="header__cart-item-price">100.000đ</span>
                                                     <span class="header__cart-item-x">x</span>
                                                     <span class="header__cart-item-qnt">2</span>
                                                 </div>
@@ -186,7 +186,7 @@
                                                 <div class="header__cart-item-name">Thương nhớ Trà Long
                                                 </div>
                                                 <div class="header__cart-item-price-wrap">
-                                                    <span class="header__cart-item-price">100.000vnd</span>
+                                                    <span class="header__cart-item-price">100.000đ</span>
                                                     <span class="header__cart-item-x">x</span>
                                                     <span class="header__cart-item-qnt">2</span>
                                                 </div>
@@ -206,7 +206,7 @@
                                                 <div class="header__cart-item-name">Thương nhớ Trà Long
                                                 </div>
                                                 <div class="header__cart-item-price-wrap">
-                                                    <span class="header__cart-item-price">100.000vnd</span>
+                                                    <span class="header__cart-item-price">100.000đ</span>
                                                     <span class="header__cart-item-x">x</span>
                                                     <span class="header__cart-item-qnt">2</span>
                                                 </div>
