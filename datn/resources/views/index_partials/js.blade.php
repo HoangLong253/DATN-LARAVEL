@@ -275,4 +275,35 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 </script>
+<!-- Btn contact -->
+<script type="text/javascript" src="assets/js/jQuery.WCircleMenu-min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        /* Phone circle */
+        $('#my-phone-circle').WCircleMenu({
+            angle_start : -Math.PI,
+            delay: 50,
+            distance: 70,
+            angle_interval: Math.PI/4,
+            easingFuncShow:"easeOutBack",
+            easingFuncHide:"easeInBack",
+            step:5,
+            openCallback:false,
+            closeCallback:false,
+        });
+
+        /* Phone support */
+        $('.support-content').hide();
+        $('a.btn-support').click(function (e) {
+            e.stopPropagation();
+            $('.support-content').slideToggle();
+        });
+        $('.support-content').click(function (e) {
+            e.stopPropagation();
+        });
+        $(document).click(function () {
+            $('.support-content').slideUp();
+        });
+    })
+</script>
 <noscript></noscript>

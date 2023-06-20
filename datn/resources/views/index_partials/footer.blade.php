@@ -74,4 +74,32 @@
     </div>
     <!-- Back to top btn -->
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+    <!-- Contact option 2 -->
+    <div class="support-online">
+    <div class="support-content" style="display: block;">
+        <a target="_blank" href="tel: " class=" btn-frame not-loading call-now" rel="nofollow">
+            <i class="fab fa-whatsapp"></i>
+            <div class="animated infinite zoomIn kenit-alo-circle"></div>
+            <div class="animated infinite pulse kenit-alo-circle-fill"></div>
+            <span>Hotline:  </span>
+        </a>
+        <a class="btn-frame mes not-loading" target="_blank" href="lien-he">
+            <i class="fa fa-map-marker"></i>
+            <span>Chỉ đường</span>
+        </a>
+        <a class="btn-frame mes not-loading" target="_blank" href="//zalo.me/ ">
+             <span>Zalo</span>
+        </a>
+        <a class="btn-frame sms not-loading" target="_blank" href="sms: ">
+            <i class="fab fa-weixin"></i>
+            <span>SMS:  </span>
+        </a>
+    </div>
+    <a class="btn-frame btn-support not-loading">
+        <div class="animated infinite zoomIn kenit-alo-circle"></div>
+        <div class="animated infinite pulse kenit-alo-circle-fill"></div>
+        <i class="fa fa-user-circle"></i>
+    </a>
+</div>
 </div>
