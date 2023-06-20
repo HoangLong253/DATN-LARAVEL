@@ -72,4 +72,6 @@
             <i><img src="assets/images/icon/hl.png" alt=""> </i>
         </a>
     </div>
+    <!-- Back to top btn -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 </div>
