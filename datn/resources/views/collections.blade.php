@@ -1,17 +1,5 @@
-<!DOCTYPE html>
-<html lang="vn">
- 
-<!-- Head -->
-@include ('index_partials.head')
-
-<body>
-    <div class="containerr">
-        <div class="main">
-
-             <!-- Header -->
-             @include ('index_partials.header')
-             <!-- Menu  -->
-             @include ('index_partials.menu')
+@extends('layouts.app')
+@section('content')
             <!-- Main -->
 
             <!-- bỏ all sản phẩm, bên trái là danh mục sản phẩm, 
@@ -35,7 +23,7 @@
                     <div class="content-main">
                         <div class="grid-product">
                             @foreach ($all as $all)
-                            <a href="./collections/sach-giao-khoa/lop-6/am-nhac-va-mi-thuat-lop-6" class="box-product">
+                            <a href="./sach-giao-khoa/lop-6/am-nhac-va-mi-thuat-lop-6" class="box-product">
                                 @if($all->PhanTramGiam != 0)
                                     <div class="product-sale-oustanding ">
                                         <span class="sale-lb img_hover">{{$all->PhanTramGiam * 100}}%</span>
@@ -63,10 +51,4 @@
                      </div>
                 </div>
             </div>
-            <!-- Footer -->
-            @include ('index_partials.footer')
-        </div>
-    </div>
-</body>
-@include ('index_partials.js')
-</html>
+@endsection

@@ -81,10 +81,6 @@ Route::get('product_detail', function () {
     return view('product/product_detail');
 })->name('product_detail');
 
-Route::get('collections', function () {
-    return view('collections');
-})->name('collections');
-
 /* Admin add product */
 Route::get('AddProduct', function () {
     return view('adm_partials/add_product');
