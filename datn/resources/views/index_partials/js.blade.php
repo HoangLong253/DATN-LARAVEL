@@ -6,6 +6,13 @@ $('.owl-slideshow').owlCarousel({
     loop: true,
     margin: 10,
     nav: false,
+    loop:true,
+    lazyLoad:true,
+    dots:false,
+    autoplay:true,
+    autoplayTimeout:3500,
+    autoplaySpeed:400,
+    autoplayHoverPause:true,
     responsive: {
         0: {
             items: 1
@@ -16,6 +23,13 @@ $('.owl-partner').owlCarousel({
     loop: true,
     margin: 10,
     nav: false,
+    loop:true,
+    lazyLoad:true,
+    dots:false,
+    autoplay:true,
+    autoplayTimeout:3500,
+    autoplaySpeed:400,
+    autoplayHoverPause:true,
     responsive: {
         0: {
             items: 7
@@ -26,12 +40,19 @@ $('.owl-spnb').owlCarousel({
     loop: true,
     margin: 10,
     nav: false,
+    loop:true,
+    lazyLoad:true,
+    dots:false,
+    autoplay:true,
+    autoplayTimeout:3500,
+    autoplaySpeed:400,
+    autoplayHoverPause:true,
     responsive: {
         0: {
             items: 5
         },
     }
-})
+})/* 
 $('.owl-carousel').owlCarousel({
     items: 1,
     merge: true,
@@ -48,7 +69,7 @@ $('.owl-carousel').owlCarousel({
             items: 4
         }
     }
-});
+}); */
 
 $('.news-slick').slick({
     slidesToShow: 3,
@@ -136,8 +157,7 @@ $(document).ready(function() {
         var factor = 0.02 * ($(this).index() ? -1 : 1);
         book.opts.thumbnailScale = book.opts.thumbnailScale + factor;
         rebuildThumbnails();
-    })
-
+    }) 
 });
 </script>
 <!-- Chữ rung -->
@@ -164,15 +184,70 @@ $(document).ready(function() {
     });
 
 });
+</script>  
+<!-- Btn back to top -->
+<script> 
+let mybutton = document.getElementById("myBtn"); 
+window.onscroll = function() {
+    scrollFunction()
+}; 
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+} 
+function topFunction() {
+    document.body.scrollTop = 0;  
+    document.documentElement.scrollTop = 0;  
+}
 </script>
-
+<!-- Btn contact -->
+<script type="text/javascript" src="assets/js/jQuery.WCircleMenu-min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    /* Phone circle */
+    $('#my-phone-circle').WCircleMenu({
+        angle_start: -Math.PI,
+        delay: 50,
+        distance: 70,
+        angle_interval: Math.PI / 4,
+        easingFuncShow: "easeOutBack",
+        easingFuncHide: "easeInBack",
+        step: 5,
+        openCallback: false,
+        closeCallback: false,
+    }); 
+    /* Phone support */
+    $('.support-content').hide();
+    $('a.btn-support').click(function(e) {
+        e.stopPropagation();
+        $('.support-content').slideToggle();
+    });
+    $('.support-content').click(function(e) {
+        e.stopPropagation();
+    });
+    $(document).click(function() {
+        $('.support-content').slideUp();
+    });
+})
+</script>
+<!-- Shiner -->
+<script>
+    $(document).ready(function(){
+    $(window).bind("load", function() {
+        var api = $(".peShiner").peShiner({ api: true, paused: true, reverse: true, repeat: 1, color: 'oceanHL' });
+        api.resume();
+    }); 
+</script>
+<!-- Menu sticky -->
 <script>
 window.onscroll = function() {
     myFunction()
 };
 var header = document.getElementById("menu-scroll");
-var sticky = header.offsetTop;
-
+var sticky = header.offsetTop; 
 function myFunction() {
     if (window.pageYOffset > sticky) {
         header.classList.add("sticky");
@@ -181,129 +256,5 @@ function myFunction() {
     }
 }
 </script>
-<script>
-! function(f, b, e, v, n, t, s) {
-    if (f.fbq) return;
-    n = f.fbq = function() {
-        n.callMethod ?
-            n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-    };
-    if (!f._fbq) f._fbq = n;
-    n.push = n;
-    n.loaded = !0;
-    n.version = '2.0';
-    n.queue = [];
-    t = b.createElement(e);
-    t.async = !0;
-    t.src = v;
-    s = b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t, s)
-}(window, document, 'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1748726912209454');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=1748726912209454&ev=PageView&noscript=1" /></noscript>
-
-<script>
-(function(w, d, s, l, i) {
-    w[l] = w[l] || [];
-    w[l].push({
-        'gtm.start': new Date().getTime(),
-        event: 'gtm.js'
-    });
-    var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s),
-        dl = l != 'dataLayer' ? '&l=' + l : '';
-    j.async = true;
-    j.src =
-        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-    f.parentNode.insertBefore(j, f);
-})(window, document, 'script', 'dataLayer', 'GTM-MSB2SX5');
-</script>
-<div id="fb-root"></div>
-
-
-<div id="fb-customer-chat" class="fb-customerchat">
-</div>
-
-<script>
-var chatbox = document.getElementById('fb-customer-chat');
-chatbox.setAttribute("page_id", "113969381682545");
-chatbox.setAttribute("attribution", "biz_inbox");
-</script>
-
-
-<script>
-window.fbAsyncInit = function() {
-    FB.init({
-        xfbml: true,
-        version: 'v16.0'
-    });
-};
-
-(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s);
-    js.id = id;
-    js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-</script>
-
-<!-- Btn back to top -->
-<script>
-    // Get the button:
-let mybutton = document.getElementById("myBtn");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
-</script>
-<!-- Btn contact -->
-<script type="text/javascript" src="assets/js/jQuery.WCircleMenu-min.js"></script>
-<script type="text/javascript">
-    $(document).ready(function(){
-        /* Phone circle */
-        $('#my-phone-circle').WCircleMenu({
-            angle_start : -Math.PI,
-            delay: 50,
-            distance: 70,
-            angle_interval: Math.PI/4,
-            easingFuncShow:"easeOutBack",
-            easingFuncHide:"easeInBack",
-            step:5,
-            openCallback:false,
-            closeCallback:false,
-        });
-
-        /* Phone support */
-        $('.support-content').hide();
-        $('a.btn-support').click(function (e) {
-            e.stopPropagation();
-            $('.support-content').slideToggle();
-        });
-        $('.support-content').click(function (e) {
-            e.stopPropagation();
-        });
-        $(document).click(function () {
-            $('.support-content').slideUp();
-        });
-    })
-</script>
+ 
 <noscript></noscript>

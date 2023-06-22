@@ -1,4 +1,4 @@
-<!-- Footer --> 
+<!-- Footer -->
 <div class="footer">
     <div class="footer-article ">
         <div class="wrap-content">
@@ -55,51 +55,36 @@
             width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
-    <!-- Contact -->
-    <div class="fixed-contact">
-        <a class="cart-fixed text-decoration-none" href="giohang" title="Giỏ hàng">
-            <i class="fas fa-shopping-bag"></i>
-            <span class="count-cart"> </span>
-        </a>
-        <a class="btn-zalo btn-frame text-decoration-none" target="_blank" href=" ">
-            <div class="animated infinite zoomIn kenit-alo-circle"></div>
-            <div class="animated infinite pulse kenit-alo-circle-fill"></div>
-            <i> <img src="assets/images/icon/zl.png" alt=""></i>
-        </a>
-        <a class="btn-phone btn-frame text-decoration-none" href=" ">
-            <div class="animated infinite zoomIn kenit-alo-circle"></div>
-            <div class="animated infinite pulse kenit-alo-circle-fill"></div>
-            <i><img src="assets/images/icon/hl.png" alt=""> </i>
-        </a>
-    </div>
+
     <!-- Back to top btn -->
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
     <!-- Contact option 2 -->
     <div class="support-online">
-    <div class="support-content" style="display: block;">
-        <a target="_blank" href="tel: " class=" btn-frame not-loading call-now" rel="nofollow">
-            <i class="fab fa-whatsapp"></i>
+        <div class="support-content" style="display: block;">
+            <a target="_blank" href="tel: " class=" btn-frame not-loading call-now" rel="nofollow">
+                <i class="fa-solid fa-phone-volume"></i>
+                <div class="animated infinite zoomIn kenit-alo-circle"></div>
+                <div class="animated infinite pulse kenit-alo-circle-fill"></div>
+                <span>Hotline: 0768848015 </span>
+            </a>
+            <a class="btn-frame mes not-loading" target="_blank" href="lien-he">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Chỉ đường</span>
+            </a>
+            <a class="btn-frame mes not-loading" target="_blank" href="//zalo.me/ ">
+                <i class="fa-brands fa-facebook-messenger"></i>
+                <span>Zalo: 09768848015</span>
+            </a>
+            <a class="btn-frame sms not-loading" target="_blank" href="sms: ">
+                <i class="fa-solid fa-comment-sms"></i>
+                <span>SMS: 0768848015</span>
+            </a>
+        </div>
+        <a class="btn-frame btn-support not-loading">
             <div class="animated infinite zoomIn kenit-alo-circle"></div>
             <div class="animated infinite pulse kenit-alo-circle-fill"></div>
-            <span>Hotline:  </span>
-        </a>
-        <a class="btn-frame mes not-loading" target="_blank" href="lien-he">
-            <i class="fa fa-map-marker"></i>
-            <span>Chỉ đường</span>
-        </a>
-        <a class="btn-frame mes not-loading" target="_blank" href="//zalo.me/ ">
-             <span>Zalo</span>
-        </a>
-        <a class="btn-frame sms not-loading" target="_blank" href="sms: ">
-            <i class="fab fa-weixin"></i>
-            <span>SMS:  </span>
+            <i class="fa-solid fa-user-tie"></i>
         </a>
     </div>
-    <a class="btn-frame btn-support not-loading">
-        <div class="animated infinite zoomIn kenit-alo-circle"></div>
-        <div class="animated infinite pulse kenit-alo-circle-fill"></div>
-        <i class="fa fa-user-circle"></i>
-    </a>
-</div>
 </div>

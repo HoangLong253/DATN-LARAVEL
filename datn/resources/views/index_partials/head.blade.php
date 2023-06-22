@@ -24,6 +24,8 @@
     <script src="../assets/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
     <script src="../assets/js/jquery.lettering.js"></script>
     <script src="../assets/js/jquery.textillate.js"></script>
+    <script src="../assets/js/jquery.pixelentity.shiner.min.js"></script>
+    <script src="../assets/js/jQuery.WCircleMenu-min.js"></script>
     <script src="../assets/js/wow_book.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <!-- Google Font: Source Sans Pro -->
