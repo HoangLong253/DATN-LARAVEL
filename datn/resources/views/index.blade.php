@@ -116,4 +116,94 @@
 
 <!--Xem thêm-->
 <a href="{{route('collections')}}" class="btn btn-success"> Xem thêm</a>
+
+            <!-- Video News -->
+            <div class="wrap-video-news">
+                <div class="wrap-content">
+                    <div class="main-title-text">TIN TỨC & VIDEO</div>
+                    <div class="wrap-vidnews-items">
+                        <div class="wrap-video">
+                            <div class="fotorama" data-nav="thumbs" data-autoplay="true" data-width="100%" data-height="100%"
+                                data-thumbwidth="145" data-thumbheight="90">
+                                <a href="https://youtu.be/Q2T2JuQgob4"></a>
+                                <a href="https://youtu.be/WdCMqN2ukaA"></a>
+                                <a href="https://youtu.be/kWCEaNgTCdY"></a>
+                                <a href="https://youtu.be/CyKmrNhXM3o"></a>
+                            </div>
+                        </div>
+                        <div class="wrap-news">
+                            <div class="news-slick">
+                                <div class="news-box">
+                                    <div class="news-img"><img
+                                            src="https://thumbs.dreamstime.com/b/beautiful-sunset-over-water-tree-silhouette-nature-landscape-amazing-orange-yellow-sky-night-scene-wallpaper-birds-flying-154424473.jpg"
+                                            alt=""></div>
+                                    <div class="news-text">
+                                        <div class="news-name">Lorem ipsum dolor sit amet.</div>
+                                        <div class="news-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                            Eius repellat aliquam quidem, voluptatem sed nostrum recusandae.</div>
+                                        <!-- <div class="news-content"></div> -->
+                                    </div>
+                                </div>
+                                <div class="news-box">
+                                    <div class="news-img"><img
+                                            src="https://thumbs.dreamstime.com/b/beautiful-sunset-over-water-tree-silhouette-nature-landscape-amazing-orange-yellow-sky-night-scene-wallpaper-birds-flying-154424473.jpg"
+                                            alt=""></div>
+                                    <div class="news-text">
+                                        <div class="news-name">Lorem ipsum dolor sit amet.</div>
+                                        <div class="news-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                            Eius repellat aliquam quidem, voluptatem sed nostrum recusandae.</div>
+                                        <!-- <div class="news-content"></div> -->
+                                    </div>
+                                </div>
+                                <div class="news-box">
+                                    <div class="news-img"><img
+                                            src="https://thumbs.dreamstime.com/b/beautiful-sunset-over-water-tree-silhouette-nature-landscape-amazing-orange-yellow-sky-night-scene-wallpaper-birds-flying-154424473.jpg"
+                                            alt=""></div>
+                                    <div class="news-text">
+                                        <div class="news-name">Lorem ipsum dolor sit amet.</div>
+                                        <div class="news-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                            Eius repellat aliquam quidem, voluptatem sed nostrum recusandae.</div>
+                                        <!-- <div class="news-content"></div> -->
+                                    </div>
+                                </div>
+                                <div class="news-box">
+                                    <div class="news-img"><img
+                                            src="https://thumbs.dreamstime.com/b/beautiful-sunset-over-water-tree-silhouette-nature-landscape-amazing-orange-yellow-sky-night-scene-wallpaper-birds-flying-154424473.jpg"
+                                            alt=""></div>
+                                    <div class="news-text">
+                                        <div class="news-name">Lorem ipsum dolor sit amet.</div>
+                                        <div class="news-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                            Eius repellat aliquam quidem, voluptatem sed nostrum recusandae.</div>
+                                        <!-- <div class="news-content"></div> -->
+                                    </div>
+                                </div>
+                                <div class="news-box">
+                                    <div class="news-img"><img
+                                            src="https://thumbs.dreamstime.com/b/beautiful-sunset-over-water-tree-silhouette-nature-landscape-amazing-orange-yellow-sky-night-scene-wallpaper-birds-flying-154424473.jpg"
+                                            alt=""></div>
+                                    <div class="news-text">
+                                        <div class="news-name">Lorem ipsum dolor sit amet.</div>
+                                        <div class="news-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                            Eius repellat aliquam quidem, voluptatem sed nostrum recusandae.</div>
+                                        <!-- <div class="news-content"></div> -->
+                                    </div>
+                                </div>
+                                <div class="news-box">
+                                    <div class="news-img"><img
+                                            src="https://thumbs.dreamstime.com/b/beautiful-sunset-over-water-tree-silhouette-nature-landscape-amazing-orange-yellow-sky-night-scene-wallpaper-birds-flying-154424473.jpg"
+                                            alt=""></div>
+                                    <div class="news-text">
+                                        <div class="news-name">Lorem ipsum dolor sit amet.</div>
+                                        <div class="news-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                            Eius repellat aliquam quidem, voluptatem sed nostrum recusandae.</div>
+                                        <!-- <div class="news-content"></div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Xem thêm-->
+                <a href="{{route('tintuc')}}" class="btn btn-success"> Xem thêm</a>
+            </div>
 @endsection
