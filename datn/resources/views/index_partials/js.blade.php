@@ -10,7 +10,7 @@ $('.owl-slideshow').owlCarousel({
     lazyLoad:true,
     dots:false,
     autoplay:true,
-    autoplayTimeout:3500,
+    autoplayTimeout:2500,
     autoplaySpeed:400,
     autoplayHoverPause:true,
     responsive: {
@@ -27,7 +27,7 @@ $('.owl-partner').owlCarousel({
     lazyLoad:true,
     dots:false,
     autoplay:true,
-    autoplayTimeout:3500,
+    autoplayTimeout:2500,
     autoplaySpeed:400,
     autoplayHoverPause:true,
     responsive: {
@@ -44,7 +44,7 @@ $('.owl-spnb').owlCarousel({
     lazyLoad:true,
     dots:false,
     autoplay:true,
-    autoplayTimeout:3500,
+    autoplayTimeout:2500,
     autoplaySpeed:400,
     autoplayHoverPause:true,
     responsive: {
@@ -52,24 +52,7 @@ $('.owl-spnb').owlCarousel({
             items: 5
         },
     }
-})/* 
-$('.owl-carousel').owlCarousel({
-    items: 1,
-    merge: true,
-    loop: true,
-    margin: 10,
-    video: true,
-    lazyLoad: true,
-    center: true,
-    responsive: {
-        480: {
-            items: 2
-        },
-        600: {
-            items: 4
-        }
-    }
-}); */
+})  
 
 $('.news-slick').slick({
     slidesToShow: 3,
@@ -231,17 +214,19 @@ $(document).ready(function() {
     $(document).click(function() {
         $('.support-content').slideUp();
     });
+    
 })
+
 </script>
 <!-- Shiner -->
-<script>
-    $(document).ready(function(){
+
+<script type="text/javascript">   
     $(window).bind("load", function() {
         var api = $(".peShiner").peShiner({ api: true, paused: true, reverse: true, repeat: 1, color: 'oceanHL' });
         api.resume();
-    }); 
+    });
 </script>
-<!-- Menu sticky -->
+ <!-- Menu sticky -->
 <script>
 window.onscroll = function() {
     myFunction()

@@ -36,7 +36,7 @@
 </div>
 <!--Sach giao khoa-->
 <div class="wrap-spnb">
-    <div class="wrap-content">
+    <div class="wrap-content wow animate__fadeInLeft" data-wow-duration="2s""">
         <div class="main-title-text">SÁCH GIÁO KHOA</div>
         <div class="wrap-slide-spnb">
             <div class="owl-spnb owl-carousel owlCarousel">

@@ -1,3 +1,7 @@
+<div class="header-banner wow animate__fadeInLeft" data-wow-duration="2s""">
+    <img src="assets/images/slideshow/bannerheader.png" alt="">
+</div>
+<!--  -->
 <div class="header">
     <div class="header-top">
         <div class="wrap-content">
@@ -117,8 +121,10 @@
             <div class="header-with-search ">
                 <div class="logo">
                     <div class="header__logo  ">
-                        <a class="peShiner " href="http://127.0.0.1:8000"><img class="header__logo-img peShiner  "
+                        <div class="peShiner">
+                        <a class=" " href="http://127.0.0.1:8000"><img class="header__logo-img   "
                                 src="./assets/images/logo/logo.png" alt=""></a>
+                        </div>
                         <div class="info-company">
                             <div class="header__cpnname">LT Bookstore</div>
                             <div class="company_desc">Tri thức là sức mạnh</div>
