@@ -114,8 +114,10 @@
     </div>
 </div>
 
-<!--Xem thêm-->
-<a href="{{route('collections')}}" class="btn btn-success"> Xem thêm</a>
+<!--Xem them-->
+<div class="xemthem-btn">
+    <a href="http://127.0.0.1:8000/collections" class="btn btn-success"> Xem thêm</a>
+</div>
 
             <!-- Video News -->
             <div class="wrap-video-news">
@@ -203,7 +205,9 @@
                         </div>
                     </div>
                 </div>
-                <!--Xem thêm-->
-                <a href="{{route('tintuc')}}" class="btn btn-success"> Xem thêm</a>
+                <!--Xem them-->
+                <div class="xemthem-btn">
+                    <a href="http://127.0.0.1:8000/collections" class="btn btn-success"> Xem thêm</a>
+                </div>
             </div>
 @endsection
