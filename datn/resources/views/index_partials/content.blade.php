@@ -5,7 +5,7 @@
         <div class="wrap-slide-spnb">
             <div class="owl-spnb owl-carousel owlCarousel">
                 @foreach ($noibats as $noibat)
-                <a href="#" class="box-product">
+                <a href="#" class="box-product"  ">
                     @if($noibat->PhanTramGiam != 0)
                     <div class="product-sale-oustanding ">
                         <span class="sale-lb img_hover">{{$noibat->PhanTramGiam * 100}}%</span>
@@ -18,13 +18,13 @@
                     <div class="infor-product">
 
                     </div>
-                    @if($noibat->PhanTramGiam != 0)
-                    <div class="name-product">{{$noibat->TenSach}}</div>
+                    @if($noibat->PhanTramGiam != 0) 
+                    <div class="name-product text-split-1">{{$noibat->TenSach}}</div>
                     <div class="price-product">@convert($noibat->DonGia - ($noibat->DonGia *
                         $noibat->PhanTramGiam),0)đ</div>
                     <div class="price-product"><del>@convert($noibat->DonGia,0)đ</del></div>
                     @else
-                    <div class="name-product">{{$noibat->TenSach}}</div>
+                    <div class="name-product text-split-1">{{$noibat->TenSach}}</div>
                     <div class="price-product">@convert($noibat->DonGia,0)đ</div>
                     @endif
 
@@ -55,12 +55,12 @@
 
                     </div>
                     @if($sgks->PhanTramGiam != 0)
-                    <div class="name-product">{{$sgks->TenSach}}</div>
+                    <div class="name-product text-split-1">{{$sgks->TenSach}}</div>
                     <div class="price-product">@convert($sgks->DonGia - ($sgks->DonGia *
                         $sgks->PhanTramGiam),0)đ</div>
                     <div class="price-product"><del>@convert($sgks->DonGia,0)đ</del></div>
                     @else
-                    <div class="name-product">{{$sgks->TenSach}}</div>
+                    <div class="name-product text-split-1">{{$sgks->TenSach}}</div>
                     <div class="price-product">@convert($sgks->DonGia,0)đ</div>
                     @endif
 
@@ -92,12 +92,12 @@
 
                     </div>
                     @if($thamkhao->PhanTramGiam != 0)
-                    <div class="name-product">{{$thamkhao->TenSach}}</div>
+                    <div class="name-product text-split-1">{{$thamkhao->TenSach}}</div>
                     <div class="price-product">@convert($thamkhao->DonGia - ($noibat->DonGia *
                         $thamkhao->PhanTramGiam),0)đ</div>
                     <div class="price-product"><del>@convert($thamkhao->DonGia,0)đ</del></div>
                     @else
-                    <div class="name-product">{{$thamkhao->TenSach}}</div>
+                    <div class="name-product text-split-1">{{$thamkhao->TenSach}}</div>
                     <div class="price-product">@convert($thamkhao->DonGia,0)đ</div>
                     @endif
 
@@ -120,7 +120,7 @@
         <div class="main-title-text">TIN TỨC & VIDEO</div>
         <div class="wrap-vidnews-items">
             <div class="wrap-video">
-                <div class="fotorama" data-nav="thumbs" data-autoplay="true" data-width="100%" data-height="100%"
+                <div class="fotorama" data-nav="thumbs" data-autoplay="true" data-width="600" data-height="450"
                     data-thumbwidth="145" data-thumbheight="90">
                     <a href="https://youtu.be/Q2T2JuQgob4"></a>
                     <a href="https://youtu.be/WdCMqN2ukaA"></a>

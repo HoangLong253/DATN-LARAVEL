@@ -3,20 +3,26 @@
         <ul class="  d-flex justify-content-between align-items-center">
             <li><a href="{{ route('index') }}">Trang chủ</a></li>
             <li class="line"></li>
-            <li><a href="{{ route('gioithieu') }}">Giới Thiệu</a></li>
-            <li class="line"></li>
-            <li><a href="{{ route('collections')}}">Sản Phẩm</a>
+            <li><a href="{{ route('gioithieu') }}">VỀ CHÚNG TÔI</a></li>
+                <li class="line"></li>
+                <li><a href="{{ route('collections')}}">Sản Phẩm</a>
                 <ul>
                     <li>
-                        <a class="has-child transition" title="" href=" ">Sản phẩm 1</a>
-                        <ul>
+                        <a class="has-child transition" title="" href=" ">Sách giáo khoa</a>
+                        <a class="has-child transition" title="" href=" ">Sách tham khảo</a>
+                         <ul>
                             <li>
+                                <a class="has-child transition" title=" " href=" "> sản phẩm 2</a>
+                                <a class="has-child transition" title=" " href=" "> sản phẩm 2</a>
                                 <a class="has-child transition" title=" " href=" "> sản phẩm 2</a>
                                 <ul>
                                     <li>
                                         <a class="has-child transition" title=" " href=" "> sản phẩm 3</a>
+                                        <a class="has-child transition" title=" " href=" "> sản phẩm 3</a>
+                                        <a class="has-child transition" title=" " href=" "> sản phẩm 3</a>
                                         <ul>
                                             <li>
+                                                <a class="transition" title=" " href=" "> sản phẩm 4</a>
                                                 <a class="transition" title=" " href=" "> sản phẩm 4</a>
                                             </li>
                                         </ul>
