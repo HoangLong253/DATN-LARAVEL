@@ -109,8 +109,9 @@
 </div>
 
 <!--Xem thêm-->
+<div class="xemthem-btn">
 <a href="http://127.0.0.1:8000/collections" class="btn btn-success"> Xem thêm</a>
-<!--<button type="button" href="http://127.0.0.1:8000/collections" class="btn btn-success" >Xem thêm</button>-->
+</div>
 
 <!-- Video News -->
 <div class="wrap-video-news">
