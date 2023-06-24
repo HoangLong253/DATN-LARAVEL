@@ -62,23 +62,23 @@
     <!-- Contact option 2 -->
     <div class="support-online">
         <div class="support-content" style="display: block;">
-            <a target="_blank" href="tel: " class=" btn-frame not-loading call-now" rel="nofollow">
-                <i class="fa-solid fa-phone-volume"></i>
+            <a target="_blank" href="tel:0768848015 " class=" btn-frame not-loading call-now" rel="nofollow">
+                <i><img src="assets/images/icon/hl.png" alt=""></i> 
                 <div class="animated infinite zoomIn kenit-alo-circle"></div>
                 <div class="animated infinite pulse kenit-alo-circle-fill"></div>
-                <span>Hotline: 0768848015 </span>
+                <span>Hotline</span>
             </a>
-            <a class="btn-frame mes not-loading" target="_blank" href="lien-he">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Chỉ đường</span>
+            <a class="btn-frame mes not-loading" target="_blank" href="https://bom.so/pPF8sq">
+                <i><img src="assets/images/icon/place.png" alt=""></i> 
+                <span>Bản đồ</span>
             </a>
-            <a class="btn-frame mes not-loading" target="_blank" href="//zalo.me/ ">
-                <i class="fa-brands fa-facebook-messenger"></i>
-                <span>Zalo: 09768848015</span>
+            <a class="btn-frame mes not-loading" target="_blank" href="//zalo.me/0768848015 ">
+                <i><img src="assets/images/icon/zl.png" alt=""></i>
+                <span>Zalo</span>
             </a>
-            <a class="btn-frame sms not-loading" target="_blank" href="sms: ">
-                <i class="fa-solid fa-comment-sms"></i>
-                <span>SMS: 0768848015</span>
+            <a class="btn-frame sms not-loading" target="_blank" href="https://m.me/tlbookstore.page">
+                <i><img src="assets/images/icon/mess.png" alt=""></i>
+                <span>Messenger</span>
             </a>
         </div>
         <a class="btn-frame btn-support not-loading">
@@ -87,4 +87,12 @@
             <i class="fa-solid fa-user-tie"></i>
         </a>
     </div>
+    
 </div>
+<!--  -->
+ <!-- Messenger Chat Plugin Code -->
+ <div id="fb-root"></div>
+
+ <!-- Your Chat Plugin code -->
+ <div id="fb-customer-chat" class="fb-customerchat">
+ </div>
