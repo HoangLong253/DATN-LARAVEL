@@ -6,32 +6,32 @@
             <div class="owl-partner owl-carousel owlCarousel ">
                 <div>
                     <a href="{{route('DHQGHN')}}">
-                        <img class="scale-img img_hover" src="{{asset('images/doi-tac/DHQGHN.jpg')}}" alt="">
+                        <img class="scale-img img_hover" src="{{ asset('images/doi-tac/DHQGHN.jpg') }}" alt="">
                     </a>
                 </div>
                 <div>
                     <a href="">
-                        <img class="scale-img img_hover" src=".{{asset('images/doi-tac/DN.jpg')}}" alt="">
+                        <img class="scale-img img_hover" src="{{ asset('images/doi-tac/DN.jpg') }}" alt="">
                     </a>
                 </div>
                 <div>
                     <a href="{{route("GK")}}">
-                        <img class="scale-img img_hover" src="{{asset('images/doi-tac/GD.jpg')}}" alt="">
+                        <img class="scale-img img_hover" src="{{ asset('images/doi-tac/GD.jpg') }}" alt="">
                     </a>
                 </div>
                 <div>
                     <a href="">
-                        <img class="scale-img img_hover" src="{{asset('images/doi-tac/THTPHCM.jpg')}}" alt="">
+                        <img class="scale-img img_hover" src="{{ asset('images/doi-tac/THTPHCM.jpg') }}" alt="">
                     </a>
                 </div>
                 <div>
                     <a href="">
-                        <img class="scale-img img_hover" src="{{asset('images/doi-tac/TN.jpg')}}" alt="">
+                        <img class="scale-img img_hover" src="{{ asset('images/doi-tac/TN.jpg') }}" alt="">
                     </a>
                 </div>
                 <div>
                     <a href="">
-                        <img class="scale-img img_hover" src="{{asset('images/doi-tac/Tre.jpg')}}" alt="">
+                        <img class="scale-img img_hover" src="{{ asset('images/doi-tac/Tre.jpg') }}" alt="">
                     </a>
                 </div>
             </div>
