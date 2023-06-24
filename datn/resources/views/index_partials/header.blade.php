@@ -1,5 +1,5 @@
 <div class="header-banner wow animate__fadeInLeft" data-wow-duration="2s""">
-    <img src="assets/images/slideshow/bannerheader.png" alt="">
+    <img src="{{asset('images/slideshow/bannerheader.png')}}" alt="">
 </div>
 <!--  -->
 <div class="header">
@@ -122,8 +122,8 @@
                 <div class="logo">
                     <div class="header__logo  ">
                         <div class="peShiner">
-                        <a class=" " href="http://127.0.0.1:8000"><img class="header__logo-img   "
-                                src="./assets/images/logo/logo.png" alt=""></a>
+                        <a class=" " href="{{route('index')}}"><img class="header__logo-img"
+                                src="{{asset('images/logo/logo.png')}}" alt=""></a>
                         </div>
                         <div class="info-company">
                             <div class="header__cpnname">LT Bookstore</div>

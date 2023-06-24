@@ -2,7 +2,7 @@
 <html lang="vn">
 <!-- Head -->
 
-@include ('index_partials.head') 
+@include ('index_partials.head')
 <!-- Body -->
 
 <body>
