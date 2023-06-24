@@ -14,7 +14,7 @@
             @include ('index_partials.breadcrumb')
             <!-- Content -->
             <!-- Cart -->
-            <div class="wrap-gio-hang">
+            <!--<div class="wrap-gio-hang">
                 <div class="wrap-content">
                     <div class="wrap-cart">
                         <div class="row">
@@ -151,7 +151,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
             <!-- Cart no product -->
             <div class="wrap-cart-no-product">
                 <div class="wrap-content">
@@ -160,7 +160,7 @@
                         enctype="multipart/form-data">
                         <div class="wrap-cart">
                             <div class="row">
-                                <a href="" class="empty-cart text-decoration-none w-100">
+                                <a href="{{route('index')}}" class="empty-cart text-decoration-none w-100">
                                     <i class="fa fa-cart-arrow-down"></i>
                                     <p>Không tồn tại sản phẩm nào trong giỏ hàng !</p>
                                     <span>Về trang chủ</span>

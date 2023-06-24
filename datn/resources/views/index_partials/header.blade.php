@@ -1,5 +1,5 @@
 <div class="header-banner wow animate__fadeInLeft" data-wow-duration="2s""">
-    <img src="assets/images/slideshow/bannerheader.png" alt="">
+    <img src="{{asset('assets/images/slideshow/bannerheader.png')}}" alt="">
 </div>
 <!--  -->
 <div class="header">
@@ -122,8 +122,8 @@
                 <div class="logo">
                     <div class="header__logo  ">
                         <div class="peShiner">
-                        <a class=" " href="http://127.0.0.1:8000"><img class="header__logo-img   "
-                                src="./assets/images/logo/logo.png" alt=""></a>
+                        <a class=" " href="{{route('index')}}"><img class="header__logo-img   "
+                                src="{{asset('assets/images/logo/logo.png')}}" alt=""></a>
                         </div>
                         <div class="info-company">
                             <div class="header__cpnname">LT Bookstore</div>
@@ -155,7 +155,7 @@
                 <!-- FadeIn chưa chuẩn -->
 
                 <div class="header__cart">
-                    <a href="http://127.0.0.1:8000/giohang">
+                    <a href="{{route('giohang')}}">
                         <div class="header__cart-wrap"><i class="header__cart-icon fa-solid fa-cart-shopping"></i>
                             <span class="header__cart-notice">
                                 3
@@ -229,7 +229,7 @@
                                         </div>
                                     </li>
                                 </ul>
-                                <a href="http://127.0.0.1:8000/giohang"
+                                <a href="{{route('giohang')}}"
                                     class="header__cart-view-cart btn btn-primary">Xem Giỏ Hàng</a>
                             </div>
                         </div>

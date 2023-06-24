@@ -72,7 +72,7 @@
                 <i><img src="assets/images/icon/place.png" alt=""></i> 
                 <span>Bản đồ</span>
             </a>
-            <a class="btn-frame mes not-loading" target="_blank" href="//zalo.me/0768848015 ">
+            <a class="btn-frame mes not-loading" target="_blank" href="https://zalo.me/0768848015 ">
                 <i><img src="assets/images/icon/zl.png" alt=""></i>
                 <span>Zalo</span>
             </a>
