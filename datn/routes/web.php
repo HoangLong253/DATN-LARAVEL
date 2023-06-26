@@ -17,14 +17,13 @@ use App\Http\Controllers\DangNhapController;
 
 use Illuminate\Support\Facades\DB;
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
 Route::get('/home', [BooksController::class, 'home'])->name('home');
 
 Route::get('/admin', [BooksController::class, 'home'])->name('admin');
-
 
 Route::get('/home/add', [BooksController::class, 'add'])->name('add');
 
@@ -50,7 +49,7 @@ Route::get('dangxuat', function () {
 })->name('dangxuat');
 
 /*Xử lí chức năng đăng nhập đăng kí*/
-Route::post('validate_registration', [LogregController::class, 'validate_registration'])->name('validate_registration');
+Route::post('check_register', [DangNhapController::class, 'check_register'])->name('check_register');
 
 Route::post('check_login', [DangNhapController::class, 'check_login'])->name('check_login');
 

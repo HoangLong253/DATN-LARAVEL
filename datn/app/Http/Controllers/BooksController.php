@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Facades\DB;
+use App\Models\nguoidungs;
 
 class BooksController extends Controller
 {
@@ -32,15 +33,17 @@ class BooksController extends Controller
                         ])
                         ->take(5)
                         ->get();
+
         
-        if(isset($_COOKIE['is_logged'])&&$_COOKIE['is_logged']==1) {
-            $user = DB::table('nhanvien')->where('MaNV', $_COOKIE['id'])->get();
-            return view('index', [
-                'user' => $user,
+        if(isset($_COOKIE['is_logged']) || $_COOKIE['is_logged']==1 ) {
+            $user1 = DB::table("nguoidungs")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
+            /*$user1 = nguoidungs::where('MaNgDung', $_COOKIE['id'])->get();*/
+            return view('index', array(
+                'user1' => $user1,
                 'noibats' => $noibats,
                 'sgks' => $sgks,
                 'thamkhaos' => $thamkhaos
-        ]);
+            ));
         } else {
             return view('index', [
                 'noibats' => $noibats,

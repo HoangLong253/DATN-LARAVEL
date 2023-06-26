@@ -25,7 +25,7 @@
                                 <th>Nhà xuất bản</th>
                                 <th>Nổi bật</th>
                                 <th>Đơn giá</th>
-                                <th>Phần trăm giảm</th>
+                                <th>Phần trăm giảm (%)</th>
                                 <th>Giá giảm</th>
                                 <th>Trạng thái</th>
                                 <th>Chức năng</th>
@@ -53,7 +53,7 @@
                                 </td>
                                 @endif
                                 <td> {{$all->DonGia}} </td>
-                                <td> {{$all->PhanTramGiam * 100}} </td>
+                                <td> {{$all->PhanTramGiam * 100}}%</td>
                                 <td> {{$all->DonGia - $all->DonGia * $all->PhanTramGiam}} </td>
                                 @if($all->TrangThai)
                                 <td>

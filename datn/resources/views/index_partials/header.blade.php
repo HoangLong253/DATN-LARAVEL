@@ -89,15 +89,13 @@
                     <!-- đăng kí đăng nhập Tú làm sao hover vô nó đậm lên nhá, 
                         với lại làm cái separate đừng trùng với tên nút đăng nhập luôn-->
                     @if (isset($_COOKIE['is_logged']) && $_COOKIE['is_logged']== 1)
-                    @if($user)
                     <li class="header__navbar-item">
-                        <div href="" class="header__navbar-item">Xin chào: </div>
+                        <div class="header__navbar-item">Xin chào: {{ $user1[0]->HoTen }}</div>
                         <div class="header__navbar-item header__navbar-item--separate">|</div>
                         <a href="{{ route('dangxuat') }}" class="header__navbar-item">
                             Đăng xuất
                         </a>
                     </li>
-                    @endif
                     @else
                     <li class="header__navbar-item">
                         <a href="{{ route('dangki') }}" class="header__navbar-item">
