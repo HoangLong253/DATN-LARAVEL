@@ -17,9 +17,9 @@ use App\Http\Controllers\DangNhapController;
 
 use Illuminate\Support\Facades\DB;
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
 Route::get('/home', [BooksController::class, 'home'])->name('home');
 
@@ -45,37 +45,67 @@ Route::get('dangxuat', function () {
 })->name('dangxuat');
 
 /*Xử lí chức năng đăng nhập đăng kí*/
-Route::post('validate_registration', [LogregController::class, 'validate_registration'])->name('validate_registration');
+Route::post('check_register', [DangNhapController::class, 'check_register'])->name('check_register');
 
 Route::post('check_login', [DangNhapController::class, 'check_login'])->name('check_login');
 
+/* Menu */
 Route::get('gioithieu', function () {
-    return view('GioiThieu');
+    if(isset($_COOKIE['is_logged']) || $_COOKIE['is_logged']==1 ) {
+        $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
+        return view('GioiThieu', [
+            'user1' => $user1,
+        ]);
+    }
+    else{
+        return view('GioiThieu');
+    }
 })->name('gioithieu');
 
 Route::get('tintuc', function () {
-    return view('TinTuc');
+    if(isset($_COOKIE['is_logged']) || $_COOKIE['is_logged']==1 ) {
+        $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
+        return view('TinTuc', [
+            'user1' => $user1,
+        ]);
+    }
+    else {
+        return view('TinTuc');
+    }
 })->name('tintuc');
 
 Route::get('dichvu', function () {
-    return view('DichVu');
+    if(isset($_COOKIE['is_logged']) || $_COOKIE['is_logged']==1 ) {
+        $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
+        return view('DichVu', [
+            'user1' => $user1,
+        ]);
+    }
+    else {
+        return view('DichVu');
+    }
 })->name('dichvu');
 
-Route::get('tieuchi', function () {
-    return view('TieuChi');
-})->name('tieuchi');
-
+ 
 Route::get('lienhe', function () {
-    return view('LienHe');
+    if(isset($_COOKIE['is_logged']) || $_COOKIE['is_logged']==1 ) {
+        $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
+        return view('LienHe', [
+            'user1' => $user1,
+        ]);
+    }
+    else {
+        return view('LienHe');
+    }
 })->name('lienhe');
 
-//sản phẩm
+Route::get('/giohang', [CartController::class, 'giohang'])->name('giohang');
+
+/* Product */
 
 Route::get('/collections/tatca', [BooksController::class, 'collections'])->name('collections');
 
 Route::get('/collections/sach-giao-khoa/lop-6/am-nhac-va-mi-thuat-lop-6', [BooksController::class, 'amnhac6'])->name('amnhac6');
-
-Route::get('/giohang', [CartController::class, 'giohang'])->name('giohang');
 
 /*Route::get('/collections/{loai}/{tensach}', function($loai, $tensach){
     $loai = DB::table('sach')->where('MaSach', '=', $loai)->where('TenSach', '=', $tensach)->get();
@@ -85,19 +115,8 @@ Route::get('/giohang', [CartController::class, 'giohang'])->name('giohang');
 
 Route::get('/collections/giaokhoa', [BooksController::class, 'GK'])->name('GK');
 
-Route::get('collections/nha-xuat-ban/giao-duc', [BooksController::class, 'GK'])->name('GK');
+Route::get('/collections/thamkhao', [BooksController::class, 'TK'])->name('TK');
 
-//Route::get('/collections/thamkhao', [BooksController::class, 'TK'])->name('TK');
+Route::get('/collections/nha-xuat-ban/giao-duc', [BooksController::class, 'GD'])->name('GD');
 
 Route::get('/collections/nha-xuat-ban/dai-hoc-quoc-gia-ha-noi', [BooksController::class, 'DHQGHN'])->name('DHQGHN');
-
-//này là taphop/cái gì đó vd taphop/sach-giao-khoa
-
-//này là taphop/sach-giao-khoa/cái gì đó vd taphop/sach-giao-khoa/lop-6/toan-6-tap-1
-
-//admin
-
-/* Admin add product */
-Route::get('AddProduct', function () {
-    return view('adm_partials/add_product');
-})->name('AddProduct');

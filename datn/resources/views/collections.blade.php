@@ -10,8 +10,8 @@
 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="http://127.0.0.1:8000">Trang chủ</a></li>
-                  <li class="breadcrumb-item"><a href="http://127.0.0.1:8000/collections">Danh mục</a></li>
+                  <li class="breadcrumb-item"><a href="{{route('index')}}">Trang chủ</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Danh mục</li>
                   <li class="breadcrumb-item active" aria-current="page">Tất cả các sách</li>
                 </ol>
             </nav>

@@ -12,7 +12,7 @@
                     </div>
                     @endif
                     <div class=" scale-img img_hover">
-                        <img alt="ảnh lỗi" src="{{ asset('images/sach/GK/' . $noibat->HinhAnh)}}" width="200"
+                        <img alt="ảnh lỗi" src="{{ asset('assets/images/sach/GK/' . $noibat->HinhAnh)}}" width="200"
                             height="300"></img>
                     </div>
                     <div class="infor-product">
@@ -48,7 +48,7 @@
                     </div>
                     @endif
                     <div class=" scale-img img_hover">
-                        <img alt="ảnh lỗi" src="{{ asset('images/sach/GK/' . $sgks->HinhAnh)}}" width="200"
+                        <img alt="ảnh lỗi" src="{{ asset('assets/images/sach/GK/' . $sgks->HinhAnh)}}" width="200"
                             height="300"></img>
                     </div>
                     <div class="infor-product">
@@ -85,7 +85,7 @@
                     @endif
                     <div class=" scale-img img_hover">
                         <img alt="ảnh lỗi"
-                            src="{{ asset('images/sach/' . $thamkhao->MaLoaiSach . '/' . $thamkhao->HinhAnh)}}"
+                            src="{{ asset('assets/images/sach/' . $thamkhao->MaLoaiSach . '/' . $thamkhao->HinhAnh)}}"
                             width="200" height="300"></img>
                     </div>
                     <div class="infor-product">

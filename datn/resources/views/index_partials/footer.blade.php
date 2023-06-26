@@ -72,9 +72,9 @@
                 <i class="fa-solid fa-location-dot"></i>
                 <span>Chỉ đường</span>
             </a>
-            <a class="btn-frame mes not-loading" target="_blank" href="//zalo.me/ ">
-                <i class="fa-brands fa-facebook-messenger"></i>
-                <span>Zalo: 09768848015</span>
+            <a class="btn-frame mes not-loading" target="_blank" href="https://zalo.me/0768848015 ">
+                <i><img src="assets/images/icon/zl.png" alt=""></i>
+                <span>Zalo</span>
             </a>
             <a class="btn-frame sms not-loading" target="_blank" href="sms: ">
                 <i class="fa-solid fa-comment-sms"></i>

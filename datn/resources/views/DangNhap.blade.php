@@ -64,19 +64,21 @@
                 <div class="input-group-prepend">
                     <div class="input-group-text"><i class="fa fa-user"></i></div>
                 </div>
-                <input type="text" class="form-control text-sm" id="username" name="username" placeholder="Tài khoản" required="">
+                <input type="text" class="form-control text-sm" id="username" name="username" placeholder="Email" required="true">
                 <div class="invalid-feedback">Vui lòng nhập tài khoản</div>
             </div>
+            @error('username')
+                <p class="">{{ $message }}</p>
+            @enderror
             <div class="input-group input-user">
                 <div class="input-group-prepend">
                     <div class="input-group-text"><i class="fa fa-lock"></i></div>
                 </div>
-                <input type="password" class="form-control text-sm" id="password" name="password" placeholder="Mật khẩu" required="">
-               
-                @error('username')
-                    <p class="">{{ $message }}</p>
-                @enderror
+                <input type="password" class="form-control text-sm" id="password" name="password" placeholder="Mật khẩu" required="true">
             </div>
+            @error('password')
+                <p class="">{{ $message }}</p>
+            @enderror
             <div class="button-user d-flex align-items-center justify-content-between">
                 <!--nút đăng nhập-->
                 <input type="submit" class="btn btn-primary" name="login-user" value="Đăng nhập">
@@ -88,7 +90,7 @@
             </div>
             <div class="note-user">
                 <span>Bạn chưa có tài khoản  ! </span>
-                <a href="#" title="Đăng ký">Đăng ký</a>
+                <a href="{{route('dangki')}}" title="Đăng ký">Đăng ký</a>
             </div>
         </form>
     </div>

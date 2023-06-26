@@ -1,20 +1,8 @@
-<!DOCTYPE html>
-<html lang="vn">
-<!-- Head -->
-@include ('index_partials.head')
-<!-- Body --> 
-<body>
-    <div class="containerr">
-        <div class="main">
-            <!-- Header -->
-            @include ('index_partials.header')
-            <!-- Menu  -->
-            @include ('index_partials.menu')
-            <!-- Breadcrumb  -->
-            @include ('index_partials.breadcrumb')
+@extends('layouts.app')
+@section('content')
             <!-- Content -->
             <!-- Cart -->
-            <div class="wrap-gio-hang">
+            <!--<div class="wrap-gio-hang">
                 <div class="wrap-content">
                     <div class="wrap-cart">
                         <div class="row">
@@ -151,7 +139,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
             <!-- Cart no product -->
             <div class="wrap-cart-no-product">
                 <div class="wrap-content">
@@ -160,7 +148,7 @@
                         enctype="multipart/form-data">
                         <div class="wrap-cart">
                             <div class="row">
-                                <a href="" class="empty-cart text-decoration-none w-100">
+                                <a href="{{route('index')}}" class="empty-cart text-decoration-none w-100">
                                     <i class="fa fa-cart-arrow-down"></i>
                                     <p>Không tồn tại sản phẩm nào trong giỏ hàng !</p>
                                     <span>Về trang chủ</span>
@@ -170,13 +158,4 @@
                     </form>
                 </div>
             </div>
-            <!-- Footer -->
-            @include ('index_partials.footer')
-        </div>
-    </div>
-    </div>
-</body>
-@include ('index_partials.js')
-
-
-</html>
+@endsection
