@@ -4,8 +4,8 @@
     <div class="wrap-content">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="http://127.0.0.1:8000">Trang chủ</a></li>
-              <li class="breadcrumb-item"><a href="#">Sách giáo khoa</a></li>
+              <li class="breadcrumb-item"><a href="{{route('index')}}">Trang chủ</a></li>
+              <li class="breadcrumb-item"><a href="{{route('GK')}}">Sách giáo khoa</a></li>
               <li class="breadcrumb-item"><a href="#">Lớp 6</a></li>
               <li class="breadcrumb-item active" aria-current="page">Âm nhạc và mĩ thuật lớp 6</li>
             </ol>
@@ -15,7 +15,7 @@
         <div class="product-images-info">
             <div class="img-product">
                 <div class="img-main-product">
-                    <img src="http://127.0.0.1:8000/assets/images/sach/GK/an-v6.jpg"
+                    <img src="{{asset('assets/images/sach/GK/an-v6.jpg')}}"
                         alt="sach-giao-khoa">
                 </div>
                 <!--đọc thử ở đây-->

@@ -112,6 +112,6 @@
             </div>
         </div>
     </div>
-</body>
+</div>
 @include ('index_partials.js')   
-</html>
+@endsection
