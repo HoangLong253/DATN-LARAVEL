@@ -8,22 +8,22 @@
                 <li><a href="{{ route('collections')}}">Sản Phẩm</a>
                 <ul>
                     <li>
-                        <a class="has-child transition" title="" href=" ">Sách giáo khoa</a>
-                        <a class="has-child transition" title="" href=" ">Sách tham khảo</a>
+                        <a class="has-child transition" title="" href="{{route('GK')}}">Sách giáo khoa</a>
+                        <a class="has-child transition" title="" href="{{route('TK')}}">Sách tham khảo</a>
                          <ul>
                             <li>
-                                <a class="has-child transition" title=" " href=" "> sản phẩm 2</a>
-                                <a class="has-child transition" title=" " href=" "> sản phẩm 2</a>
-                                <a class="has-child transition" title=" " href=" "> sản phẩm 2</a>
+                                <a class="has-child transition" title=" " href="#"> sản phẩm 2</a>
+                                <a class="has-child transition" title=" " href="#"> sản phẩm 2</a>
+                                <a class="has-child transition" title=" " href="#"> sản phẩm 2</a>
                                 <ul>
                                     <li>
-                                        <a class="has-child transition" title=" " href=" "> sản phẩm 3</a>
-                                        <a class="has-child transition" title=" " href=" "> sản phẩm 3</a>
-                                        <a class="has-child transition" title=" " href=" "> sản phẩm 3</a>
+                                        <a class="has-child transition" title=" " href="#"> sản phẩm 3</a>
+                                        <a class="has-child transition" title=" " href="#"> sản phẩm 3</a>
+                                        <a class="has-child transition" title=" " href="#"> sản phẩm 3</a>
                                         <ul>
                                             <li>
-                                                <a class="transition" title=" " href=" "> sản phẩm 4</a>
-                                                <a class="transition" title=" " href=" "> sản phẩm 4</a>
+                                                <a class="transition" title=" " href="#"> sản phẩm 4</a>
+                                                <a class="transition" title=" " href="#"> sản phẩm 4</a>
                                             </li>
                                         </ul>
                                     </li>

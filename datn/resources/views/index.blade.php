@@ -207,7 +207,7 @@
                 </div>
                 <!--Xem them-->
                 <div class="xemthem-btn">
-                    <a href="http://127.0.0.1:8000/collections" class="btn btn-success"> Xem thêm</a>
+                    <a href="{{route('tintuc')}}" class="btn btn-success"> Xem thêm</a>
                 </div>
             </div>
 @endsection

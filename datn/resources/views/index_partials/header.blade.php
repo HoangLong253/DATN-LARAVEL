@@ -90,7 +90,9 @@
                         với lại làm cái separate đừng trùng với tên nút đăng nhập luôn-->
                     @if (isset($_COOKIE['is_logged']) && $_COOKIE['is_logged']== 1)
                     <li class="header__navbar-item">
-                        <div class="header__navbar-item">Xin chào: {{ $user1[0]->HoTen }}</div>
+                        <a href="#">
+                            <div class="header__navbar-item">Xin chào: {{ $user1[0]->HoTen }}</div>
+                        </a>
                         <div class="header__navbar-item header__navbar-item--separate">|</div>
                         <a href="{{ route('dangxuat') }}" class="header__navbar-item">
                             Đăng xuất

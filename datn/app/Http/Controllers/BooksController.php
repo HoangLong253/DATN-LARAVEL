@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Facades\DB;
-use App\Models\nguoidungs;
 
 class BooksController extends Controller
 {
@@ -36,7 +35,7 @@ class BooksController extends Controller
 
         
         if(isset($_COOKIE['is_logged']) || $_COOKIE['is_logged']==1 ) {
-            $user1 = DB::table("nguoidungs")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
+            $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
             /*$user1 = nguoidungs::where('MaNgDung', $_COOKIE['id'])->get();*/
             return view('index', array(
                 'user1' => $user1,
@@ -56,9 +55,18 @@ class BooksController extends Controller
 
     public function collections() {
         $all = DB::table("sach")->get();
-        return view('collections',[
-            'all' => $all,
-        ]);
+        if(isset($_COOKIE['is_logged']) || $_COOKIE['is_logged']==1 ) {
+            $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
+            return view('collections',[
+                'user1' => $user1,
+                'all' => $all,
+            ]);
+        }
+        else {
+            return view('collections',[
+                'all' => $all,
+            ]);
+        }
     }
     public function home() {
         $alls = DB::table("sach")
@@ -84,9 +92,18 @@ class BooksController extends Controller
         ])
         ->take(10)
         ->get();
-        return view('amnhac6', [
-            'sgks' => $sgks,
-        ]);
+        if(isset($_COOKIE['is_logged']) || $_COOKIE['is_logged']==1 ) {
+            $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
+            return view('amnhac6', [
+                'user1' => $user1,
+                'sgks' => $sgks,
+            ]);
+        }
+        else {
+            return view('amnhac6', [
+                'sgks' => $sgks,
+            ]);
+        }
     }
 
     public function GK() {
@@ -95,10 +112,38 @@ class BooksController extends Controller
             ["MaLoaiSach", "=", "GK"]
         ])
         ->get();
+        if(isset($_COOKIE['is_logged']) || $_COOKIE['is_logged']==1 ) {
+            $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
+            return view('GK', [
+                'user1' => $user1,
+                'gks' => $gks,
+            ]);
+        }
+        else {
+            return view('GK', [
+                'gks' => $gks,
+            ]);
+        }
+    }
 
-        return view('GK', [
-            'gks' => $gks,
-        ]);
+    public function GD() {
+        $gks = DB::table("sach")
+        ->where([
+            ["MaLoaiSach", "=", "GK"]
+        ])
+        ->get();
+        if(isset($_COOKIE['is_logged']) || $_COOKIE['is_logged']==1 ) {
+            $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
+            return view('GD', [
+                'user1' => $user1,
+                'gks' => $gks,
+            ]);
+        }
+        else {
+            return view('GD', [
+                'gks' => $gks,
+            ]);
+        }
     }
 
     public function TK() {
@@ -107,7 +152,13 @@ class BooksController extends Controller
             ["MaLoaiSach", "=", "TK"]
         ])
         ->get();
-
+        if(isset($_COOKIE['is_logged']) || $_COOKIE['is_logged']==1 ) {
+            $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
+            return view('TK', [
+                'user1' => $user1,
+                'tks' => $tks,
+            ]);
+        }
         return view('TK', [
             'tks' => $tks,
         ]);
@@ -119,7 +170,13 @@ class BooksController extends Controller
             ["MaNXB", "=", "DHQGHN"]
         ])
         ->get();
-
+        if(isset($_COOKIE['is_logged']) || $_COOKIE['is_logged']==1 ) {
+            $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
+            return view('DHQGHN', [
+                'user1' => $user1,
+                'hns' => $hns,
+            ]);
+        }
         return view('DHQGHN', [
             'hns' => $hns,
         ]);

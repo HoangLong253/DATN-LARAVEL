@@ -15,7 +15,7 @@
                     </a>
                 </div>
                 <div>
-                    <a href="{{route("GK")}}">
+                    <a href="{{route("GD")}}">
                         <img class="scale-img img_hover" src="{{asset('assets/images/doi-tac/GD.jpg')}}" alt="">
                     </a>
                 </div>

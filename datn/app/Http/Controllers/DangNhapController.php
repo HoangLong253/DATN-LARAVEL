@@ -28,7 +28,7 @@ class DangNhapController extends Controller
                         ->where("Email", $name)
                         ->where("MatKhau", $pass)
                         ->exists();*/
-        $nd = DB::table('nguoidungs')
+        $nd = DB::table('nguoidung')
                         ->where("Email", $name)
                         ->where("MatKhau", $pass)
                         ->exists();
@@ -39,7 +39,7 @@ class DangNhapController extends Controller
 
         if($nd == 1) {
             $is_logged = 1;
-            $id = (DB::table('nguoidungs')
+            $id = (DB::table('nguoidung')
             ->where("Email", $name)
             ->where("MatKhau", $pass)
             ->select('MaNgDung')

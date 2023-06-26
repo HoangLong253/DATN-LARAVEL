@@ -55,49 +55,61 @@ Route::post('check_login', [DangNhapController::class, 'check_login'])->name('ch
 
 /* Menu */
 Route::get('gioithieu', function () {
-    return view('GioiThieu');
+    if(isset($_COOKIE['is_logged']) || $_COOKIE['is_logged']==1 ) {
+        $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
+        return view('GioiThieu', [
+            'user1' => $user1,
+        ]);
+    }
+    else{
+        return view('GioiThieu');
+    }
 })->name('gioithieu');
 
 Route::get('tintuc', function () {
-    return view('TinTuc');
+    if(isset($_COOKIE['is_logged']) || $_COOKIE['is_logged']==1 ) {
+        $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
+        return view('TinTuc', [
+            'user1' => $user1,
+        ]);
+    }
+    else {
+        return view('TinTuc');
+    }
 })->name('tintuc');
 
 Route::get('dichvu', function () {
-    return view('DichVu');
+    if(isset($_COOKIE['is_logged']) || $_COOKIE['is_logged']==1 ) {
+        $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
+        return view('DichVu', [
+            'user1' => $user1,
+        ]);
+    }
+    else {
+        return view('DichVu');
+    }
 })->name('dichvu');
 
  
 Route::get('lienhe', function () {
-    return view('LienHe');
+    if(isset($_COOKIE['is_logged']) || $_COOKIE['is_logged']==1 ) {
+        $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
+        return view('LienHe', [
+            'user1' => $user1,
+        ]);
+    }
+    else {
+        return view('LienHe');
+    }
 })->name('lienhe');
 
-Route::get('giohang', function () {
-    return view('giohang');
-})->name('giohang');
+Route::get('/giohang', [CartController::class, 'giohang'])->name('giohang');
 
 /* Product */
-Route::get('product_detail', function () {
-    return view('product/product_detail');
-})->name('product_detail');
-
-Route::get('collections', function () {
-    return view('collections');
-})->name('collections');
-
-/* Admin add product */
-Route::get('AddProduct', function () {
-    return view('adm_partials/add_product');
-})->name('AddProduct');
-
-/*Route::get('taphop', function () {
-    return view('taphop');
-})->name('taphop');*/
 
 Route::get('/collections/tatca', [BooksController::class, 'collections'])->name('collections');
 
 Route::get('/collections/sach-giao-khoa/lop-6/am-nhac-va-mi-thuat-lop-6', [BooksController::class, 'amnhac6'])->name('amnhac6');
-
-Route::get('/giohang', [CartController::class, 'giohang'])->name('giohang');
 
 /*Route::get('/collections/{loai}/{tensach}', function($loai, $tensach){
     $loai = DB::table('sach')->where('MaSach', '=', $loai)->where('TenSach', '=', $tensach)->get();
@@ -105,49 +117,10 @@ Route::get('/giohang', [CartController::class, 'giohang'])->name('giohang');
     return view();
 })->name('chitietsach');*/
 
-Route::get('gioithieu', function () {
-    return view('GioiThieu');
-})->name('gioithieu');
-
-Route::get('tintuc', function () {
-    return view('TinTuc');
-})->name('tintuc');
-
-Route::get('dichvu', function () {
-    return view('DichVu');
-})->name('dichvu');
-
-Route::get('tieuchi', function () {
-    return view('TieuChi');
-})->name('tieuchi');
-
-Route::get('lienhe', function () {
-    return view('LienHe');
-})->name('lienhe');
-
-Route::get('giohang', function () {
-    return view('giohang');
-})->name('giohang');
-
 Route::get('/collections/giaokhoa', [BooksController::class, 'GK'])->name('GK');
 
-Route::get('collections/nha-xuat-ban/giao-duc', [BooksController::class, 'GK'])->name('GK');
+Route::get('/collections/thamkhao', [BooksController::class, 'TK'])->name('TK');
 
-//Route::get('/collections/thamkhao', [BooksController::class, 'TK'])->name('TK');
+Route::get('/collections/nha-xuat-ban/giao-duc', [BooksController::class, 'GD'])->name('GD');
 
 Route::get('/collections/nha-xuat-ban/dai-hoc-quoc-gia-ha-noi', [BooksController::class, 'DHQGHN'])->name('DHQGHN');
-
-//Route::get('/collections/nha-xuat-ban/dai-hoc-quoc-gia-ha-noi', [BooksController::class, 'TK'])->name('TK');
-
-//này là taphop/cái gì đó vd taphop/sach-giao-khoa
-
-/*Route::get('taphop', function () {
-    return view('taphop');
-})->name('taphop');*/
-
-//này là taphop/sach-giao-khoa/cái gì đó vd taphop/sach-giao-khoa/lop-6/toan-6-tap-1
-
-/*Route::get('taphop', function () {
-    return view('taphop');
-})->name('taphop');*/
-

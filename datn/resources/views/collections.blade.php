@@ -1,17 +1,5 @@
-<!DOCTYPE html>
-<html lang="vn">
- 
-<!-- Head -->
-@include ('index_partials.head')
-
-<body>
-    <div class="containerr">
-        <div class="main">
-
-             <!-- Header -->
-             @include ('index_partials.header')
-             <!-- Menu  -->
-             @include ('index_partials.menu')
+@extends('layouts.app')
+@section('content')
             <!-- Main -->
 
             <!-- bỏ all sản phẩm, bên trái là danh mục sản phẩm, 
@@ -22,8 +10,8 @@
 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="http://127.0.0.1:8000">Trang chủ</a></li>
-                  <li class="breadcrumb-item"><a href="http://127.0.0.1:8000/collections">Danh mục</a></li>
+                  <li class="breadcrumb-item"><a href="{{route('index')}}">Trang chủ</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Danh mục</li>
                   <li class="breadcrumb-item active" aria-current="page">Tất cả các sách</li>
                 </ol>
             </nav>
@@ -63,10 +51,4 @@
                      </div>
                 </div>
             </div>
-            <!-- Footer -->
-            @include ('index_partials.footer')
-        </div>
-    </div>
-</body>
-@include ('index_partials.js')
-</html>
+@endsection
