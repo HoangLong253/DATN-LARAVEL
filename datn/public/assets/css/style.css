@@ -314,7 +314,6 @@ figure:hover figcaption{box-shadow:0 20px 15px -10px hsla(0,0%,0%,.25);backgroun
  a:hover{color:yellow !important;}
 .header-banner{width:100%;}
 .header-banner img{width:100%;}
-
 /* Text Hide */
 .text-split-1{overflow:hidden !important;text-overflow:ellipsis !important;white-space:normal !important;-webkit-box-orient:vertical !important;display:-webkit-box !important;-webkit-line-clamp:1 !important;}
 .text-split-2{overflow:hidden !important;text-overflow:ellipsis !important;white-space:normal !important;-webkit-box-orient:vertical !important;display:-webkit-box !important;-webkit-line-clamp:2 !important;}
@@ -325,6 +324,35 @@ figure:hover figcaption{box-shadow:0 20px 15px -10px hsla(0,0%,0%,.25);backgroun
 .text-split-7{overflow:hidden !important;text-overflow:ellipsis !important;white-space:normal !important;-webkit-box-orient:vertical !important;display:-webkit-box !important;-webkit-line-clamp:7 !important;}
 .text-split-8{overflow:hidden !important;text-overflow:ellipsis !important;white-space:normal !important;-webkit-box-orient:vertical !important;display:-webkit-box !important;-webkit-line-clamp:8 !important;}
 /* Trang trong giới thiệu */
-.title-text{font-weight: bold;font-stretch: 20px;}
-.title-desc{font-size: 18px;margin: 7px 0px;}
-.title-desc div{ margin: 5px 0px;}
+.title-text{font-weight:bold;font-stretch:20px;}
+.title-desc{font-size:18px;margin:7px 0px;}
+.title-desc div{margin:5px 0px;}
+/* Form login */
+.bg-dn{background:#23242B;}
+.wrap-userdn{position:relative;}
+.box-login{position:relative;width:539px;height: 320px;overflow:hidden;background:#00337C;border-bottom-left-radius:5px;border-bottom-right-radius:5px;}
+.wrap-userdn{width:560px;height: 330px;position:relative;overflow:hidden;margin:auto;}
+.wrap-userdn .box-login{position:absolute;inset:5px;z-index:2;}
+.wrap-userdn:before{transform-origin:bottom right;content:'';position:absolute;width:560px;height:280px;top:-50%;left:-50%;background:linear-gradient(0deg,transparent,#45f3ff,#45f3ff,#45f3ff);z-index:1;animation:animate 6s linear infinite;}
+.wrap-userdn::after{transform-origin:bottom right;content:'';position:absolute;width:560px;height:280px;top:-50%;left:-50%;background:linear-gradient(0deg,transparent,#ff2770,#ff2770,#ff2770);z-index:1;animation:animate 6s linear infinite;animation-delay:-3s;}
+@keyframes animate{0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+}
+.wrap-userdn{width:100%;max-width:550px;margin:auto;border-radius:5px;}
+.wrap-userdk{width:100%;max-width:550px;margin:auto;border-radius:5px;}
+.wrap-userdk{position:relative;}
+.box-regis{position:relative;width:539px;overflow:hidden;background:#00337C;border-bottom-left-radius:5px;border-bottom-right-radius:5px;}
+.wrap-userdk{width:560px;height:930px;position:relative;overflow:hidden;margin:auto;}
+.wrap-userdk .box-regis{position:absolute;inset:5px;z-index:2;}
+.wrap-userdk:before{transform-origin:bottom right;content:'';position:absolute;width:560px;height:870px;top:-50%;left:-50%;background:linear-gradient(0deg,transparent,#45f3ff,#45f3ff,#45f3ff);z-index:1;animation:animate 6s linear infinite;}
+.wrap-userdk::after{transform-origin:bottom right;content:'';position:absolute;width:560px;height:870px;top:-50%;left:-50%;background:linear-gradient(0deg,transparent,#ff2770,#ff2770,#ff2770);z-index:1;animation:animate 6s linear infinite;animation-delay:-3s;}
+.mrb50{margin-bottom:50px;}
+/* Google */
+.fb-google-btn {
+    text-align: center;
+   
+}
+.fb-google-btn span{color: #fff;}
+/* Thêm sản phẩm */
+.box-info{display: flex;}
+.box-add-img{background: #ccc;}
