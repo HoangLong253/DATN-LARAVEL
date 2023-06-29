@@ -73,7 +73,7 @@
                 <span>Chỉ đường</span>
             </a>
             <a class="btn-frame mes not-loading" target="_blank" href="https://zalo.me/0768848015 ">
-                <i><img src="assets/images/icon/zl.png" alt=""></i>
+                <i><img src="{{asset('assets/images/icon/zl.png')}}" alt=""></i>
                 <span>Zalo</span>
             </a>
             <a class="btn-frame sms not-loading" target="_blank" href="sms: ">

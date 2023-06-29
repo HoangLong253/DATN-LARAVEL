@@ -107,11 +107,40 @@ Route::get('/collections/tatca', [BooksController::class, 'collections'])->name(
 
 Route::get('/collections/sach-giao-khoa/lop-6/am-nhac-va-mi-thuat-lop-6', [BooksController::class, 'amnhac6'])->name('amnhac6');
 
-/*Route::get('/collections/{loai}/{tensach}', function($loai, $tensach){
-    $loai = DB::table('sach')->where('MaSach', '=', $loai)->where('TenSach', '=', $tensach)->get();
-
-    return view();
-})->name('chitietsach');*/
+Route::get('/collections/{loai}/{tensach}/{ma}', function($loai, $tensach, $ma){
+    $chitietsach = DB::table('sach')
+                        ->join('nhaxuatban', 'sach.MaNXB', '=', 'nhaxuatban.MaNXB')
+                        ->where('MaSach', '=', $ma)
+                        ->get();
+    $sgks = DB::table("sach")
+                        ->where([
+                            ["MaLoaiSach", "=", "GK"],
+                            ["TrangThai", "=", 1,],
+                        ])
+                        ->take(10)
+                        ->get();
+    /*$tennxb = DB::table('nhaxuatban')
+                    ->where('MaNXB', $tennxb1)
+                    ->get();*/
+    $tenloai = DB::table('loaisach')
+                    ->where('MaLoaiSach', '=' ,$loai)
+                    ->get();
+    if(isset($_COOKIE['is_logged']) || $_COOKIE['is_logged']==1 ) {
+        $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
+        return view('chitietsach', [
+                'user1' => $user1,
+                'chitietsach' => $chitietsach,
+                'sgks' => $sgks,
+                'tenloai' => $tenloai
+        ]);
+    } else {
+        return view('chitietsach', [
+            'chitietsach' => $chitietsach,
+            'sgks' => $sgks,
+            'tenloai' => $tenloai
+    ]);
+    }
+})->name('chitietsach');
 
 Route::get('/collections/giaokhoa', [BooksController::class, 'GK'])->name('GK');
 

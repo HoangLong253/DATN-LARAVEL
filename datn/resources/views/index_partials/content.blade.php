@@ -5,7 +5,7 @@
         <div class="wrap-slide-spnb">
             <div class="owl-spnb owl-carousel owlCarousel">
                 @foreach ($noibats as $noibat)
-                <a href="#" class="box-product"  ">
+                <a href="{{route('chitietsach', ['ma' => $noibat->MaSach, 'tensach' => $noibat->TenSach, 'loai' => $noibat->MaLoaiSach])}}" class="box-product"  ">
                     @if($noibat->PhanTramGiam != 0)
                     <div class="product-sale-oustanding ">
                         <span class="sale-lb img_hover">{{ $noibat->PhanTramGiam * 100}}%</span>
@@ -41,7 +41,7 @@
         <div class="wrap-slide-spnb">
             <div class="owl-spnb owl-carousel owlCarousel">
                 @foreach ($sgks as $sgks)
-                <a href="#" class="box-product">
+                <a href="{{route('chitietsach', ['ma' => $sgks->MaSach, 'tensach' => $sgks->TenSach, 'loai' => $sgks->MaLoaiSach])}}" class="box-product">
                     @if($sgks->PhanTramGiam != 0)
                     <div class="product-sale-oustanding ">
                         <span class="sale-lb img_hover">{{$sgks->PhanTramGiam * 100}}%</span>
@@ -77,7 +77,7 @@
         <div class="wrap-slide-spnb">
             <div class="owl-spnb owl-carousel owlCarousel">
                 @foreach ($thamkhaos as $thamkhao)
-                <a href="#" class="box-product">
+                <a href="{{route('chitietsach', ['ma' => $thamkhao->MaSach, 'tensach' => $thamkhao->TenSach, 'loai' => $thamkhao->MaLoaiSach])}}" class="box-product">
                     @if($thamkhao->PhanTramGiam != 0)
                     <div class="product-sale-oustanding ">
                         <span class="sale-lb img_hover">{{$thamkhao->PhanTramGiam * 100}}%</span>
