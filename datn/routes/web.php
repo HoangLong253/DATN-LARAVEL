@@ -142,6 +142,8 @@ Route::get('/collections/{loai}/{tensach}/{ma}', function($loai, $tensach, $ma){
     }
 })->name('chitietsach');
 
+Route::post('/timkiem', [BooksController::class, 'search'])->name('search');
+
 Route::get('/collections/giaokhoa', [BooksController::class, 'GK'])->name('GK');
 
 Route::get('/collections/thamkhao', [BooksController::class, 'TK'])->name('TK');

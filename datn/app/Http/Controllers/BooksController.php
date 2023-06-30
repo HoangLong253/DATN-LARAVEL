@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
 class BooksController extends Controller
 {
@@ -180,6 +181,28 @@ class BooksController extends Controller
         return view('DHQGHN', [
             'hns' => $hns,
         ]);
+    }
+
+    public function search(Request $request) {
+        $var = $request->search;
+        /*$search_value = DB::table('sach')
+                        ->where('TenSach', '=', '%' . $var . '%')
+                        ->get();*/
+        $search_value = DB::table('sach')
+                        ->where('TenSach', 'LIKE', '%' . $var . '%')
+                        ->get();
+        if(isset($_COOKIE['is_logged']) || $_COOKIE['is_logged']==1 ) {
+            $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
+            return view('timkiem', [
+                'user1' => $user1,
+                'search_value' => $search_value
+            ]);
+        } else {
+            return view('timkiem', [
+                'search_value' => $search_value
+            ]);  
+        }
+        
     }
     use HasFactory;
 }

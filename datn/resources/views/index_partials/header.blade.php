@@ -26,7 +26,7 @@
 
                 <ul class="header__navbar-list">
                     <li class="header__navbar-item">
-                        <a href="" class="header__navbar-item-link">
+                        <a href="{{route('tintuc')}}" class="header__navbar-item-link">
                             <i class="header__navbar-icon fa-solid fa-bell"></i>
                             Thông Báo
                         </a>
@@ -131,9 +131,10 @@
                         </div> 
                     </div>
                 </div>
-                <div class="header__search">
+                <form method="post" action="{{route('search')}}" class="header__search">
+                    @csrf
                     <div class="header__search-input-wrap">
-                        <input type="text" class="header__search-input" placeholder="Nhập từ khóa để tìm kiếm">
+                        <input type="text" name ="search" id ="search" class="header__search-input" placeholder="Nhập từ khóa để tìm kiếm">
                         <!-- Search history -->
                         <div class="header__search-history">
                             <h3 class="header__search-history-heading">Lịch sử tìm kiếm</h3>
@@ -147,19 +148,19 @@
                             </ul>
                         </div>
                     </div>
-                    <button class="header__search-btn">
+                    <button class="header__search-btn" type="submit">
                         <i class="header__search-btn-icon fa-solid fa-magnifying-glass"></i>
                     </button>
-                </div>
+                </form>
                 <!-- Cart -->
                 <!-- FadeIn chưa chuẩn -->
 
                 <div class="header__cart">
                     <a href="{{route('giohang')}}">
                         <div class="header__cart-wrap"><i class="header__cart-icon fa-solid fa-cart-shopping"></i>
-                            <span class="header__cart-notice">
+                            <!--<span class="header__cart-notice">
                                 0
-                            </span>
+                            </span>-->
                         </div>
                             <!-- No cart: header__cart-list-no-cart-->
                         <div class="header__cart-list-no-cart">
