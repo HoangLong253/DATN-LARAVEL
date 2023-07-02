@@ -198,7 +198,12 @@
                         <div class="wrap-slide-spnb">
                             <div class="owl-spnb owl-carousel owlCarousel">
                                 @foreach ($sgks as $sgk)
-                                <a href="#" class="box-product">
+                                <a href="{{route('chitietsach', ['ma' => $sgk->MaSach, 'tensach' => $sgk->TenSach, 'loai' => $sgk->MaLoaiSach])}}" class="box-product">
+                                    @if($sgk->PhanTramGiam != 0)
+                                    <div class="product-sale-oustanding ">
+                                        <span class="sale-lb img_hover">{{ $sgk->PhanTramGiam * 100}}%</span>
+                                    </div>
+                                    @endif
                                     <div class="scale-img img_hover">
                                         <img alt="ảnh lỗi" src="{{ asset('./assets/images/sach/GK/' . $sgk->HinhAnh)}}"
                                             width="200" height="300"></img>
@@ -206,8 +211,15 @@
                                     <div class="infor-product">
                                         
                                     </div>
-                                    <div class="name-product">{{$sgk->TenSach}}</div>
+                                    @if($sgk->PhanTramGiam != 0) 
+                                    <div class="name-product text-split-1">{{$sgk->TenSach}}</div>
+                                    <div class="price-product">@convert($sgk->DonGia - ($sgk->DonGia *
+                                        $sgk->PhanTramGiam),0)đ</div>
+                                    <div class="price-product"><del>@convert($sgk->DonGia,0)đ</del></div>
+                                    @else
+                                    <div class="name-product text-split-1">{{$sgk->TenSach}}</div>
                                     <div class="price-product">@convert($sgk->DonGia,0)đ</div>
+                                    @endif
                                 </a>
                                 @endforeach
                             </div>

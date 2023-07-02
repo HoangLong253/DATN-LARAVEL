@@ -17,15 +17,13 @@ use App\Http\Controllers\DangNhapController;
 
 use Illuminate\Support\Facades\DB;
 
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
-
-Route::get('/home', [BooksController::class, 'home'])->name('home');
+Route::get('/', function () {
+    return view('index');
+});
 
 Route::get('/admin', [BooksController::class, 'home'])->name('admin');
 
-Route::get('/home/add', [BooksController::class, 'add'])->name('add');
+Route::get('/admin/add', [BooksController::class, 'add'])->name('add');
 
 Route::get('/', [BooksController::class, 'index'])->name('index');
 
@@ -73,6 +71,18 @@ Route::get('tintuc', function () {
         return view('TinTuc');
     }
 })->name('tintuc');
+
+Route::get('/tintuc/chudetintuc', function(){
+    if(isset($_COOKIE['is_logged']) || $_COOKIE['is_logged']==1 ) {
+        $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
+        return view('articletest', [
+            'user1' => $user1,
+        ]);
+    }
+    else {
+        return view('articletest');
+    }
+})->name('chitiettintuc');
 
 Route::get('dichvu', function () {
     if(isset($_COOKIE['is_logged']) || $_COOKIE['is_logged']==1 ) {

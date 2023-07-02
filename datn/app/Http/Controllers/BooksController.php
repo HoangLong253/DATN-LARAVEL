@@ -73,7 +73,7 @@ class BooksController extends Controller
         $alls = DB::table("sach")
                     ->join("nhaxuatban", "sach.MaNXB", "=", "nhaxuatban.MaNXB")
                     ->get();
-        return view('home',[
+        return view('admin',[
             'alls' => $alls,
         ]);
     }
