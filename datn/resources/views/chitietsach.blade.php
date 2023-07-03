@@ -1,5 +1,9 @@
 @extends('layouts.app')
 @section('content')
+    @php
+        $test = 1;
+        $count = &$test;
+    @endphp
     <!--Chi tiết sách-->
     <div class="wrap-content">
         <nav aria-label="breadcrumb">
@@ -67,8 +71,6 @@
                             </div>
                             <div class="name-text1"> Tình trạng: <span class="name-text-infor">Còn hàng</span>
                             </div>
-                            <div class="name-text1"> Kích thước: <span class="name-text-infor">Kích thước</span>
-                            </div>
                         </div>
                         <!--<div class="flex-price-product">
                             <span class="price-new">Giá khuyến mãi: <span
@@ -93,16 +95,20 @@
                         @endif
                         <div class="quantity-pick">Số lượng:
                             <span class="buttons_added">
-                                <input class="minus is-form" type="button" value="-">
-                                <input aria-label="quantity" class="input-qty" max="10" min="1" name=""
-                                    type="number" value="1">
-                                <input class="plus is-form" type="button" value="+">
+                                <input class="minus is-form" type="button" value="-" onclick="decreaseCount({{$count}}, this)">
+                                <input type="number" aria-label="quantity" class="input-qty" value="{{$count}}" max="10" min="1" name="quantity">
+                                <input class="plus is-form" type="button" value="+" onclick="increaseCount({{$count}}, this)">
                             </span>
                         </div>
                         <div class="flex-btn-product">
-                            <div class="add-cart-btn"><button type="button" class="btn btn-danger">Thêm vào giỏ
-                                    hàng
-                                    <i class="fa-solid fa-bag-shopping"></i></button></div>
+                            <div class="add-cart-btn">
+                                <!--<button type="button" class="btn btn-danger">Thêm vào giỏ hàng
+                                <i class="fa-solid fa-bag-shopping"></i>
+                                </button>-->
+                                <a href="{{route('them.giohang', ['id' => $chitietsach[0]->MaSach, 'count' => $test])}}" id="quantity" class="btn btn-danger">
+                                    Thêm vào giỏ hàng <i class="fa-solid fa-bag-shopping"></i>
+                                </a>
+                            </div>
                             <button type="button" class="btn btn-primary">Mua ngay <i
                                     class="fa-solid fa-credit-card"></i></button>
                         </div>
@@ -116,15 +122,15 @@
                                 màng có bảo vệ + đóng hộp carton 3 lớp
                             </div>
                             <div class="policy-gw-items">
-                                <i class="fa-solid fa-check"></i> Được <a <a class="plc-gw" href="">Kiểm tra
+                                <i class="fa-solid fa-check"></i> Được <a class="plc-gw" href="">Kiểm tra
                                     hàng</a> trước khi nhận
                             </div>
                             <div class="policy-gw-items">
-                                <i class="fa-solid fa-check"></i> Hoàn tiền <a <a class="plc-gw"
+                                <i class="fa-solid fa-check"></i> Hoàn tiền <a class="plc-gw"
                                     href="">100%</a> nếu sản phẩm lỗi
                             </div>
                             <div class="policy-gw-items">
-                                <i class="fa-solid fa-check"></i> Hỗ trợ xuất hóa đơn <a <a class="plc-gw"
+                                <i class="fa-solid fa-check"></i> Hỗ trợ xuất hóa đơn <a class="plc-gw"
                                     href="">VAT </a> theo yêu cầu
                             </div>
                         </div>
@@ -234,4 +240,42 @@
 
         </div>
     </div>
+@endsection
+@section('js')
+<script>
+  function increaseCount(a, b) {
+  var input = b.previousElementSibling;
+  var value = parseInt(input.value, 10);
+  value = isNaN(value) ? 0 : value;
+  value++;
+  input.value = value;    
+  changeHref(value);
+}
+
+function decreaseCount(a, b) {
+  var input = b.nextElementSibling;
+  var value = parseInt(input.value, 10);
+  if (value > 1) {
+    value = isNaN(value) ? 0 : value;
+    value--;
+    input.value = value;
+    changeHref(value);
+  }
+}
+function changeHref(quantity)
+{
+//khởi tạo giá trị mã sách từ laravel gửi về 
+var maSach = "{{ $chitietsach[0]->MaSach }}";
+//đuờng dẫn 
+var url = "{{ route('them.giohang', ['id' => ':maSach', 'count' => ':testValue']) }}";
+//thay đổi ký tự ':maSach' thành biến mã sách từ laravel
+url = url.replace(':maSach', maSach);
+//thay đổi ký tự ':testValue' ở trong biến url thành số lượng
+url = url.replace(':testValue',quantity);
+//lấy id của biến a cần thay đổi ở trên biến a mới nãy tôi có để 1 cái id là quantity 
+var linkElement = document.getElementById('quantity');
+//thay đổi đường dẫn của thẻ a đó thành url mình vừa biến đổi
+linkElement.setAttribute('href', url);
+}
+</script>
 @endsection

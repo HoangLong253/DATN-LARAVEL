@@ -12,21 +12,20 @@ class BooksController extends Controller
         if(!isset($_COOKIE['is_logged'])) {
             setcookie('is_logged', 0, time() + 360000, '/');
           }
-        
-        $noibats = DB::table("sach")
+        $noibats = DB::table("saches")
                             ->where([
                                 ["NoiBat", "=", 1],
                                 ["TrangThai", "=", 1,],
                             ])
                             ->get();
-        $sgks = DB::table("sach")
+        $sgks = DB::table("saches")
                         ->where([
                             ["MaLoaiSach", "=", "GK"],
                             ["TrangThai", "=", 1,],
                         ])
                         ->take(5)
                         ->get();
-        $thamkhaos = DB::table("sach")
+        $thamkhaos = DB::table("saches")
                         ->where([
                             ["MaLoaiSach", "=", "TK"],
                             ["TrangThai", "=", 1,],
@@ -35,32 +34,39 @@ class BooksController extends Controller
                         ->get();
 
         
-        if(isset($_COOKIE['is_logged']) || $_COOKIE['is_logged']==1 ) {
+        if(isset($_COOKIE['is_logged']) && $_COOKIE['is_logged']== 1 ) {
             $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
-            /*$user1 = nguoidungs::where('MaNgDung', $_COOKIE['id'])->get();*/
+            $usercart = DB::table('ctgiohang')
+                        ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+                        ->get();
             return view('index', array(
                 'user1' => $user1,
                 'noibats' => $noibats,
                 'sgks' => $sgks,
-                'thamkhaos' => $thamkhaos
+                'thamkhaos' => $thamkhaos,
+                'usercart' => $usercart
             ));
         } else {
             return view('index', [
                 'noibats' => $noibats,
                 'sgks' => $sgks,
-                'thamkhaos' => $thamkhaos
+                'thamkhaos' => $thamkhaos, 
             ]);
         }
         
     }
 
     public function collections() {
-        $all = DB::table("sach")->get();
-        if(isset($_COOKIE['is_logged']) || $_COOKIE['is_logged']==1 ) {
+        $all = DB::table("saches")->get();
+        if(isset($_COOKIE['is_logged']) && $_COOKIE['is_logged']==1 ) {
             $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
+            $usercart = DB::table('ctgiohang')
+                            ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+                            ->get();
             return view('collections',[
                 'user1' => $user1,
                 'all' => $all,
+                'usercart' => $usercart
             ]);
         }
         else {
@@ -70,7 +76,7 @@ class BooksController extends Controller
         }
     }
     public function home() {
-        $alls = DB::table("sach")
+        $alls = DB::table("saches")
                     ->join("nhaxuatban", "sach.MaNXB", "=", "nhaxuatban.MaNXB")
                     ->get();
         return view('admin',[
@@ -79,14 +85,14 @@ class BooksController extends Controller
     }
 
     public function add() {
-        $alls = DB::table("sach")
+        $alls = DB::table("saches")
         ->join("nhaxuatban", "sach.MaNXB", "=", "nhaxuatban.MaNXB")
         ->get();
         return view('add');
     }
 
     public function amnhac6() {
-        $sgks = DB::table("sach")
+        $sgks = DB::table("saches")
         ->where([
             ["MaLoaiSach", "=", "GK"],
             ["TrangThai", "=", 1,],
@@ -108,56 +114,44 @@ class BooksController extends Controller
     }
 
     public function GK() {
-        $gks = DB::table("sach")
+        $gks = DB::table("saches")
         ->where([
             ["MaLoaiSach", "=", "GK"]
         ])
         ->get();
         if(isset($_COOKIE['is_logged']) || $_COOKIE['is_logged']==1 ) {
             $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
+            $usercart = DB::table('ctgiohang')
+            ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+            ->get();
             return view('GK', [
                 'user1' => $user1,
                 'gks' => $gks,
+                'usercart' => $usercart
             ]);
         }
         else {
             return view('GK', [
-                'gks' => $gks,
-            ]);
-        }
-    }
-
-    public function GD() {
-        $gks = DB::table("sach")
-        ->where([
-            ["MaLoaiSach", "=", "GK"]
-        ])
-        ->get();
-        if(isset($_COOKIE['is_logged']) || $_COOKIE['is_logged']==1 ) {
-            $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
-            return view('GD', [
-                'user1' => $user1,
-                'gks' => $gks,
-            ]);
-        }
-        else {
-            return view('GD', [
                 'gks' => $gks,
             ]);
         }
     }
 
     public function TK() {
-        $tks = DB::table("sach")
+        $tks = DB::table("saches")
         ->where([
             ["MaLoaiSach", "=", "TK"]
         ])
         ->get();
-        if(isset($_COOKIE['is_logged']) || $_COOKIE['is_logged']==1 ) {
+        if(isset($_COOKIE['is_logged']) && $_COOKIE['is_logged']==1 ) {
             $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
+            $usercart = DB::table('ctgiohang')
+            ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+            ->get();
             return view('TK', [
                 'user1' => $user1,
                 'tks' => $tks,
+                'usercart' => $usercart
             ]);
         }
         return view('TK', [
@@ -165,13 +159,37 @@ class BooksController extends Controller
         ]);
     }
 
+    public function GD() {
+        $gks = DB::table("saches")
+        ->where([
+            ["MaLoaiSach", "=", "GK"]
+        ])
+        ->get();
+        if(isset($_COOKIE['is_logged']) && $_COOKIE['is_logged']==1 ) {
+            $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
+            $usercart = DB::table('ctgiohang')
+            ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+            ->get();
+            return view('GD', [
+                'user1' => $user1,
+                'gks' => $gks,
+                'usercart' => $usercart
+            ]);
+        }
+        else {
+            return view('GD', [
+                'gks' => $gks,
+            ]);
+        }
+    }
+
     public function DHQGHN() {
-        $hns = DB::table("sach")
+        $hns = DB::table("saches")
         ->where([
             ["MaNXB", "=", "DHQGHN"]
         ])
         ->get();
-        if(isset($_COOKIE['is_logged']) || $_COOKIE['is_logged']==1 ) {
+        if(isset($_COOKIE['is_logged']) && $_COOKIE['is_logged']==1 ) {
             $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
             return view('DHQGHN', [
                 'user1' => $user1,
@@ -183,12 +201,84 @@ class BooksController extends Controller
         ]);
     }
 
+    public function DN() {
+        $dns = DB::table("saches")
+        ->where([
+            ["MaNXB", "=", "DN"]
+        ])
+        ->get();
+        if(isset($_COOKIE['is_logged']) && $_COOKIE['is_logged']==1 ) {
+            $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
+            $usercart = DB::table('ctgiohang')
+            ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+            ->get();
+            return view('DN', [
+                'user1' => $user1,
+                'dns' => $dns,
+                'usercart' => $usercart
+            ]);
+        }
+        else {
+            return view('DN', [
+                'dns' => $dns,
+            ]);
+        }
+    }
+
+    public function TN() {
+        $tns = DB::table("saches")
+        ->where([
+            ["MaNXB", "=", "TN"]
+        ])
+        ->get();
+        if(isset($_COOKIE['is_logged']) && $_COOKIE['is_logged']==1 ) {
+            $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
+            $usercart = DB::table('ctgiohang')
+            ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+            ->get();
+            return view('TN', [
+                'user1' => $user1,
+                'tns' => $tns,
+                'usercart' => $usercart
+            ]);
+        }
+        else {
+            return view('TN', [
+                'tns' => $tns,
+            ]);
+        }
+    }
+
+    public function THTPHCM() {
+        $thtphcms = DB::table("saches")
+        ->where([
+            ["MaNXB", "=", "THTPHCM"]
+        ])
+        ->get();
+        if(isset($_COOKIE['is_logged']) && $_COOKIE['is_logged']==1 ) {
+            $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
+            $usercart = DB::table('ctgiohang')
+            ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+            ->get();
+            return view('THTPHCM', [
+                'user1' => $user1,
+                'thtphcms' => $thtphcms,
+                'usercart' => $usercart
+            ]);
+        }
+        else {
+            return view('THTPHCM', [
+                'thtphcms' => $thtphcms,
+            ]);
+        }
+    }
+
     public function search(Request $request) {
         $var = $request->search;
         /*$search_value = DB::table('sach')
                         ->where('TenSach', '=', '%' . $var . '%')
                         ->get();*/
-        $search_value = DB::table('sach')
+        $search_value = DB::table('saches')
                         ->where('TenSach', 'LIKE', '%' . $var . '%')
                         ->get();
         if(isset($_COOKIE['is_logged']) || $_COOKIE['is_logged']==1 ) {

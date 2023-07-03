@@ -24,7 +24,7 @@
                         <div class="product-list">
                             
                             @foreach ($gks as $all)
-                            <a href="./collections/sach-giao-khoa/lop-6/am-nhac-va-mi-thuat-lop-6" class="box-product">
+                            <a href="{{route('chitietsach', ['ma' => $all->MaSach, 'tensach' => $all->TenSach, 'loai' => $all->MaLoaiSach])}}" class="box-product">
                                 @if($all->PhanTramGiam != 0)
                                     <div class="product-sale-oustanding ">
                                         <span class="sale-lb img_hover">{{$all->PhanTramGiam * 100}}%</span>

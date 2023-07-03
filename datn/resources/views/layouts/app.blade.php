@@ -25,5 +25,6 @@
 </body>
 
 @include ('index_partials.js')
+@yield('js')
 
 </html>
