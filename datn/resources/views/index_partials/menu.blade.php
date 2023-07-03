@@ -9,23 +9,24 @@
                 <ul>
                     <li>
                         <a class="has-child transition" title="" href="{{route('GK')}}">Sách giáo khoa</a>
-                        <a class="has-child transition" title="" href="{{route('TK')}}">Sách tham khảo</a>
+                        <a class="" title="" href="{{route('TK')}}">Sách tham khảo</a>
                          <ul>
                             <li>
-                                <a class="has-child transition" title=" " href="#"> sản phẩm 2</a>
-                                <a class="has-child transition" title=" " href="#"> sản phẩm 2</a>
-                                <a class="has-child transition" title=" " href="#"> sản phẩm 2</a>
+                                <a class="has-child transition" title=" " href="{{route('c2')}}"> Cấp 2</a>
                                 <ul>
                                     <li>
-                                        <a class="has-child transition" title=" " href="#"> sản phẩm 3</a>
-                                        <a class="has-child transition" title=" " href="#"> sản phẩm 3</a>
-                                        <a class="has-child transition" title=" " href="#"> sản phẩm 3</a>
-                                        <ul>
-                                            <li>
-                                                <a class="transition" title=" " href="#"> sản phẩm 4</a>
-                                                <a class="transition" title=" " href="#"> sản phẩm 4</a>
-                                            </li>
-                                        </ul>
+                                        <a class="has-child transition" title=" " href="{{route('l6')}}"> lớp 6</a>
+                                        <a class="has-child transition" title=" " href="{{route('l7')}}"> lớp 7</a>
+                                        <a class="has-child transition" title=" " href="{{route('l8')}}"> lớp 8</a>
+                                        <a class="has-child transition" title=" " href="{{route('l9')}}"> lớp 9</a>
+                                    </li>
+                                </ul>
+                                <a class="has-child transition" title=" " href="{{route('c3')}}"> Cấp 3</a>
+                                <ul>
+                                    <li>
+                                        <a class="has-child transition" title=" " href="{{route('l10')}}"> lớp 10</a>
+                                        <a class="has-child transition" title=" " href="{{route('l11')}}"> lớp 11</a>
+                                        <a class="has-child transition" title=" " href="{{route('l12')}}"> lớp 12</a>
                                     </li>
                                 </ul>
                             </li>

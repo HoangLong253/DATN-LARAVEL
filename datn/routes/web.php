@@ -127,7 +127,7 @@ Route::get('/collections/tatca', [BooksController::class, 'collections'])->name(
 
 Route::get('/collections/sach-giao-khoa/lop-6/am-nhac-va-mi-thuat-lop-6', [BooksController::class, 'amnhac6'])->name('amnhac6');
 
-Route::get('/collections/{loai}/{tensach}/{ma}', function($loai, $tensach, $ma){
+Route::get('/collections/sach/{loai}/{tensach}/{ma}', function($loai, $tensach, $ma){
     $chitietsach = DB::table('saches')
                         ->join('nhaxuatban', 'saches.MaNXB', '=', 'nhaxuatban.MaNXB')
                         ->where('MaSach', '=', $ma)
@@ -161,16 +161,23 @@ Route::get('/collections/{loai}/{tensach}/{ma}', function($loai, $tensach, $ma){
     ]);
     }
 })->name('chitietsach');
-
 Route::post('/timkiem', [BooksController::class, 'search'])->name('search');
 
-Route::get('/collections/giaokhoa', [BooksController::class, 'GK'])->name('GK');
-
-Route::get('/collections/thamkhao', [BooksController::class, 'TK'])->name('TK');
-
+Route::get('/collections/giao-khoa', [BooksController::class, 'GK'])->name('GK');
+Route::get('/collections/tham-khao', [BooksController::class, 'TK'])->name('TK');
 Route::get('/collections/nha-xuat-ban/giao-duc', [BooksController::class, 'GD'])->name('GD');
-
 Route::get('/collections/nha-xuat-ban/dai-hoc-quoc-gia-ha-noi', [BooksController::class, 'DHQGHN'])->name('DHQGHN');
 Route::get('/collections/nha-xuat-ban/tong-hop-thanh-pho-ho-chi-minh', [BooksController::class, 'THTPHCM'])->name('THTPHCM');
 Route::get('/collections/nha-xuat-ban/dong-nai', [BooksController::class, 'DN'])->name('DN');
 Route::get('/collections/nha-xuat-ban/thanh-nien', [BooksController::class, 'TN'])->name('TN');
+
+Route::get('/collections/giao-khoa/cap-2', [BooksController::class, 'c2'])->name('c2');
+Route::get('/collections/giao-khoa/cap-3', [BooksController::class, 'c3'])->name('c3');
+
+Route::get('/collections/giao-khoa/cap-2/lop-6', [BooksController::class, 'l6'])->name('l6');
+Route::get('/collections/giao-khoa/cap-2/lop-7', [BooksController::class, 'l7'])->name('l7');
+Route::get('/collections/giao-khoa/cap-2/lop-8', [BooksController::class, 'l8'])->name('l8');
+Route::get('/collections/giao-khoa/cap-2/lop-9', [BooksController::class, 'l9'])->name('l9');
+Route::get('/collections/giao-khoa/cap-3/lop-10', [BooksController::class, 'l10'])->name('l10');
+Route::get('/collections/giao-khoa/cap-3/lop-11', [BooksController::class, 'l11'])->name('l11');
+Route::get('/collections/giao-khoa/cap-3/lop-12', [BooksController::class, 'l12'])->name('l12');
