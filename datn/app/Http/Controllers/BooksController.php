@@ -75,14 +75,6 @@ class BooksController extends Controller
             ]);
         }
     }
-    public function home() {
-        $alls = DB::table("saches")
-                    ->join("nhaxuatban", "sach.MaNXB", "=", "nhaxuatban.MaNXB")
-                    ->get();
-        return view('admin',[
-            'alls' => $alls,
-        ]);
-    }
 
     public function add() {
         $alls = DB::table("saches")

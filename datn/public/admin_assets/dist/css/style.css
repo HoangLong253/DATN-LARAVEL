@@ -1,0 +1,7 @@
+/* Login adm */
+
+.wrap-login-adm .wrap-content{margin: 0 auto;text-align: center;}
+.login-box, .register-box {
+   width: 360px;
+   margin: auto;
+}

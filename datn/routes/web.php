@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Request;
 use App\Http\Controllers\BooksController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\DangNhapController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GioithieuController;
 use App\Http\Controllers\TintucController;
 use App\Http\Controllers\DichvuController;
@@ -13,11 +15,10 @@ use App\Http\Controllers\product_detailController;
 use App\Http\Controllers\collectionsController;
 use App\Http\Controllers\AddProductController;
 use App\Http\Controllers\LogregController;
-use App\Http\Controllers\DangNhapController;
 
 use Illuminate\Support\Facades\DB;
 
-Route::get('/admin', [BooksController::class, 'home'])->name('admin');
+Route::get('/admin', [AdminController::class, 'home'])->name('admin');
 
 Route::get('/admin/add', [BooksController::class, 'add'])->name('add');
 
@@ -42,6 +43,16 @@ Route::get('dangxuat', function () {
 Route::post('check_register', [DangNhapController::class, 'check_register'])->name('check_register');
 
 Route::post('check_login', [DangNhapController::class, 'check_login'])->name('check_login');
+
+/*xử lí đăng kí admin*/
+
+Route::post('adm_login', [AdminController::class, 'adm_login'])->name('adm_login');
+
+Route::get('adm_logout', [AdminController::class, 'adm_logout'])->name('adm_logout');
+
+Route::get('admin_login_form', function() {
+    return view('adm_partials.login');
+})->name('admin_login_form');
 
 /* Menu */
 Route::get('gioithieu', function () {
