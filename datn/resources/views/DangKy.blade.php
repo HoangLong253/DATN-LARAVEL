@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-@include ('index_partials.head') 
-<body> 
+@include ('index_partials.head')
+
+<body class="bg-dn">
     <nav class="navbar navbar-light navbar-expand-lg mb-5" style="background-color: #e3f2fd;">
         <div class="container">
             <a class="navbar-brand mr-auto" href="#">Dedicated Dragon BookStore</a>
@@ -22,13 +23,13 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('index') }}">Trang chủ</a>
-                    </li> 
-                    @else 
+                    </li>
+                    @else
                     <li class="nav-item">
                         <a class="nav-link" href="#">Đăng Xuất</a>
-                    </li> 
+                    </li>
                     @endguest
-                </ul>  
+                </ul>
             </div>
         </div>
     </nav>
@@ -187,50 +188,50 @@
             </div>
 
         </div> -->
-        
-        
 
 
 
-        
+
+
+
     </div>
-    
-     
-     
-    
+
+
+
+
 </body>
 <script>
-    $('.owl-product').owlCarousel({
-        loop: true,
-        margin: 10,
-        nav: false,
-        responsive: {
-            0: {
-                items: 4
-            },
-        }
-    })
+$('.owl-product').owlCarousel({
+    loop: true,
+    margin: 10,
+    nav: false,
+    responsive: {
+        0: {
+            items: 4
+        },
+    }
+})
 </script>
 <script>
-    //<![QUANTITYPICK[
-    $('input.input-qty').each(function () {
-        var $this = $(this),
-            qty = $this.parent().find('.is-form'),
-            min = Number($this.attr('min')),
-            max = Number($this.attr('max'))
-        if (min == 0) {
-            var d = 0
-        } else d = min
-        $(qty).on('click', function () {
-            if ($(this).hasClass('minus')) {
-                if (d > min) d += -1
-            } else if ($(this).hasClass('plus')) {
-                var x = Number($this.val()) + 1
-                if (x <= max) d += 1
-            }
-            $this.attr('value', d).val(d)
-        })
+//<![QUANTITYPICK[
+$('input.input-qty').each(function() {
+    var $this = $(this),
+        qty = $this.parent().find('.is-form'),
+        min = Number($this.attr('min')),
+        max = Number($this.attr('max'))
+    if (min == 0) {
+        var d = 0
+    } else d = min
+    $(qty).on('click', function() {
+        if ($(this).hasClass('minus')) {
+            if (d > min) d += -1
+        } else if ($(this).hasClass('plus')) {
+            var x = Number($this.val()) + 1
+            if (x <= max) d += 1
+        }
+        $this.attr('value', d).val(d)
     })
+})
 //]]>
 </script>
 
