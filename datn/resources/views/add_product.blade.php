@@ -630,10 +630,10 @@
 <div class="form-add-top">
     <div class="title-name1">Thông tin tài khoản</div>
     <div>Quản lý thông tin hồ sơ để bảo mật tài khoản</div>
-    <div class="flex-user-infor">
+    <form class="flex-user-infor" action> 
         <div class="user-infor-detail">
             <label for>Tên đăng nhập:</label><span> kyter39</span>
-            <form action>
+            
                 <div class="form-group">
                     <!-- Set khi đăng nhập r thì hiện thông tin vào form sửa thì click vào r đổi thôi -->
                     <label for>Họ và tên: </label>
@@ -667,7 +667,7 @@
                     <button type="submit" class="btn btn-danger">Hủy</button>
                 </div>
 
-            </form>
+             
 
         </div>
         <div class="user-infor-img">
@@ -679,11 +679,11 @@
             <form action="#">
                 <input type="file" id="myFile" name="filename">
                 <div>Dụng lượng file tối đa 1 MB
-                    Định dạng:.JPEG, .PNG</div>
+                    Định dạng:.JPEG, .PNG</div> 
             </form>
             
         </div>
-    </div>
+    </form>
 </div>
 <!--  -->
 @endsection
