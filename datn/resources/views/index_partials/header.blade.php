@@ -1,4 +1,4 @@
-<div class="header-banner wow animate__fadeInLeft" data-wow-duration="2s""">
+<div class="header-banner wow animate__fadeInLeft" data-wow-duration="2s">
     <img src="{{asset('assets/images/slideshow/bannerheader.png')}}" alt="">
 </div>
 <!--  -->
@@ -75,7 +75,7 @@
 
                             </ul>
                             <div class="header__notify-footer">
-                                <a href="" class="header__notify-footer-btn">Xem tất cả</a>
+                                <a href="{{route('tintuc')}}" class="header__notify-footer-btn">Xem tất cả</a>
                             </div>
                         </div>
 
@@ -158,13 +158,23 @@
                 <div class="header__cart">
                     <a href="{{route('giohang')}}">
                         <div class="header__cart-wrap"><i class="header__cart-icon fa-solid fa-cart-shopping"></i>
-                            <!--<span class="header__cart-notice">
-                                0
-                            </span>-->
+                            <span class="header__cart-notice">
+                                @php
+                                if(isset($_COOKIE['is_logged']) && $_COOKIE['is_logged']==1 ){
+                                    echo count($usercart);
+                                } else if(session('cart') != null) {
+                                    echo count(session('cart'));
+                                } else {
+                                    echo 0;
+                                }
+                                @endphp
+                            </span>
+
                         </div>
+
                             <!-- No cart: header__cart-list-no-cart-->
                         <div class="header__cart-list-no-cart">
-
+                            
                         </div>
                     </a>
                 </div>

@@ -10,7 +10,7 @@
                     </a>
                 </div>
                 <div>
-                    <a href="#">
+                    <a href="{{route('DN')}}">
                         <img class="scale-img img_hover" src="{{asset('assets/images/doi-tac/DN.jpg')}}" alt="">
                     </a>
                 </div>
@@ -20,12 +20,12 @@
                     </a>
                 </div>
                 <div>
-                    <a href="#">
+                    <a href="{{route('THTPHCM')}}">
                         <img class="scale-img img_hover" src="{{asset('assets/images/doi-tac/THTPHCM.jpg')}}" alt="">
                     </a>
                 </div>
                 <div>
-                    <a href="#">
+                    <a href="{{route('TN')}}">
                         <img class="scale-img img_hover" src="{{asset('assets/images/doi-tac/TN.jpg')}}" alt="">
                     </a>
                 </div>

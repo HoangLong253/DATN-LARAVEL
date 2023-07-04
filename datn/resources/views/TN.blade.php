@@ -11,8 +11,9 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="{{route('index')}}">Trang chủ</a></li>
-                  <li class="breadcrumb-item"><a href="{{route('collections')}}">Danh mục</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Sách tham khảo</li>
+                  <li class="breadcrumb-item"><a href="{{route('collections')}}">Sản phẩm</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Nhà xuât bản</li>
+                  <li class="breadcrumb-item active" aria-current="page">Thanh Niên</li> 
                 </ol>
             </nav>
                 
@@ -22,7 +23,7 @@
                     <div class="wrap-content">
                         <div class="product-list">
                             
-                            @foreach ($tks as $all)
+                            @foreach ($tns as $all)
                             <a href="{{route('chitietsach', ['ma' => $all->MaSach, 'tensach' => $all->TenSach, 'loai' => $all->MaLoaiSach])}}" class="box-product">
                                 @if($all->PhanTramGiam != 0)
                                     <div class="product-sale-oustanding ">

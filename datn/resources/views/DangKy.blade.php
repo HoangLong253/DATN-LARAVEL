@@ -5,7 +5,7 @@
 <body class="bg-dn">
     <nav class="navbar navbar-light navbar-expand-lg mb-5" style="background-color: #e3f2fd;">
         <div class="container">
-            <a class="navbar-brand mr-auto" href="#">Dedicated Dragon BookStore</a>
+            <a class="navbar-brand mr-auto" href="#">TL BookStore</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -118,14 +118,14 @@
             @error('phone')
                 <p class="">{{ $message }}</p>
             @enderror
-            <label>Địa chỉ</label>
+            <!--<label>Địa chỉ</label>
             <div class="input-group input-user">
                 <div class="input-group-prepend">
                     <div class="input-group-text"><i class="fa fa-map"></i></div>
                 </div>
                 <input type="text" class="form-control text-sm" id="address" name="address" placeholder="Nhập địa chỉ của bạn" value="" required="">
             <div class="invalid-feedback">Vui lòng nhập địa chỉ</div>
-            </div>
+            </div>-->
             <div class="button-user">
                 <input type="submit" class="btn btn-primary btn-block" name="check-register" value="Đăng ký">
             </div>

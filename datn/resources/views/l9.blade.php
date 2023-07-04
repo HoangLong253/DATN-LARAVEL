@@ -11,18 +11,18 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="{{route('index')}}">Trang chủ</a></li>
-                  <li class="breadcrumb-item"><a href="{{route('collections')}}">Danh mục</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Sách tham khảo</li>
+                  <li class="breadcrumb-item" aria-current="page"><a href="{{route('GK')}}">Sách giáo khoa</a></li>
+                  <li class="breadcrumb-item" aria-current="page">Cấp 2</li>
                 </ol>
             </nav>
-                
-            <!--Bên phải-->         
-            <div class="all-right">
-                <div class="wrap-product padding50">
-                    <div class="wrap-content">
-                        <div class="product-list">
-                            
-                            @foreach ($tks as $all)
+            <div class="wrap-main">
+                <div class="wrap-content">
+                    <div class="title-main">
+                        Lớp 9
+                    </div>
+                    <div class="content-main">
+                        <div class="grid-product">
+                            @foreach ($l9s as $all)
                             <a href="{{route('chitietsach', ['ma' => $all->MaSach, 'tensach' => $all->TenSach, 'loai' => $all->MaLoaiSach])}}" class="box-product">
                                 @if($all->PhanTramGiam != 0)
                                     <div class="product-sale-oustanding ">
@@ -30,7 +30,7 @@
                                     </div>
                                 @endif
                                 <div class=" scale-img img_hover">
-                                    <img alt="ảnh lỗi" src="{{ asset('./assets/images/sach/' . $all->MaLoaiSach . '/' . $all->HinhAnh)}}"
+                                    <img alt="ảnh lỗi" src="{{ asset('assets/images/sach/' . $all->MaLoaiSach . '/' . $all->HinhAnh)}}"
                                     width="200" height="300"></img>
                                 </div>
                                 <div class="infor-product">
@@ -48,7 +48,7 @@
                             </a>
                             @endforeach
                         </div>
-                    </div>
-                 </div>
+                     </div>
+                </div>
             </div>
 @endsection
