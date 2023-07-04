@@ -42,6 +42,7 @@ Route::post('check_login', [DangNhapController::class, 'check_login'])->name('ch
 
 /*xử lí admin*/
 Route::get('/admin/trang-chu', [AdminController::class, 'home'])->name('admin');
+Route::get('/admin', [AdminController::class, 'home'])->name('admin');
 
 Route::post('adm_login', [AdminController::class, 'adm_login'])->name('adm_login');
 
@@ -60,8 +61,6 @@ Route::get('/admin/nguoi-dung', [AdminController::class, 'user'])->name('admin_u
 Route::get('/admin/loai-sach', [AdminController::class, 'product_type'])->name('admin_product_type');
 
 Route::get('/admin/nha-xuat-ban', [AdminController::class, 'publisher'])->name('admin_publisher');
-
-
 
 Route::get('/admin/hoa-don-nhap', [AdminController::class, 'invoice_import'])->name('admin_invoice_import');
 

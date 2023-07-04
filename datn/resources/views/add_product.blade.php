@@ -18,17 +18,12 @@
 @section('main_content')
                     <!-- Thêm sản phẩm -->
                     <div class="form-add-top">
-                        <div class="title-name1">Thông tin cơ bản</div>
                         <div class="box-info">
                             <div class="whole-box-sp-img">
                                 <div class="title-name2">Hình ảnh sản phẩm</div>
-                                <div class="box-add-img">
-                                    Hình ảnh sản phẩm
-                                </div>
-                                <div>Width: 260 px - Height: 300 px (.jpg|.gif|.png|.jpeg|.gif)</div>
-                                <form action="/action_page.php">
+                                <!--<div>Width: 260 px - Height: 300 px (.jpg|.gif|.png|.jpeg|.gif)</div>-->
+                                <form action="#">
                                     <input type="file" id="myFile" name="filename">
-                                    <input type="submit">
                                 </form>
                             </div>
                             <div class="whole-box-sp-info">
@@ -89,11 +84,11 @@
                                 <input type="file" id="myFile" name="filename">
                                 <input type="submit">
                             </form>
-                            <div class="title-name1">Hình ảnh đọc thử</div>
+                            <!--<div class="title-name1">Hình ảnh đọc thử</div>
                             <form action="/action_page.php">
                                 <input type="file" id="myFile" name="filename">
                                 <input type="submit">
-                            </form>
+                            </form>-->
                             <!-- Thao tác -->
                             <div class="flex-control">
                                 <div class="form-check">

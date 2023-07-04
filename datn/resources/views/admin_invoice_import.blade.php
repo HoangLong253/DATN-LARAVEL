@@ -46,10 +46,13 @@
                     </td>
                     @endif
                     <td>
-                      <a id="update_btn" href="#" class="mr-3 func_icon !important" title="Update Record"
+                      <a id="update_btn" href="#" class="mr-3 func_icon !important" title="Cập nhật"
                           data-toggle="tooltip"><span class="fa fa-pen"></span></a>
-                      <a id="del_btn" href="#" title="Delete Record"
+                      <a id="del_btn" href="#" title="Xoá"
                           data-toggle="tooltip"><span class="fa fa-trash"></span></a>
+                        <a href="#"  title="Dẫn qua chi tiết">
+                            <span class="fa fa-long-arrow-alt-right"></span>
+                        </a>
                     </td>
                 </tr>
             @endforeach
