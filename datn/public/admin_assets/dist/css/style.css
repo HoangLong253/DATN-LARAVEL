@@ -25,3 +25,7 @@
  .flex-user-infor{width: 80%;margin: auto;}
  .box-user-infor-img{border-radius: 100%;width: 200px;height: 200px;}
  .box-user-infor-img img{border-radius: 100%;width: 200px;height: 200px;}
+ .flex-infor-bill{display: flex;justify-content: space-between;gap: 30px;}
+ .infor-bill{width: 50%;}
+ .grid-product-inbill-list{display: grid;grid-template-columns: repeat(5,1fr);gap: 10px;}
+ 

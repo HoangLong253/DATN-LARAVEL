@@ -630,44 +630,42 @@
 <div class="form-add-top">
     <div class="title-name1">Thông tin tài khoản</div>
     <div>Quản lý thông tin hồ sơ để bảo mật tài khoản</div>
-    <form class="flex-user-infor" action> 
+    <form class="flex-user-infor" action>
         <div class="user-infor-detail">
             <label for>Tên đăng nhập:</label><span> kyter39</span>
-            
-                <div class="form-group">
-                    <!-- Set khi đăng nhập r thì hiện thông tin vào form sửa thì click vào r đổi thôi -->
-                    <label for>Họ và tên: </label>
-                    <input type="id" class="form-control"
-                        id
-                        aria-describedby="<!--  -->"
-                        placeholder="Nhập họ và tên">
-                    <small id="<!--  -->"
-                        class="form-text text-muted"></small>
-                </div>
-                <div class="form-group">
-                    <label for>Email: </label>
-                    <input type="id" class="form-control"
-                        id
-                        aria-describedby="<!--  -->"
-                        placeholder="Nhập email">
-                    <small id="<!--  -->"
-                        class="form-text text-muted"></small>
-                </div>
-                <div class="form-group">
-                    <label for>Số điện thoại: </label>
-                    <input type="id" class="form-control"
-                        id
-                        aria-describedby="<!--  -->"
-                        placeholder="Nhập số điện thoại">
-                    <small id="<!--  -->"
-                        class="form-text text-muted"></small>
-                </div>
-                <div class="flex-btn">
-                    <button type="submit" class="btn btn-success">Thay đổi</button>
-                    <button type="submit" class="btn btn-danger">Hủy</button>
-                </div>
 
-             
+            <div class="form-group">
+                <!-- Set khi đăng nhập r thì hiện thông tin vào form sửa thì click vào r đổi thôi -->
+                <label for>Họ và tên: </label>
+                <input type="id" class="form-control"
+                    id
+                    aria-describedby="<!--  -->"
+                    placeholder="Nhập họ và tên">
+                <small id="<!--  -->"
+                    class="form-text text-muted"></small>
+            </div>
+            <div class="form-group">
+                <label for>Email: </label>
+                <input type="id" class="form-control"
+                    id
+                    aria-describedby="<!--  -->"
+                    placeholder="Nhập email">
+                <small id="<!--  -->"
+                    class="form-text text-muted"></small>
+            </div>
+            <div class="form-group">
+                <label for>Số điện thoại: </label>
+                <input type="id" class="form-control"
+                    id
+                    aria-describedby="<!--  -->"
+                    placeholder="Nhập số điện thoại">
+                <small id="<!--  -->"
+                    class="form-text text-muted"></small>
+            </div>
+            <div class="flex-btn">
+                <button type="submit" class="btn btn-success">Thay đổi</button>
+                <button type="submit" class="btn btn-danger">Hủy</button>
+            </div>
 
         </div>
         <div class="user-infor-img">
@@ -679,11 +677,82 @@
             <form action="#">
                 <input type="file" id="myFile" name="filename">
                 <div>Dụng lượng file tối đa 1 MB
-                    Định dạng:.JPEG, .PNG</div> 
+                    Định dạng:.JPEG, .PNG</div>
             </form>
-            
+
         </div>
     </form>
+</div>
+<!-- Thông tin đơn hàng -->
+<div class="form-add-top">
+    <div class="title-name1">Thông tin đơn hàng</div>
+    <div class="title-bill">ĐƠN HÀNG: <span class="id-bill">#008000</span>, ĐẶT
+        LÚC: <span class="time-bill">10 06, 2023 09:05SA</span></div>
+    <div class="flex-infor-bill">
+        <div class="infor-bill">
+            <div class="title-name2">Địa chỉ nhận thanh toán</div>
+            <div class="infor-bill-item">
+                Tình trạng thanh toán: <span>paid</span>
+            </div>
+            <div class="infor-bill-item">Âu Dương Hoàng Long </div>
+            <div class="infor-bill-item">39/8 Nhất Chi Mai, P13, Tân Bình, Tp,
+                HCM</div>
+            <div class="infor-bill-item">Vietnam</div>
+            <div class="infor-bill-item">0768848015</div>
+        </div>
+        <div class="infor-bill">
+            <div class="title-name2">Địa chỉ gửi hàng</div>
+            <div class="infor-bill-item">
+                Vận chuển: <span>fullfield</span>
+            </div>
+            <div class="infor-bill-item">Âu Dương Hoàng Long </div>
+            <div class="infor-bill-item">39/8 Nhất Chi Mai, P13, Tân Bình, Tp,
+                HCM</div>
+            <div class="infor-bill-item">Vietnam</div>
+            <div class="infor-bill-item">0768848015</div>
+        </div>
+    </div>
+    <div class="grid-product-inbill-list">
+        <div class="gridspname">
+            <div class="title-name2">Sản phẩm</div>
+            <div class="grid-product-inbill-list-info">
+                <div>Thương nhớ trà long</div>
+                <div>Tiểu thuyết</div>
+            </div>
+            <div class="grid-product-inbill-list-info">
+                <div>Thương nhớ trà long2</div>
+                <div>Tiểu thuyết2</div>
+            </div>
+        </div>
+        <div class="gridspid">
+            <div class="title-name2">Mã sản phẩm</div>
+            <div class="grid-product-inbill-list-info">
+                <div>#008000</div>
+                <div>#00800das0</div>
+            </div>
+        </div>
+        <div class="gridspprice">
+            <div class="title-name2">Giá</div>
+            <div class="grid-product-inbill-list-info">
+                <div>30000đ </div>
+                <div>50000đ </div>
+            </div>
+        </div>
+        <div class="gridspquanty">
+            <div class="title-name2">Số lượng</div>
+            <div class="grid-product-inbill-list-info">
+                <div>3</div>
+                <div>2</div>
+            </div>
+        </div>
+        <div class="gridsptotalprice">
+            <div class="title-name2">Tổng cộng</div>
+            <div class="grid-product-inbill-list-info">
+                <div>90000đ</div>
+                <div>60000đ</div>
+            </div>
+        </div>
+    </div>
 </div>
 <!--  -->
 @endsection
