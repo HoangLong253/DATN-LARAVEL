@@ -336,3 +336,19 @@ figure:hover figcaption{box-shadow:0 20px 15px -10px hsla(0,0%,0%,.25);backgroun
    width: 360px;
    margin: auto;
 }
+
+.box-info{display: flex;justify-content: space-between;}
+.box-add-img{background: #ccc;width: 260px;height: 300px;margin: 25px;}
+.whole-box-sp-info {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+    width: 70%;
+}
+.flex-btn{display: flex;justify-content: flex-end;gap: 20px;}
+.form-add-top {
+    width: 1200px;
+    margin: auto;
+}
+/* Form add nhân viên*/
+.form-add-staff{width: 500px;}

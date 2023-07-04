@@ -169,10 +169,12 @@
                                 }
                                 @endphp
                             </span>
+
                         </div>
+
                             <!-- No cart: header__cart-list-no-cart-->
                         <div class="header__cart-list-no-cart">
-
+                            
                         </div>
                     </a>
                 </div>

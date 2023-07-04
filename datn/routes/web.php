@@ -18,10 +18,6 @@ use App\Http\Controllers\LogregController;
 
 use Illuminate\Support\Facades\DB;
 
-Route::get('/admin', [AdminController::class, 'home'])->name('admin');
-
-Route::get('/admin/add', [BooksController::class, 'add'])->name('add');
-
 Route::get('/', [BooksController::class, 'index'])->name('index');
 
 /* Login -Regis */
@@ -44,15 +40,46 @@ Route::post('check_register', [DangNhapController::class, 'check_register'])->na
 
 Route::post('check_login', [DangNhapController::class, 'check_login'])->name('check_login');
 
-/*xử lí đăng kí admin*/
+/*xử lí admin*/
+Route::get('/admin/trang-chu', [AdminController::class, 'home'])->name('admin');
 
 Route::post('adm_login', [AdminController::class, 'adm_login'])->name('adm_login');
 
 Route::get('adm_logout', [AdminController::class, 'adm_logout'])->name('adm_logout');
 
-Route::get('admin_login_form', function() {
+Route::get('/admin/login', function() {
     return view('adm_partials.login');
 })->name('admin_login_form');
+
+Route::get('/admin/sach', [AdminController::class, 'product'])->name('admin_product');
+
+Route::get('/admin/nhan-vien', [AdminController::class, 'employee'])->name('admin_employee');
+
+Route::get('/admin/nguoi-dung', [AdminController::class, 'user'])->name('admin_user');
+
+Route::get('/admin/loai-sach', [AdminController::class, 'product_type'])->name('admin_product_type');
+
+Route::get('/admin/nha-xuat-ban', [AdminController::class, 'publisher'])->name('admin_publisher');
+
+
+
+Route::get('/admin/hoa-don-nhap', [AdminController::class, 'invoice_import'])->name('admin_invoice_import');
+
+
+
+Route::get('/admin/hoa-don-ban', [AdminController::class, 'invoice_sale'])->name('admin_invoice_sale');
+
+
+
+Route::get('/admin/bang-tin', [AdminController::class, 'user'])->name('admin_user');
+
+Route::get('/admin/san-pham/them-san-pham', [AdminController::class, 'add_product'])->name('add_product');
+
+Route::get('/admin/san-pham/them-nhan-vien', [AdminController::class, 'add_empl'])->name('add_employee');
+
+Route::get('/admin/san-pham/them-loai-sach', [AdminController::class, 'add_product_type'])->name('add_product_type');
+
+Route::get('/admin/san-pham/them-nha-xuat-ban', [AdminController::class, 'add_publisher'])->name('add_publisher');
 
 /* Menu */
 Route::get('gioithieu', function () {
