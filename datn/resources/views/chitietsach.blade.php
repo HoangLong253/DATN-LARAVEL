@@ -60,8 +60,7 @@
                 <li class="breadcrumb-item active" aria-current="page">{{$chitietsach[0]->TenSach}}</li>
             </ol>
         </nav>
-    </div>
-    <div class="wrap-product-whole">
+        <div class="wrap-product-whole">
         <div class="product-images-info">
             <div class="img-product">
                 <div class="img-main-product">
@@ -280,14 +279,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="wrap-product-same-grid grid-4">
-
-
-                </div>
+                 
             </div>
 
         </div>
     </div>
+    </div>
+    
 @endsection
 @section('js')
     <script>

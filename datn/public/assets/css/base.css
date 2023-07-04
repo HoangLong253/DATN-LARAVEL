@@ -148,7 +148,7 @@ to{transform:scale(var(--growth-to));}
 .js-facebook-messenger-box.open svg#close-icon{opacity:1}
 
 /* Cart Fix */
-.cart-fixed{position:fixed;right:20px;bottom:390px;z-index:10;background:#4b4f56;width:50px;height:50px;text-align:center;color:#fff!important;border-radius:100%;display:flex;align-items:center;justify-content:center;}
+.cart-fixed{position:fixed;right: 35px;bottom: 100px;z-index:10;background:#4b4f56;width:50px;height:50px;text-align:center;color:#fff!important;border-radius:100%;display:flex;align-items:center;justify-content:center;}
 .cart-fixed i{font-size:20px;}
 .cart-fixed span{position:absolute;top:0px;right:-5px;color:#ffffff;width:25px;height:25px;background:var(--color-red);text-align:center;line-height:25px;font-size:11px;border-radius:100%;}
   

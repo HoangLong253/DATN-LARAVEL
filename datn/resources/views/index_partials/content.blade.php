@@ -12,7 +12,7 @@
                     </div>
                     @endif
                     <div class=" scale-img img_hover">
-                        <img alt="ảnh lỗi" src="{{ asset('assets/images/sach/GK/' . $noibat->HinhAnh)}}" width="200"
+                        <img alt="ảnh lỗi" src="{{ asset('assets/images/sach/' . $noibat->MaLoaiSach . '/' . $noibat->HinhAnh)}}" width="200"
                             height="300"></img>
                     </div>
                     <div class="infor-product">

@@ -311,7 +311,7 @@ figure:hover figcaption{box-shadow:0 20px 15px -10px hsla(0,0%,0%,.25);backgroun
 .support-online a:hover span{display:block;}
 .support-online a span:before{content:"";width:0;height:0;border-style:solid;border-width:10px 10px 10px 0;border-color:transparent #009EFF transparent transparent;position:absolute;left:-10px;top:10px;}
 /* Header */
- a:hover{color:yellow !important;}
+ 
 .header-banner{width:100%;}
 .header-banner img{width:100%;}
 /* Text Hide */

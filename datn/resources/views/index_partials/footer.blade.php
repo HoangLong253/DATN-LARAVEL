@@ -55,7 +55,19 @@
             width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
-
+    <!-- Cart -->
+    <a class="cart-fixed text-decoration-none" href="{{route('giohang')}}" title="Giỏ hàng">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="count-cart">@php
+                                if(isset($_COOKIE['is_logged']) && $_COOKIE['is_logged']==1 ){
+                                    echo count($usercart);
+                                } else if(session('cart') != null) {
+                                    echo count(session('cart'));
+                                } else {
+                                    echo 0;
+                                }
+                                @endphp </span>
+    </a>
     <!-- Back to top btn -->
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
@@ -87,12 +99,12 @@
             <i class="fa-solid fa-user-tie"></i>
         </a>
     </div>
-    
+
 </div>
 <!--  -->
- <!-- Messenger Chat Plugin Code -->
- <div id="fb-root"></div>
+<!-- Messenger Chat Plugin Code -->
+<div id="fb-root"></div>
 
- <!-- Your Chat Plugin code -->
- <div id="fb-customer-chat" class="fb-customerchat">
- </div>
+<!-- Your Chat Plugin code -->
+<div id="fb-customer-chat" class="fb-customerchat">
+</div>
