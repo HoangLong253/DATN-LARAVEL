@@ -25,27 +25,28 @@
                         DANH MỤC SẢN PHẨM
                     </div>
                     <ul>
-                        <li>
+                        <li class="danhmuc-sp-list-item">
                             <a href="">Trinh thám - kinh dị</a>
                         </li>
-                        <li>
+                        <li class="danhmuc-sp-list-item">
                             <a href="">Trinh thám - kinh dị</a>
                         </li>
-                        <li>
+                        <li class="danhmuc-sp-list-item">
                             <a href="">Trinh thám - kinh dị</a>
                         </li>
-                        <li>
+                        <li class="danhmuc-sp-list-item">
                             <a href="">Trinh thám - kinh dị</a>
                         </li>
-                        <li>
+                        <li class="danhmuc-sp-list-item">
                             <a href="">Trinh thám - kinh dị</a>
                         </li>
-                        <li>
+                        <li class="danhmuc-sp-list-item">
                             <a href="">Trinh thám - kinh dị</a>
                         </li>
-                        <li>
+                        <li class="danhmuc-sp-list-item">
                             <a href="">Trinh thám - kinh dị</a>
                         </li>
+                         
     
                     </ul>
                 </div>   
