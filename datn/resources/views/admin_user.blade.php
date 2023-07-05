@@ -20,7 +20,7 @@
         <tr>
             <th>Mã Người Dùng</th>
             <th>Mã Giỏ Hàng</th>
-            <th>Họ Tên</th>
+            <th>Họ Tên Người Dùng</th>
             <th>SĐT</th>
             <th>Địa Chỉ</th>
             <th>Trạng Thái</th>
@@ -32,9 +32,9 @@
         <tr>
             <td> {{$all->MaNgDung}} </td>
             <td> {{$all->MaGioHang}} </td>
-            <td> {{$all->HoTen}} </td>
+            <td class="chuhoa"> {{$all->HoTenND}} </td>
             <td> {{$all->SDT}} </td>
-            <td> {{$all->DiaChi}} </td>
+            <td class="chuhoa"> {{$all->DiaChi}} </td>
             @if($all->TrangThai)
             <td>
                 <input type="checkbox" id="TrangThai" name="TrangThai" value="yes" checked

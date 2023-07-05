@@ -22,7 +22,7 @@
     <thead>
         <tr>
             <th>Mã Nhân Viên</th>
-            <th>Họ Tên</th>
+            <th>Họ Tên Nhân Viên</th>
             <th>SĐT</th>
             <th>Trạng Thái</th>
             <th>Là Admin</th>
@@ -33,7 +33,7 @@
         @foreach($alls as $all)
         <tr>
             <td> {{$all->MaNV}} </td>
-            <td> {{$all->HoTen}} </td>
+            <td> {{$all->HoTenNV}} </td>
             <td> {{$all->SDT}} </td>
             @if($all->TrangThai)
             <td>

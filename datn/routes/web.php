@@ -64,7 +64,9 @@ Route::get('/admin/nha-xuat-ban', [AdminController::class, 'publisher'])->name('
 
 Route::get('/admin/hoa-don-nhap', [AdminController::class, 'invoice_import'])->name('admin_invoice_import');
 
+Route::get('chi-tiet-hoa-don-ban/{id}', [AdminController::class, 'invoice_detail_sale'])->name('admin_invoice_detail_sale');
 
+Route::get('chi-tiet-hoa-don-nhap/{id}', [AdminController::class, 'invoice_detail_import'])->name('admin_invoice_detail_import');
 
 Route::get('/admin/hoa-don-ban', [AdminController::class, 'invoice_sale'])->name('admin_invoice_sale');
 

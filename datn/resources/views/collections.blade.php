@@ -41,7 +41,7 @@
                                     <div class="price-product">@convert($all->DonGia - ($all->DonGia * $all->PhanTramGiam),0)đ</div> 
                                     <div class="price-product"><del>@convert($all->DonGia,0)đ</del></div> 
                                 @else
-                                    <div class="name-product">{{$all->TenSach}}</div>
+                                    <div class="name-product chuhoa">{{$all->TenSach}}</div>
                                     <div class="price-product">@convert($all->DonGia,0)đ</div>
                                 @endif
                                 

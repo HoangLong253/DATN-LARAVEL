@@ -16,7 +16,7 @@
                     alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">{{ $admin[0]->HoTen }}</a>
+                <a href="#" class="d-block">{{ $admin[0]->HoTenNV }}</a>
             </div>
         </div>
 
@@ -64,7 +64,7 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{ route('admin_user') }}" class="nav-link">
-                                <i class="nav-icon"></i>
+                                <i class="nav-icon fas "></i>
                                 <p>
                                     Người dùng
                                 </p>
@@ -72,7 +72,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('admin_employee') }}" class="nav-link">
-                                <i class="nav-icon"></i>
+                                <i class="nav-icon fas "></i>
                                 <p>
                                     Nhân viên
                                 </p>
@@ -80,7 +80,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('admin_product') }}" class="nav-link">
-                                <i class="nav-icon"></i>
+                                <i class="nav-icon fas "></i>
                                 <p>
                                     Sách
                                 </p>
@@ -88,7 +88,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('admin_product_type') }}" class="nav-link">
-                                <i class="nav-icon"></i>
+                                <i class="nav-icon fas "></i>
                                 <p>
                                     Loại sách
                                 </p>
@@ -96,7 +96,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('admin_publisher') }}" class="nav-link">
-                                <i class="nav-icon"></i>
+                                <i class="nav-icon fas "></i>
                                 <p>
                                     Nhà xuất bản
                                 </p>
@@ -104,7 +104,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('admin_employee') }}" class="nav-link">
-                                <i class="nav-icon"></i>
+                                <i class="nav-icon fas "></i>
                                 <p>
                                     Bảng tin
                                 </p>

@@ -40,8 +40,8 @@
                     src="{{ asset('./assets/images/sach/' . $all->MaLoaiSach . '/' . $all->HinhAnh)}}"
                     width="70" height="100"></img>
             </td>
-            <td> {{$all->TenSach}} </td>
-            <td> {{$all->TenNXB}} </td>
+            <td class="chuhoa"> {{$all->TenSach}} </td>
+            <td class="chuhoa"> {{$all->TenNXB}} </td>
             @if($all->NoiBat)
             <td>
                 <input type="checkbox" id="NoiBat" name="NoiBat" value="yes" checked

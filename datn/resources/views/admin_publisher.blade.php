@@ -31,7 +31,7 @@
         @foreach($alls as $all)
         <tr>
             <td> {{$all->MaNXB}} </td>
-            <td> {{$all->TenNXB}} </td>
+            <td class="chuhoa"> {{$all->TenNXB}} </td>
             @if($all->TrangThai)
             <td>
                 <input type="checkbox" id="TrangThai" name="TrangThai" value="yes" checked

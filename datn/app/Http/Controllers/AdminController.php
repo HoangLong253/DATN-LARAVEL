@@ -177,7 +177,10 @@ class AdminController extends Controller
     }
 
     public function invoice_sale() {
-        $alls = DB::table('hoadonban')->get();
+        $alls = DB::table('hoadonban')
+                    ->join('nhanvien', 'hoadonban.MaNV', '=', 'nhanvien.MaNV')
+                    ->join('nguoidung', 'hoadonban.MaNgDung', '=', 'nguoidung.MaNgDung')
+                    ->get();
         if(isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged']== 1 ) {
             $admin = DB::table("nhanvien")
                         ->where('MaNV', '=', $_COOKIE['id'])
@@ -191,12 +194,49 @@ class AdminController extends Controller
         }
     }
     public function invoice_import() {
-        $alls = DB::table('hoadonnhap')->get();
+        $alls = DB::table('hoadonnhap')
+                    ->join('nhanvien', 'hoadonnhap.MaNV', '=', 'nhanvien.MaNV')
+                    ->get();
         if(isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged']== 1 ) {
             $admin = DB::table("nhanvien")
                         ->where('MaNV', '=', $_COOKIE['id'])
                         ->get();
             return view('admin_invoice_import',[
+                'alls' => $alls,
+                'admin' => $admin
+            ]);
+        } else {
+            return view('adm_partials.login');
+        }
+    }
+
+    public function invoice_detail_sale($id) {
+        $alls = DB::table('cthoadonban')
+                    ->join('saches', 'cthoadonban.MaSach', '=', 'saches.MaSach')
+                    ->where('MaHDBan', '=', $id)
+                    ->get();
+        if(isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged']== 1 ) {
+            $admin = DB::table("nhanvien")
+                        ->where('MaNV', '=', $_COOKIE['id'])
+                        ->get();
+            return view('admin_invoice_detail_sale',[
+                'alls' => $alls,
+                'admin' => $admin
+            ]);
+        } else {
+            return view('adm_partials.login');
+        }
+    }
+    public function invoice_detail_import($id) {
+        $alls = DB::table('cthoadonnhap')
+                        ->join('saches', 'cthoadonnhap.MaSach', '=', 'saches.MaSach')   
+                        ->where('MaHDNhap', '=', $id)
+                        ->get();
+        if(isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged']== 1 ) {
+            $admin = DB::table("nhanvien")
+                        ->where('MaNV', '=', $_COOKIE['id'])
+                        ->get();
+            return view('admin_invoice_detail_import',[
                 'alls' => $alls,
                 'admin' => $admin
             ]);
