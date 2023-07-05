@@ -12,7 +12,7 @@
         </ol>
       </div>
       <div>
-        <a href="{{route('add_employee')}}" class="btn btn-success pull-right"><i class="fa fa-plus"></i>Thêm</a>
+        <a href="{{route('add_publisher')}}" class="btn btn-success pull-right"><i class="fa fa-plus"></i>Thêm</a>
       </div><!-- /.col -->
     </div><!-- /.row -->
   </div><!-- /.container-fluid -->

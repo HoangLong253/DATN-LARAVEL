@@ -74,13 +74,15 @@ Route::get('/admin/hoa-don-ban', [AdminController::class, 'invoice_sale'])->name
 
 Route::get('/admin/bang-tin', [AdminController::class, 'user'])->name('admin_user');
 
-Route::get('/admin/san-pham/them-san-pham', [AdminController::class, 'add_product'])->name('add_product');
+Route::get('/admin/sach/them-sach', [AdminController::class, 'add_product'])->name('add_product');
 
-Route::get('/admin/san-pham/them-nhan-vien', [AdminController::class, 'add_empl'])->name('add_employee');
+Route::post('/them-sach', [AdminController::class, 'func_add_product'])->name('func_add_product');
 
-Route::get('/admin/san-pham/them-loai-sach', [AdminController::class, 'add_product_type'])->name('add_product_type');
+Route::get('/admin/nhan-vien/them-nhan-vien', [AdminController::class, 'add_empl'])->name('add_employee');
 
-Route::get('/admin/san-pham/them-nha-xuat-ban', [AdminController::class, 'add_publisher'])->name('add_publisher');
+Route::get('/admin/loai-sach/them-loai-sach', [AdminController::class, 'add_product_type'])->name('add_product_type');
+
+Route::get('/admin/nha-xuat-ban/them-nha-xuat-ban', [AdminController::class, 'add_publisher'])->name('add_publisher');
 
 /* Menu */
 Route::get('gioithieu', function () {
