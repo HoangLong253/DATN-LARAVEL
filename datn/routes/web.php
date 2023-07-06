@@ -15,6 +15,7 @@ use App\Http\Controllers\product_detailController;
 use App\Http\Controllers\collectionsController;
 use App\Http\Controllers\AddProductController;
 use App\Http\Controllers\LogregController;
+use App\Http\Controllers\ThanhToanController;
 
 use Illuminate\Support\Facades\DB;
 
@@ -211,3 +212,14 @@ Route::get('/collections/giao-khoa/cap-2/lop-9', [BooksController::class, 'l9'])
 Route::get('/collections/giao-khoa/cap-3/lop-10', [BooksController::class, 'l10'])->name('l10');
 Route::get('/collections/giao-khoa/cap-3/lop-11', [BooksController::class, 'l11'])->name('l11');
 Route::get('/collections/giao-khoa/cap-3/lop-12', [BooksController::class, 'l12'])->name('l12');
+
+/* Thong tin ca nhan / thanh toan */
+Route::get('thanhtoan', function () {
+    return view('thongtingiaohang');
+})->name('thanhtoan');
+Route::get('thongtinnguoidung', function () {
+    return view('thongtinnguoidung');
+})->name('thongtinnguoidung');
+Route::get('lichsumuahang', function () {
+    return view('lichsumuahang');
+})->name('lichsumuahang');

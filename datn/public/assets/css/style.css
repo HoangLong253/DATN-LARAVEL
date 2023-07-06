@@ -391,3 +391,24 @@ a{text-decoration: none !important;}
 .danhmuc-sp-list-item{padding-bottom: 10px;border-bottom: solid 1px #000;}
 /*  */
 .img-none-full img{ height: 300px !important;}
+
+/* Thanh toán */
+.flex-infor-giaohang{display: flex;justify-content: space-between;gap: 30px;}
+.step{width: 50%;}
+.step2{width: 50%;}
+.product-inlist{display: flex;justify-content: space-between;align-items: center;margin-bottom: 10px;}
+.total-price-product{margin-top: 20px;}
+ .flex-total-price-product{display: flex;justify-content: space-between;align-items: center;}
+ .infor-user-in-fieldset{display: flex;align-items: center;gap: 20px;}
+ .grid-5{grid-template-columns: repeat(5,1fr);gap: 20px;display: grid;}
+ .flex-user-infor{display: flex;justify-content: space-between;gap: 30px;}
+ .user-infor-detail{width: 70%;}
+ .user-infor-img{width: 30%;}
+ .flex-user-infor{width: 80%;margin: auto;}
+ .box-user-infor-img{border-radius: 100%;width: 200px;height: 200px;}
+ .box-user-infor-img img{border-radius: 100%;width: 200px;height: 200px;}
+ .flex-infor-bill{display: flex;justify-content: space-between;gap: 30px;}
+ .infor-bill{width: 50%;}
+ .grid-product-inbill-list{display: grid;grid-template-columns: repeat(5,1fr);gap: 10px;}
+ /*Chữ hoa đầu*/
+.chuhoa {text-transform: capitalize;}
