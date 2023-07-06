@@ -376,6 +376,10 @@ a:hover{color: unset !important;}
     margin: auto;
 }
 a{text-decoration: none !important;}
+
+/*Chữ hoa đầu*/
+.chuhoa {text-transform: capitalize;}
+
 /* Collection */
 .flex-sp-dm{display: flex;justify-content: space-between;gap: 15px;}   
 .width-collection{width: 75%;}

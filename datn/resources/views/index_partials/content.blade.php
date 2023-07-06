@@ -58,12 +58,12 @@
 
                     </div>
                     @if($sgks->PhanTramGiam != 0)
-                    <div class="name-product text-split-1">{{$sgks->TenSach}}</div>
+                    <div class="name-product text-split-1 chuhoa">{{$sgks->TenSach}}</div>
                     <div class="price-product">@convert($sgks->DonGia - ($sgks->DonGia *
                         $sgks->PhanTramGiam),0)đ</div>
                     <div class="price-product"><del>@convert($sgks->DonGia,0)đ</del></div>
                     @else
-                    <div class="name-product text-split-1">{{$sgks->TenSach}}</div>
+                    <div class="name-product text-split-1 chuhoa">{{$sgks->TenSach}}</div>
                     <div class="price-product">@convert($sgks->DonGia,0)đ</div>
                     @endif
 
@@ -96,12 +96,12 @@
 
                     </div>
                     @if($thamkhao->PhanTramGiam != 0)
-                    <div class="name-product text-split-1">{{$thamkhao->TenSach}}</div>
+                    <div class="name-product text-split-1 chuhoa">{{$thamkhao->TenSach}}</div>
                     <div class="price-product">@convert($thamkhao->DonGia - ($noibat->DonGia *
                         $thamkhao->PhanTramGiam),0)đ</div>
                     <div class="price-product"><del>@convert($thamkhao->DonGia,0)đ</del></div>
                     @else
-                    <div class="name-product text-split-1">{{$thamkhao->TenSach}}</div>
+                    <div class="name-product text-split-1 chuhoa">{{$thamkhao->TenSach}}</div>
                     <div class="price-product">@convert($thamkhao->DonGia,0)đ</div>
                     @endif
 

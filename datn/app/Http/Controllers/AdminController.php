@@ -177,7 +177,10 @@ class AdminController extends Controller
     }
 
     public function invoice_sale() {
-        $alls = DB::table('hoadonban')->get();
+        $alls = DB::table('hoadonban')
+                    ->join('nhanvien', 'hoadonban.MaNV', '=', 'nhanvien.MaNV')
+                    ->join('nguoidung', 'hoadonban.MaNgDung', '=', 'nguoidung.MaNgDung')
+                    ->get();
         if(isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged']== 1 ) {
             $admin = DB::table("nhanvien")
                         ->where('MaNV', '=', $_COOKIE['id'])
@@ -191,7 +194,9 @@ class AdminController extends Controller
         }
     }
     public function invoice_import() {
-        $alls = DB::table('hoadonnhap')->get();
+        $alls = DB::table('hoadonnhap')
+                    ->join('nhanvien', 'hoadonnhap.MaNV', '=', 'nhanvien.MaNV')
+                    ->get();
         if(isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged']== 1 ) {
             $admin = DB::table("nhanvien")
                         ->where('MaNV', '=', $_COOKIE['id'])
@@ -205,18 +210,102 @@ class AdminController extends Controller
         }
     }
 
-    public function add_product() {
-        if(isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged']==1 ) {
+    public function invoice_detail_sale($id) {
+        $alls = DB::table('cthoadonban')
+                    ->join('saches', 'cthoadonban.MaSach', '=', 'saches.MaSach')
+                    ->where('MaHDBan', '=', $id)
+                    ->get();
+        if(isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged']== 1 ) {
             $admin = DB::table("nhanvien")
                         ->where('MaNV', '=', $_COOKIE['id'])
                         ->get();
-            return view('add_product',[
+            return view('admin_invoice_detail_sale',[
+                'alls' => $alls,
                 'admin' => $admin
             ]);
         } else {
             return view('adm_partials.login');
         }
     }
+    public function invoice_detail_import($id) {
+        $alls = DB::table('cthoadonnhap')
+                        ->join('saches', 'cthoadonnhap.MaSach', '=', 'saches.MaSach')   
+                        ->where('MaHDNhap', '=', $id)
+                        ->get();
+        if(isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged']== 1 ) {
+            $admin = DB::table("nhanvien")
+                        ->where('MaNV', '=', $_COOKIE['id'])
+                        ->get();
+            return view('admin_invoice_detail_import',[
+                'alls' => $alls,
+                'admin' => $admin
+            ]);
+        } else {
+            return view('adm_partials.login');
+        }
+    }
+
+    public function add_product() {
+        $loaisach = DB::table('loaisach')->get();
+        $nxb = DB::table('nhaxuatban')->get();
+        if(isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged']==1 ) {
+            $admin = DB::table("nhanvien")
+                        ->where('MaNV', '=', $_COOKIE['id'])
+                        ->get();
+            return view('add_product',[
+                'admin' => $admin,
+                'loaisach' => $loaisach,
+                'nxb' => $nxb,
+            ]);
+        } else {
+            return view('adm_partials.login');
+        }
+    }
+
+    public function func_add_product(Request $request) {
+
+        $messages = [
+            'bookid.required' => 'Mã sách không được để trống',
+            'bookname.required' => 'Tên sách không được để trống',
+            'price.required' => 'Đơn giá không được để trống',
+            'percent.required' => 'Chiết khấu không được để trống',
+            'content.required' => 'Nội dung không được để trống',
+        ];
+        $this->validate($request, [
+            'bookid' => 'required',
+            'bookname' => 'required',
+            'price' => 'required',
+            'percent' => 'required',
+            'content' => 'required',
+        ], $messages);
+
+        $bookid = $request->bookid;
+        $bookname = $request->bookname;
+        $booktype = $request->booktype;
+        $publisher = $request->publisher;
+        $price = $request->price;
+        $percent = $request->percent;
+        $content = $request->content;
+        $star = $request->star;
+        $check = DB::table('saches')
+        ->insert([
+            'MaSach' => $bookid,
+            'TenSach' => $bookname,
+            'MaLoaiSach' => $booktype,
+            'MaNXB' => $publisher,
+            'DonGia' => $price,
+            'PhanTramGiam' => $percent,
+            'MoTa' => $content,
+            'TrangThai' => 1,
+            'NoiBat' => $star,
+        ]);
+        if($check) {
+            return redirect()->route('add_product')->with('success', 'Thêm sách thành công.');
+        } else {
+            return redirect()->route('add_product')->with('fail', 'Thêm sách không thành công.');
+        }
+    }
+
     public function edit_product() {
 
     }
@@ -228,7 +317,7 @@ class AdminController extends Controller
             $admin = DB::table("nhanvien")
                         ->where('MaNV', '=', $_COOKIE['id'])
                         ->get();
-            return view('add_product',[
+            return view('add_employee',[
                 'admin' => $admin
             ]);
         } else {

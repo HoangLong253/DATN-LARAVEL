@@ -28,4 +28,6 @@
  .flex-infor-bill{display: flex;justify-content: space-between;gap: 30px;}
  .infor-bill{width: 50%;}
  .grid-product-inbill-list{display: grid;grid-template-columns: repeat(5,1fr);gap: 10px;}
+ /*Chữ hoa đầu*/
+.chuhoa {text-transform: capitalize;}
  

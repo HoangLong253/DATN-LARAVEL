@@ -19,8 +19,8 @@
         <thead>
             <tr>
                 <th>Mã Hoá Đơn Bán</th>
-                <th>Mã Nhân Viên</th>
-                <th>Mã Người Dùng</th>
+                <th>Họ Tên Nhân Viên</th>
+                <th>Họ Tên Người Dùng</th>
                 <th>Tổng Tiền</th>
                 <th>Trạng Thái Giao Hàng</th>
                 <th>Trạng Thái Thanh Toán</th>
@@ -32,8 +32,8 @@
             @foreach ($alls as $all)
                 <tr>
                     <td> {{ $all->MaHDBan }} </td>
-                    <td> {{ $all->MaNV }} </td>
-                    <td> {{ $all->MaNgDung }} </td>
+                    <td> {{ $all->HoTenNV }} </td>
+                    <td> {{ $all->HoTenND }} </td>
                     <td> {{ $all->TongTien }} </td>
                     @switch($all->TrangThaiGiaoHang)
                         @case(0)
@@ -80,7 +80,7 @@
                                 class="fa fa-trash">
                             </span>
                         </a>
-                        <a href="#"  title="Dẫn qua chi tiết">
+                        <a href="{{route('admin_invoice_detail_sale', ['id' => $all->MaHDBan])}}"  title="Dẫn qua chi tiết">
                             <span class="fa fa-long-arrow-alt-right"></span>
                         </a>
                     </td>

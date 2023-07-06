@@ -57,7 +57,7 @@
                     @break
                     @default
                 @endswitch
-                <li class="breadcrumb-item active" aria-current="page">{{$chitietsach[0]->TenSach}}</li>
+                <li class="breadcrumb-item active chuhoa" aria-current="page">{{$chitietsach[0]->TenSach}}</li>
             </ol>
         </nav>
         <div class="wrap-product-whole">
@@ -109,7 +109,7 @@
                                     giả</span>
                             </div>
                             <div class="name-text1"> Nhà xuất bản: <span
-                                    class="name-text-infor">{{ $chitietsach[0]->TenNXB }}</span>
+                                    class="name-text-infor chuhoa">{{ $chitietsach[0]->TenNXB }}</span>
                             </div>
                             <div class="name-text1"> Năm xuất bản: <span class="name-text-infor">2023</span>
                             </div>
