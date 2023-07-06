@@ -7,13 +7,14 @@
                  lọc theo nhà xuất bản bla bla, bên phải là sản phẩm -->
 
 <!--Bên trái-->
-
-<nav aria-label="breadcrumb">
+<nav aria-label="breadcrumb"></nav>
+<div class="wrap-content">  
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{route('index')}}">Trang chủ</a></li>
         <li class="breadcrumb-item active" aria-current="page">Danh mục</li>
         <li class="breadcrumb-item active" aria-current="page">Tất cả các sách</li>
     </ol>
+</div>
 </nav>
 <div class="wrap-main">
     <div class="wrap-content">
@@ -26,28 +27,35 @@
                     </div>
                     <ul>
                         <li class="danhmuc-sp-list-item">
-                            <a href="">Trinh thám - kinh dị</a>
+                            <a href="">Sách Giáo Khoa</a>
+                            <ul>
+                                <li>
+                                    <a href="">Cấp 2</a>
+                                    <ul>
+                                        <li><a href="">Lớp 6</a></li>
+                                        <li><a href="">Lớp 7</a></li>
+                                        <li><a href="">Lớp 8</a></li>
+                                        <li><a href="">Lớp 9</a></li>
+                                    </ul>
+                                </li> 
+                                <li>
+                                    <a href="">Cấp 3</a>
+                                    <ul>
+                                        <li><a href="">Lớp 10</a></li>
+                                        <li><a href="">Lớp 11</a></li>
+                                        <li><a href="">Lớp 12</a></li>
+                                    </ul>
+                                </li> 
+                            </ul>
                         </li>
+
                         <li class="danhmuc-sp-list-item">
-                            <a href="">Trinh thám - kinh dị</a>
-                        </li>
+                            <a href="">Sách Tham khảo</a>
+                        </li> 
+
                         <li class="danhmuc-sp-list-item">
-                            <a href="">Trinh thám - kinh dị</a>
-                        </li>
-                        <li class="danhmuc-sp-list-item">
-                            <a href="">Trinh thám - kinh dị</a>
-                        </li>
-                        <li class="danhmuc-sp-list-item">
-                            <a href="">Trinh thám - kinh dị</a>
-                        </li>
-                        <li class="danhmuc-sp-list-item">
-                            <a href="">Trinh thám - kinh dị</a>
-                        </li>
-                        <li class="danhmuc-sp-list-item">
-                            <a href="">Trinh thám - kinh dị</a>
-                        </li>
-                         
-    
+                            <a href="">Sách Khoa Học Tự Nhiên</a>
+                        </li> 
                     </ul>
                 </div>   
                 
@@ -65,8 +73,8 @@
                             <span class="sale-lb img_hover">{{$all->PhanTramGiam * 100}}%</span>
                         </div>
                         @endif
-                        <div class=" scale-img img_hover">
-                            <img alt="ảnh lỗi"
+                        <div class=" scale-img img_hover img-none-full">
+                            <img alt="ảnh lỗi" class="w-100"
                                 src="{{ asset('assets/images/sach/' . $all->MaLoaiSach . '/' . $all->HinhAnh)}}"
                                 width="200" height="300"></img>
                         </div>

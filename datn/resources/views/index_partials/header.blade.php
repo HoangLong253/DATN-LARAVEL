@@ -1,6 +1,4 @@
-<div class="header-banner wow animate__fadeInLeft" data-wow-duration="2s">
-    <img src="{{asset('assets/images/slideshow/bannerheader.png')}}" alt="">
-</div>
+ 
 <!--  -->
 <div class="header">
     <div class="header-top">
@@ -86,8 +84,7 @@
                             Trợ Giúp
                         </a>
                     </li>
-                    <!-- đăng kí đăng nhập Tú làm sao hover vô nó đậm lên nhá, 
-                        với lại làm cái separate đừng trùng với tên nút đăng nhập luôn-->
+                     
                     @if (isset($_COOKIE['is_logged']) && $_COOKIE['is_logged']== 1)
                     <li class="header__navbar-item">
                         <a href="#">
@@ -122,8 +119,9 @@
                 <div class="logo">
                     <div class="header__logo  ">
                         <div class="peShiner">
-                        <a class=" " href="{{route('index')}}"><img class="header__logo-img   "
-                                src="{{asset('assets/images/logo/logo.png')}}" alt=""></a>
+                        <a class=" " href="{{route('index')}}">
+                            <img class="header__logo-img"
+                                src="{{asset('assets/images/logo/logo.jpg')}}" alt=""></a>
                         </div>
                         <div class="info-company">
                             <div class="header__cpnname">LT Bookstore</div>
