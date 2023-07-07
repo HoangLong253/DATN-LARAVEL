@@ -69,14 +69,7 @@
                     @error('fullname')
                     <p class="">{{ $message }}</p>
                     @enderror
-                    <!--<label>Tài khoản</label>
-            <div class="input-group input-user">
-                <div class="input-group-prepend">
-                    <div class="input-group-text"><i class="fa fa-user"></i></div>
-                </div>
-                <input type="text" class="form-control text-sm" id="username" name="username" placeholder="Nhập tài khoản của bạn" value="" required="">
-            <div class="invalid-feedback">Vui lòng nhập tài khoản</div>
-            </div>-->
+                    
                     <label>Mật khẩu</label>
                     <div class="input-group input-user">
                         <div class="input-group-prepend">
@@ -125,76 +118,14 @@
                     @error('phone')
                     <p class="">{{ $message }}</p>
                     @enderror
-                    <!--<label>Địa chỉ</label>
-            <div class="input-group input-user">
-                <div class="input-group-prepend">
-                    <div class="input-group-text"><i class="fa fa-map"></i></div>
-                </div>
-                <input type="text" class="form-control text-sm" id="address" name="address" placeholder="Nhập địa chỉ của bạn" value="" required="">
-            <div class="invalid-feedback">Vui lòng nhập địa chỉ</div>
-            </div>-->
+                     
                     <div class="button-user">
                         <input type="submit" class="btn btn-primary btn-block" name="check-register" value="Đăng ký">
                     </div>
-                </form>
-                <div class="fb-google-btn">
-                    <a href="#" class="fb-google-btn--fb btn btn--size-s btn--with-icon">
-                        <i class=" fb-google-btn-icon fa-brands fa-square-facebook"></i>
-                        <span class="fb-google-btn-title">Kết nối với Facebook</span>
-                    </a>
-                    <a href="#" class="fb-google-btn--gg btn btn--size-s btn--with-icon">
-                        <i class="fb-google-btn-icon fa-brands fa-google"></i>
-                        <span class="fb-google-btn-title">Kết nối với Google</span>
-
-                    </a>
-                </div>
+                </form> 
             </div>
 
-            <!-- <div class="row justify-content-center">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header">Đăng Ký</div>
-                    <div class="card-body">
-                        <form action="#" method="POST">
-                            @csrf
-                            <div class="form-group mb-3">
-                                <input type="text" name="name" class="form-control" placeholder="Tên" />
-                                @if($errors->has('name'))
-                                <span class="text-danger">{{ $errors->first('name') }}</span>
-                                @endif
-                            </div>
-                            <div class="form-group mb-3">
-                                <input type="text" name="email" class="form-control" placeholder="Địa chỉ email" />
-                                @if($errors->has('email'))
-                                <span class="text-danger">{{ $errors->first('email') }}</span>
-                                @endif
-                            </div>
-                            <div class="form-group mb-3">
-                                <input type="password" name="password" class="form-control" placeholder="Mật khẩu" />
-                                @if($errors->has('password'))
-                                <span class="text-danger">{{ $errors->first('password') }}</span>
-                            @endif
-                        </div>
-                        <div class="fb-google-btn">
-                            <a href="" class="fb-google-btn--fb btn btn--size-s btn--with-icon">
-                                <i class=" fb-google-btn-icon fa-brands fa-square-facebook"></i>
-                                <span class="fb-google-btn-title">Kết nối với Facebook</span>
-                            </a>
-                            <a href="" class="fb-google-btn--gg btn btn--size-s btn--with-icon">
-                                <i class="fb-google-btn-icon fa-brands fa-google"></i>
-                                <span class="fb-google-btn-title">Kết nối với Google</span>
-            
-                            </a>
-                        </div>
-                        <div class="d-grid mx-auto">
-                            <button type="submit" class="btn btn-dark btn-block">Đăng Ký</button>
-                        </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-        </div> -->
+             
 
 
 
