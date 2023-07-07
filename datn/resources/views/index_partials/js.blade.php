@@ -57,7 +57,7 @@ $('.owl-spnb').owlCarousel({
 $('.news-slick').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 500,
     arrows: false,
     vertical: true,

@@ -38,8 +38,7 @@
             <li><a href="{{ route('tintuc') }}">Tin Tức</a></li>
             <li class="line"></li>
             <li><a href="{{ route('dichvu') }}">Dịch Vụ</a></li>
-            <li class="line"></li>
-            <li><a href="{{ route('lienhe') }}">Liên hệ</a></li>
+             
         </ul>
     </div>
 </div>
