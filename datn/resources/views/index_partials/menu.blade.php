@@ -6,7 +6,7 @@
             <li><a href="{{ route('gioithieu') }}">VỀ CHÚNG TÔI</a></li>
                 <li class="line"></li>
                 <li><a href="{{ route('collections')}}">Sản Phẩm</a>
-                <ul>
+                <!--<ul>
                     <li>
                         <a class="has-child transition" title="" href="{{route('GK')}}">Sách giáo khoa</a>
                         <a class="" title="" href="{{route('TK')}}">Sách tham khảo</a>
@@ -32,7 +32,7 @@
                             </li>
                         </ul>
                     </li>
-                </ul>
+                </ul>-->
             </li>
             <li class="line"></li>
             <li><a href="{{ route('tintuc') }}">Tin Tức</a></li>

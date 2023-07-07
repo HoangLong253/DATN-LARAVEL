@@ -23,11 +23,11 @@
             @if($noibat->PhanTramGiam != 0)
             <div class="name-product text-split-1">{{$noibat->TenSach}}</div>
             <div class="price-product">@convert($noibat->DonGia - ($noibat->DonGia *
-                $noibat->PhanTramGiam),0)đ</div>
-            <div class="price-product"><del>@convert($noibat->DonGia,0)đ</del></div>
+                $noibat->PhanTramGiam))đ</div>
+            <div class="price-product"><del>@convert($noibat->DonGia)đ</del></div>
             @else
             <div class="name-product text-split-1">{{$noibat->TenSach}}</div>
-            <div class="price-product">@convert($noibat->DonGia,0)đ</div>
+            <div class="price-product">@convert($noibat->DonGia)đ</div>
             @endif
 
             </a>
@@ -38,7 +38,7 @@
 </div>
 <!--Sach giao khoa-->
 <div class="wrap-spnb">
-    <div class="wrap-content wow animate__fadeInLeft" data-wow-duration="2s""">
+    <div class="wrap-content wow animate__fadeInLeft" data-wow-duration="2s">
         <div class="main-title-text">SÁCH GIÁO KHOA</div>
         <div class="wrap-slide-spnb">
             <div class="owl-spnb owl-carousel owlCarousel">
@@ -60,11 +60,11 @@
                     @if($sgks->PhanTramGiam != 0)
                     <div class="name-product text-split-1 chuhoa">{{$sgks->TenSach}}</div>
                     <div class="price-product">@convert($sgks->DonGia - ($sgks->DonGia *
-                        $sgks->PhanTramGiam),0)đ</div>
-                    <div class="price-product"><del>@convert($sgks->DonGia,0)đ</del></div>
+                        $sgks->PhanTramGiam))đ</div>
+                    <div class="price-product"><del>@convert($sgks->DonGia)đ</del></div>
                     @else
                     <div class="name-product text-split-1 chuhoa">{{$sgks->TenSach}}</div>
-                    <div class="price-product">@convert($sgks->DonGia,0)đ</div>
+                    <div class="price-product">@convert($sgks->DonGia)đ</div>
                     @endif
 
                 </a>
@@ -98,11 +98,11 @@
                     @if($thamkhao->PhanTramGiam != 0)
                     <div class="name-product text-split-1 chuhoa">{{$thamkhao->TenSach}}</div>
                     <div class="price-product">@convert($thamkhao->DonGia - ($noibat->DonGia *
-                        $thamkhao->PhanTramGiam),0)đ</div>
-                    <div class="price-product"><del>@convert($thamkhao->DonGia,0)đ</del></div>
+                        $thamkhao->PhanTramGiam))đ</div>
+                    <div class="price-product"><del>@convert($thamkhao->DonGia)đ</del></div>
                     @else
                     <div class="name-product text-split-1 chuhoa">{{$thamkhao->TenSach}}</div>
-                    <div class="price-product">@convert($thamkhao->DonGia,0)đ</div>
+                    <div class="price-product">@convert($thamkhao->DonGia)đ</div>
                     @endif
 
                 </a>

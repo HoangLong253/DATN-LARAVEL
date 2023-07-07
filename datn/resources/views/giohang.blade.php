@@ -81,7 +81,7 @@
                 <td colspan="5" class="text-right">
                     <a href="{{ route('index') }}" class="btn btn-primary"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
                     <!--<button class="btn btn-success">Thanh toán</button>-->
-                    <a href="" class="btn btn-success">Thanh toán</a>
+                    <a href="{{route('thanhtoan')}}" class="btn btn-success">Thanh toán</a>
                 </td>
             </tr>
         </tfoot>

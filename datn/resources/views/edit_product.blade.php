@@ -31,7 +31,7 @@
 @endsection
 @section('main_content')
 <!-- Thêm sản phẩm -->
-<form action="{{route('func_edit_product')}}" method="post">
+<form action="{{route('func_edit_product', ['id' => $sach[0]->MaSach])}}" method="post">
     @csrf
     <div class="form-add-top">
         <div class="whole-box-sp-img">
@@ -41,13 +41,15 @@
         </div>
         <div class="box-info">
             <div class="whole-box-sp-info">
-                <!--<div class="form-group">
-                    <label for="idbook">Mã sách: </label>
+                <div class="form-group">
+                    <label for="bookid">Mã sách: </label>
                     <input type="text" class="form-control" id="bookid" name="bookid"
-                        aria-describedby=""
+                        value="{{$sach[0]->MaSach}}"
                         placeholder="Nhập mã sách">
-                    <small id="" class="form-text text-muted"> .</small>
-                </div>-->
+                </div>
+                @error('bookname')
+                    <p class="">{{ $message }}</p>
+                @enderror
                 <div class="form-group">
                     <label for="namebook">Tên sách: </label>
                     <input type="id" class="form-control chuhoa" id="bookname" name="bookname"

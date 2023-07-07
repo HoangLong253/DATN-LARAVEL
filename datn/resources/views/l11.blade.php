@@ -1,54 +1,49 @@
-@extends('layouts.app')
-@section('content')
-            <!-- Main -->
-
-            <!-- bỏ all sản phẩm, bên trái là danh mục sản phẩm, 
-                 ở dưới có thể có tìm theo mức giá, dưới nữa có thể 
-                 lọc theo nhà xuất bản bla bla, bên phải là sản phẩm -->
-
-            <!--Bên trái-->
-
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="{{route('index')}}">Trang chủ</a></li>
-                  <li class="breadcrumb-item" aria-current="page"><a href="{{route('GK')}}">Sách giáo khoa</a></li>
-                  <li class="breadcrumb-item" aria-current="page">Cấp 2</li>
-                </ol>
-            </nav>
-            <div class="wrap-main">
-                <div class="wrap-content">
-                    <div class="title-main">
-                        Lớp 11
-                    </div>
-                    <div class="content-main">
-                        <div class="grid-product">
-                            @foreach ($l11s as $all)
-                            <a href="{{route('chitietsach', ['ma' => $all->MaSach, 'tensach' => $all->TenSach, 'loai' => $all->MaLoaiSach])}}" class="box-product">
-                                @if($all->PhanTramGiam != 0)
-                                    <div class="product-sale-oustanding ">
-                                        <span class="sale-lb img_hover">{{$all->PhanTramGiam * 100}}%</span>
-                                    </div>
-                                @endif
-                                <div class=" scale-img img_hover">
-                                    <img alt="ảnh lỗi" src="{{ asset('assets/images/sach/' . $all->MaLoaiSach . '/' . $all->HinhAnh)}}"
-                                    width="200" height="300"></img>
-                                </div>
-                                <div class="infor-product">
-                                    
-                                </div>
-                                @if($all->PhanTramGiam != 0)
-                                    <div class="name-product chuhoa">{{$all->TenSach}}</div>
-                                    <div class="price-product">@convert($all->DonGia - ($all->DonGia * $all->PhanTramGiam),0)đ</div> 
-                                    <div class="price-product"><del>@convert($all->DonGia,0)đ</del></div> 
-                                @else
-                                    <div class="name-product chuhoa">{{$all->TenSach}}</div>
-                                    <div class="price-product">@convert($all->DonGia,0)đ</div>
-                                @endif
-                                
-                            </a>
-                            @endforeach
-                        </div>
-                     </div>
-                </div>
+@extends('layouts.tatcasach')
+@section('breadcrum')
+<div class="wrap-content">  
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{route('index')}}">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="{{route('collections')}}">Sách</a></li>
+            <li class="breadcrumb-item"><a href="{{route('c3')}}">Cấp 3</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Lớp 11</li>
+        </ol>
+    </nav>
+</div>
+@endsection
+@section('main')
+<div class="width-collection">
+    <div class="title-main">
+        LỚP 11
+    </div>
+    <div class="grid-product ">
+        @foreach ($l11s as $all)
+        <a href="{{route('chitietsach', ['ma' => $all->MaSach, 'tensach' => $all->TenSach, 'loai' => $all->MaLoaiSach])}}"
+            class="box-product">
+            @if($all->PhanTramGiam != 0)
+            <div class="product-sale-oustanding ">
+                <span class="sale-lb img_hover">{{$all->PhanTramGiam * 100}}%</span>
             </div>
+            @endif
+            <div class=" scale-img img_hover img-none-full">
+                <img alt="ảnh lỗi" class="w-100"
+                    src="{{ asset('assets/images/sach/' . $all->MaLoaiSach . '/' . $all->HinhAnh)}}"
+                    width="200" height="300"></img>
+            </div>
+            <div class="infor-product">
+
+            </div>
+            @if($all->PhanTramGiam != 0)
+            <div class="name-product">{{$all->TenSach}}</div>
+            <div class="price-product">@convert($all->DonGia - ($all->DonGia * $all->PhanTramGiam))đ</div>
+            <div class="price-product"><del>@convert($all->DonGia)đ</del></div>
+            @else
+            <div class="name-product">{{$all->TenSach}}</div>
+            <div class="price-product">@convert($all->DonGia)đ</div>
+            @endif
+
+        </a>
+        @endforeach
+    </div>
+</div>
 @endsection

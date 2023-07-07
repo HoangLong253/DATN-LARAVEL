@@ -128,15 +128,15 @@
                         @if ($chitietsach[0]->PhanTramGiam)
                             <div class="flex-price-product">
                                 <span class="price-new">Giá khuyến mãi: <span
-                                        class="price-bold">@convert($chitietsach[0]->DonGia - $chitietsach[0]->DonGia * $chitietsach[0]->PhanTramGiam, 0)đ</span></span>
+                                        class="price-bold">@convert($chitietsach[0]->DonGia - $chitietsach[0]->DonGia * $chitietsach[0]->PhanTramGiam)đ</span></span>
                                 <!-- Format monney tự cách hoặc chấm + Auto set "Đ" sau giá -->
                                 <span class="price-old">Giá gốc: <span
-                                        class="price-strikethrough">@convert($chitietsach[0]->DonGia, 0)đ</span></span>
+                                        class="price-strikethrough">@convert($chitietsach[0]->DonGia)đ</span></span>
                             </div>
                         @else
                             <div class="flex-price-product">
                                 <!-- Format monney tự cách hoặc chấm + Auto set "Đ" sau giá -->
-                                <span class="price-new">Giá gốc: <span class="price">@convert($chitietsach[0]->DonGia, 0)đ</span></span>
+                                <span class="price-new">Giá gốc: <span class="price">@convert($chitietsach[0]->DonGia)đ</span></span>
                             </div>
                         @endif
                         <div class="quantity-pick">Số lượng:
@@ -249,7 +249,9 @@
                         <div class="main-title-text">SẢN PHẨM TƯƠNG TỰ</div>
                         <div class="wrap-slide-spnb">
                             <div class="owl-spnb owl-carousel owlCarousel">
-                                @foreach ($sgks as $sgk)
+                                @switch($chitietsach[0]->MaLoaiSach)
+                                    @case('GK')
+                                    @foreach ($sgks as $sgk)
                                     <a href="{{ route('chitietsach', ['ma' => $sgk->MaSach, 'tensach' => $sgk->TenSach, 'loai' => $sgk->MaLoaiSach]) }}"
                                         class="box-product">
                                         @if ($sgk->PhanTramGiam != 0)
@@ -259,7 +261,7 @@
                                         @endif
                                         <div class="scale-img img_hover">
                                             <img alt="ảnh lỗi"
-                                                src="{{ asset('./assets/images/sach/GK/' . $sgk->HinhAnh) }}"
+                                                src="{{ asset('./assets/images/sach/' . $sgk->MaLoaiSach . '/' . $sgk->HinhAnh) }}"
                                                 width="200" height="300"></img>
                                         </div>
                                         <div class="infor-product">
@@ -267,14 +269,44 @@
                                         </div>
                                         @if ($sgk->PhanTramGiam != 0)
                                             <div class="name-product text-split-1">{{ $sgk->TenSach }}</div>
-                                            <div class="price-product">@convert($sgk->DonGia - $sgk->DonGia * $sgk->PhanTramGiam, 0)đ</div>
-                                            <div class="price-product"><del>@convert($sgk->DonGia, 0)đ</del></div>
+                                            <div class="price-product">@convert($sgk->DonGia - $sgk->DonGia * $sgk->PhanTramGiam)đ</div>
+                                            <div class="price-product"><del>@convert($sgk->DonGia)đ</del></div>
                                         @else
                                             <div class="name-product text-split-1">{{ $sgk->TenSach }}</div>
-                                            <div class="price-product">@convert($sgk->DonGia, 0)đ</div>
+                                            <div class="price-product">@convert($sgk->DonGia)đ</div>
                                         @endif
                                     </a>
-                                @endforeach
+                                    @endforeach
+                                    @break
+                                    @case('TK')
+                                    @foreach ($tks as $sgk)
+                                    <a href="{{ route('chitietsach', ['ma' => $sgk->MaSach, 'tensach' => $sgk->TenSach, 'loai' => $sgk->MaLoaiSach]) }}"
+                                        class="box-product">
+                                        @if ($sgk->PhanTramGiam != 0)
+                                            <div class="product-sale-oustanding ">
+                                                <span class="sale-lb img_hover">{{ $sgk->PhanTramGiam * 100 }}%</span>
+                                            </div>
+                                        @endif
+                                        <div class="scale-img img_hover">
+                                            <img alt="ảnh lỗi"
+                                                src="{{ asset('./assets/images/sach/' . $sgk->MaLoaiSach . '/' . $sgk->HinhAnh) }}"
+                                                width="200" height="300"></img>
+                                        </div>
+                                        <div class="infor-product">
+
+                                        </div>
+                                        @if ($sgk->PhanTramGiam != 0)
+                                            <div class="name-product text-split-1">{{ $sgk->TenSach }}</div>
+                                            <div class="price-product">@convert($sgk->DonGia - $sgk->DonGia * $sgk->PhanTramGiam)đ</div>
+                                            <div class="price-product"><del>@convert($sgk->DonGia)đ</del></div>
+                                        @else
+                                            <div class="name-product text-split-1">{{ $sgk->TenSach }}</div>
+                                            <div class="price-product">@convert($sgk->DonGia)đ</div>
+                                        @endif
+                                    </a>
+                                    @endforeach
+                                    @break
+                                @endswitch
                             </div>
                         </div>
                     </div>

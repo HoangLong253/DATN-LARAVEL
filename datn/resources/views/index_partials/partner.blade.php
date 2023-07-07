@@ -29,11 +29,6 @@
                         <img class="scale-img img_hover" src="{{asset('assets/images/doi-tac/TN.jpg')}}" alt="">
                     </a>
                 </div>
-                <div>
-                    <a href="#">
-                        <img class="scale-img img_hover" src="{{asset('assets/images/doi-tac/Tre.jpg')}}" alt="">
-                    </a>
-                </div>
             </div>
         </div>
     </div>

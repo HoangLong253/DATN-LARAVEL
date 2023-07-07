@@ -5,40 +5,47 @@
     <div class="title-name1">Thông tin tài khoản</div>
     <div>Quản lý thông tin hồ sơ để bảo mật tài khoản</div>
     <div><a href="{{ route('lichsumuahang') }}">Lịch sử mua hàng</a></div>
-    <form class="flex-user-infor" action>
+    <form class="flex-user-infor" action="#" method="POST">
         <div class="user-infor-detail">
-            <label for>Tên đăng nhập:</label><span> kyter39</span>
-
+            <div class="form-group">
+                <!-- Set khi đăng nhập r thì hiện thông tin vào form sửa thì click vào r đổi thôi -->
+                <label for>Tên đăng nhập: </label>
+                <input type="text" class="form-control"
+                    id="username" name="username"
+                    value="{{$user1[0]->TenDangNhapND}}"
+                    placeholder="Nhập tên đăng nhập">
+            </div>
             <div class="form-group">
                 <!-- Set khi đăng nhập r thì hiện thông tin vào form sửa thì click vào r đổi thôi -->
                 <label for>Họ và tên: </label>
-                <input type="id" class="form-control"
-                    id
-                    aria-describedby="<!--  -->"
+                <input type="text" class="form-control"
+                    id="name" name="name"
+                    value="{{$user1[0]->HoTenND}}"
                     placeholder="Nhập họ và tên">
-                <small id="<!--  -->"
-                    class="form-text text-muted"></small>
             </div>
             <div class="form-group">
                 <label for>Email: </label>
-                <input type="id" class="form-control"
-                    id
-                    aria-describedby="<!--  -->"
+                <input type="text" class="form-control"
+                    id="email" name="email"
+                    value="{{$user1[0]->Email}}"
                     placeholder="Nhập email">
-                <small id="<!--  -->"
-                    class="form-text text-muted"></small>
+            </div>
+            <div class="form-group">
+                <label for>Mật khẩu: </label>
+                <input type="text" class="form-control"
+                    id="password" name="password"
+                    value="{{$user1[0]->MatKhau}}"
+                    placeholder="Nhập số điện thoại">
             </div>
             <div class="form-group">
                 <label for>Số điện thoại: </label>
-                <input type="id" class="form-control"
-                    id
-                    aria-describedby="<!--  -->"
+                <input type="number" class="form-control"
+                    id="phone" name="phone"
+                    value="{{$user1[0]->SDT}}"
                     placeholder="Nhập số điện thoại">
-                <small id="<!--  -->"
-                    class="form-text text-muted"></small>
             </div>
             <div class="flex-btn">
-                <button type="submit" class="btn btn-success">Thay đổi</button>
+                <button type="submit" class="btn btn-success">Cập nhật</button>
                 <button type="submit" class="btn btn-danger">Hủy</button>
             </div>
 

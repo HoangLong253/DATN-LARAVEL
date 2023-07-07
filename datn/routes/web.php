@@ -82,7 +82,7 @@ Route::post('/them-sach', [AdminController::class, 'func_add_product'])->name('f
 
 Route::get('/admin/sach/sua-sach/{id}', [AdminController::class, 'edit_product'])->name('edit_product');
 
-Route::post('/sua-sach', [AdminController::class, 'func_edit_product'])->name('func_edit_product');
+Route::post('/sua-sach/{id}', [AdminController::class, 'func_edit_product'])->name('func_edit_product');
 
 Route::get('/xoa-sach/{id}', [AdminController::class, 'func_delete_product'])->name('func_delete_product');
 /*end sách*/
@@ -102,9 +102,9 @@ Route::get('/xoa-nhan-vien/{id}', [AdminController::class, 'func_delete_empl'])-
 /*loại sách*/
 Route::get('/admin/loai-sach/them-loai-sach', [AdminController::class, 'add_product_type'])->name('add_product_type');
 
-Route::post('/them-loai-sach', [AdminController::class, 'func_add_product_type'])->name('func_add_product_type');
-
 Route::get('/admin/sach/sua-loai-sach/{id}', [AdminController::class, 'edit_product_type'])->name('edit_product_type');
+
+Route::post('/them-loai-sach', [AdminController::class, 'func_add_product_type'])->name('func_add_product_type');
 
 Route::post('/sua-loai-sach', [AdminController::class, 'func_edit_product_type'])->name('func_edit_product_type');
 
@@ -114,9 +114,9 @@ Route::get('/xoa-loai-sach/{id}', [AdminController::class, 'func_delete_product_
 /*nhà xuất bản*/
 Route::get('/admin/nha-xuat-ban/them-nha-xuat-ban', [AdminController::class, 'add_publisher'])->name('add_publisher');
 
-Route::post('/them-nha-xuat-ban', [AdminController::class, 'func_add_publisher'])->name('func_add_publisher');
-
 Route::get('/admin/sach/sua-nha-xuat-ban/{id}', [AdminController::class, 'edit_publisher'])->name('edit_publisher');
+
+Route::post('/them-nha-xuat-ban', [AdminController::class, 'func_add_publisher'])->name('func_add_publisher');
 
 Route::post('/sua-nha-xuat-ban', [AdminController::class, 'func_edit_publisher'])->name('func_edit_publisher');
 
@@ -234,6 +234,13 @@ Route::get('/collections/sach/{loai}/{tensach}/{ma}', function($loai, $tensach, 
                         ])
                         ->take(10)
                         ->get();
+    $tks = DB::table("saches")
+                        ->where([
+                            ["MaLoaiSach", "=", "TK"],
+                            ["TrangThai", "=", 1,],
+                        ])
+                        ->take(10)
+                        ->get();
     /*$tennxb = DB::table('nhaxuatban')
                     ->where('MaNXB', $tennxb1)
                     ->get();*/
@@ -252,6 +259,7 @@ Route::get('/collections/sach/{loai}/{tensach}/{ma}', function($loai, $tensach, 
         return view('chitietsach', [
             'chitietsach' => $chitietsach,
             'sgks' => $sgks,
+            'tks' => $tks,
             'tenloai' => $tenloai
     ]);
     }
@@ -279,11 +287,44 @@ Route::get('/collections/giao-khoa/cap-3/lop-12', [BooksController::class, 'l12'
 
 /* Thong tin ca nhan / thanh toan */
 Route::get('thanhtoan', function () {
-    return view('thongtingiaohang');
+    if (isset($_COOKIE['is_logged']) && $_COOKIE['is_logged'] == 1) {
+        $user1 = DB::table("nguoidung")->where('MaNgDung', '=', $_COOKIE['id'])->get();
+        $usercart = DB::table('ctgiohang')
+            ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+            ->get();
+        return view('thongtingiaohang', [
+            'user1' => $user1,
+            'usercart' => $usercart
+        ]);
+    } else {
+        return view('thongtingiaohang');
+    }
 })->name('thanhtoan');
 Route::get('thongtinnguoidung', function () {
-    return view('thongtinnguoidung');
+    if (isset($_COOKIE['is_logged']) && $_COOKIE['is_logged'] == 1) {
+        $user1 = DB::table("nguoidung")->where('MaNgDung', '=', $_COOKIE['id'])->get();
+        $usercart = DB::table('ctgiohang')
+            ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+            ->get();
+        return view('thongtinnguoidung', [
+            'user1' => $user1,
+            'usercart' => $usercart
+        ]);
+    } else {
+        return view('thongtinnguoidung');
+    }
 })->name('thongtinnguoidung');
 Route::get('lichsumuahang', function () {
-    return view('lichsumuahang');
+    if (isset($_COOKIE['is_logged']) && $_COOKIE['is_logged'] == 1) {
+        $user1 = DB::table("nguoidung")->where('MaNgDung', '=', $_COOKIE['id'])->get();
+        $usercart = DB::table('ctgiohang')
+            ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+            ->get();
+        return view('lichsumuahang', [
+            'user1' => $user1,
+            'usercart' => $usercart
+        ]);
+    } else {
+        return view('lichsumuahang');
+    }
 })->name('lichsumuahang');

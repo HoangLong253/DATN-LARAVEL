@@ -67,9 +67,9 @@
                     onclick="return false;" />
             </td>
             @endif
-            <td> @convert($all->DonGia, 0)đ </td>
-            <td> @convert($all->PhanTramGiam * 100, 0)%</td>
-            <td> @convert($all->DonGia - $all->DonGia * $all->PhanTramGiam, 0)đ </td>
+            <td> @convert($all->DonGia)đ</td>
+            <td> {{$all->PhanTramGiam * 100}}%</td>
+            <td> @convert($all->DonGia - ($all->DonGia * $all->PhanTramGiam))đ </td>
             @if($all->TrangThai)
             <td>
                 <input type="checkbox" id="TrangThai" name="TrangThai" value="yes" checked

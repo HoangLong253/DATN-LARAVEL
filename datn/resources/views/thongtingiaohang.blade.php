@@ -14,83 +14,87 @@
                     <!-- Begin đã có tk -->
                     <div class="section-content section-customer-information ">
                         <div class="fieldset">
+                            @if(isset($_COOKIE['is_logged']) && $_COOKIE['is_logged'] == 1)
                             <div class="infor-user-in-fieldset">
-                                <div class="img-user-in-fieldset">
-                                    <img
-                                        src="https://theme.hstatic.net/200000287623/1000948667/14/logo_checkout.jpg?v=265"
-                                        alt>
-                                </div>
                                 <div class="detail-user-in-fieldset">
-                                    <div class="text-in-fieldset">Lê Thanh Tú
+                                    <div class="text-in-fieldset">
+                                        Tên đăng nhập: {{$user1[0]->TenDangNhapND}}
                                     </div>
                                     <div><a href>Đăng xuất</a></div>
                                 </div>
                             </div>
-                            <div class="infor-in-fieldset">
-                                <label for>Họ và tên: </label>
-                                <span class="text-in-fieldset">Lê Thanh Tú
-                                </span>
-                            </div>
-                            <div class="infor-in-fieldset">
-                                <label for>Số điện thoại:</label>
-                                <span class="text-in-fieldset">0768848015</span>
-                            </div>
-                            <div class="infor-in-fieldset">
-                                <label for>Địa chỉ</label>
-                                <span class="text-in-fieldset">30/8 Nhất Chi
-                                    Mai, Phường 13, Tân Bình, Tp. HCM</span>
-                            </div>
+                            <form action="#" method="POST">
+                                <div class="section-content section-customer-information ">
+
+                                    <div class="fieldset">
+            
+                                        <div class="form-group">
+                                            <label for="namebook">Họ và tên: </label>
+                                            <input type="id" class="form-control"
+                                                id="name" name="name"
+                                                value="{{$user1[0]->HoTenND}}"
+                                                placeholder="Nhập họ và tên">
+                                        </div>
+            
+                                        <div class="form-group">
+                                            <label for="namebook">Email: </label>
+                                            <input type="id" class="form-control"
+                                                id="email" name="email"
+                                                value="{{$user1[0]->Email}}"
+                                                placeholder="Nhập emal">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="namebook">Số điện thoại: </label>
+                                            <input type="number" class="form-control"
+                                                id="phone" name="phone"
+                                                value="{{$user1[0]->SDT}}"
+                                                placeholder="Nhập số điện thoại">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            @else
+                            <p class="section-content-text">
+                                Bạn đã có tài khoản?
+                                <a
+                                    href="/account/login?urlredirect=%2Fcheckouts%2F341793fd37ff478b870d4674675e8533%3Fstep%3D1">Đăng
+                                    nhập</a>
+                            </p>
+                            <form action="#" method="POST">
+                                <div class="section-content section-customer-information ">
+
+                                    <div class="fieldset">
+            
+                                        <div class="form-group">
+                                            <label for="namebook">Họ và tên: </label>
+                                            <input type="id" class="form-control"
+                                                id="name" name="name"
+                                                placeholder="Nhập họ và tên">
+                                        </div>
+            
+                                        <div class="form-group">
+                                            <label for="namebook">Email: </label>
+                                            <input type="id" class="form-control"
+                                                id="email" name="email"
+                                                placeholder="Nhập emal">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="namebook">Số điện thoại: </label>
+                                            <input type="number" class="form-control"
+                                                id="phone" name="phone"
+                                                placeholder="Nhập số điện thoại">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            @endif
 
                         </div>
                     </div>
                     <!-- End đã có tk -->
                     <!-- cái phần thanh toán ra làm 2 r xóa 1 trong 2 đã có tk vs chưa có tk ra 2 form thanh taán đã dk vs chưa dk  -->
-                    <!-- Begin chưa có tk -->
-                    <div class="section-content section-customer-information ">
-
-                        <p class="section-content-text">
-                            Bạn đã có tài khoản?
-                            <a
-                                href="/account/login?urlredirect=%2Fcheckouts%2F341793fd37ff478b870d4674675e8533%3Fstep%3D1">Đăng
-                                nhập</a>
-                        </p>
-
-                        <div class="fieldset">
-
-                            <div class="form-group">
-                                <label for="namebook">Họ và tên: </label>
-                                <input type="id" class="form-control"
-                                    id="namebook"
-                                    aria-describedby="<!--  -->"
-                                    placeholder="Nhập họ và tên">
-                                <small id="<!--  -->"
-                                    class="form-text text-muted"></small>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="namebook">Emal: </label>
-                                <input type="id" class="form-control"
-                                    id="namebook"
-                                    aria-describedby="<!--  -->"
-                                    placeholder="Nhập emal">
-                                <small id="<!--  -->"
-                                    class="form-text text-muted"></small>
-                            </div>
-                            <div class="form-group">
-                                <label for="namebook">Số điện thoại: </label>
-                                <input type="number" class="form-control"
-                                    id="namebook"
-                                    aria-describedby="<!--  -->"
-                                    placeholder="Nhập số điện thoại">
-                                <small id="<!--  -->"
-                                    class="form-text text-muted"></small>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End chưa có tk -->
                     <div class="section-content">
                         <div class="fieldset">
-
                             <form autocomplete="off"
                                 id="form_update_shipping_method" class="field "
                                 accept-charset="UTF-8" method="post">
@@ -126,14 +130,11 @@
                                         <div class="form-group">
                                             <label for="namebook">Nhập địa chỉ:
                                             </label>
-                                            <input type="id"
+                                            <input type="text"
                                                 class="form-control"
-                                                id="namebook"
-                                                aria-describedby="<!--  -->"
-                                                placeholder="Nhập nhập địa chỉ">
-                                            <small id="<!--  -->"
-                                                class="form-text text-muted">
-                                            </small>
+                                                id="address" name="address"
+                                                value="{{$user1[0]->DiaChi}}"
+                                                placeholder="Nhập địa chỉ">
                                         </div>
 
                                     </div>

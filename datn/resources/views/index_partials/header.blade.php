@@ -87,7 +87,7 @@
                      
                     @if (isset($_COOKIE['is_logged']) && $_COOKIE['is_logged']== 1)
                     <li class="header__navbar-item">
-                        <a href="#">
+                        <a href="{{route('thongtinnguoidung')}}">
                             <div class="header__navbar-item">Xin chào: {{ $user1[0]->HoTenND }}</div>
                         </a>
                         <div class="header__navbar-item header__navbar-item--separate">|</div>
