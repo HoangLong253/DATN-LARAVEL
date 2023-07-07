@@ -2,6 +2,20 @@
 @section('header_content')
 <div class="container-fluid">
     <div class="row mb-2">
+      <div class="return">
+        @if ($message = Session::get('success'))
+            <div>
+                <div style="color: #12c300;
+            font-size: 1.2em;font-weight: bold;">{{ $message }}</div>
+            </div>
+        @endif
+        @if ($message = Session::get('fail'))
+            <div>
+                <div style="color: #dd0505;
+            font-size: 1.2em;font-weight: bold;">{{ $message }}</div>
+            </div>
+        @endif
+    </div>
       <div class="col-sm-6">
         <h1 class="m-0">Sách</h1>
       </div><!-- /.col -->
@@ -68,9 +82,9 @@
             </td>
             @endif
             <td>
-                <a id="update_btn" href="#" class="mr-3 func_icon !important" title="Cập nhật"
+                <a id="update_btn" href="{{route('edit_product', ['id' => $all->MaSach])}}" class="mr-3 func_icon !important" title="Cập nhật"
                     data-toggle="tooltip"><span class="fa fa-pen"></span></a>
-                <a id="del_btn" href="#" title="Xoá"
+                <a id="del_btn" href="{{route('func_delete_product', ['id' => $all->MaSach])}}" title="Xoá"
                     data-toggle="tooltip"><span class="fa fa-trash"></span></a>
               </td>
         </tr>

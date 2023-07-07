@@ -23,7 +23,8 @@ class AdminController extends Controller
             return view('adm_partials.login');
         }
     }*/
-    public function adm_login(Request $request) {
+    public function adm_login(Request $request)
+    {
         $messages = [
             'username.required' => 'Tài khoản không được để trống',
             'password.required' => 'Mật khẩu không được để trống',
@@ -37,32 +38,32 @@ class AdminController extends Controller
         $pass = $request->password;
 
         $nv = DB::table('nhanvien')
-                        ->where("Email", $name)
-                        ->where("MatKhau", $pass)
-                        ->where("LaAdmin", '=', 0)
-                        ->exists();
+            ->where("Email", $name)
+            ->where("MatKhau", $pass)
+            ->where("LaAdmin", '=', 0)
+            ->exists();
         $admin = DB::table('nhanvien')
-                        ->where("Email", $name)
-                        ->where("MatKhau", $pass)
-                        ->where("LaAdmin", '=', 1)
-                        ->exists();
-        if($admin == 1) {
+            ->where("Email", $name)
+            ->where("MatKhau", $pass)
+            ->where("LaAdmin", '=', 1)
+            ->exists();
+        if ($admin == 1) {
             $admin_is_logged = 1;
             $id = (DB::table('nhanvien')
-                    ->where("Email", $name)
-                    ->where("MatKhau", $pass)
-                    ->select('MaNV')
-                    ->get())[0]->MaNV;
+                ->where("Email", $name)
+                ->where("MatKhau", $pass)
+                ->select('MaNV')
+                ->get())[0]->MaNV;
             setcookie('admin_is_logged', $admin_is_logged, time() + 360000, '/');
             setcookie('id', $id, time() + 360000, '/');
             return redirect()->route('admin');
         } else if ($nv == 1) {
             $admin_is_logged = 1;
             $id = (DB::table('nhanvien')
-                    ->where("Email", $name)
-                    ->where("MatKhau", $pass)
-                    ->select('MaNV')
-                    ->get())[0]->MaNV;
+                ->where("Email", $name)
+                ->where("MatKhau", $pass)
+                ->select('MaNV')
+                ->get())[0]->MaNV;
             setcookie('admin_is_logged', $admin_is_logged, time() + 360000, '/');
             setcookie('id', $id, time() + 360000, '/');
             return redirect()->route('admin');
@@ -71,33 +72,37 @@ class AdminController extends Controller
         }
     }
 
-    public function adm_logout() {
+    public function adm_logout()
+    {
         setcookie('admin_is_logged', 0, time() - 360000, '/');
         setcookie('admin_is_logged', 0, time() + 360000, '/');
         return redirect()->route('admin');
     }
 
-    public function home() {
-        if(isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged']==1 ) {
+    public function home()
+    {
+        if (isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged'] == 1) {
             $admin = DB::table("nhanvien")
-                        ->where('MaNV', '=', $_COOKIE['id'])
-                        ->get();
-            return view('admin_index',[
+                ->where('MaNV', '=', $_COOKIE['id'])
+                ->get();
+            return view('admin_index', [
                 'admin' => $admin
             ]);
         } else {
             return view('adm_partials.login');
         }
     }
-    public function product() {
+    public function product()
+    {
         $alls = DB::table("saches")
-        ->join("nhaxuatban", "saches.MaNXB", "=", "nhaxuatban.MaNXB")
-        ->get();
-        if(isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged']==1 ) {
+            ->join("nhaxuatban", "saches.MaNXB", "=", "nhaxuatban.MaNXB")
+            ->where("saches.TrangThai", '=', 1)
+            ->get();
+        if (isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged'] == 1) {
             $admin = DB::table("nhanvien")
-                        ->where('MaNV', '=', $_COOKIE['id'])
-                        ->get();
-            return view('admin_product',[
+                ->where('MaNV', '=', $_COOKIE['id'])
+                ->get();
+            return view('admin_product', [
                 'alls' => $alls,
                 'admin' => $admin
             ]);
@@ -105,13 +110,14 @@ class AdminController extends Controller
             return view('adm_partials.login');
         }
     }
-    public function employee() {
+    public function employee()
+    {
         $alls = DB::table('nhanvien')->get();
-        if(isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged']== 1 ) {
+        if (isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged'] == 1) {
             $admin = DB::table("nhanvien")
-                        ->where('MaNV', '=', $_COOKIE['id'])
-                        ->get();
-            return view('admin_employee',[
+                ->where('MaNV', '=', $_COOKIE['id'])
+                ->get();
+            return view('admin_employee', [
                 'alls' => $alls,
                 'admin' => $admin
             ]);
@@ -119,13 +125,14 @@ class AdminController extends Controller
             return view('adm_partials.login');
         }
     }
-    public function user() {
+    public function user()
+    {
         $alls = DB::table('nguoidung')->get();
-        if(isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged']== 1 ) {
+        if (isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged'] == 1) {
             $admin = DB::table("nhanvien")
-                        ->where('MaNV', '=', $_COOKIE['id'])
-                        ->get();
-            return view('admin_user',[
+                ->where('MaNV', '=', $_COOKIE['id'])
+                ->get();
+            return view('admin_user', [
                 'alls' => $alls,
                 'admin' => $admin
             ]);
@@ -133,13 +140,14 @@ class AdminController extends Controller
             return view('adm_partials.login');
         }
     }
-    public function product_type() {
+    public function product_type()
+    {
         $alls = DB::table('loaisach')->get();
-        if(isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged']== 1 ) {
+        if (isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged'] == 1) {
             $admin = DB::table("nhanvien")
-                        ->where('MaNV', '=', $_COOKIE['id'])
-                        ->get();
-            return view('admin_product_type',[
+                ->where('MaNV', '=', $_COOKIE['id'])
+                ->get();
+            return view('admin_product_type', [
                 'alls' => $alls,
                 'admin' => $admin
             ]);
@@ -147,13 +155,14 @@ class AdminController extends Controller
             return view('adm_partials.login');
         }
     }
-    public function publisher() {
+    public function publisher()
+    {
         $alls = DB::table('nhaxuatban')->get();
-        if(isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged']== 1 ) {
+        if (isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged'] == 1) {
             $admin = DB::table("nhanvien")
-                        ->where('MaNV', '=', $_COOKIE['id'])
-                        ->get();
-            return view('admin_publisher',[
+                ->where('MaNV', '=', $_COOKIE['id'])
+                ->get();
+            return view('admin_publisher', [
                 'alls' => $alls,
                 'admin' => $admin
             ]);
@@ -161,13 +170,14 @@ class AdminController extends Controller
             return view('adm_partials.login');
         }
     }
-    public function news() {
+    public function news()
+    {
         $alls = DB::table('nhaxuatban')->get();
-        if(isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged']== 1 ) {
+        if (isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged'] == 1) {
             $admin = DB::table("nhanvien")
-                        ->where('MaNV', '=', $_COOKIE['id'])
-                        ->get();
-            return view('admin_publisher',[
+                ->where('MaNV', '=', $_COOKIE['id'])
+                ->get();
+            return view('admin_publisher', [
                 'alls' => $alls,
                 'admin' => $admin
             ]);
@@ -176,16 +186,17 @@ class AdminController extends Controller
         }
     }
 
-    public function invoice_sale() {
+    public function invoice_sale()
+    {
         $alls = DB::table('hoadonban')
-                    ->join('nhanvien', 'hoadonban.MaNV', '=', 'nhanvien.MaNV')
-                    ->join('nguoidung', 'hoadonban.MaNgDung', '=', 'nguoidung.MaNgDung')
-                    ->get();
-        if(isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged']== 1 ) {
+            ->join('nhanvien', 'hoadonban.MaNV', '=', 'nhanvien.MaNV')
+            ->join('nguoidung', 'hoadonban.MaNgDung', '=', 'nguoidung.MaNgDung')
+            ->get();
+        if (isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged'] == 1) {
             $admin = DB::table("nhanvien")
-                        ->where('MaNV', '=', $_COOKIE['id'])
-                        ->get();
-            return view('admin_invoice_sale',[
+                ->where('MaNV', '=', $_COOKIE['id'])
+                ->get();
+            return view('admin_invoice_sale', [
                 'alls' => $alls,
                 'admin' => $admin
             ]);
@@ -193,15 +204,16 @@ class AdminController extends Controller
             return view('adm_partials.login');
         }
     }
-    public function invoice_import() {
+    public function invoice_import()
+    {
         $alls = DB::table('hoadonnhap')
-                    ->join('nhanvien', 'hoadonnhap.MaNV', '=', 'nhanvien.MaNV')
-                    ->get();
-        if(isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged']== 1 ) {
+            ->join('nhanvien', 'hoadonnhap.MaNV', '=', 'nhanvien.MaNV')
+            ->get();
+        if (isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged'] == 1) {
             $admin = DB::table("nhanvien")
-                        ->where('MaNV', '=', $_COOKIE['id'])
-                        ->get();
-            return view('admin_invoice_import',[
+                ->where('MaNV', '=', $_COOKIE['id'])
+                ->get();
+            return view('admin_invoice_import', [
                 'alls' => $alls,
                 'admin' => $admin
             ]);
@@ -210,16 +222,17 @@ class AdminController extends Controller
         }
     }
 
-    public function invoice_detail_sale($id) {
+    public function invoice_detail_sale($id)
+    {
         $alls = DB::table('cthoadonban')
-                    ->join('saches', 'cthoadonban.MaSach', '=', 'saches.MaSach')
-                    ->where('MaHDBan', '=', $id)
-                    ->get();
-        if(isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged']== 1 ) {
+            ->join('saches', 'cthoadonban.MaSach', '=', 'saches.MaSach')
+            ->where('MaHDBan', '=', $id)
+            ->get();
+        if (isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged'] == 1) {
             $admin = DB::table("nhanvien")
-                        ->where('MaNV', '=', $_COOKIE['id'])
-                        ->get();
-            return view('admin_invoice_detail_sale',[
+                ->where('MaNV', '=', $_COOKIE['id'])
+                ->get();
+            return view('admin_invoice_detail_sale', [
                 'alls' => $alls,
                 'admin' => $admin
             ]);
@@ -227,16 +240,17 @@ class AdminController extends Controller
             return view('adm_partials.login');
         }
     }
-    public function invoice_detail_import($id) {
+    public function invoice_detail_import($id)
+    {
         $alls = DB::table('cthoadonnhap')
-                        ->join('saches', 'cthoadonnhap.MaSach', '=', 'saches.MaSach')   
-                        ->where('MaHDNhap', '=', $id)
-                        ->get();
-        if(isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged']== 1 ) {
+            ->join('saches', 'cthoadonnhap.MaSach', '=', 'saches.MaSach')
+            ->where('MaHDNhap', '=', $id)
+            ->get();
+        if (isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged'] == 1) {
             $admin = DB::table("nhanvien")
-                        ->where('MaNV', '=', $_COOKIE['id'])
-                        ->get();
-            return view('admin_invoice_detail_import',[
+                ->where('MaNV', '=', $_COOKIE['id'])
+                ->get();
+            return view('admin_invoice_detail_import', [
                 'alls' => $alls,
                 'admin' => $admin
             ]);
@@ -245,14 +259,15 @@ class AdminController extends Controller
         }
     }
 
-    public function add_product() {
+    public function add_product()
+    {
         $loaisach = DB::table('loaisach')->get();
         $nxb = DB::table('nhaxuatban')->get();
-        if(isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged']==1 ) {
+        if (isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged'] == 1) {
             $admin = DB::table("nhanvien")
-                        ->where('MaNV', '=', $_COOKIE['id'])
-                        ->get();
-            return view('add_product',[
+                ->where('MaNV', '=', $_COOKIE['id'])
+                ->get();
+            return view('add_product', [
                 'admin' => $admin,
                 'loaisach' => $loaisach,
                 'nxb' => $nxb,
@@ -262,7 +277,31 @@ class AdminController extends Controller
         }
     }
 
-    public function func_add_product(Request $request) {
+    public function edit_product($id)
+    {
+        $loaisach = DB::table('loaisach')->get();
+        $nxb = DB::table('nhaxuatban')->get();
+        $sach = DB::table('saches')
+            ->where('MaSach', '=', $id)
+            ->get();
+        /*$loaisachraw = DB::raw("SELECT IF('MaLoaiSach' not like $sach[0]->MaLoaiSach) FROM loaisach");*/
+        if (isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged'] == 1) {
+            $admin = DB::table("nhanvien")
+                ->where('MaNV', '=', $_COOKIE['id'])
+                ->get();
+            return view('edit_product', [
+                'admin' => $admin,
+                'loaisach' => $loaisach,
+                'sach' => $sach,
+                'nxb' => $nxb,
+            ]);
+        } else {
+            return view('adm_partials.login');
+        }
+    }
+
+    public function func_add_product(Request $request)
+    {
 
         $messages = [
             'bookid.required' => 'Mã sách không được để trống',
@@ -288,46 +327,162 @@ class AdminController extends Controller
         $content = $request->content;
         $star = $request->star;
         $check = DB::table('saches')
-        ->insert([
-            'MaSach' => $bookid,
-            'TenSach' => $bookname,
-            'MaLoaiSach' => $booktype,
-            'MaNXB' => $publisher,
-            'DonGia' => $price,
-            'PhanTramGiam' => $percent,
-            'MoTa' => $content,
-            'TrangThai' => 1,
-            'NoiBat' => $star,
-        ]);
-        if($check) {
+            ->insert([
+                'MaSach' => $bookid,
+                'TenSach' => $bookname,
+                'MaLoaiSach' => $booktype,
+                'MaNXB' => $publisher,
+                'DonGia' => $price,
+                'PhanTramGiam' => $percent,
+                'MoTa' => $content,
+                'TrangThai' => 1,
+                'NoiBat' => $star,
+            ]);
+        if ($check) {
             return redirect()->route('add_product')->with('success', 'Thêm sách thành công.');
         } else {
             return redirect()->route('add_product')->with('fail', 'Thêm sách không thành công.');
         }
     }
 
-    public function edit_product() {
-
-    }
-    public function delete_product() {
-
-    }
-    public function add_empl() {
-        if(isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged']==1 ) {
+    public function func_edit_product($id)
+    {
+        $loaisach = DB::table('loaisach')->get();
+        $nxb = DB::table('nhaxuatban')->get();
+        $sach = DB::table('saches')
+            ->where('MaSach', '=', $id)
+            ->get();
+        $loaisachraw = DB::raw("SELECT IF('MaLoaiSach' not like $sach[0]->MaLoaiSach) FROM loaisach");
+        if (isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged'] == 1) {
             $admin = DB::table("nhanvien")
-                        ->where('MaNV', '=', $_COOKIE['id'])
-                        ->get();
-            return view('add_employee',[
+                ->where('MaNV', '=', $_COOKIE['id'])
+                ->get();
+            return view('edit_product', [
+                'admin' => $admin,
+                'loaisach' => $loaisach,
+                'sach' => $sach,
+                'nxb' => $nxb,
+            ]);
+        } else {
+            return view('adm_partials.login');
+        }
+    }
+    public function func_delete_product($id)
+    {
+        $del = DB::table('saches')
+            ->where('MaSach', '=', $id)
+            ->update([
+                'TrangThai' => 0
+            ]);
+        if ($del) {
+            return redirect()->route('admin_product')->with('success', 'Xoá sách thành công.');
+        } else {
+            return redirect()->route('admin_product')->with('fail', 'Xoá sách không thành công.');
+        }
+    }
+    public function add_empl()
+    {
+        if (isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged'] == 1) {
+            $admin = DB::table("nhanvien")
+                ->where('MaNV', '=', $_COOKIE['id'])
+                ->get();
+            return view('add_employee', [
                 'admin' => $admin
             ]);
         } else {
             return view('adm_partials.login');
         }
     }
-    public function edit_empl() {
-
+    public function edit_empl()
+    {
+        if (isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged'] == 1) {
+            $admin = DB::table("nhanvien")
+                ->where('MaNV', '=', $_COOKIE['id'])
+                ->get();
+            return view('add_employee', [
+                'admin' => $admin
+            ]);
+        } else {
+            return view('adm_partials.login');
+        }
     }
-    public function delete_empl() {
+    public function delete_empl($id)
+    {
+        $del = DB::table('nhanvien')
+            ->where('MaVN', '=', $id)
+            ->update([
+                'TrangThai' => 0
+            ]);
+        if ($del) {
+            return redirect()->route('admin_product')->with('success', 'Xoá sách thành công.');
+        } else {
+            return redirect()->route('admin_product')->with('fail', 'Xoá sách không thành công.');
+        }
+    }
+    public function add_invoice_import()
+    {
+        if (isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged'] == 1) {
+            $admin = DB::table("nhanvien")
+                ->where('MaNV', '=', $_COOKIE['id'])
+                ->get();
+            return view('add_invoice_import', [
+                'admin' => $admin
+            ]);
+        } else {
+            return view('adm_partials.login');
+        }
+    }
+    public function edit_invoice_import()
+    {
+        if (isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged'] == 1) {
+            $admin = DB::table("nhanvien")
+                ->where('MaNV', '=', $_COOKIE['id'])
+                ->get();
+            return view('add_invoice_import', [
+                'admin' => $admin
+            ]);
+        } else {
+            return view('adm_partials.login');
+        }
+    }
+    public function delete_invoice_import()
+    {
+        if (isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged'] == 1) {
+            $admin = DB::table("nhanvien")
+                ->where('MaNV', '=', $_COOKIE['id'])
+                ->get();
+            return view('add_invoice_import', [
+                'admin' => $admin
+            ]);
+        } else {
+            return view('adm_partials.login');
+        }
+    }
 
+    public function edit_invoice_sale()
+    {
+        if (isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged'] == 1) {
+            $admin = DB::table("nhanvien")
+                ->where('MaNV', '=', $_COOKIE['id'])
+                ->get();
+            return view('add_invoice_import', [
+                'admin' => $admin
+            ]);
+        } else {
+            return view('adm_partials.login');
+        }
+    }
+    public function delete_invoice_sale()
+    {
+        if (isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged'] == 1) {
+            $admin = DB::table("nhanvien")
+                ->where('MaNV', '=', $_COOKIE['id'])
+                ->get();
+            return view('add_invoice_import', [
+                'admin' => $admin
+            ]);
+        } else {
+            return view('adm_partials.login');
+        }
     }
 }

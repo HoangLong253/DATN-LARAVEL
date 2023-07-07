@@ -70,19 +70,83 @@ Route::get('chi-tiet-hoa-don-nhap/{id}', [AdminController::class, 'invoice_detai
 
 Route::get('/admin/hoa-don-ban', [AdminController::class, 'invoice_sale'])->name('admin_invoice_sale');
 
-
-
 Route::get('/admin/bang-tin', [AdminController::class, 'user'])->name('admin_user');
 
+/*thêm sửa xoá*/ 
+
+/*sách*/
 Route::get('/admin/sach/them-sach', [AdminController::class, 'add_product'])->name('add_product');
 
 Route::post('/them-sach', [AdminController::class, 'func_add_product'])->name('func_add_product');
 
+Route::get('/admin/sach/sua-sach/{id}', [AdminController::class, 'edit_product'])->name('edit_product');
+
+Route::post('/sua-sach', [AdminController::class, 'func_edit_product'])->name('func_edit_product');
+
+Route::get('/xoa-sach/{id}', [AdminController::class, 'func_delete_product'])->name('func_delete_product');
+/*end sách*/
+
+/*nhân viên*/
 Route::get('/admin/nhan-vien/them-nhan-vien', [AdminController::class, 'add_empl'])->name('add_employee');
 
+Route::post('/them-nhan-vien', [AdminController::class, 'func_add_empl'])->name('func_add_empl');
+
+Route::get('/admin/sach/sua-nhan-vien/{id}', [AdminController::class, 'edit_empl'])->name('edit_empl');
+
+Route::post('/sua-nhan-vien', [AdminController::class, 'func_edit_empl'])->name('func_edit_empl');
+
+Route::get('/xoa-nhan-vien/{id}', [AdminController::class, 'func_delete_empl'])->name('func_delete_empl');
+/*end nhân viên*/
+
+/*loại sách*/
 Route::get('/admin/loai-sach/them-loai-sach', [AdminController::class, 'add_product_type'])->name('add_product_type');
 
+Route::post('/them-loai-sach', [AdminController::class, 'func_add_product_type'])->name('func_add_product_type');
+
+Route::get('/admin/sach/sua-loai-sach/{id}', [AdminController::class, 'edit_product_type'])->name('edit_product_type');
+
+Route::post('/sua-loai-sach', [AdminController::class, 'func_edit_product_type'])->name('func_edit_product_type');
+
+Route::get('/xoa-loai-sach/{id}', [AdminController::class, 'func_delete_product_type'])->name('func_delete_product_type');
+/*end loại sách*/
+
+/*nhà xuất bản*/
 Route::get('/admin/nha-xuat-ban/them-nha-xuat-ban', [AdminController::class, 'add_publisher'])->name('add_publisher');
+
+Route::post('/them-nha-xuat-ban', [AdminController::class, 'func_add_publisher'])->name('func_add_publisher');
+
+Route::get('/admin/sach/sua-nha-xuat-ban/{id}', [AdminController::class, 'edit_publisher'])->name('edit_publisher');
+
+Route::post('/sua-nha-xuat-ban', [AdminController::class, 'func_edit_publisher'])->name('func_edit_publisher');
+
+Route::get('/xoa-nha-xuat-ban/{id}', [AdminController::class, 'func_delete_publisher'])->name('func_delete_publisher');
+/*end nhà xuất bản*/
+
+/*hoá đơn nhập*/
+Route::get('/admin/hoa-don-nhap/them-hoa-don-nhap', [AdminController::class, 'add_invoice_import'])->name('add_invoice_import');
+
+Route::post('/them-hoa-don-nhap', [AdminController::class, 'func_add_invoice_import'])->name('func_add_invoice_import');
+
+Route::get('/admin/sach/sua-hoa-don-nhap/{id}', [AdminController::class, 'edit_invoice_import'])->name('edit_invoice_import');
+
+Route::post('/sua-hoa-don-nhap', [AdminController::class, 'func_edit_invoice_import'])->name('func_edit_invoice_import');
+
+Route::get('/xoa-hoa-don-nhap/{id}', [AdminController::class, 'func_delete_invoice_import'])->name('func_delete_invoice_import');
+/*end hoá đơn nhập*/
+
+/*chi tiết hoá đơn nhập*/
+Route::get('/admin/sach/sua-hoa-don-nhap/{id}', [AdminController::class, 'edit_invoice_detail_import'])->name('edit_invoice_detail_import');
+
+Route::post('/sua-hoa-don-nhap', [AdminController::class, 'func_edit_invoice_detail_import'])->name('func_edit_invoice_detail_import');
+/*end chi tiết hoá đơn nhập*/
+
+/*chi tiết hoá đơn bán*/
+Route::get('/admin/sach/sua-hoa-don-ban/{id}', [AdminController::class, 'edit_invoice_import'])->name('edit_invoice_import');
+
+Route::post('/sua-hoa-don-ban', [AdminController::class, 'func_edit_invoice_import'])->name('func_edit_invoice_import');
+/*end chi tiết hoá đơn bán*/
+
+
 
 /* Menu */
 Route::get('gioithieu', function () {
