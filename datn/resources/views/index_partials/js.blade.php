@@ -187,7 +187,7 @@ function topFunction() {
 }
 </script>
 <!-- Btn contact -->
-<script type="text/javascript" src="assets/js/jQuery.WCircleMenu-min.js"></script>
+<script type="text/javascript" src="{{asset('assets/js/jQuery.WCircleMenu-min.js')}}"></script>
 <script type="text/javascript">
 $(document).ready(function() {
     /* Phone circle */

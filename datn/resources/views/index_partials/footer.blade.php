@@ -69,7 +69,7 @@
                                 @endphp </span>
     </a>
     <!-- Back to top btn -->
-    <button onclick="topFunction()" id="myBtn" title="Go to top"> <img src="assets/images/icon/top.png" alt=""> </button>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"> <img src="{{asset('assets/images/icon/top.png')}}" alt=""> </button>
 
     <!-- Contact option 2 -->
     <div class="support-online">
