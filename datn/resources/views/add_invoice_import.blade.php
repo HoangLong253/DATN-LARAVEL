@@ -20,7 +20,7 @@
 <div class="form-add-top">
     <div class="form-add-invoice">
         <div class="title-name1">Thêm Hóa Đơn Nhập</div>
-        <form action="#" method="POST">
+        <form action="{{route('func_add_invoice_import')}}" method="POST">
             @csrf
             <div class="whole-box-form-info">
                 <div class="form-group">

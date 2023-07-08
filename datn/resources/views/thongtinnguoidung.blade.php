@@ -5,7 +5,7 @@
     <div class="title-name1">Thông tin tài khoản</div>
     <div>Quản lý thông tin hồ sơ để bảo mật tài khoản</div>
     <div><a href="{{ route('lichsumuahang') }}">Lịch sử mua hàng</a></div>
-    <form class="flex-user-infor" action="#" method="POST">
+    <form class="flex-user-infor" action="{{route('capnhatthongtin')}}" method="POST">
         <div class="user-infor-detail">
             <div class="form-group">
                 <!-- Set khi đăng nhập r thì hiện thông tin vào form sửa thì click vào r đổi thôi -->
@@ -32,10 +32,11 @@
             </div>
             <div class="form-group">
                 <label for>Mật khẩu: </label>
-                <input type="text" class="form-control"
-                    id="password" name="password"
+                <input type="password" class="form-control text-sm"
+                    id="id_password" name="password"
                     value="{{$user1[0]->MatKhau}}"
-                    placeholder="Nhập số điện thoại">
+                    placeholder="Nhập mật khẩu">
+                <i class="far fa-eye matkhau" id="togglePassword"></i>
             </div>
             <div class="form-group">
                 <label for>Số điện thoại: </label>

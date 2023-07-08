@@ -16,6 +16,7 @@ use App\Http\Controllers\collectionsController;
 use App\Http\Controllers\AddProductController;
 use App\Http\Controllers\LogregController;
 use App\Http\Controllers\ThanhToanController;
+use App\Http\Controllers\UserController;
 
 use Illuminate\Support\Facades\DB;
 
@@ -52,6 +53,8 @@ Route::get('adm_logout', [AdminController::class, 'adm_logout'])->name('adm_logo
 Route::get('/admin/login', function() {
     return view('adm_partials.login');
 })->name('admin_login_form');
+
+Route::post('capnhat', [UserController::class, 'update'])->name('capnhatthongtin');
 
 Route::get('/admin/sach', [AdminController::class, 'product'])->name('admin_product');
 
@@ -153,8 +156,12 @@ Route::post('/sua-hoa-don-ban', [AdminController::class, 'func_edit_invoice_impo
 Route::get('gioithieu', function () {
     if(isset($_COOKIE['is_logged']) && $_COOKIE['is_logged']==1 ) {
         $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
+        $cartcount = DB::table('ctgiohang')
+                        ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+                        ->get();
         return view('GioiThieu', [
             'user1' => $user1,
+            'cartcount' => $cartcount,
         ]);
     }
     else{
@@ -165,7 +172,11 @@ Route::get('gioithieu', function () {
 Route::get('tintuc', function () {
     if(isset($_COOKIE['is_logged']) && $_COOKIE['is_logged']==1 ) {
         $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
+        $cartcount = DB::table('ctgiohang')
+                    ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+                    ->get();
         return view('TinTuc', [
+            'cartcount' => $cartcount,
             'user1' => $user1,
         ]);
     }
@@ -177,8 +188,12 @@ Route::get('tintuc', function () {
 Route::get('/tintuc/chudetintuc', function(){
     if(isset($_COOKIE['is_logged']) && $_COOKIE['is_logged']==1 ) {
         $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
+        $cartcount = DB::table('ctgiohang')
+                        ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+                        ->get();
         return view('articletest', [
             'user1' => $user1,
+            'cartcount' => $cartcount,
         ]);
     }
     else {
@@ -189,8 +204,12 @@ Route::get('/tintuc/chudetintuc', function(){
 Route::get('dichvu', function () {
     if(isset($_COOKIE['is_logged']) && $_COOKIE['is_logged']==1 ) {
         $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
+        $cartcount = DB::table('ctgiohang')
+        ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+        ->get();
         return view('DichVu', [
             'user1' => $user1,
+            'cartcount' => $cartcount,
         ]);
     }
     else {
@@ -202,7 +221,11 @@ Route::get('dichvu', function () {
 Route::get('lienhe', function () {
     if(isset($_COOKIE['is_logged']) && $_COOKIE['is_logged']==1 ) {
         $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
+        $cartcount = DB::table('ctgiohang')
+        ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+        ->get();
         return view('LienHe', [
+            'cartcount' => $cartcount,
             'user1' => $user1,
         ]);
     }
@@ -211,16 +234,16 @@ Route::get('lienhe', function () {
     }
 })->name('lienhe');
 
+/*giỏ hàng*/
 Route::get('/giohang', [CartController::class, 'giohang'])->name('giohang');
 Route::get('/sach/{id}/{count}', [CartController::class, 'them'])->name('them.giohang');
 Route::patch('giohang/update', [CartController::class, 'capnhat'])->name('capnhat.giohang');
 Route::delete('giohang/xoa', [CartController::class, 'xoa'])->name('xoa.giohang');
+/*end giỏ hàng*/
 
 /* Product */
 
 Route::get('/collections/tatca', [BooksController::class, 'collections'])->name('collections');
-
-Route::get('/collections/sach-giao-khoa/lop-6/am-nhac-va-mi-thuat-lop-6', [BooksController::class, 'amnhac6'])->name('amnhac6');
 
 Route::get('/collections/sach/{loai}/{tensach}/{ma}', function($loai, $tensach, $ma){
     $chitietsach = DB::table('saches')
@@ -289,12 +312,12 @@ Route::get('/collections/giao-khoa/cap-3/lop-12', [BooksController::class, 'l12'
 Route::get('thanhtoan', function () {
     if (isset($_COOKIE['is_logged']) && $_COOKIE['is_logged'] == 1) {
         $user1 = DB::table("nguoidung")->where('MaNgDung', '=', $_COOKIE['id'])->get();
-        $usercart = DB::table('ctgiohang')
+        $cartcount = DB::table('ctgiohang')
             ->where('MaGioHang', '=', $user1[0]->MaGioHang)
             ->get();
         return view('thongtingiaohang', [
             'user1' => $user1,
-            'usercart' => $usercart
+            'cartcount' => $cartcount
         ]);
     } else {
         return view('thongtingiaohang');
@@ -303,28 +326,28 @@ Route::get('thanhtoan', function () {
 Route::get('thongtinnguoidung', function () {
     if (isset($_COOKIE['is_logged']) && $_COOKIE['is_logged'] == 1) {
         $user1 = DB::table("nguoidung")->where('MaNgDung', '=', $_COOKIE['id'])->get();
-        $usercart = DB::table('ctgiohang')
+        $cartcount = DB::table('ctgiohang')
             ->where('MaGioHang', '=', $user1[0]->MaGioHang)
             ->get();
         return view('thongtinnguoidung', [
             'user1' => $user1,
-            'usercart' => $usercart
+            'cartcount' => $cartcount
         ]);
     } else {
-        return view('thongtinnguoidung');
+        return view('index');
     }
 })->name('thongtinnguoidung');
 Route::get('lichsumuahang', function () {
     if (isset($_COOKIE['is_logged']) && $_COOKIE['is_logged'] == 1) {
         $user1 = DB::table("nguoidung")->where('MaNgDung', '=', $_COOKIE['id'])->get();
-        $usercart = DB::table('ctgiohang')
+        $cartcount = DB::table('ctgiohang')
             ->where('MaGioHang', '=', $user1[0]->MaGioHang)
             ->get();
         return view('lichsumuahang', [
             'user1' => $user1,
-            'usercart' => $usercart
+            'cartcount' => $cartcount
         ]);
     } else {
-        return view('lichsumuahang');
+        return view('index');
     }
 })->name('lichsumuahang');

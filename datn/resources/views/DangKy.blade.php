@@ -5,7 +5,7 @@
 <body class="bg-dn">
     <nav class="navbar navbar-light navbar-expand-lg mb-5" style="background-color: #e3f2fd;">
         <div class="container">
-            <a class="navbar-brand mr-auto" href="#">TL BookStore</a>
+            <a class="navbar-brand mr-auto" href="{{ route('index') }}">LT BookStore</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -20,9 +20,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('dangki') }}">Đăng Ký</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('index') }}">Trang chủ</a>
                     </li>
                     @else
                     <li class="nav-item">
@@ -57,6 +54,18 @@
                 <form class="form-user validation-user" novalidate="" method="post" action="{{route('check_register')}}"
                     enctype="multipart/form-data">
                     @csrf
+                    <label>Tên đăng nhập</label>
+                    <div class="input-group input-user">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><i class="fa fa-user"></i></div>
+                        </div>
+                        <input type="text" class="form-control text-sm" id="username" name="username"
+                            placeholder="Nhập họ tên của bạn" value="" required="">
+                        <div class="invalid-feedback">Vui lòng nhập tên đăng nhập</div>
+                    </div>
+                    @error('username')
+                    <p class="">{{ $message }}</p>
+                    @enderror
                     <label>Họ tên</label>
                     <div class="input-group input-user">
                         <div class="input-group-prepend">
@@ -75,8 +84,9 @@
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="fa fa-lock"></i></div>
                         </div>
-                        <input type="password" class="form-control text-sm" id="password" name="password"
+                        <input type="password" class="form-control text-sm" id="id_password" name="password"
                             placeholder="Nhập mật khẩu (trên 8 kí tự)" required="">
+                        <i class="far fa-eye" id="togglePassword"></i>
                         <div class="invalid-feedback">Vui lòng nhập mật khẩu</div>
                     </div>
                     @error('password')
@@ -87,8 +97,9 @@
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="fa fa-lock"></i></div>
                         </div>
-                        <input type="password" class="form-control text-sm" id="repassword" name="repassword"
+                        <input type="password" class="form-control text-sm" id="id_repassword" name="repassword"
                             placeholder="Nhập lại mật khẩu" required="">
+                            <i class="far fa-eye" id="togglerePassword"></i>
                         <div class="invalid-feedback">Vui lòng nhập lại mật khẩu</div>
                     </div>
                     @error('repassword')
@@ -124,20 +135,8 @@
                     </div>
                 </form> 
             </div>
-
-             
-
-
-
-
-
         </div>
     </div>
-    </div>
-
-
-
-
 </body>
 <script>
 $('.owl-product').owlCarousel({
@@ -172,6 +171,32 @@ $('input.input-qty').each(function() {
     })
 })
 //]]>
+</script>
+
+<script>
+    const togglePassword = document.querySelector('#togglePassword');
+  const password = document.querySelector('#id_password');
+
+  togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
+</script>
+
+<script>
+    const togglerePassword = document.querySelector('#togglerePassword');
+  const repassword = document.querySelector('#id_repassword');
+
+  togglerePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = repassword.getAttribute('type') === 'password' ? 'text' : 'password';
+    repassword.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa fa-eye-slash');
+});
 </script>
 
 </html>

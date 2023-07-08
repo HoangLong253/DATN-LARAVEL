@@ -242,10 +242,10 @@ function myFunction() {
 }
 </script>
 <script>
-      var chatbox = document.getElementById('fb-customer-chat');
-      chatbox.setAttribute("page_id", "111404121865899");
-      chatbox.setAttribute("attribution", "biz_inbox");
-    </script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "111404121865899");
+    chatbox.setAttribute("attribution", "biz_inbox");
+</script>
 
     <!-- Your SDK code -->
     <script>
@@ -265,3 +265,16 @@ function myFunction() {
       }(document, 'script', 'facebook-jssdk'));
     </script>
 <noscript></noscript>
+
+<script>
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#id_password');
+
+  togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
+</script>

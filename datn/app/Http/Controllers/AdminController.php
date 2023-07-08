@@ -460,11 +460,83 @@ class AdminController extends Controller
         }
     }
 
-    public function func_add_empl()
+    public function func_add_empl(Request $request)
     {
+        $messages = [
+            'id.required' => 'Mã nhân viên không được để trống',
+            'emplname.required' => 'Tên nhân viên không được để trống',
+            'password.required' => 'Mật khẩu không được để trống',
+            'emplemail.required' => 'Email không được để trống',
+            'phone.required' => 'Số điện thoại không được để trống', 
+        ];
+        $this->validate($request, [
+            'id' => 'required',
+            'emplname' => 'required',
+            'password' => 'required',
+            'emplemail' => 'required',
+            'phone' => 'required', 
+        ], $messages);
+
+        $id = $request->id;
+        $emplname = $request->emplname; 
+        $password = $request->password;
+        $emplemail = $request->emplemail;
+        $phone = $request->phone; 
+         $isadmin = $request->isadmin; 
+        $check = DB::table('nhanvien')
+        ->insert([
+            'MaNV' => $id,
+            'HoTen' => $emplname, 
+            'Email' => $emplemail,
+            'MatKhau' => $password, 
+            'SDT' => $phone, 
+            'LaAdmin' => $isadmin, 
+            'TrangThai' => 1, 
+        ]);
+        if($check) {
+            return redirect()->route('add_empl')->with('success', 'Thêm nhân viên thành công.');
+        } else {
+            return redirect()->route('add_empl')->with('fail', 'Thêm nhân viên không thành công.');
+        }
     }
-    public function func_edit_empl($id)
+    public function func_edit_empl($id, Request $request)
     {
+        $messages = [
+            'id.required' => 'Mã nhân viên không được để trống',
+            'emplname.required' => 'Tên nhân viên không được để trống',
+            'password.required' => 'Mật khẩu không được để trống',
+            'emplemail.required' => 'Email không được để trống',
+            'phone.required' => 'Số điện thoại không được để trống', 
+        ];
+        $this->validate($request, [
+            'id' => 'required',
+            'emplname' => 'required',
+            'password' => 'required',
+            'emplemail' => 'required',
+            'phone' => 'required', 
+        ], $messages);
+
+        $id = $request->id;
+        $emplname = $request->emplname; 
+        $password = $request->password;
+        $emplemail = $request->emplemail;
+        $phone = $request->phone; 
+         $isadmin = $request->isadmin; 
+        $check = DB::table('nhanvien')
+        ->insert([
+            'MaNV' => $id,
+            'HoTen' => $emplname, 
+            'Email' => $emplemail,
+            'MatKhau' => $password, 
+            'SDT' => $phone, 
+            'LaAdmin' => $isadmin, 
+            'TrangThai' => 1, 
+        ]);
+        if($check) {
+            return redirect()->route('add_empl')->with('success', 'Thêm nhân viên thành công.');
+        } else {
+            return redirect()->route('add_empl')->with('fail', 'Thêm nhân viên không thành công.');
+        }
     }
 
     public function func_delete_empl($id)
@@ -513,11 +585,55 @@ class AdminController extends Controller
         }
     }
 
-    public function func_add_product_type()
+    public function func_add_product_type(Request $request)
     {
+        $messages = [
+            'id.required' => 'Mã loại sách không được để trống',
+            'name.required' => 'Tên loại sách không được để trống', 
+        ];
+        $this->validate($request, [
+            'id' => 'required',
+            'name' => 'required', 
+        ], $messages);
+
+        $id = $request->id;
+        $name = $request->name; 
+        $check = DB::table('loaisach')
+        ->insert([
+            'MaNXB' => $id,
+            'TenNXB' => $name,  
+            'TrangThai' => 1, 
+        ]);
+        if($check) {
+            return redirect()->route('add_product_type')->with('success', 'Thêm loại sách thành công.');
+        } else {
+            return redirect()->route('add_product_type')->with('fail', 'Thêm loại sách không thành công.');
+        }
     }
-    public function func_edit_product_type($id)
+    public function func_edit_product_type($id, Request $request)
     {
+        $messages = [
+            'id.required' => 'Mã loại sách không được để trống',
+            'name.required' => 'Tên loại sách không được để trống', 
+        ];
+        $this->validate($request, [
+            'id' => 'required',
+            'name' => 'required', 
+        ], $messages);
+
+        $id = $request->id;
+        $name = $request->name; 
+        $check = DB::table('loaisach')
+        ->insert([
+            'MaNXB' => $id,
+            'TenNXB' => $name,  
+            'TrangThai' => 1, 
+        ]);
+        if($check) {
+            return redirect()->route('add_product_type')->with('success', 'Thêm loại sách thành công.');
+        } else {
+            return redirect()->route('add_product_type')->with('fail', 'Thêm loại sách không thành công.');
+        }
     }
 
     public function func_delete_product_type($id)
@@ -566,11 +682,55 @@ class AdminController extends Controller
         }
     }
 
-    public function func_add_publisher()
+    public function func_add_publisher(Request $request)
     {
+        $messages = [
+            'id.required' => 'Mã nhà xuất bản không được để trống',
+            'name.required' => 'Tên nhà xuất bản không được để trống', 
+        ];
+        $this->validate($request, [
+            'id' => 'required',
+            'name' => 'required', 
+        ], $messages);
+
+        $id = $request->id;
+        $name = $request->name; 
+        $check = DB::table('nhaxuatban')
+        ->insert([
+            'MaNXB' => $id,
+            'TenNXB' => $name,  
+            'TrangThai' => 1, 
+        ]);
+        if($check) {
+            return redirect()->route('add_publisher')->with('success', 'Thêm nhà xuất bản thành công.');
+        } else {
+            return redirect()->route('add_publisher')->with('fail', 'Thêm nhà xuất bản không thành công.');
+        }
     }
-    public function func_edit_publisher($id)
+    public function func_edit_publisher($id, Request $request)
     {
+        $messages = [
+            'id.required' => 'Mã nhà xuất bản không được để trống',
+            'name.required' => 'Tên nhà xuất bản không được để trống', 
+        ];
+        $this->validate($request, [
+            'id' => 'required',
+            'name' => 'required', 
+        ], $messages);
+
+        $id = $request->id;
+        $name = $request->name; 
+        $check = DB::table('nhaxuatban')
+        ->insert([
+            'MaNXB' => $id,
+            'TenNXB' => $name,  
+            'TrangThai' => 1, 
+        ]);
+        if($check) {
+            return redirect()->route('add_publisher')->with('success', 'Thêm nhà xuất bản thành công.');
+        } else {
+            return redirect()->route('add_publisher')->with('fail', 'Thêm nhà xuất bản không thành công.');
+        }
     }
 
     public function func_delete_publisher($id)
@@ -602,6 +762,36 @@ class AdminController extends Controller
             return view('adm_partials.login');
         }
     }
+
+    public function func_add_invoice_import(Request $request) {
+        $messages = [
+            'id.required' => 'Mã hóa đơn không được để trống',
+            'name.required' => 'Tên Nhân viên không được để trống', 
+            'total.required' => 'Tổng tiền không được để trống', 
+        ];
+        $this->validate($request, [
+            'id' => 'required',
+            'name' => 'required',
+             'total' => 'required',  
+        ], $messages);
+
+        $id = $request->id;
+        $name = $request->name; 
+        $total = $request->total; 
+        $check = DB::table('hoadonnhap')
+        ->insert([
+            'MaHDNhap' => $id,
+            'MaNV' => $name,
+             'TongTien' => $total,    
+            'TrangThai' => 1, 
+        ]);
+        if($check) {
+            return redirect()->route('add_invoice_import')->with('success', 'Thêm hóa đơn nhập thành công.');
+        } else {
+            return redirect()->route('add_invoice_import')->with('fail', 'Thêm hóa đơn nhập không thành công.');
+        }
+    }
+
     public function edit_invoice_import()
     {
         if (isset($_COOKIE['admin_is_logged']) && $_COOKIE['admin_is_logged'] == 1) {

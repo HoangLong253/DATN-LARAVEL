@@ -29,7 +29,7 @@ class DangNhapController extends Controller
                         ->where("MatKhau", $pass)
                         ->exists();*/
         $nd = DB::table('nguoidung')
-                        ->where("Email", $name)
+                        ->where("TenDangNhapND", $name)
                         ->where("MatKhau", $pass)
                         ->exists();
         /*$ship = DB::table('nggiaohang')
@@ -40,7 +40,7 @@ class DangNhapController extends Controller
         if($nd == 1) {
             $is_logged = 1;
             $id = (DB::table('nguoidung')
-            ->where("Email", $name)
+            ->where("TenDangNhapND", $name)
             ->where("MatKhau", $pass)
             ->select('MaNgDung')
             ->get())[0]->MaNgDung;
@@ -59,6 +59,7 @@ class DangNhapController extends Controller
     public function check_register(Request $request)
     {
         $messages = [
+            'username.required' => 'Tên Đăng Nhập Không Được Bỏ Trống',
             'fullname.required' => 'Họ Và Tên Không Được Bỏ Trống',
             'password.required' => 'Mật Khẩu Không Được Bỏ Trống.',
             'password.min' => 'Mật Khẩu Phải Trên 8 ký tự.',
@@ -69,7 +70,7 @@ class DangNhapController extends Controller
             'email.required' => 'Email không được bỏ trống',
         ];
         $this->validate($request, [
-            
+            'username' => 'required',
             'fullname' => 'required',
             'password' => 'required|min:8',
             'repassword' => 'same:password',
@@ -77,6 +78,7 @@ class DangNhapController extends Controller
             'email' => 'required',
         ], $messages);
 
+        $username = $request->username;
         $MaNV = time();
         $fullname = $request->fullname;
         $password = $request->password;
@@ -106,6 +108,7 @@ class DangNhapController extends Controller
             ]);*/
         $check = DB::table('nguoidung')
         ->insert([
+            'TenDangNhapND' => $username, 
             'MaNgDung' => $MaNV,
             'HoTen' => $fullname,
             'Email' => $email,

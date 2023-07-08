@@ -16,7 +16,7 @@
     </div><!-- /.container-fluid -->
 @endsection
 @section('main_content')
-    <form action="#" method="POST">
+    <form action="{{route('func_add_publisher')}}" method="POST">
         <div class="form-add-staff">
             <div class="form-group">
                 <label for="">Mã Nhà Xuất Bản: </label>

@@ -6,7 +6,7 @@
 
     <nav class="navbar navbar-light navbar-expand-lg mb-5" style="background-color: #e3f2fd;">
         <div class="container">
-            <a class="navbar-brand mr-auto" href="#">Dedicated Dragon BookStore</a>
+            <a class="navbar-brand mr-auto" href="{{ route('index') }}">LT BookStore</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -21,9 +21,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('dangki') }}">Đăng Ký</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('index') }}">Trang chủ</a>
                     </li>
 
                     @else
@@ -72,26 +69,23 @@
                             placeholder="Tài khoản" required="">
                         <div class="invalid-feedback">Vui lòng nhập tài khoản</div>
                     </div>
+                    @error('username')
+                        <p class="">{{ $message }}</p>
+                    @enderror
                     <div class="input-group input-user">
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="fa fa-lock"></i></div>
                         </div>
-                        <input type="password" class="form-control text-sm" id="password" name="password"
+                        <input type="password" class="form-control text-sm" id="id_password" name="password"
                             placeholder="Mật khẩu" required="">
-
-                        @error('username')
-                        <p class="">{{ $message }}</p>
-                        @enderror
+                        <i class="far fa-eye matkhau" id="togglePassword"></i>
                     </div>
+                    @error('password')
+                        <p class="">{{ $message }}</p>
+                    @enderror
                     <div class="button-user d-flex align-items-center justify-content-between">
                         <!--nút đăng nhập-->
                         <input type="submit" class="btn btn-primary" name="login-user" value="Đăng nhập">
-                        <!--nút nhớ mật khẩu-->
-                        <div class="checkbox-user custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" name="remember-user" id="remember-user"
-                                value="1">
-                            <label class="custom-control-label" for="remember-user">Nhớ mật khẩu</label>
-                        </div>
                     </div>
                     <div class="note-user">
                         <span>Bạn chưa có tài khoản ! </span>
@@ -100,8 +94,17 @@
                 </form>
             </div>
         </div>
-
-
 </body>
+<script>
+    const togglePassword = document.querySelector('#togglePassword');
+  const password = document.querySelector('#id_password');
 
+  togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa fa-eye-slash');
+});
+</script>
 </html>

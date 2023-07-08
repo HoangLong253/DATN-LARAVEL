@@ -15,43 +15,80 @@
         </thead>
         <tbody>
             @php $total = 0 @endphp
-            @if (session('cart'))
-                @foreach (session('cart') as $id => $details)
-                    <tr rowId="{{ $id }}">
-                        <td>
-                            <div class="row">
-                                <div class="col-sm-3 ">
-                                    <img class="card-img-top"
-                                        src="{{ asset('assets/images/sach/' . $details['loaisach'] . '/' . $details['image']) }}"
-                                        class="card-img-top" />
-                                </div>
+            @if(isset($_COOKIE['is_logged']) && $_COOKIE['is_logged']==1 )
+                @foreach($usercart as $usercart)
+                <tr>
+                    <td>
+                        <div class="row">
+                            <div class="col-sm-3 ">
+                                <img class="card-img-top"
+                                    src="{{ asset('assets/images/sach/' . $usercart->MaLoaiSach . '/' . $usercart->HinhAnh) }}"
+                                    class="card-img-top" />
                             </div>
-                        </td>
-                        <td data-th="Product">
-                            <div class="col-sm-9 hidden-xs">
-                                {{ $details['name'] }}
-                            </div>
-                        </td>
-                        <td data-th="Qty">
-                            <span class="buttons_added">
-                                <input class="minus is-form" type="button" value="-" onclick="decreaseCount(event, this)">
-                                <input type="number" aria-label="quantity" class="input-qty" value="{{  $details['quantity'] }}" max="10" min="1" name="quantity">
-                                <input class="plus is-form" type="button" value="+" onclick="increaseCount(event, this)">
-                            </span>
-                        </td>
-                        <td data-th="Price">
-                            {{ number_format($details['price']) }}đ
-                        </td>
-                        <td class="actions">
-                            <a class="btn btn-outline-danger btn-sm delete-product">
-                                Xoá
-                                <!--<i class="fa fa-trash-o"></i>-->
-                            </a>
-                        </td>
-                    </tr>
-                    @php $total += $details['price'] * $details['quantity'] @endphp
+                        </div>
+                    </td>
+                    <td data-th="Product">
+                        <div class="col-sm-9 hidden-xs">
+                            {{ $usercart->TenSach }}
+                        </div>
+                    </td>
+                    <td data-th="Qty">
+                        <span class="buttons_added">
+                            <input class="minus is-form" type="button" value="-" onclick="decreaseCount(event, this)">
+                            <input type="number" aria-label="quantity" class="input-qty" value="{{  $usercart->SL }}" max="10" min="1" name="quantity">
+                            <input class="plus is-form" type="button" value="+" onclick="increaseCount(event, this)">
+                        </span>
+                    </td>
+                    <td data-th="Price">
+                        @convert($usercart->DonGia)đ
+                    </td>
+                    <td class="actions">
+                        <a class="btn btn-outline-danger btn-sm delete-product">
+                            Xoá
+                            <!--<i class="fa fa-trash-o"></i>-->
+                        </a>
+                    </td>
+                </tr>
+                @php $total += $usercart->DonGia * $usercart->SL @endphp
                 @endforeach
             @else
+                @if (session('cart'))
+                    @foreach (session('cart') as $id => $details)
+                        <tr rowId="{{ $id }}">
+                            <td>
+                                <div class="row">
+                                    <div class="col-sm-3 ">
+                                        <img class="card-img-top"
+                                            src="{{ asset('assets/images/sach/' . $details['loaisach'] . '/' . $details['image']) }}"
+                                            class="card-img-top" />
+                                    </div>
+                                </div>
+                            </td>
+                            <td data-th="Product">
+                                <div class="col-sm-9 hidden-xs">
+                                    {{ $details['name'] }}
+                                </div>
+                            </td>
+                            <td data-th="Qty">
+                                <span class="buttons_added">
+                                    <input class="minus is-form" type="button" value="-" onclick="decreaseCount(event, this)">
+                                    <input type="number" aria-label="quantity" class="input-qty" value="{{  $details['quantity'] }}" max="10" min="1" name="quantity">
+                                    <input class="plus is-form" type="button" value="+" onclick="increaseCount(event, this)">
+                                </span>
+                            </td>
+                            <td data-th="Price">
+                                {{ number_format($details['price']) }}đ
+                            </td>
+                            <td class="actions">
+                                <a class="btn btn-outline-danger btn-sm delete-product">
+                                    Xoá
+                                    <!--<i class="fa fa-trash-o"></i>-->
+                                </a>
+                            </td>
+                        </tr>
+                        @php $total += $details['price'] * $details['quantity'] @endphp
+                    @endforeach
+                @else
                 <!-- Cart no product -->
                 <div class="wrap-cart-no-product">
                     <div class="wrap-content">
@@ -70,11 +107,12 @@
                     </div>
                 </div>
             @endif
+            @endif
         </tbody>
         <tfoot>
             <tr>
                 <td colspan="5" class="text-right">
-                    Tổng tiền: {{number_format($total,0)}}đ
+                    Tổng tiền: @convert($total)đ
                 </td>
             </tr>
             <tr>

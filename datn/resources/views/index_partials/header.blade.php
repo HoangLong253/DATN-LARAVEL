@@ -159,7 +159,7 @@
                             <span class="header__cart-notice">
                                 @php
                                 if(isset($_COOKIE['is_logged']) && $_COOKIE['is_logged']==1 ){
-                                    echo count($usercart);
+                                    echo count($cartcount);
                                 } else if(session('cart') != null) {
                                     echo count(session('cart'));
                                 } else {

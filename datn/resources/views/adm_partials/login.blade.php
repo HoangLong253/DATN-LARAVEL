@@ -49,6 +49,7 @@
                                     </div>
                                     <input type="password" class="form-control text-sm" name="password"
                                         id="password" placeholder="Mật khẩu *" autocomplete="off">
+                                    <i class="far fa-eye" id="togglePassword"></i>
                                     <div class="input-group-append">
                                         <div class="input-group-text show-password">
                                             <span class="fas fa-eye"></span>
@@ -81,4 +82,16 @@
                 </div>
         </div>
 </body>
+<script>
+    const togglePassword = document.querySelector('#togglePassword');
+  const password = document.querySelector('#id_password');
+
+  togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
+</script>
 </html>

@@ -341,7 +341,7 @@ a:hover{color: unset !important;}
 .wrap-userdk{width:100%;max-width:550px;margin:auto;border-radius:5px;}
 .wrap-userdk{position:relative;}
 .box-regis{position:relative;width:539px;overflow:hidden;background:#00337C;border-bottom-left-radius:5px;border-bottom-right-radius:5px;}
-.wrap-userdk{width:560px;height: 600px;position:relative;overflow:hidden;margin:auto;}
+.wrap-userdk{width:560px;height: 636px;position:relative;overflow:hidden;margin:auto;}
 .wrap-userdk .box-regis{position:absolute;inset:5px;z-index:2;}
 .wrap-userdk:before{transform-origin:bottom right;content:'';position:absolute;width:560px;height:870px;top:-50%;left:-50%;background:linear-gradient(0deg,transparent,#45f3ff,#45f3ff,#45f3ff);z-index:1;animation:animate 6s linear infinite;}
 .wrap-userdk::after{transform-origin:bottom right;content:'';position:absolute;width:560px;height:870px;top:-50%;left:-50%;background:linear-gradient(0deg,transparent,#ff2770,#ff2770,#ff2770);z-index:1;animation:animate 6s linear infinite;animation-delay:-3s;}
@@ -412,3 +412,10 @@ a{text-decoration: none !important;}
  .grid-product-inbill-list{display: grid;grid-template-columns: repeat(5,1fr);gap: 10px;}
  /*Chữ hoa đầu*/
 .chuhoa {text-transform: capitalize;}
+
+.matkhau{
+    display: none;
+    float: right;
+    margin-left: -30px; 
+    cursor: pointer;
+}

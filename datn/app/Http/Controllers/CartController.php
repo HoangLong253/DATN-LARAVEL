@@ -12,11 +12,16 @@ class CartController extends Controller
         if(isset($_COOKIE['is_logged']) && $_COOKIE['is_logged']==1 ) {
             $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
             $usercart = DB::table('ctgiohang')
+                            ->join('saches', 'ctgiohang.MaSach', '=', 'saches.MaSach')
+                            ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+                            ->get();
+            $cartcount = DB::table('ctgiohang')
                             ->where('MaGioHang', '=', $user1[0]->MaGioHang)
                             ->get();
             return view('giohang', [
                 'user1' => $user1,
-                'usercart' => $usercart
+                'usercart' => $usercart,
+                'cartcount' => $cartcount,
             ]);
         }
         else {
