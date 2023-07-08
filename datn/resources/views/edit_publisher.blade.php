@@ -1,6 +1,20 @@
 @extends('layouts.admin')
 @section('header_content')
     <div class="container-fluid">
+        <div class="return">
+            @if ($message = Session::get('success'))
+            <div>
+                <div style="color: #12c300;
+                font-size: 1.2em;font-weight: bold;">{{ $message }}</div>
+            </div>
+            @endif
+            @if ($message = Session::get('fail'))
+            <div>
+                <div style="color: #dd0505;
+                font-size: 1.2em;font-weight: bold;">{{ $message }}</div>
+            </div>
+            @endif
+        </div>
         <div class="row mb-2">
             <div class="col-sm-6">
                 <h1 class="m-0">Sửa Nhà Xuất Bản</h1>
@@ -17,6 +31,7 @@
 @endsection
 @section('main_content')
     <form action="#" method="POST">
+        @csrf
         <div class="form-add-staff">
             <div class="form-group">
                 <label for="">Mã Nhà Xuất Bản: </label>
@@ -43,7 +58,7 @@
                 <div class="form-check">
                     <input type="checkbox" class="form-check-input" 
                         id="active" name="active"
-                        @if ($pl[0]->TrangThai)
+                        @if ($pl[0]->TrangThaiNXB)
                         checked
                         @endif
                         >

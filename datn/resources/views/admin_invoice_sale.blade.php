@@ -1,6 +1,20 @@
 @extends('layouts.admin')
 @section('header_content')
     <div class="container-fluid">
+        <div class="return">
+            @if ($message = Session::get('success'))
+            <div>
+                <div style="color: #12c300;
+                font-size: 1.2em;font-weight: bold;">{{ $message }}</div>
+            </div>
+            @endif
+            @if ($message = Session::get('fail'))
+            <div>
+                <div style="color: #dd0505;
+                font-size: 1.2em;font-weight: bold;">{{ $message }}</div>
+            </div>
+            @endif
+        </div>
         <div class="row mb-2">
             <div class="col-sm-6">
                 <h1 class="m-0">Hoá Đơn Bán</h1>
@@ -15,6 +29,9 @@
     </div><!-- /.container-fluid -->
 @endsection
 @section('main_content')
+@if ($alls == null)
+    <div>Không có dữ liệu</div>
+@else
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -34,7 +51,7 @@
                     <td> {{ $all->MaHDBan }} </td>
                     <td> {{ $all->HoTenNV }} </td>
                     <td> {{ $all->HoTenND }} </td>
-                    <td> {{ $all->TongTien }} </td>
+                    <td> @convert($all->TongTienHDB)đ </td>
                     @switch($all->TrangThaiGiaoHang)
                         @case(0)
                             <td> Đơn hàng đang chờ duyệt </td>
@@ -61,7 +78,7 @@
                             <td> Đã thanh toán </td>
                         @break
                     @endswitch
-                    @if($all->TrangThai)
+                    @if($all->TrangThaiHDB)
                     <td>
                         <input type="checkbox" id="TrangThai" name="TrangThai" value="yes" checked
                             onclick="return false;" />
@@ -73,13 +90,13 @@
                     </td>
                     @endif
                     <td>
-                        <a id="update_btn" href="#" class="mr-3 func_icon !important" title="Cập nhật"
+                        <a id="update_btn" href="{{route('edit_invoice_sale', ['id' => $all->MaHDBan])}}" class="mr-3 func_icon !important" title="Cập nhật"
                             data-toggle="tooltip"><span class="fa fa-pen"></span></a>
-                        <a id="del_btn" class="mr-3 func_icon" href="#" title="Xoá" data-toggle="tooltip">
+                        <!--<a id="del_btn" class="mr-3 func_icon" href="#" title="Xoá" data-toggle="tooltip">
                             <span
                                 class="fa fa-trash">
                             </span>
-                        </a>
+                        </a>-->
                         <a href="{{route('admin_invoice_detail_sale', ['id' => $all->MaHDBan])}}"  title="Dẫn qua chi tiết">
                             <span class="fa fa-long-arrow-alt-right"></span>
                         </a>
@@ -88,4 +105,5 @@
             @endforeach
         </tbody>
     </table>
+@endif
 @endsection

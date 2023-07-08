@@ -1,21 +1,21 @@
 @extends('layouts.admin')
 @section('header_content')
 <div class="container-fluid">
-    <div class="row mb-2">
-        <div class="return">
-            @if ($message = Session::get('success'))
-            <div>
-                <div style="color: #12c300;
-                font-size: 1.2em;font-weight: bold;">{{ $message }}</div>
-            </div>
-            @endif
-            @if ($message = Session::get('fail'))
-            <div>
-                <div style="color: #dd0505;
-                font-size: 1.2em;font-weight: bold;">{{ $message }}</div>
-            </div>
-            @endif
+    <div class="return">
+        @if ($message = Session::get('success'))
+        <div>
+            <div style="color: #12c300;
+            font-size: 1.2em;font-weight: bold;">{{ $message }}</div>
         </div>
+        @endif
+        @if ($message = Session::get('fail'))
+        <div>
+            <div style="color: #dd0505;
+            font-size: 1.2em;font-weight: bold;">{{ $message }}</div>
+        </div>
+        @endif
+    </div>
+    <div class="row mb-2">
         <div class="col-sm-6">
             <h1 class="m-0">Sửa Sách</h1>
         </div><!-- /.col -->
@@ -84,7 +84,7 @@
                 <div class="form-group">
                     <label for>Giá bán: </label>
                     <input type="number" class="form-control" id="price" name="price"
-                        value="{{ $sach[0]->DonGia }}"
+                        value="{{ $sach[0]->DonGiaSach }}"
                         placeholder="Nhập giá bán">
                 </div>
                 @error('price')
@@ -117,7 +117,7 @@
                     type="checkbox" 
                     name="active" 
                     id="active"  
-                    @if ($sach[0]->TrangThai)
+                    @if ($sach[0]->TrangThaiS)
                         checked
                     @endif>
                 Trạng thái

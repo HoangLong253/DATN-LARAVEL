@@ -16,20 +16,20 @@ class BooksController extends Controller
         $noibats = DB::table("saches")
             ->where([
                 ["NoiBat", "=", 1],
-                ["TrangThai", "=", 1,],
+                ["TrangThaiS", "=", 1,],
             ])
             ->get();
         $sgks = DB::table("saches")
             ->where([
                 ["MaLoaiSach", "=", "GK"],
-                ["TrangThai", "=", 1,],
+                ["TrangThaiS", "=", 1,],
             ])
             ->take(5)
             ->get();
         $thamkhaos = DB::table("saches")
             ->where([
                 ["MaLoaiSach", "=", "TK"],
-                ["TrangThai", "=", 1,],
+                ["TrangThaiS", "=", 1,],
             ])
             ->take(5)
             ->get();
@@ -40,15 +40,11 @@ class BooksController extends Controller
             $cartcount = DB::table('ctgiohang')
                 ->where('MaGioHang', '=', $user1[0]->MaGioHang)
                 ->get();
-            $cartcount = DB::table('ctgiohang')
-                ->where('MaGioHang', '=', $user1[0]->MaGioHang)
-                ->get();
             return view('index', array(
                 'user1' => $user1,
                 'noibats' => $noibats,
                 'sgks' => $sgks,
                 'thamkhaos' => $thamkhaos,
-                'cartcount' => $cartcount,
                 'cartcount' => $cartcount,
             ));
         } else {
@@ -68,13 +64,9 @@ class BooksController extends Controller
             $cartcount = DB::table('ctgiohang')
                 ->where('MaGioHang', '=', $user1[0]->MaGioHang)
                 ->get();
-            $cartcount = DB::table('ctgiohang')
-                ->where('MaGioHang', '=', $user1[0]->MaGioHang)
-                ->get();
             return view('collections', [
                 'user1' => $user1,
                 'all' => $all,
-                'cartcount' => $cartcount,
                 'cartcount' => $cartcount,
             ]);
         } else {
@@ -88,7 +80,8 @@ class BooksController extends Controller
     {
         $gks = DB::table("saches")
             ->where([
-                ["MaLoaiSach", "=", "GK"]
+                ["MaLoaiSach", "=", "GK"],
+                ["TrangThaiS", "=", 1],
             ])
             ->get();
         if (isset($_COOKIE['is_logged']) && $_COOKIE['is_logged'] == 1) {
@@ -96,13 +89,9 @@ class BooksController extends Controller
             $cartcount = DB::table('ctgiohang')
                 ->where('MaGioHang', '=', $user1[0]->MaGioHang)
                 ->get();
-            $cartcount = DB::table('ctgiohang')
-                ->where('MaGioHang', '=', $user1[0]->MaGioHang)
-                ->get();
             return view('GK', [
                 'user1' => $user1,
                 'gks' => $gks,
-                'cartcount' => $cartcount,
                 'cartcount' => $cartcount,
             ]);
         } else {
@@ -116,6 +105,7 @@ class BooksController extends Controller
     {
         $tks = DB::table("saches")
             ->where([
+                ["TrangThaiS", "=", 1],
                 ["MaLoaiSach", "=", "TK"]
             ])
             ->get();
@@ -124,13 +114,9 @@ class BooksController extends Controller
             $cartcount = DB::table('ctgiohang')
                 ->where('MaGioHang', '=', $user1[0]->MaGioHang)
                 ->get();
-            $cartcount = DB::table('ctgiohang')
-                ->where('MaGioHang', '=', $user1[0]->MaGioHang)
-                ->get();
             return view('TK', [
                 'user1' => $user1,
                 'tks' => $tks,
-                'cartcount' => $cartcount,
                 'cartcount' => $cartcount,
             ]);
         }
@@ -139,11 +125,12 @@ class BooksController extends Controller
         ]);
     }
 
-    public function GD()
+    public function KHTN()
     {
-        $gks = DB::table("saches")
+        $tks = DB::table("saches")
             ->where([
-                ["MaLoaiSach", "=", "GK"]
+                ["TrangThaiS", "=", 1],
+                ["MaLoaiSach", "=", "KHTN"]
             ])
             ->get();
         if (isset($_COOKIE['is_logged']) && $_COOKIE['is_logged'] == 1) {
@@ -151,13 +138,33 @@ class BooksController extends Controller
             $cartcount = DB::table('ctgiohang')
                 ->where('MaGioHang', '=', $user1[0]->MaGioHang)
                 ->get();
+            return view('KHTN', [
+                'user1' => $user1,
+                'tks' => $tks,
+                'cartcount' => $cartcount,
+            ]);
+        }
+        return view('KHTN', [
+            'tks' => $tks,
+        ]);
+    }
+
+    public function GD()
+    {
+        $gks = DB::table("saches")
+            ->where([
+                ["TrangThaiS", "=", 1],
+                ["MaNXB", "=", "GD"]
+            ])
+            ->get();
+        if (isset($_COOKIE['is_logged']) && $_COOKIE['is_logged'] == 1) {
+            $user1 = DB::table("nguoidung")->where('MaNgDung', '=', $_COOKIE['id'])->get();
             $cartcount = DB::table('ctgiohang')
                 ->where('MaGioHang', '=', $user1[0]->MaGioHang)
                 ->get();
             return view('GD', [
                 'user1' => $user1,
                 'gks' => $gks,
-                'cartcount' => $cartcount,
                 'cartcount' => $cartcount,
             ]);
         } else {
@@ -171,6 +178,7 @@ class BooksController extends Controller
     {
         $hns = DB::table("saches")
             ->where([
+                ["TrangThaiS", "=", 1],
                 ["MaNXB", "=", "DHQGHN"]
             ])
             ->get();
@@ -194,6 +202,7 @@ class BooksController extends Controller
     {
         $dns = DB::table("saches")
             ->where([
+                ["TrangThaiS", "=", 1],
                 ["MaNXB", "=", "DN"]
             ])
             ->get();
@@ -218,6 +227,7 @@ class BooksController extends Controller
     {
         $tns = DB::table("saches")
             ->where([
+                ["TrangThaiS", "=", 1],
                 ["MaNXB", "=", "TN"]
             ])
             ->get();
@@ -242,6 +252,7 @@ class BooksController extends Controller
     {
         $thtphcms = DB::table("saches")
             ->where([
+                ["TrangThaiS", "=", 1],
                 ["MaNXB", "=", "THTPHCM"]
             ])
             ->get();
@@ -270,6 +281,7 @@ class BooksController extends Controller
                         ->get();*/
         $search_value = DB::table('saches')
             ->where('TenSach', 'LIKE', '%' . $var . '%')
+            ->where('TrangThaiS', '=', 1)
             ->get();
         if (isset($_COOKIE['is_logged']) && $_COOKIE['is_logged'] == 1) {
             $user1 = DB::table("nguoidung")->where('MaNgDung', '=', $_COOKIE['id'])->get();
@@ -290,18 +302,22 @@ class BooksController extends Controller
     public function c2() {
         $c2s = DB::table('saches')
         ->where([
+            ["TrangThaiS", "=", 1],
             ['MaLoaiSach', '=', 'GK'],
             ['TenSach', 'LIKE', '%Lớp 6%'],
         ])
         ->orWhere([
+            ["TrangThaiS", "=", 1],
             ['MaLoaiSach', '=', 'GK'],
             ['TenSach', 'LIKE', '%Lớp 7%']
         ])
         ->orWhere([
+            ["TrangThaiS", "=", 1],
             ['MaLoaiSach', '=', 'GK'],
             ['TenSach', 'LIKE', '%Lớp 8%']
         ])
         ->orWhere([
+            ["TrangThaiS", "=", 1],
             ['MaLoaiSach', '=', 'GK'],
             ['TenSach', 'LIKE', '%Lớp 9%']
         ])
@@ -326,14 +342,17 @@ class BooksController extends Controller
     public function c3() {
         $c3s = DB::table('saches')
             ->where([
+                ["TrangThaiS", "=", 1],
                 ['MaLoaiSach', '=', 'GK'],
                 ['TenSach', 'LIKE', '%Lớp 10%'],
             ])
             ->orWhere([
+                ["TrangThaiS", "=", 1],
                 ['MaLoaiSach', '=', 'GK'],
                 ['TenSach', 'LIKE', '%Lớp 11%']
             ])
             ->orWhere([
+                ["TrangThaiS", "=", 1],
                 ['MaLoaiSach', '=', 'GK'],
                 ['TenSach', 'LIKE', '%Lớp 12%']
             ])
@@ -358,6 +377,7 @@ class BooksController extends Controller
     public function l6() {
         $l6 = DB::table('saches')
             ->where([
+                ["TrangThaiS", "=", 1],
                 ['MaLoaiSach', '=', 'GK'],
                 ['TenSach', 'LIKE', '%Lớp 6%'],
             ])
@@ -382,6 +402,7 @@ class BooksController extends Controller
     public function l7() {
         $l7 = DB::table('saches')
             ->where([
+                ["TrangThaiS", "=", 1],
                 ['MaLoaiSach', '=', 'GK'],
                 ['TenSach', 'LIKE', '%Lớp 7%'],
             ])
@@ -406,6 +427,7 @@ class BooksController extends Controller
     public function l8() {
         $l8 = DB::table('saches')
             ->where([
+                ["TrangThaiS", "=", 1],
                 ['MaLoaiSach', '=', 'GK'],
                 ['TenSach', 'LIKE', '%Lớp 8%'],
             ])
@@ -429,6 +451,7 @@ class BooksController extends Controller
     public function l9() {
         $l9 = DB::table('saches')
             ->where([
+                ["TrangThaiS", "=", 1],
                 ['MaLoaiSach', '=', 'GK'],
                 ['TenSach', 'LIKE', '%Lớp 9%'],
             ])
@@ -452,6 +475,7 @@ class BooksController extends Controller
     public function l10() {
         $l10 = DB::table('saches')
             ->where([
+                ["TrangThaiS", "=", 1],
                 ['MaLoaiSach', '=', 'GK'],
                 ['TenSach', 'LIKE', '%Lớp 10%'],
             ])
@@ -475,6 +499,7 @@ class BooksController extends Controller
     public function l11() {
         $l11 = DB::table('saches')
             ->where([
+                ["TrangThaiS", "=", 1],
                 ['MaLoaiSach', '=', 'GK'],
                 ['TenSach', 'LIKE', '%Lớp 11%'],
             ])
@@ -499,6 +524,7 @@ class BooksController extends Controller
     public function l12() {
         $l12 = DB::table('saches')
             ->where([
+                ["TrangThaiS", "=", 1],
                 ['MaLoaiSach', '=', 'GK'],
                 ['TenSach', 'LIKE', '%Lớp 12%'],
             ])

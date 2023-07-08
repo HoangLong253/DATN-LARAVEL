@@ -1,6 +1,20 @@
 @extends('layouts.admin')
 @section('header_content')
     <div class="container-fluid">
+        <div class="return">
+            @if ($message = Session::get('success'))
+            <div>
+                <div style="color: #12c300;
+                font-size: 1.2em;font-weight: bold;">{{ $message }}</div>
+            </div>
+            @endif
+            @if ($message = Session::get('fail'))
+            <div>
+                <div style="color: #dd0505;
+                font-size: 1.2em;font-weight: bold;">{{ $message }}</div>
+            </div>
+            @endif
+        </div>
         <div class="row mb-2">
             <div class="col-sm-6">
                 <h1 class="m-0">Chi Tiết Hoá Đơn Bán</h1>
@@ -16,6 +30,9 @@
     </div><!-- /.container-fluid -->
 @endsection
 @section('main_content')
+@if ($alls == null)
+    <div>Không có dữ liệu</div>
+@else
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -35,9 +52,9 @@
                             width="70" height="100"></img>
                     </td>
                     <td class="chuhoa"> {{$all->TenSach}} </td>
-                    <td> {{ $all->DonGia }}đ </td>
-                    <td> {{$all->Sluong}} </td>
-                    @if($all->TrangThai)
+                    <td> @convert($all->DonGiaSach)đ </td>
+                    <td> {{$all->SLCTHDB}} </td>
+                    @if($all->TrangThaiCTHDB)
                     <td>
                         <input type="checkbox" id="TrangThai" name="TrangThai" value="yes" checked
                             onclick="return false;" />
@@ -52,4 +69,5 @@
             @endforeach
         </tbody>
     </table>
+@endif
 @endsection

@@ -1,6 +1,20 @@
 @extends('layouts.admin')
 @section('header_content')
     <div class="container-fluid">
+        <div class="return">
+            @if ($message = Session::get('success'))
+            <div>
+                <div style="color: #12c300;
+                font-size: 1.2em;font-weight: bold;">{{ $message }}</div>
+            </div>
+            @endif
+            @if ($message = Session::get('fail'))
+            <div>
+                <div style="color: #dd0505;
+                font-size: 1.2em;font-weight: bold;">{{ $message }}</div>
+            </div>
+            @endif
+        </div>
         <div class="row mb-2">
             <div class="col-sm-6">
                 <h1 class="m-0">Sửa Nhân Viên</h1>
@@ -46,7 +60,7 @@
             <div class=" ">
             <input type="password" class="form-control" 
                 id="password" name="password"
-                value="{{$nv[0]->MatKhau}}"
+                value="{{$nv[0]->MatKhauNV}}"
                 placeholder="Nhập mật khẩu">
             </div>
         </div>
@@ -57,7 +71,7 @@
             <label for="">Số điện thoại: </label>
             <input type="number" class="form-control" 
                 id="phone" name="phone"
-                value="{{$nv[0]->SDT}}"
+                value="{{$nv[0]->SDTNV}}"
                 placeholder="Nhập Số điện thoại">
         </div>
         @error('phone')
@@ -68,7 +82,7 @@
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" 
                     id="active" name="active"
-                    @if ($nv[0]->TrangThai)
+                    @if ($nv[0]->TrangThaiNV)
                     checked
                     @endif
                     >

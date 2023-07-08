@@ -17,33 +17,25 @@
     </div>
     <div class="row mb-2">
         <div class="col-sm-6">
-            <h1 class="m-0">Thêm Hoá Đơn Nhập</h1>
+            <h1 class="m-0">Sửa Hoá Đơn Nhập</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="{{route('admin')}}">Quản Lý</a></li>
                 <li class="breadcrumb-item"><a href="{{route('admin_invoice_import')}}">Hoá Đơn Nhập</a></li>
-                <li class="breadcrumb-item active">Thêm Hoá Đơn Nhập</li>
+                <li class="breadcrumb-item active">Sửa Hoá Đơn Nhập</li>
             </ol>
         </div>
     </div><!-- /.row -->
 </div><!-- /.container-fluid -->
 @endsection
 @section('main_content')
-<!-- Thêm sửa hóa đơn bán -->
+<!-- Sửa sửa hóa đơn bán -->
 <div class="form-add-top">
     <div class="form-add-invoice">
-        <form action="{{route('func_add_invoice_import')}}" method="POST">
+        <form action="{{route('func_edit_invoice_import', ['id' => $hdn[0]->MaHDNhap])}}" method="POST">
             @csrf
             <div class="whole-box-form-info">
-                <div class="form-group">
-                    <label for="idbook">Mã hóa đơn nhập: </label>
-                    <input type="text" class="form-control" id="id" name="id"
-                        placeholder="Nhập mã hóa đơn bán">
-                </div>
-                @error('id')
-                    <p class="">{{ $message }}</p>
-                @enderror
                 <div class="form-group">
                     <label for="namebook">Tên nhân viên: </label>
                     <!--làm thẻ select option-->
@@ -60,7 +52,7 @@
                     <label for>Tổng tiền: </label> 
                     <input type="number" class="form-control" 
                         id="total" name="total"
-                        value="0"
+                        value="{{$hdn[0]->TongTienHDN}}"
                         placeholder="Nhập tổng tiền">
                 </div>
                 @error('total')
@@ -68,7 +60,17 @@
                 @enderror
             </div>
             <div class="flex-btn">
-                <button type="submit" class="btn btn-primary">Thêm</button>
+                <div>
+                    <input 
+                        type="checkbox" 
+                        name="active" 
+                        id="active"  
+                        @if ($hdn[0]->TrangThaiHDN)
+                            checked
+                        @endif>
+                    Trạng thái
+                </div>
+                <button type="submit" class="btn btn-primary">Sửa</button>
                 <a href="{{route('admin_invoice_import')}}" class="btn btn-danger">Huỷ</a>
             </div>
         </form>

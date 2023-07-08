@@ -128,15 +128,15 @@
                         @if ($chitietsach[0]->PhanTramGiam)
                             <div class="flex-price-product">
                                 <span class="price-new">Giá khuyến mãi: <span
-                                        class="price-bold">@convert($chitietsach[0]->DonGia - $chitietsach[0]->DonGia * $chitietsach[0]->PhanTramGiam)đ</span></span>
+                                        class="price-bold">@convert($chitietsach[0]->DonGiaSach - $chitietsach[0]->DonGiaSach * $chitietsach[0]->PhanTramGiam)đ</span></span>
                                 <!-- Format monney tự cách hoặc chấm + Auto set "Đ" sau giá -->
                                 <span class="price-old">Giá gốc: <span
-                                        class="price-strikethrough">@convert($chitietsach[0]->DonGia)đ</span></span>
+                                        class="price-strikethrough">@convert($chitietsach[0]->DonGiaSach)đ</span></span>
                             </div>
                         @else
                             <div class="flex-price-product">
                                 <!-- Format monney tự cách hoặc chấm + Auto set "Đ" sau giá -->
-                                <span class="price-new">Giá gốc: <span class="price">@convert($chitietsach[0]->DonGia)đ</span></span>
+                                <span class="price-new">Giá gốc: <span class="price">@convert($chitietsach[0]->DonGiaSach)đ</span></span>
                             </div>
                         @endif
                         <div class="quantity-pick">Số lượng:
@@ -269,11 +269,11 @@
                                         </div>
                                         @if ($sgk->PhanTramGiam != 0)
                                             <div class="name-product text-split-1">{{ $sgk->TenSach }}</div>
-                                            <div class="price-product">@convert($sgk->DonGia - $sgk->DonGia * $sgk->PhanTramGiam)đ</div>
-                                            <div class="price-product"><del>@convert($sgk->DonGia)đ</del></div>
+                                            <div class="price-product">@convert($sgk->DonGiaSach - $sgk->DonGiaSach * $sgk->PhanTramGiam)đ</div>
+                                            <div class="price-product"><del>@convert($sgk->DonGiaSach)đ</del></div>
                                         @else
                                             <div class="name-product text-split-1">{{ $sgk->TenSach }}</div>
-                                            <div class="price-product">@convert($sgk->DonGia)đ</div>
+                                            <div class="price-product">@convert($sgk->DonGiaSach)đ</div>
                                         @endif
                                     </a>
                                     @endforeach
@@ -297,11 +297,11 @@
                                         </div>
                                         @if ($sgk->PhanTramGiam != 0)
                                             <div class="name-product text-split-1">{{ $sgk->TenSach }}</div>
-                                            <div class="price-product">@convert($sgk->DonGia - $sgk->DonGia * $sgk->PhanTramGiam)đ</div>
-                                            <div class="price-product"><del>@convert($sgk->DonGia)đ</del></div>
+                                            <div class="price-product">@convert($sgk->DonGiaSach - $sgk->DonGiaSach * $sgk->PhanTramGiam)đ</div>
+                                            <div class="price-product"><del>@convert($sgk->DonGiaSach)đ</del></div>
                                         @else
                                             <div class="name-product text-split-1">{{ $sgk->TenSach }}</div>
-                                            <div class="price-product">@convert($sgk->DonGia)đ</div>
+                                            <div class="price-product">@convert($sgk->DonGiaSach)đ</div>
                                         @endif
                                     </a>
                                     @endforeach

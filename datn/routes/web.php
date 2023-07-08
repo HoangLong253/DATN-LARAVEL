@@ -42,6 +42,10 @@ Route::post('check_register', [DangNhapController::class, 'check_register'])->na
 
 Route::post('check_login', [DangNhapController::class, 'check_login'])->name('check_login');
 
+Route::post('capnhat', [UserController::class, 'update'])->name('capnhatthongtin');
+
+Route::post('xoa', [UserController::class, 'delete'])->name('xoa');
+
 /*xử lí admin*/
 Route::get('/admin/trang-chu', [AdminController::class, 'home'])->name('admin');
 Route::get('/admin', [AdminController::class, 'home'])->name('admin');
@@ -53,8 +57,6 @@ Route::get('adm_logout', [AdminController::class, 'adm_logout'])->name('adm_logo
 Route::get('/admin/login', function() {
     return view('adm_partials.login');
 })->name('admin_login_form');
-
-Route::post('capnhat', [UserController::class, 'update'])->name('capnhatthongtin');
 
 Route::get('/admin/sach', [AdminController::class, 'product'])->name('admin_product');
 
@@ -68,9 +70,9 @@ Route::get('/admin/nha-xuat-ban', [AdminController::class, 'publisher'])->name('
 
 Route::get('/admin/hoa-don-nhap', [AdminController::class, 'invoice_import'])->name('admin_invoice_import');
 
-Route::get('chi-tiet-hoa-don-ban/{id}', [AdminController::class, 'invoice_detail_sale'])->name('admin_invoice_detail_sale');
+Route::get('admin/hoa-don-ban/chi-tiet-hoa-don-ban/{id}', [AdminController::class, 'invoice_detail_sale'])->name('admin_invoice_detail_sale');
 
-Route::get('chi-tiet-hoa-don-nhap/{id}', [AdminController::class, 'invoice_detail_import'])->name('admin_invoice_detail_import');
+Route::get('admin/hoa-don-nhap/chi-tiet-hoa-don-nhap/{id}', [AdminController::class, 'invoice_detail_import'])->name('admin_invoice_detail_import');
 
 Route::get('/admin/hoa-don-ban', [AdminController::class, 'invoice_sale'])->name('admin_invoice_sale');
 
@@ -95,7 +97,7 @@ Route::get('/admin/nhan-vien/them-nhan-vien', [AdminController::class, 'add_empl
 
 Route::post('/them-nhan-vien', [AdminController::class, 'func_add_empl'])->name('func_add_empl');
 
-Route::get('/admin/sach/sua-nhan-vien/{id}', [AdminController::class, 'edit_empl'])->name('edit_empl');
+Route::get('/admin/nhan-vien/sua-nhan-vien/{id}', [AdminController::class, 'edit_empl'])->name('edit_empl');
 
 Route::post('/sua-nhan-vien', [AdminController::class, 'func_edit_empl'])->name('func_edit_empl');
 
@@ -105,7 +107,7 @@ Route::get('/xoa-nhan-vien/{id}', [AdminController::class, 'func_delete_empl'])-
 /*loại sách*/
 Route::get('/admin/loai-sach/them-loai-sach', [AdminController::class, 'add_product_type'])->name('add_product_type');
 
-Route::get('/admin/sach/sua-loai-sach/{id}', [AdminController::class, 'edit_product_type'])->name('edit_product_type');
+Route::get('/admin/loai-sach/sua-loai-sach/{id}', [AdminController::class, 'edit_product_type'])->name('edit_product_type');
 
 Route::post('/them-loai-sach', [AdminController::class, 'func_add_product_type'])->name('func_add_product_type');
 
@@ -117,7 +119,7 @@ Route::get('/xoa-loai-sach/{id}', [AdminController::class, 'func_delete_product_
 /*nhà xuất bản*/
 Route::get('/admin/nha-xuat-ban/them-nha-xuat-ban', [AdminController::class, 'add_publisher'])->name('add_publisher');
 
-Route::get('/admin/sach/sua-nha-xuat-ban/{id}', [AdminController::class, 'edit_publisher'])->name('edit_publisher');
+Route::get('/admin/nha-xuat-ban/sua-nha-xuat-ban/{id}', [AdminController::class, 'edit_publisher'])->name('edit_publisher');
 
 Route::post('/them-nha-xuat-ban', [AdminController::class, 'func_add_publisher'])->name('func_add_publisher');
 
@@ -131,26 +133,30 @@ Route::get('/admin/hoa-don-nhap/them-hoa-don-nhap', [AdminController::class, 'ad
 
 Route::post('/them-hoa-don-nhap', [AdminController::class, 'func_add_invoice_import'])->name('func_add_invoice_import');
 
-Route::get('/admin/sach/sua-hoa-don-nhap/{id}', [AdminController::class, 'edit_invoice_import'])->name('edit_invoice_import');
+Route::get('/admin/hoa-don-nhap/sua-hoa-don-nhap/{id}', [AdminController::class, 'edit_invoice_import'])->name('edit_invoice_import');
 
-Route::post('/sua-hoa-don-nhap', [AdminController::class, 'func_edit_invoice_import'])->name('func_edit_invoice_import');
+Route::post('/sua-hoa-don-nhap/{id}', [AdminController::class, 'func_edit_invoice_import'])->name('func_edit_invoice_import');
 
 Route::get('/xoa-hoa-don-nhap/{id}', [AdminController::class, 'func_delete_invoice_import'])->name('func_delete_invoice_import');
 /*end hoá đơn nhập*/
 
 /*chi tiết hoá đơn nhập*/
-Route::get('/admin/sach/sua-hoa-don-nhap/{id}', [AdminController::class, 'edit_invoice_detail_import'])->name('edit_invoice_detail_import');
+Route::get('/admin/hoa-don-nhap/chi-tiet-hoa-don-nhap/them-chi-tiet-hoa-don-nhap/{id}', [AdminController::class, 'add_invoice_detail_import'])->name('add_invoice_detail_import');
 
-Route::post('/sua-hoa-don-nhap', [AdminController::class, 'func_edit_invoice_detail_import'])->name('func_edit_invoice_detail_import');
+Route::get('/admin/hoa-don-nhap/chi-tiet-hoa-don-nhap/sua-chi-tiet-hoa-don-nhap/{id}/{num}', [AdminController::class, 'edit_invoice_detail_import'])->name('edit_invoice_detail_import');
+
+Route::post('/chi-tiet-hoa-don-nhap/them-chi-tiet-hoa-don-nhap/{id}', [AdminController::class, 'func_add_invoice_detail_import'])->name('func_add_invoice_detail_import');
+
+Route::post('/chi-tiet-hoa-don-nhap/sua-chi-tiet-hoa-don-nhap/{id}', [AdminController::class, 'func_edit_invoice_detail_import'])->name('func_edit_invoice_detail_import');
+
+Route::post('/chi-tiet-hoa-don-nhap/xoa-chi-tiet-hoa-don-nhap/{id}', [AdminController::class, 'func_delete_invoice_detail_import'])->name('func_delete_invoice_detail_import');
 /*end chi tiết hoá đơn nhập*/
 
 /*chi tiết hoá đơn bán*/
-Route::get('/admin/sach/sua-hoa-don-ban/{id}', [AdminController::class, 'edit_invoice_import'])->name('edit_invoice_import');
+Route::get('/admin/sach/sua-hoa-don-ban/{id}', [AdminController::class, 'edit_invoice_sale'])->name('edit_invoice_sale');
 
-Route::post('/sua-hoa-don-ban', [AdminController::class, 'func_edit_invoice_import'])->name('func_edit_invoice_import');
+Route::post('/sua-hoa-don-ban', [AdminController::class, 'func_edit_invoice_sale'])->name('func_edit_invoice_sale');
 /*end chi tiết hoá đơn bán*/
-
-
 
 /* Menu */
 Route::get('gioithieu', function () {
@@ -291,6 +297,7 @@ Route::post('/timkiem', [BooksController::class, 'search'])->name('search');
 
 Route::get('/collections/giao-khoa', [BooksController::class, 'GK'])->name('GK');
 Route::get('/collections/tham-khao', [BooksController::class, 'TK'])->name('TK');
+Route::get('/collections/khoa-hoc-tu-nhien', [BooksController::class, 'KHTN'])->name('KHTN');
 Route::get('/collections/nha-xuat-ban/giao-duc', [BooksController::class, 'GD'])->name('GD');
 Route::get('/collections/nha-xuat-ban/dai-hoc-quoc-gia-ha-noi', [BooksController::class, 'DHQGHN'])->name('DHQGHN');
 Route::get('/collections/nha-xuat-ban/tong-hop-thanh-pho-ho-chi-minh', [BooksController::class, 'THTPHCM'])->name('THTPHCM');

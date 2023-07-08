@@ -17,13 +17,14 @@
     </div>
     <div class="row mb-2">
         <div class="col-sm-6">
-            <h1 class="m-0">Thêm Hoá Đơn Nhập</h1>
+            <h1 class="m-0">Thêm Chi Tiết Hoá Đơn Nhập</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="{{route('admin')}}">Quản Lý</a></li>
                 <li class="breadcrumb-item"><a href="{{route('admin_invoice_import')}}">Hoá Đơn Nhập</a></li>
-                <li class="breadcrumb-item active">Thêm Hoá Đơn Nhập</li>
+                <li class="breadcrumb-item"><a href="{{route('admin_invoice_detail_import', ['id' => $hdn[0]->MaHDNhap])}}">Chi Tiết Hoá Đơn Nhập</a></li>
+                <li class="breadcrumb-item active">Thêm Chi Tiết Hoá Đơn Nhập</li>
             </ol>
         </div>
     </div><!-- /.row -->
@@ -33,23 +34,15 @@
 <!-- Thêm sửa hóa đơn bán -->
 <div class="form-add-top">
     <div class="form-add-invoice">
-        <form action="{{route('func_add_invoice_import')}}" method="POST">
+        <form action="{{route('func_add_invoice_detail_import', ['id' => $hdn[0]->MaHDNhap])}}" method="POST">
             @csrf
             <div class="whole-box-form-info">
                 <div class="form-group">
-                    <label for="idbook">Mã hóa đơn nhập: </label>
-                    <input type="text" class="form-control" id="id" name="id"
-                        placeholder="Nhập mã hóa đơn bán">
-                </div>
-                @error('id')
-                    <p class="">{{ $message }}</p>
-                @enderror
-                <div class="form-group">
-                    <label for="namebook">Tên nhân viên: </label>
+                    <label for="namebook">Sách cần nhập </label>
                     <!--làm thẻ select option-->
-                    <select name="employee" id="employee" class="form-control">
-                        @foreach ($nv as $nv)
-                            <option value="{{$nv->MaNV}}">{{$nv->HoTenNV}}</option>
+                    <select name="namebook" id="namebook" class="form-control">
+                        @foreach ($sach as $sach)
+                            <option value="{{$sach->MaSach}}">{{$sach->TenSach}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -57,11 +50,19 @@
                     <p class="">{{ $message }}</p>
                 @enderror
                 <div class="form-group">
-                    <label for>Tổng tiền: </label> 
+                    <label for>Số lượng: </label> 
                     <input type="number" class="form-control" 
                         id="total" name="total"
-                        value="0"
-                        placeholder="Nhập tổng tiền">
+                        placeholder="Nhập số lượng nhập">
+                </div>
+                @error('total')
+                    <p class="">{{ $message }}</p>
+                @enderror
+                <div class="form-group">
+                    <label for>Đơn giá nhập: </label> 
+                    <input type="number" class="form-control" 
+                        id="total" name="total"
+                        placeholder="Nhập đơn giá">
                 </div>
                 @error('total')
                     <p class="">{{ $message }}</p>

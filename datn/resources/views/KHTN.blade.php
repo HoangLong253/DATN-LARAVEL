@@ -3,23 +3,23 @@
 <div class="wrap-content">  
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{route('index')}}">Trang chủ</a></li>
-          <li class="breadcrumb-item" aria-current="page"><a href="{{route('GK')}}">Sách giáo khoa</a></li>
-          <li class="breadcrumb-item" aria-current="page">Cấp 2</li>
-        </ol>
+            <li class="breadcrumb-item"><a href="{{route('index')}}">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="{{route('collections')}}">Sản phẩm</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Sách khoa học tự nhiên</li>
+          </ol>
     </nav>
 </div>
 @endsection
 @section('main')
 <div class="width-collection">
     <div class="title-main">
-        CẤP 2 (TỪ LỚP 6 -> LỚP 9)
+        KHOA HỌC TỰ NHIÊN
     </div>
-    @if($c2s == null)
+    @if($tks == null)
     <div>Không có dữ liệu</div>
     @else
     <div class="grid-product ">
-        @foreach ($c2s as $all)
+        @foreach ($tks as $all)
         <a href="{{route('chitietsach', ['ma' => $all->MaSach, 'tensach' => $all->TenSach, 'loai' => $all->MaLoaiSach])}}" class="box-product">
             @if($all->PhanTramGiam != 0)
                 <div class="product-sale-oustanding ">
@@ -27,7 +27,7 @@
                 </div>
             @endif
             <div class=" scale-img img_hover">
-                <img alt="ảnh lỗi" src="{{ asset('assets/images/sach/' . $all->MaLoaiSach . '/' . $all->HinhAnh)}}"
+                <img alt="ảnh lỗi" src="{{ asset('./assets/images/sach/' . $all->MaLoaiSach . '/' . $all->HinhAnh)}}"
                 width="200" height="300"></img>
             </div>
             <div class="infor-product">
@@ -43,7 +43,7 @@
             @endif
             
         </a>
-        @endforeach	
+        @endforeach
     </div>
     @endif
 </div>

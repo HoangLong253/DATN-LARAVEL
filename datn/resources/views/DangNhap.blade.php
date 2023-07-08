@@ -89,7 +89,7 @@
                     </div>
                     <div class="note-user">
                         <span>Bạn chưa có tài khoản ! </span>
-                        <a href="#" title="Đăng ký">Đăng ký</a>
+                        <a href="{{route('dangki')}}" title="Đăng ký">Đăng ký</a>
                     </div>
                 </form>
             </div>

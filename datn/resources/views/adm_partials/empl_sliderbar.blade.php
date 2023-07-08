@@ -40,70 +40,11 @@
                with font-awesome or any other icon font library -->
                 <!--Thử-->
                 <!--li thổng kê-->
-                <li class="nav-item">
-                    <a href="{{ route('admin') }}" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>
-                            Thống kê
-                        </p>
-                    </a>
-                </li>
                 <!--end li thổng kê-->
                 <!--li sản phẩm-->
 
                 <!--end li sản phẩm-->
                 <!--li con người-->
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon"></i>
-                        <p>
-                            Đối tượng
-                        </p>
-                        <i class="right fas fa-angle-left"></i>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('admin_user') }}" class="nav-link">
-                                <i class="nav-icon fas "></i>
-                                <p>
-                                    Người dùng
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('admin_employee') }}" class="nav-link">
-                                <i class="nav-icon fas "></i>
-                                <p>
-                                    Nhân viên
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('admin_product') }}" class="nav-link">
-                                <i class="nav-icon fas "></i>
-                                <p>
-                                    Sách
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('admin_product_type') }}" class="nav-link">
-                                <i class="nav-icon fas "></i>
-                                <p>
-                                    Loại sách
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('admin_publisher') }}" class="nav-link">
-                                <i class="nav-icon fas "></i>
-                                <p>
-                                    Nhà xuất bản
-                                </p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
                 <!--end li con người-->
                 <!--li hoá đơn-->
                 <li class="nav-item">
@@ -115,14 +56,6 @@
                         <i class="right fas fa-angle-left"></i>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{route('admin_invoice_import')}}" class="nav-link">
-                                <i class="nav-icon fas "></i>
-                                <p>
-                                    Nhập
-                                </p>
-                            </a>
-                        </li>
                         <li class="nav-item">
                             <a href="{{route('admin_invoice_sale')}}" class="nav-link">
                                 <i class="nav-icon fas "></i>

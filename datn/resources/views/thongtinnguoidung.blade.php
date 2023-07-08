@@ -2,10 +2,25 @@
 @section('content')
 <!-- Thông tin user -->
 <div class="form-add-top">
+    <div class="return">
+        @if ($message = Session::get('success'))
+            <div>
+                <div style="color: #12c300;
+            font-size: 1.2em;font-weight: bold;">{{ $message }}</div>
+            </div>
+        @endif
+        @if ($message = Session::get('fail'))
+            <div>
+                <div style="color: #dd0505;
+            font-size: 1.2em;font-weight: bold;">{{ $message }}</div>
+            </div>
+        @endif
+    </div>
     <div class="title-name1">Thông tin tài khoản</div>
     <div>Quản lý thông tin hồ sơ để bảo mật tài khoản</div>
     <div><a href="{{ route('lichsumuahang') }}">Lịch sử mua hàng</a></div>
     <form class="flex-user-infor" action="{{route('capnhatthongtin')}}" method="POST">
+        @csrf
         <div class="user-infor-detail">
             <div class="form-group">
                 <!-- Set khi đăng nhập r thì hiện thông tin vào form sửa thì click vào r đổi thôi -->
@@ -49,8 +64,13 @@
                 <button type="submit" class="btn btn-success">Cập nhật</button>
                 <button type="submit" class="btn btn-danger">Hủy</button>
             </div>
-
         </div> 
+    </form>
+    <form action="{{route('xoa')}}" method="POST">
+        @csrf
+        <div class="flex-btn">
+            <button type="submit" class="btn btn-danger">Xoá người dùng</button>
+        </div>
     </form>
 </div>
 @include ('index_partials.js')   

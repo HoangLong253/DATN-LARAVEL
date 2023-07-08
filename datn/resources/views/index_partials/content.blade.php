@@ -2,6 +2,9 @@
 <div class="wrap-spnb">
     <div class="wrap-content">
         <div class="main-title-text">SẢN PHẨM NỔI BẬT</div>
+        @if($noibats == null)
+            <div>Không có dữ liệu</div>
+        @else
         <div class="wrap-slide-spnb">
             <div class="owl-spnb owl-carousel owlCarousel">
                 @foreach ($noibats as $noibat)
@@ -22,24 +25,28 @@
             </div>
             @if($noibat->PhanTramGiam != 0)
             <div class="name-product text-split-1">{{$noibat->TenSach}}</div>
-            <div class="price-product">@convert($noibat->DonGia - ($noibat->DonGia *
+            <div class="price-product">@convert($noibat->DonGiaSach - ($noibat->DonGiaSach *
                 $noibat->PhanTramGiam))đ</div>
-            <div class="price-product"><del>@convert($noibat->DonGia)đ</del></div>
+            <div class="price-product"><del>@convert($noibat->DonGiaSach)đ</del></div>
             @else
             <div class="name-product text-split-1">{{$noibat->TenSach}}</div>
-            <div class="price-product">@convert($noibat->DonGia)đ</div>
+            <div class="price-product">@convert($noibat->DonGiaSach)đ</div>
             @endif
 
             </a>
             @endforeach
         </div>
     </div>
+        @endif
 </div>
 </div>
 <!--Sach giao khoa-->
 <div class="wrap-spnb">
     <div class="wrap-content wow animate__fadeInLeft" data-wow-duration="2s">
         <div class="main-title-text">SÁCH GIÁO KHOA</div>
+        @if($sgks == null)
+            <div>Không có dữ liệu</div>
+        @else
         <div class="wrap-slide-spnb">
             <div class="owl-spnb owl-carousel owlCarousel">
                 @foreach ($sgks as $sgks)
@@ -59,24 +66,28 @@
                     </div>
                     @if($sgks->PhanTramGiam != 0)
                     <div class="name-product text-split-1 chuhoa">{{$sgks->TenSach}}</div>
-                    <div class="price-product">@convert($sgks->DonGia - ($sgks->DonGia *
+                    <div class="price-product">@convert($sgks->DonGiaSach - ($sgks->DonGiaSach *
                         $sgks->PhanTramGiam))đ</div>
-                    <div class="price-product"><del>@convert($sgks->DonGia)đ</del></div>
+                    <div class="price-product"><del>@convert($sgks->DonGiaSach)đ</del></div>
                     @else
                     <div class="name-product text-split-1 chuhoa">{{$sgks->TenSach}}</div>
-                    <div class="price-product">@convert($sgks->DonGia)đ</div>
+                    <div class="price-product">@convert($sgks->DonGiaSach)đ</div>
                     @endif
 
                 </a>
                 @endforeach
             </div>
         </div>
+        @endif
     </div>
 </div>
 <!--Sach tham khao-->
 <div class="wrap-spnb">
     <div class="wrap-content">
         <div class="main-title-text">SÁCH THAM KHẢO</div>
+        @if($thamkhaos == null)
+            <div>Không có dữ liệu</div>
+        @else
         <div class="wrap-slide-spnb">
             <div class="owl-spnb owl-carousel owlCarousel">
                 @foreach ($thamkhaos as $thamkhao)
@@ -97,18 +108,19 @@
                     </div>
                     @if($thamkhao->PhanTramGiam != 0)
                     <div class="name-product text-split-1 chuhoa">{{$thamkhao->TenSach}}</div>
-                    <div class="price-product">@convert($thamkhao->DonGia - ($noibat->DonGia *
+                    <div class="price-product">@convert($thamkhao->DonGiaSach - ($noibat->DonGiaSach *
                         $thamkhao->PhanTramGiam))đ</div>
-                    <div class="price-product"><del>@convert($thamkhao->DonGia)đ</del></div>
+                    <div class="price-product"><del>@convert($thamkhao->DonGiaSach)đ</del></div>
                     @else
                     <div class="name-product text-split-1 chuhoa">{{$thamkhao->TenSach}}</div>
-                    <div class="price-product">@convert($thamkhao->DonGia)đ</div>
+                    <div class="price-product">@convert($thamkhao->DonGiaSach)đ</div>
                     @endif
 
                 </a>
                 @endforeach
             </div>
         </div>
+        @endif
     </div>
 </div>
 

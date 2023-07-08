@@ -48,7 +48,7 @@
                         </li> 
 
                         <li>
-                            <a href="#">Sách Khoa Học Tự Nhiên</a>
+                            <a href="{{route('KHTN')}}">Sách Khoa Học Tự Nhiên</a>
                         </li> 
                     </ul>
                     <div class="title-main-sub">

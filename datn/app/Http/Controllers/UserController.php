@@ -8,31 +8,67 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function update(Request $request) {
+        $nd = DB::table('nguoidung')
+                    ->where('MaNgDung', '=', $_COOKIE['id'])
+                    ->get();
         $messages = [
-            'id.required' => 'Mã hóa đơn không được để trống',
-            'name.required' => 'Tên Nhân viên không được để trống', 
-            'total.required' => 'Tổng tiền không được để trống', 
+            'username.required' => 'Tên đăng nhập không được để trống',
+            'name.required' => 'Họ tên không được để trống',
+            'password.required' => 'Mật khẩu không được để trống', 
+            'email.required' => 'Email không được để trống', 
+            'phone.required' => 'Điện thoại không được để trống', 
         ];
         $this->validate($request, [
-            'id' => 'required',
+            'username' => 'required',
             'name' => 'required',
-             'total' => 'required',  
+            'password' => 'required',  
+            'email' => 'required',  
+            'phone' => 'required',  
         ], $messages);
 
-        $id = $request->id;
+        $username = $request->username;
         $name = $request->name; 
-        $total = $request->total; 
-        $check = DB::table('hoadonnhap')
-        ->insert([
-            'MaHDNhap' => $id,
-            'MaNV' => $name,
-             'TongTien' => $total,    
-            'TrangThai' => 1, 
-        ]);
-        if($check) {
-            return redirect()->route('add_invoice_import')->with('success', 'Thêm hóa đơn nhập thành công.');
+        $password = $request->password; 
+        $email = $request->email; 
+        $phone = $request->phone; 
+        $checkduplicate = (
+            $nd[0]->TenDangNhapND == $username &&
+            $nd[0]->HoTenND == $name &&
+            $nd[0]->MatKhau == $password &&
+            $nd[0]->Email == $email &&
+            $nd[0]->SDT == $phone
+        );
+        if($checkduplicate) {
+            return redirect()->route('thongtinnguoidung')->with('fail', 'Dữ liệu không thay đổi');
         } else {
-            return redirect()->route('add_invoice_import')->with('fail', 'Thêm hóa đơn nhập không thành công.');
+            $check = DB::table('nguoidung')
+            ->where('MaNgDung', '=', $_COOKIE['id'])
+            ->update([
+                'TenDangNhapND' => $username,
+                'HoTenND' => $name,
+                'MatKhau' => $password,
+                'Email' => $email,
+                'SDT' => $phone, 
+            ]);
+            if($check) {
+                return redirect()->route('thongtinnguoidung')->with('success', 'Sửa thông tin thành công.');
+            } else {
+                return redirect()->route('thongtinnguoidung')->with('fail', 'Sửa thông tin không thành công.');
+            }
         }
+        
+    }
+
+    public function delete() {
+        $del = DB::table('nguoidung')
+        ->where('MaNgDung', '=', $_COOKIE['id'])
+        ->update([
+            'TrangThai' => 0
+        ]);
+        if ($del) {
+        return redirect()->route('dangxuat')->with('success', 'Xoá tài khoản thành công.');
+    } else {
+        return redirect()->route('thongtinnguoidung')->with('fail', 'tài khoản không thành công.');
+    }
     }
 }

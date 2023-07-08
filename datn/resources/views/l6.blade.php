@@ -16,6 +16,9 @@
     <div class="title-main">
         LỚP 6
     </div>
+    @if($l6s == null)
+    <div>Không có dữ liệu</div>
+    @else
     <div class="grid-product ">
         @foreach ($l6s as $all)
         <a href="{{route('chitietsach', ['ma' => $all->MaSach, 'tensach' => $all->TenSach, 'loai' => $all->MaLoaiSach])}}"
@@ -35,15 +38,16 @@
             </div>
             @if($all->PhanTramGiam != 0)
             <div class="name-product">{{$all->TenSach}}</div>
-            <div class="price-product">@convert($all->DonGia - ($all->DonGia * $all->PhanTramGiam))đ</div>
-            <div class="price-product"><del>@convert($all->DonGia)đ</del></div>
+            <div class="price-product">@convert($all->DonGiaSachSach - ($all->DonGiaSachSach * $all->PhanTramGiam))đ</div>
+            <div class="price-product"><del>@convert($all->DonGiaSachSach)đ</del></div>
             @else
             <div class="name-product">{{$all->TenSach}}</div>
-            <div class="price-product">@convert($all->DonGia)đ</div>
+            <div class="price-product">@convert($all->DonGiaSachSach)đ</div>
             @endif
 
         </a>
         @endforeach
     </div>
+    @endif
 </div>
 @endsection

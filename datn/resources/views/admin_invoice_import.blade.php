@@ -1,6 +1,20 @@
 @extends('layouts.admin')
 @section('header_content')
     <div class="container-fluid">
+        <div class="return">
+            @if ($message = Session::get('success'))
+            <div>
+                <div style="color: #12c300;
+                font-size: 1.2em;font-weight: bold;">{{ $message }}</div>
+            </div>
+            @endif
+            @if ($message = Session::get('fail'))
+            <div>
+                <div style="color: #dd0505;
+                font-size: 1.2em;font-weight: bold;">{{ $message }}</div>
+            </div>
+            @endif
+        </div>
         <div class="row mb-2">
             <div class="col-sm-6">
                 <h1 class="m-0">Hoá Đơn Nhập</h1>
@@ -18,6 +32,9 @@
     </div><!-- /.container-fluid -->
 @endsection
 @section('main_content')
+@if ($alls == null)
+    <div>Không có dữ liệu</div>
+@else
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -33,10 +50,10 @@
                 <tr>
                     <td> {{ $all->MaHDNhap }} </td>
                     <td> {{ $all->HoTenNV }} </td>
-                    <td> {{ $all->TongTien }} </td>
-                    @if($all->TrangThai)
+                    <td> @convert($all->TongTienHDN)đ </td>
+                    @if($all->TrangThaiHDN)
                     <td>
-                        <input type="checkbox" id="TrangThai" name="TrangThai" value="yes" checked
+                        <input type="checkbox" id="TrangThai" name="TrangThai" value="no" checked
                             onclick="return false;" />
                     </td>
                     @else
@@ -46,7 +63,7 @@
                     </td>
                     @endif
                     <td>
-                      <a id="update_btn" href="#" class="mr-3 func_icon !important" title="Cập nhật"
+                      <a id="update_btn" href="{{route('edit_invoice_import', ['id' => $all->MaHDNhap])}}" class="mr-3 func_icon !important" title="Cập nhật"
                           data-toggle="tooltip"><span class="fa fa-pen"></span></a>
                       <a id="del_btn" href="#" class="mr-3 func_icon" title="Xoá"
                           data-toggle="tooltip"><span class="fa fa-trash"></span></a>
@@ -58,4 +75,5 @@
             @endforeach
         </tbody>
     </table>
+@endif
 @endsection

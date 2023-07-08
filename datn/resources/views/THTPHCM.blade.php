@@ -16,32 +16,36 @@
     <div class="title-main">
         TỔNG HỢP THÀNH PHỐ HỒ CHÍ MINH
     </div>
-    <div class="grid-product ">
-        @foreach ($thtphcms as $all)
-        <a href="{{route('chitietsach', ['ma' => $all->MaSach, 'tensach' => $all->TenSach, 'loai' => $all->MaLoaiSach])}}" class="box-product">
-            @if($all->PhanTramGiam != 0)
-                <div class="product-sale-oustanding ">
-                    <span class="sale-lb img_hover">{{$all->PhanTramGiam * 100}}%</span>
-                </div>
-            @endif
-            <div class=" scale-img img_hover">
-                <img alt="ảnh lỗi" src="{{ asset('./assets/images/sach/' . $all->MaLoaiSach . '/' . $all->HinhAnh)}}"
-                width="200" height="300"></img>
+@if($thtphcms == null)
+<div>Không có dữ liệu</div>
+@else
+<div class="grid-product ">
+    @foreach ($thtphcms as $all)
+    <a href="{{route('chitietsach', ['ma' => $all->MaSach, 'tensach' => $all->TenSach, 'loai' => $all->MaLoaiSach])}}" class="box-product">
+        @if($all->PhanTramGiam != 0)
+            <div class="product-sale-oustanding ">
+                <span class="sale-lb img_hover">{{$all->PhanTramGiam * 100}}%</span>
             </div>
-            <div class="infor-product">
-                
-            </div>
-            @if($all->PhanTramGiam != 0)
-                <div class="name-product chuhoa">{{$all->TenSach}}</div>
-                <div class="price-product">@convert($all->DonGia - ($all->DonGia * $all->PhanTramGiam),0)đ</div> 
-                <div class="price-product"><del>@convert($all->DonGia)đ</del></div> 
-            @else
-                <div class="name-product chuhoa">{{$all->TenSach}}</div>
-                <div class="price-product">@convert($all->DonGia)đ</div>
-            @endif
+        @endif
+        <div class=" scale-img img_hover">
+            <img alt="ảnh lỗi" src="{{ asset('./assets/images/sach/' . $all->MaLoaiSach . '/' . $all->HinhAnh)}}"
+            width="200" height="300"></img>
+        </div>
+        <div class="infor-product">
             
-        </a>
-        @endforeach
-    </div>
+        </div>
+        @if($all->PhanTramGiam != 0)
+            <div class="name-product chuhoa">{{$all->TenSach}}</div>
+            <div class="price-product">@convert($all->DonGiaSach - ($all->DonGiaSach * $all->PhanTramGiam),0)đ</div> 
+            <div class="price-product"><del>@convert($all->DonGiaSach)đ</del></div> 
+        @else
+            <div class="name-product chuhoa">{{$all->TenSach}}</div>
+            <div class="price-product">@convert($all->DonGiaSach)đ</div>
+        @endif
+        
+    </a>
+    @endforeach
+</div>
+@endif
 </div>
 @endsection
