@@ -64,7 +64,7 @@
                         <div class="invalid-feedback">Vui lòng nhập tên đăng nhập</div>
                     </div>
                     @error('username')
-                    <p class="">{{ $message }}</p>
+                    <p class="mess-respon">{{ $message }}</p>
                     @enderror
                     <label>Họ tên</label>
                     <div class="input-group input-user">
@@ -76,7 +76,7 @@
                         <div class="invalid-feedback">Vui lòng nhập họ và tên</div>
                     </div>
                     @error('fullname')
-                    <p class="">{{ $message }}</p>
+                    <p class="mess-respon">{{ $message }}</p>
                     @enderror
                     
                     <label>Mật khẩu</label>

@@ -46,7 +46,7 @@
                     </select>
                 </div>
                 @error('name')
-                    <p class="">{{ $message }}</p>
+                    <p class="mess-respon">{{ $message }}</p>
                 @enderror
                 <div class="form-group">
                     <label for>Tổng tiền: </label> 
@@ -56,7 +56,7 @@
                         placeholder="Nhập tổng tiền">
                 </div>
                 @error('total')
-                    <p class="">{{ $message }}</p>
+                    <p class="mess-respon">{{ $message }}</p>
                 @enderror
             </div>
             <div class="flex-btn">

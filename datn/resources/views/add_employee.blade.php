@@ -31,7 +31,7 @@
 @endsection
 @section('main_content')
     <!-- Form thêm nhân viên -->
-<form action="{{route('func_add_empl')}}" method="POST">
+<form  class="margin-adm" action="{{route('func_add_empl')}}" method="POST">
     @csrf
     <div class="form-add-staff">
         <div class="form-group">
@@ -41,7 +41,7 @@
             <small id="<!--  -->" class="form-text text-muted"> .</small>
         </div>
         @error('id')
-            <p class="">{{ $message }}</p>
+            <p class="mess-respon">{{ $message }}</p>
         @enderror
         <div class="form-group">
             <label for="namebook">Tên nhân viên: </label>
@@ -50,7 +50,7 @@
             <small id="<!--  -->" class="form-text text-muted"> .</small>
         </div>
         @error('name')
-            <p class="">{{ $message }}</p>
+            <p class="mess-respon">{{ $message }}</p>
         @enderror
         <div class="form-group">
             <label for="inputPassword" class="  col-form-label">Mật khẩu:</label>
@@ -59,16 +59,9 @@
             </div>
         </div>
         @error('password')
-            <p class="">{{ $message }}</p>
+            <p class="mess-respon">{{ $message }}</p>
         @enderror
-        <!--<div class="form-group">
-            <label for="exampleFormControlSelect1">Công việc: </label>
-            <select class="form-control" id="exampleFormControlSelect1">
-                <option>Quản lý</option>
-                <option>Nhân viên bán hàng</option>
-                <option>Nhân viên giao hàng...</option>
-            </select>
-        </div>-->
+         
         <div class="form-group">
             <label for="">Số điện thoại: </label>
             <input type="number" class="form-control" id="phone" name="phone" aria-describedby="<!--  -->"
@@ -76,16 +69,10 @@
             <small id="<!--  -->" class="form-text text-muted"> .</small>
         </div>
         @error('phone')
-            <p class="">{{ $message }}</p>
+            <p class="mess-respon">{{ $message }}</p>
         @enderror
         <!-- Thao tác -->
-        <div class="flex-control">
-            <!--<div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                <label class="form-check-label" for="defaultCheck1">
-                    Trạng thái
-                </label>
-            </div>-->
+        <div class="flex-control"> 
             <div class="flex-btn">
                 <button type="submit" class="btn btn-primary">Thêm</button>
                 <!--<button type="button" class="btn btn-danger">Hủy</button>-->

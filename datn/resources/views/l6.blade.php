@@ -38,11 +38,13 @@
             </div>
             @if($all->PhanTramGiam != 0)
             <div class="name-product">{{$all->TenSach}}</div>
-            <div class="price-product">@convert($all->DonGiaSachSach - ($all->DonGiaSachSach * $all->PhanTramGiam))đ</div>
-            <div class="price-product"><del>@convert($all->DonGiaSachSach)đ</del></div>
+            <div class="flex-price">
+            <div class="price-product core-price">@convert($all->DonGiaSach - ($all->DonGiaSach * $all->PhanTramGiam))đ</div>
+            <div class="price-product line-price"><del>@convert($all->DonGiaSach)đ</del></div>
+            </div>
             @else
             <div class="name-product">{{$all->TenSach}}</div>
-            <div class="price-product">@convert($all->DonGiaSachSach)đ</div>
+            <div class="price-product">@convert($all->DonGiaSach)đ</div>
             @endif
 
         </a>

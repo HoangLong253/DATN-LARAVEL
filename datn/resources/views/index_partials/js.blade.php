@@ -217,15 +217,7 @@ $(document).ready(function() {
     
 })
 
-</script>
-<!-- Shiner -->
-
-<script type="text/javascript">   
-    $(window).bind("load", function() {
-        var api = $(".peShiner").peShiner({ api: true, paused: true, reverse: true, repeat: 1, color: 'oceanHL' });
-        api.resume();
-    });
-</script>
+</script> 
  <!-- Menu sticky -->
 <script>
 window.onscroll = function() {
@@ -240,31 +232,9 @@ function myFunction() {
         header.classList.remove("sticky");
     }
 }
-</script>
-<script>
-    var chatbox = document.getElementById('fb-customer-chat');
-    chatbox.setAttribute("page_id", "111404121865899");
-    chatbox.setAttribute("attribution", "biz_inbox");
-</script>
-
-    <!-- Your SDK code -->
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          xfbml            : true,
-          version          : 'v17.0'
-        });
-      };
-
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    </script>
-<noscript></noscript>
+</script> 
+ 
+ 
 
 <script>
     const togglePassword = document.querySelector('#togglePassword');
@@ -277,4 +247,5 @@ function myFunction() {
     // toggle the eye slash icon
     this.classList.toggle('fa-eye-slash');
 });
+</script>
 </script>

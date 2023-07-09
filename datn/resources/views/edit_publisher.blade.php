@@ -30,7 +30,7 @@
     </div><!-- /.container-fluid -->
 @endsection
 @section('main_content')
-    <form action="#" method="POST">
+    <form class="margin-adm" action="#" method="POST">
         @csrf
         <div class="form-add-staff">
             <div class="form-group">
@@ -41,7 +41,7 @@
                     placeholder="Nhập Mã Nhà Xuất Bản">
             </div>
             @error('id')
-                <p class="">{{ $message }}</p>
+                <p class="mess-respon">{{ $message }}</p>
             @enderror
             <div class="form-group">
                 <label for="namebook">Tên Nhà Xuất Bản: </label>
@@ -51,7 +51,7 @@
                     placeholder="Nhập Tên Nhà Xuất Bản">
             </div>
             @error('name')
-                <p class="">{{ $message }}</p>
+                <p class="mess-respon">{{ $message }}</p>
             @enderror
             <!-- Thao tác -->
             <div class="flex-control">

@@ -41,11 +41,7 @@
             <div class="row d-flex justify-content-between align-items-center">
                 <div class="footer-copyright">2023 Copyright DELICATE DRAGON BOOKSTORE. Design by TL Corp
 
-                </div>
-                <div class="footer-statistic "><span>Online: </span><span>Tháng: </span><span>Tổng truy cập:
-                    </span>
-
-                </div>
+                </div> 
             </div>
         </div>
     </div>

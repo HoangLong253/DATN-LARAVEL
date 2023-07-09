@@ -30,7 +30,7 @@ class DangNhapController extends Controller
                         ->exists();*/
         $nd = DB::table('nguoidung')
                         ->where("TenDangNhapND", $name)
-                        ->where("MatKhau", $pass)
+                        ->where("MatKhauND", $pass)
                         ->exists();
         /*$ship = DB::table('nggiaohang')
                         ->where("Email", $name)
@@ -41,7 +41,7 @@ class DangNhapController extends Controller
             $is_logged = 1;
             $id = (DB::table('nguoidung')
             ->where("TenDangNhapND", $name)
-            ->where("MatKhau", $pass)
+            ->where("MatKhauND", $pass)
             ->select('MaNgDung')
             ->get())[0]->MaNgDung;
             setcookie('is_logged', $is_logged, time() + 360000, '/');
@@ -112,7 +112,7 @@ class DangNhapController extends Controller
             'MaNgDung' => $MaNV,
             'HoTen' => $fullname,
             'Email' => $email,
-            'MatKhau' => $password,
+            'MatKhauND' => $password,
             'SDT' => $phone,
             'TrangThai' => 1
         ]);

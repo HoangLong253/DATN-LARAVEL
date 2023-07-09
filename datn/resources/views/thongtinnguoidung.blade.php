@@ -42,14 +42,14 @@
                 <label for>Email: </label>
                 <input type="text" class="form-control"
                     id="email" name="email"
-                    value="{{$user1[0]->Email}}"
+                    value="{{$user1[0]->EmailND}}"
                     placeholder="Nhập email">
             </div>
             <div class="form-group">
                 <label for>Mật khẩu: </label>
                 <input type="password" class="form-control text-sm"
                     id="id_password" name="password"
-                    value="{{$user1[0]->MatKhau}}"
+                    value="{{$user1[0]->MatKhauND}}"
                     placeholder="Nhập mật khẩu">
                 <i class="far fa-eye matkhau" id="togglePassword"></i>
             </div>
@@ -57,7 +57,7 @@
                 <label for>Số điện thoại: </label>
                 <input type="number" class="form-control"
                     id="phone" name="phone"
-                    value="{{$user1[0]->SDT}}"
+                    value="{{$user1[0]->SDTND}}"
                     placeholder="Nhập số điện thoại">
             </div>
             <div class="flex-btn">

@@ -34,9 +34,7 @@
       <div class="container-fluid">
         
       </div>
-    </div>
-
-
+    </div> 
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->

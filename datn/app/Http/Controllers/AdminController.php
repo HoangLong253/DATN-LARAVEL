@@ -40,13 +40,13 @@ class AdminController extends Controller
 
         $nv = DB::table('nhanvien')
             ->where("TenDangNhapNV", $name)
-            ->where("MatKhau", $pass)
+            ->where("MatKhauNV", $pass)
             ->where("TrangThaiNV", 1)
             ->where("LaAdmin", '=', 0)
             ->exists();
         $admin = DB::table('nhanvien')
             ->where("TenDangNhapNV", $name)
-            ->where("MatKhau", $pass)
+            ->where("MatKhauNV", $pass)
             ->where("TrangThaiNV", 1)
             ->where("LaAdmin", '=', 1)
             ->exists();
@@ -54,7 +54,7 @@ class AdminController extends Controller
             $admin_is_logged = 1;
             $id = (DB::table('nhanvien')
                 ->where("TenDangNhapNV", $name)
-                ->where("MatKhau", $pass)
+                ->where("MatKhauNV", $pass)
                 ->select('MaNV')
                 ->get())[0]->MaNV;
             setcookie('admin_is_logged', $admin_is_logged, time() + 360000, '/');
@@ -64,7 +64,7 @@ class AdminController extends Controller
             $admin_is_logged = 1;
             $id = (DB::table('nhanvien')
                 ->where("TenDangNhapNV", $name)
-                ->where("MatKhau", $pass)
+                ->where("MatKhauNV", $pass)
                 ->select('MaNV')
                 ->get())[0]->MaNV;
             setcookie('admin_is_logged', $admin_is_logged, time() + 360000, '/');
@@ -500,7 +500,7 @@ class AdminController extends Controller
                 'MaNV' => $id,
                 'HoTenNV' => $emplname,
                 'EmailNV' => $emplemail,
-                'MatKhauNV' => $password,
+                'MatKhauNVNV' => $password,
                 'SDT' => $phone,
                 'LaAdmin' => $isadmin,
                 'TrangThai' => 1,
@@ -539,7 +539,7 @@ class AdminController extends Controller
         $isadmin = $request->isadmin;
         $checkdup = ($id1 == $nv[0]->MaNV &&
             $emplname == $nv[0]->HoTenNV &&
-            $password == $nv[0]->MatKhau &&
+            $password == $nv[0]->MatKhauNV &&
             $emplemail == $nv[0]->Email &&
             $phone == $nv[0]->SDT &&
             $isadmin == $nv[0]->LaAdmin);
@@ -552,7 +552,7 @@ class AdminController extends Controller
                     'MaNV' => $id1,
                     'HoTenNV' => $emplname,
                     'EmailNV' => $emplemail,
-                    'MatKhauNV' => $password,
+                    'MatKhauNVNV' => $password,
                     'SDTNV' => $phone,
                     'LaAdmin' => $isadmin,
                     'TrangThai' => 1,
