@@ -35,7 +35,7 @@
 @if ($alls == null)
     <div>Không có dữ liệu</div>
 @else
-<table class="table table-bordered table-striped">
+<table class="table table-bordered table-striped ">
     <thead>
         <tr>
             <th>Mã Loại Sách</th>

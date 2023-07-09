@@ -25,9 +25,11 @@
             </div>
             @if($noibat->PhanTramGiam != 0)
             <div class="name-product text-split-1">{{$noibat->TenSach}}</div>
-            <div class="price-product">@convert($noibat->DonGiaSach - ($noibat->DonGiaSach *
+           <div class="flex-price">
+             <div class="price-product core-price">@convert($noibat->DonGiaSach - ($noibat->DonGiaSach *
                 $noibat->PhanTramGiam))đ</div>
-            <div class="price-product"><del>@convert($noibat->DonGiaSach)đ</del></div>
+            <div class="price-product line-price"><del>@convert($noibat->DonGiaSach)đ</del></div>
+           </div>
             @else
             <div class="name-product text-split-1">{{$noibat->TenSach}}</div>
             <div class="price-product">@convert($noibat->DonGiaSach)đ</div>
@@ -66,9 +68,11 @@
                     </div>
                     @if($sgks->PhanTramGiam != 0)
                     <div class="name-product text-split-1 chuhoa">{{$sgks->TenSach}}</div>
-                    <div class="price-product">@convert($sgks->DonGiaSach - ($sgks->DonGiaSach *
+                    <div class="flex-price">
+                    <div class="price-product core-price">@convert($sgks->DonGiaSach - ($sgks->DonGiaSach *
                         $sgks->PhanTramGiam))đ</div>
-                    <div class="price-product"><del>@convert($sgks->DonGiaSach)đ</del></div>
+                    <div class="price-product line-price"><del>@convert($sgks->DonGiaSach)đ</del></div>
+                </div>
                     @else
                     <div class="name-product text-split-1 chuhoa">{{$sgks->TenSach}}</div>
                     <div class="price-product">@convert($sgks->DonGiaSach)đ</div>
@@ -108,9 +112,11 @@
                     </div>
                     @if($thamkhao->PhanTramGiam != 0)
                     <div class="name-product text-split-1 chuhoa">{{$thamkhao->TenSach}}</div>
-                    <div class="price-product">@convert($thamkhao->DonGiaSach - ($noibat->DonGiaSach *
+                    <div class="flex-price">
+                    <div class="price-product core-price">@convert($thamkhao->DonGiaSach - ($noibat->DonGiaSach *
                         $thamkhao->PhanTramGiam))đ</div>
-                    <div class="price-product"><del>@convert($thamkhao->DonGiaSach)đ</del></div>
+                    <div class="price-product line-price"><del>@convert($thamkhao->DonGiaSach)đ</del></div>
+                </div>
                     @else
                     <div class="name-product text-split-1 chuhoa">{{$thamkhao->TenSach}}</div>
                     <div class="price-product">@convert($thamkhao->DonGiaSach)đ</div>
@@ -128,8 +134,7 @@
 <div class="xemthem-btn">
     <a href="{{route('collections')}}" class="btn btn-success"> Xem thêm</a>
 </div>
-<!--<button type="button" href="http://127.0.0.1:8000/collections" class="btn btn-success" >Xem thêm</button>-->
-
+ 
 <!-- Video News -->
 <div class="wrap-video-news">
     <div class="wrap-content">

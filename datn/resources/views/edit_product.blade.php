@@ -48,7 +48,7 @@
                         placeholder="Nhập mã sách">
                 </div>
                 @error('bookname')
-                    <p class="">{{ $message }}</p>
+                    <p class="mess-respon">{{ $message }}</p>
                 @enderror
                 <div class="form-group">
                     <label for="namebook">Tên sách: </label>
@@ -57,7 +57,7 @@
                         placeholder="Nhập tên sách">
                 </div>
                 @error('bookname')
-                    <p class="">{{ $message }}</p>
+                    <p class="mess-respon">{{ $message }}</p>
                 @enderror
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Loại sách: </label>
@@ -68,7 +68,7 @@
                     </select>
                 </div>
                 @error('booktype')
-                    <p class="">{{ $message }}</p>
+                    <p class="mess-respon">{{ $message }}</p>
                 @enderror
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Nhà xuất bản: </label>
@@ -79,7 +79,7 @@
                     </select>
                 </div>
                 @error('publisher')
-                    <p class="">{{ $message }}</p>
+                    <p class="mess-respon">{{ $message }}</p>
                 @enderror
                 <div class="form-group">
                     <label for>Giá bán: </label>
@@ -88,7 +88,7 @@
                         placeholder="Nhập giá bán">
                 </div>
                 @error('price')
-                    <p class="">{{ $message }}</p>
+                    <p class="mess-respon">{{ $message }}</p>
                 @enderror
                 <div class="form-group">
                     <label for>Chiết khấu: </label>
@@ -97,7 +97,7 @@
                         placeholder="Nhập chiết khấu">
                 </div>
                 @error('percent')
-                    <p class="">{{ $message }}</p>
+                    <p class="mess-respon">{{ $message }}</p>
                 @enderror
                 <!-- Tự tính chiết khấu dựa vào giá bán - giá mới -->
                 <div class="form-group">
@@ -107,7 +107,7 @@
                         placeholder="Nhập nội dung">
                 </div>
                 @error('content')
-                    <p class="">{{ $message }}</p>
+                    <p class="mess-respon">{{ $message }}</p>
                 @enderror
             </div>
         </div>

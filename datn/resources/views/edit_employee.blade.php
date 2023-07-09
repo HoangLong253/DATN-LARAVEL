@@ -30,8 +30,8 @@
     </div><!-- /.container-fluid -->
 @endsection
 @section('main_content')
-    <!-- Form sửa nhân viên -->
-<form action="{{route('func_edit_empl', ['id' => $nv[0]->MaNV])}}" method="post">
+    <!-- Form thêm nhân viên -->
+<form class="margin-adm" action="" method="POST">
     @csrf
     <div class="form-add-staff">
         <div class="form-group">
@@ -42,7 +42,7 @@
                 placeholder="Nhập Mã nhân viên">
         </div>
         @error('id')
-            <p class="">{{ $message }}</p>
+            <p class="mess-respon">{{ $message }}</p>
         @enderror
         <div class="form-group">
             <label for="namebook">Tên nhân viên: </label>
@@ -52,7 +52,7 @@
                 placeholder="Nhập tên nhân viên">
         </div>
         @error('name')
-            <p class="">{{ $message }}</p>
+            <p class="mess-respon">{{ $message }}</p>
         @enderror
         <div class="form-group">
             <label for="inputPassword" class="  col-form-label">Mật khẩu:</label>
@@ -64,7 +64,7 @@
             </div>
         </div>
         @error('password')
-            <p class="">{{ $message }}</p>
+            <p class="mess-respon">{{ $message }}</p>
         @enderror
         <div class="form-group">
             <label for="">Số điện thoại: </label>
@@ -74,7 +74,7 @@
                 placeholder="Nhập Số điện thoại">
         </div>
         @error('phone')
-            <p class="">{{ $message }}</p>
+            <p class="mess-respon">{{ $message }}</p>
         @enderror
         <!-- Thao tác -->
         <div class="flex-control">

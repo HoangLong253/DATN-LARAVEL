@@ -118,10 +118,10 @@
             <div class="header-with-search ">
                 <div class="logo">
                     <div class="header__logo  ">
-                        <div class="peShiner">
+                        <div class=" ">
                         <a class=" " href="{{route('index')}}">
                             <img class="header__logo-img"
-                                src="{{asset('assets/images/logo/logo.jpg')}}" alt=""></a>
+                                src="{{asset('assets/images/logo/logo.png')}}" alt=""></a>
                         </div>
                         <div class="info-company">
                             <div class="header__cpnname">LT Bookstore</div>
@@ -150,9 +150,7 @@
                         <i class="header__search-btn-icon fa-solid fa-magnifying-glass"></i>
                     </button>
                 </form>
-                <!-- Cart -->
-                <!-- FadeIn chưa chuẩn -->
-
+                <!-- Cart -->  
                 <div class="header__cart">
                     <a href="{{route('giohang')}}">
                         <div class="header__cart-wrap"><i class="header__cart-icon fa-solid fa-cart-shopping"></i>
@@ -168,8 +166,7 @@
                                 @endphp
                             </span>
 
-                        </div>
-
+                        </div> 
                             <!-- No cart: header__cart-list-no-cart-->
                         <div class="header__cart-list-no-cart">
                             

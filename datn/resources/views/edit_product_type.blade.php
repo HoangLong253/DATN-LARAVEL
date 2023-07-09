@@ -31,7 +31,7 @@
 @endsection
 @section('main_content')
     <!-- Form thêm nhân viên -->
-    <form action="{{route('func_edit_product_type', ['id' => $pt[0]->MaLoaiSach])}}" method="POST">
+    <form class="margin-adm" action="{{route('func_edit_product_type', ['id' => $pt[0]->MaLoaiSach])}}" method="POST">
         @csrf
         <div class="form-add-staff">
             <div class="form-group">
@@ -42,7 +42,7 @@
                     placeholder="Nhập Mã loại sách">
             </div>
             @error('id')
-                <p class="">{{ $message }}</p>
+                <p class="mess-respon">{{ $message }}</p>
             @enderror
             <div class="form-group">
                 <label for="namebook">Tên Loại Sách: </label>
@@ -52,7 +52,7 @@
                     placeholder="Nhập tên loại sách">
             </div>
             @error('name')
-                <p class="">{{ $message }}</p>
+                <p class="mess-respon">{{ $message }}</p>
             @enderror 
             <!-- Thao tác -->
             <div class="flex-control">

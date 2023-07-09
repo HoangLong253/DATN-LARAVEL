@@ -40,7 +40,7 @@ class AdminController extends Controller
 
         $nv = DB::table('nhanvien')
             ->where("TenDangNhapNV", $name)
-            ->where("MatKhau", $pass)
+            ->where("MatKhauNV", $pass)
             ->where("TrangThaiNV", 1)
             ->where("LaAdmin", '=', 0)
             ->exists();
@@ -54,7 +54,7 @@ class AdminController extends Controller
             $admin_is_logged = 1;
             $id = (DB::table('nhanvien')
                 ->where("TenDangNhapNV", $name)
-                ->where("MatKhau", $pass)
+                ->where("MatKhauNV", $pass)
                 ->select('MaNV')
                 ->get())[0]->MaNV;
             setcookie('admin_is_logged', $admin_is_logged, time() + 360000, '/');
@@ -64,7 +64,7 @@ class AdminController extends Controller
             $admin_is_logged = 1;
             $id = (DB::table('nhanvien')
                 ->where("TenDangNhapNV", $name)
-                ->where("MatKhau", $pass)
+                ->where("MatKhauNV", $pass)
                 ->select('MaNV')
                 ->get())[0]->MaNV;
             setcookie('admin_is_logged', $admin_is_logged, time() + 360000, '/');
@@ -565,7 +565,7 @@ class AdminController extends Controller
                     'MaNV' => $id1,
                     'HoTenNV' => $emplname,
                     'EmailNV' => $emplemail,
-                    'MatKhauNV' => $password,
+                    'MatKhauNVNV' => $password,
                     'SDTNV' => $phone,
                     'LaAdmin' => $isadmin,
                     'TrangThai' => 1,

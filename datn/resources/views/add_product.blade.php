@@ -49,7 +49,7 @@
                     <small id="<!--  -->" class="form-text text-muted"> .</small>
                 </div>
                 @error('bookid')
-                    <p class="">{{ $message }}</p>
+                    <p class="mess-respon">{{ $message }}</p>
                 @enderror
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Loại sách: </label>
@@ -60,7 +60,7 @@
                     </select>
                 </div>
                 @error('booktype')
-                    <p class="">{{ $message }}</p>
+                    <p class="mess-respon">{{ $message }}</p>
                 @enderror
                 <div class="form-group">
                     <label for="namebook">Tên sách: </label>
@@ -70,7 +70,7 @@
                     <small id="<!--  -->" class="form-text text-muted"> .</small>
                 </div>
                 @error('bookname')
-                    <p class="">{{ $message }}</p>
+                    <p class="mess-respon">{{ $message }}</p>
                 @enderror
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Nhà xuất bản: </label>
@@ -81,7 +81,7 @@
                     </select>
                 </div>
                 @error('publisher')
-                    <p class="">{{ $message }}</p>
+                    <p class="mess-respon">{{ $message }}</p>
                 @enderror
                 <div class="form-group">
                     <label for>Giá bán: </label>
@@ -91,7 +91,7 @@
                     <small id="<!--  -->" class="form-text text-muted"> .</small>
                 </div>
                 @error('price')
-                    <p class="">{{ $message }}</p>
+                    <p class="mess-respon">{{ $message }}</p>
                 @enderror
                 <div class="form-group">
                     <label for>Chiết khấu: </label>
@@ -101,7 +101,7 @@
                     <small id="<!--  -->" class="form-text text-muted"> .</small>
                 </div>
                 @error('percent')
-                    <p class="">{{ $message }}</p>
+                    <p class="mess-respon">{{ $message }}</p>
                 @enderror
                 <!-- Tự tính chiết khấu dựa vào giá bán - giá mới -->
                 <div class="form-group">
@@ -112,28 +112,23 @@
                     <small id="<!--  -->" class="form-text text-muted"> .</small>
                 </div>
                 @error('content')
-                    <p class="">{{ $message }}</p>
+                    <p class="mess-respon">{{ $message }}</p>
                 @enderror
             </div>
         </div>
         <div class="form-add-bottom">
             <div>
-                <!--<input type="checkbox" name="active" id="active">
+                
                 Trạng thái -->
                 <input type="checkbox" name="star" id="star">
                 Nổi bật
             </div>
-            <!--<div class="title-name1">Hình ảnh đọc thử</div>
-                                <form action="/action_page.php">
-                                    <input type="file" id="myFile" name="filename">
-                                    <input type="submit">
-                                </form>-->
+             
             <!-- Thao tác -->
             <div class="flex-control">
                 <div class="flex-btn">
                     <button type="submit" class="btn btn-primary">Thêm</button>
-                    <!--<button type="button" class="btn btn-danger">Hủy</button>-->
-                    <a href="{{route('admin_product')}}" class="btn btn-danger">Huỷ</a>
+                     <a href="{{route('admin_product')}}" class="btn btn-danger">Huỷ</a>
                 </div>
             </div>
         </div>

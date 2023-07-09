@@ -30,4 +30,6 @@
  .grid-product-inbill-list{display: grid;grid-template-columns: repeat(5,1fr);gap: 10px;}
  /*Chữ hoa đầu*/
 .chuhoa {text-transform: capitalize;}
- 
+ /*  */
+body{font-family: 'SFU Futura';}
+.margin-adm{margin-left: 20px;}

@@ -70,7 +70,7 @@
                         <div class="invalid-feedback">Vui lòng nhập tài khoản</div>
                     </div>
                     @error('username')
-                        <p class="">{{ $message }}</p>
+                        <p class="mess-respon">{{ $message }}</p>
                     @enderror
                     <div class="input-group input-user">
                         <div class="input-group-prepend">
@@ -81,7 +81,7 @@
                         <i class="far fa-eye matkhau" id="togglePassword"></i>
                     </div>
                     @error('password')
-                        <p class="">{{ $message }}</p>
+                        <p class="mess-respon">{{ $message }}</p>
                     @enderror
                     <div class="button-user d-flex align-items-center justify-content-between">
                         <!--nút đăng nhập-->

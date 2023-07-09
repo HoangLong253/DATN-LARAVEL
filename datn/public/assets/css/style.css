@@ -10,11 +10,11 @@ a{text-decoration:unset;}
 .header__navbar{display:flex;justify-content:space-between;}
 .header__navbar-list{list-style:none;padding-left:0;margin:4px 0 0 0;}
 .header__navbar-item{margin:0 8px;position:relative;min-height:26px;}
-..header__navbar-item:hover{color: yellow !important;}
+..header__navbar-item:hover{color:yellow !important;}
 .header__navbar-item.header__navbar-icon{display:flex;}
 .header__navbar-item--has-notify:hover .header__notify{display:block;z-index:1;}
 .header__navbar-item,.header__navbar-item-link{display:inline-block;text-decoration:none;font-size:15px;color:var(--white-color);}
-.header__navbar-item{cursor:pointer;color: #fff !important;}
+.header__navbar-item{cursor:pointer;color:#fff !important;font-family:'SFU Futura';}
 .header__navbar-item-link:hover{opacity:.7;cursor:pointer;}
 .header__navbar-item,.header__navbar-item-link,.header__navbar-icon-link{display:inline-flex;align-items:center;}
 .header__navbar-item-bold{font-weight:600;}
@@ -109,8 +109,8 @@ align-items:center;justify-content:space-between;}
 .header__search-btn:hover{background-color:#FFE600;cursor:pointer;}
 .header__search-btn-icon{font-size:14px;color:var(--white-color);}
 .header__search-input:focus~.header__search-history{display:block;}
-.header__cpnname{text-transform:uppercase;font-size:30px;margin:10px 0;padding-left:10px;line-height:30px;color:#ADFF00;font-family:fantasy;}
-.company_desc{font-size:25px;color:yellow;font-family:'';}
+.header__cpnname{text-transform:uppercase;font-size:36px;margin:10px 0;padding-left:10px;line-height:30px;color:#ADFF00;font-family:'Aladin';}
+.company_desc{font-size:30px;color:yellow;font-family:'Aladin';}
 /* Search history */
 .header__search-history{z-index:2;position:absolute;top:calc(100% + 2px);left:0;width:calc(100% - 16px);background-color:var(--white-color);border-radius:2px;box-shadow:0 1px 5px rgb(175,175,175);display:none;overflow:hidden;/* height:200px;*/
 }
@@ -136,7 +136,7 @@ color:yellow;}
 .menu ul{width:100%;padding:0px;margin:auto;list-style:none;}
 .menu ul li{position:relative;z-index:1;}
 .menu ul li.line{width:1px;height:15px;background-color:rgba(0,0,0,0.1);}
-.menu ul li a{display:block;position:relative;font-size:13px;color:#ffffff;padding:12px 12px 11px 12px;font-weight:500;text-transform:uppercase;text-decoration:none!important;}
+.menu ul li a{display:block;position:relative;font-size:15px;color:#ffffff;padding:12px 12px 11px 12px;font-weight:500;text-transform:uppercase;font-family:'Helvetica Neue';text-decoration:none!important;}
 .menu ul li a.has-child{padding-right:16px;margin-right:8px;}
 .menu ul li a.has-child:after{content:'';position:absolute;bottom:calc(50% - 4px/2);right:5px;width:5px;height:5px;border:1px solid #fafafa;border-top:0px;border-left:0px;-moz-transform:rotate(45deg);-webkit-transform:rotate(45deg);-o-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);-webkit-transition:all 0.4s ease-out;-moz-transition:all 0.4s ease-out;-o-transition:all 0.4s ease-out;-ms-transition:all 0.3s ease-out;transition:all 0.3s ease-out;}
 .menu ul li ul{position:absolute;min-width:180px;margin-top:-5px;padding-top:0.75em;padding-bottom:0.75em;background-color:#fafafa;border-radius:0.25rem;-webkit-box-shadow:1px 1px 15px rgb(0 0 0 / 15%);box-shadow:1px 1px 15px rgb(0 0 0 / 15%);-webkit-transform:perspective(600px) rotateX(-90deg);transform:perspective(600px) rotateX(-90deg);-webkit-transform-origin:0 0 0;transform-origin:0 0 0;opacity:0;visibility:hidden;transition:all .5s;}
@@ -150,7 +150,7 @@ color:yellow;}
 .menu ul li ul li:hover > a.has-child:after,.menu ul li ul li a.active.has-child:after{border-color:var(--color-red);}
 .menu ul li ul li a{padding:10px 0px 9px 0px;text-transform:capitalize;}
 .menu ul li ul li ul{top:-0.75rem;left:100%;margin-top:0px;}
-.menu ul li a {color: yellow !important;}
+.menu ul li a{color:yellow !important;}
 /* .menu ul li ul li:hover{background-color:black;}
 */
 .menu ul li:hover > ul{background:green;}
@@ -177,7 +177,7 @@ color:yellow;}
 .product-list{display:grid;grid-template-columns:repeat(4,1fr);grid-gap:20px;}
 .box-product{text-align:center;position:relative;}
 .infor-products{padding:5px 0px;line-height:25px;}
-.name-product{color:#b02925;text-transform:capitalize;font-weight:bold;}
+.name-product{color:#b02925;text-transform:capitalize;font-weight:bold;font-family: 'UTM Alberta';}
 .image-product{width:220px;height:300px;margin-bottom:1rem;}
 .owl-carousel .owl-item img{display:block;text-align:center;align-items:center;}
 .wrap-slide-spnb{margin-top:5px;}
@@ -192,7 +192,8 @@ color:yellow;}
 .wrap-vidnews-items{display:flex;justify-content:space-between;margin-top:5px;}
 .wrap-news{width:49%;}
 .wrap-video{width:49%;}
-.news-box{/* width:50%; */display:flex !important;gap: 20px;margin-bottom: 10px;justify-content: space-between;}
+.news-box{/* width:50%;*/
+display:flex !important;gap:20px;margin-bottom:10px;justify-content:space-between;}
 .news-img{width:50%;}
 .news-img img{width:100%;height:180px;}
 .news-text{width:50%;margin-left:10px;}
@@ -200,14 +201,14 @@ color:yellow;}
 .news-desc{font-size:16px;color:#285430;}
 /* Footer */
 .footer-article{padding:30px 0;background:#EDF1F2;}
-.footer-title-text{font-family:'Mulish-ExtraBold';color:#538D22;}
+.footer-title-text{font-family: 'SFU Futura';color:#538D22;}
 .footer-map{width:100%;}
 .footer-news{width:44%;}
 .footer-policy{width:24%;}
 .footer-fanpage{width:29%}
 .footer-powered{background-color:#285430;padding:15px 0;color:#ffffff;}
 .owl-carousel .owl-item img{display:block;margin:auto;}
-.footer-policy ul{list-style:none;}
+.footer-policy ul{list-style:none;padding-left: 0px;}
 .footer-policy ul li a{color:#000000;}
 .footer-policy ul li a:hover{color:#ee4d2d;}
 /* 3D BOX */
@@ -275,20 +276,18 @@ figure:hover figcaption{box-shadow:0 20px 15px -10px hsla(0,0%,0%,.25);backgroun
 /* Product page */
 .grid-product{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
 /* News page */
-a{color: unset !important;}
-a:hover{color: unset !important;}
+a{color:unset !important;}
+a:hover{color:unset !important;}
 .grid-news{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
 .news-box-in{display:flex;gap:15px;justify-content:space-between;}
-.news-img-in{width: 35%;}
-.news-text-in{width: 65%;}
-.news-name-in {font-size:16px;font-weight:bold;color:red;text-transform:uppercase;}
+.news-img-in{width:35%;}
+.news-text-in{width:65%;}
+.news-name-in{font-size:16px;font-weight:bold;color:red;text-transform:uppercase;font-family: 'UTM Alberta';}
 .news-name-in:hover{color:blue;transition:all 0.4s linear;}
-.news-desc-in{font-size:15px;text-align:justify;} 
+.news-desc-in{font-size:15px;text-align:justify;}
 /* Back to top */
 #myBtn{/* Hidden by default */
- padding: 0px !important;
- background: unset !important;
- position:fixed;/* Fixed/sticky position */
+ padding:0px !important;background:unset !important;position:fixed;/* Fixed/sticky position */
  bottom:20px;/* Place the button at the bottom of the page */
  right:30px;/* Place the button 30px from the right */
  z-index:99;/* Make sure it does not overlap */
@@ -301,7 +300,6 @@ a:hover{color: unset !important;}
  border-radius:10px;/* Rounded corners */
  font-size:18px;/* Increase font size */
 }
- 
 /* Btn contact option 2 */
  .support-online{position:fixed;z-index:999;left:10px;bottom:0px;}
 .support-online i{width:40px;height:40px;background:#43a1f3;color:#ffffff;border-radius:100%;font-size:20px;text-align:center;line-height:1.9;position:relative;z-index:999;}
@@ -310,7 +308,6 @@ a:hover{color: unset !important;}
 .support-online a:hover span{display:block;}
 .support-online a span:before{content:"";width:0;height:0;border-style:solid;border-width:10px 10px 10px 0;border-color:transparent #009EFF transparent transparent;position:absolute;left:-10px;top:10px;}
 /* Header */
- 
 .header-banner{width:100%;}
 .header-banner img{width:100%;}
 /* Text Hide */
@@ -329,8 +326,8 @@ a:hover{color: unset !important;}
 /* Form login */
 .bg-dn{background:#23242B;}
 .wrap-userdn{position:relative;}
-.box-login{position:relative;width:539px;height: 320px;overflow:hidden;background:#00337C;border-bottom-left-radius:5px;border-bottom-right-radius:5px;}
-.wrap-userdn{width:560px;height: 330px;position:relative;overflow:hidden;margin:auto;}
+.box-login{position:relative;width:539px;height: 340px;overflow:hidden;background:#00337C;border-bottom-left-radius:5px;border-bottom-right-radius:5px;}
+.wrap-userdn{width:560px;height: 350px;position:relative;overflow:hidden;margin:auto;}
 .wrap-userdn .box-login{position:absolute;inset:5px;z-index:2;}
 .wrap-userdn:before{transform-origin:bottom right;content:'';position:absolute;width:560px;height:280px;top:-50%;left:-50%;background:linear-gradient(0deg,transparent,#45f3ff,#45f3ff,#45f3ff);z-index:1;animation:animate 6s linear infinite;}
 .wrap-userdn::after{transform-origin:bottom right;content:'';position:absolute;width:560px;height:280px;top:-50%;left:-50%;background:linear-gradient(0deg,transparent,#ff2770,#ff2770,#ff2770);z-index:1;animation:animate 6s linear infinite;animation-delay:-3s;}
@@ -341,81 +338,71 @@ a:hover{color: unset !important;}
 .wrap-userdk{width:100%;max-width:550px;margin:auto;border-radius:5px;}
 .wrap-userdk{position:relative;}
 .box-regis{position:relative;width:539px;overflow:hidden;background:#00337C;border-bottom-left-radius:5px;border-bottom-right-radius:5px;}
-.wrap-userdk{width:560px;height: 636px;position:relative;overflow:hidden;margin:auto;}
+.wrap-userdk{width:560px;height:636px;position:relative;overflow:hidden;margin:auto;}
 .wrap-userdk .box-regis{position:absolute;inset:5px;z-index:2;}
 .wrap-userdk:before{transform-origin:bottom right;content:'';position:absolute;width:560px;height:870px;top:-50%;left:-50%;background:linear-gradient(0deg,transparent,#45f3ff,#45f3ff,#45f3ff);z-index:1;animation:animate 6s linear infinite;}
 .wrap-userdk::after{transform-origin:bottom right;content:'';position:absolute;width:560px;height:870px;top:-50%;left:-50%;background:linear-gradient(0deg,transparent,#ff2770,#ff2770,#ff2770);z-index:1;animation:animate 6s linear infinite;animation-delay:-3s;}
 .mrb50{margin-bottom:50px;}
 /* Google */
-.fb-google-btn {
-    text-align: center;
-   
-}
-.fb-google-btn span{color: #fff;}
+.fb-google-btn{text-align:center;}
+.fb-google-btn span{color:#fff;}
 /* Thêm sản phẩm */
-.box-info{display: flex;justify-content: space-between;}
-.box-add-img{background: #ccc;width: 260px;height: 300px;margin: 25px;}
-.whole-box-sp-info {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 20px;
-    width: 70%;
-}
-.flex-btn{display: flex;justify-content: flex-end;gap: 20px;}
-.form-add-top {
-    width: 1200px;
-    margin: auto;
-}
+.box-info{display:flex;justify-content:space-between;}
+.box-add-img{background:#ccc;width:260px;height:300px;margin:25px;}
+.whole-box-sp-info{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;width:70%;}
+.flex-btn{display:flex;justify-content:flex-end;gap:20px;}
+.form-add-top{width:1200px;margin:auto;}
 /* Form add nhân viên*/
-.form-add-staff{width: 500px;}
+.form-add-staff{width:500px;}
 /* Login adm */
-
- .wrap-login-adm .wrap-content{margin: 0 auto;text-align: center;}
- .login-box, .register-box {
-    width: 360px;
-    margin: auto;
-}
-a{text-decoration: none !important;}
-
+ .wrap-login-adm .wrap-content{margin:0 auto;text-align:center;}
+.login-box,.register-box{width:360px;margin:auto;}
+a{text-decoration:none !important;}
 /*Chữ hoa đầu*/
-.chuhoa {text-transform: capitalize;}
-
+.chuhoa{text-transform:capitalize;}
 /* Collection */
-.flex-sp-dm{display: flex;justify-content: space-between;gap: 15px;}   
-.width-collection{width: 75%;}
-    
-.danhmuc-sp ul {}
-.title-main-sub{font-size: 16px;font-weight: bold;margin-bottom: 10px;}
-.danhmuc-sp{width: 25%;position: relative;height: auto;}
-.danhmuc-sp-list{position: sticky;border: solid 1px #000;padding: 10px 15px;top: 0px;width: 100%;height: auto;}
-.danhmuc-sp-list-item{padding-bottom: 10px;border-bottom: solid 1px #000;}
-/*  */
-.img-none-full img{ height: 300px !important;}
-
+.flex-sp-dm{display:flex;justify-content:space-between;gap:15px;}
+.width-collection{width:75%;}
+.danhmuc-sp ul{}
+.title-main-sub{font-size:16px;font-weight:bold;margin-bottom:10px;}
+.danhmuc-sp{width:25%;position:relative;height:auto;}
+.danhmuc-sp-list{position:sticky;border:solid 1px #000;padding:10px 15px;top:0px;width:100%;height:auto;}
+.danhmuc-sp-list-item{padding-bottom:10px;border-bottom:solid 1px #000;}
+/* */
+.img-none-full img{height:300px !important;}
 /* Thanh toán */
-.flex-infor-giaohang{display: flex;justify-content: space-between;gap: 30px;}
-.step{width: 50%;}
-.step2{width: 50%;}
-.product-inlist{display: flex;justify-content: space-between;align-items: center;margin-bottom: 10px;}
-.total-price-product{margin-top: 20px;}
- .flex-total-price-product{display: flex;justify-content: space-between;align-items: center;}
- .infor-user-in-fieldset{display: flex;align-items: center;gap: 20px;}
- .grid-5{grid-template-columns: repeat(5,1fr);gap: 20px;display: grid;}
- .flex-user-infor{display: flex;justify-content: space-between;gap: 30px;}
- .user-infor-detail{width: 70%;}
- .user-infor-img{width: 30%;}
- .flex-user-infor{width: 80%;margin: auto;}
- .box-user-infor-img{border-radius: 100%;width: 200px;height: 200px;}
- .box-user-infor-img img{border-radius: 100%;width: 200px;height: 200px;}
- .flex-infor-bill{display: flex;justify-content: space-between;gap: 30px;}
- .infor-bill{width: 50%;}
- .grid-product-inbill-list{display: grid;grid-template-columns: repeat(5,1fr);gap: 10px;}
- /*Chữ hoa đầu*/
-.chuhoa {text-transform: capitalize;}
-
-.matkhau{
-    display: none;
-    float: right;
-    margin-left: -30px; 
-    cursor: pointer;
+.flex-infor-giaohang{display:flex;justify-content:space-between;gap:30px;}
+.step{width:50%;}
+.step2{width:50%;}
+.product-inlist{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+.total-price-product{margin-top:20px;}
+.flex-total-price-product{display:flex;justify-content:space-between;align-items:center;}
+.infor-user-in-fieldset{display:flex;align-items:center;gap:20px;}
+.grid-5{grid-template-columns:repeat(5,1fr);gap:20px;display:grid;}
+.flex-user-infor{display:flex;justify-content:space-between;gap:30px;}
+.user-infor-detail{width:70%;}
+.user-infor-img{width:30%;}
+.flex-user-infor{width:80%;margin:auto;}
+.box-user-infor-img{border-radius:100%;width:200px;height:200px;}
+.box-user-infor-img img{border-radius:100%;width:200px;height:200px;}
+.flex-infor-bill{display:flex;justify-content:space-between;gap:30px;}
+.infor-bill{width:50%;}
+.grid-product-inbill-list{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;}
+/*Chữ hoa đầu*/
+.chuhoa{text-transform:capitalize;}
+.matkhau{display:none;float:right;margin-left:-30px;cursor:pointer;}
+/* Body */
+body{font-family:'SFU Futura';}
+/* */
+.mess-respon{color:red;}
+.header__navbar-list a:hover{color:yellow !important;}
+.flex-price{display: flex;justify-content: center;gap: 20px;}
+.name-product:hover{color: #00337C;}
+.line-price{color: #ccc;}
+.core-price{color: red;}
+.footer-copyright {
+    text-align: center;
 }
+.footer-policy ul li a:hover{color: #00337C !important;}
+.scale-img.img_hover img{width: 250px !important ;height: 300px !important;}
+.form-user label{color: #fff;}
