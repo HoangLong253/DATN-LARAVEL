@@ -164,6 +164,7 @@ Route::get('gioithieu', function () {
         $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
         $cartcount = DB::table('ctgiohang')
                         ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+                        ->where('TrangThaiCTGH', '=', 1)
                         ->get();
         return view('GioiThieu', [
             'user1' => $user1,
@@ -179,8 +180,9 @@ Route::get('tintuc', function () {
     if(isset($_COOKIE['is_logged']) && $_COOKIE['is_logged']==1 ) {
         $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
         $cartcount = DB::table('ctgiohang')
-                    ->where('MaGioHang', '=', $user1[0]->MaGioHang)
-                    ->get();
+        ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+        ->where('TrangThaiCTGH', '=', 1)
+        ->get();
         return view('TinTuc', [
             'cartcount' => $cartcount,
             'user1' => $user1,
@@ -196,6 +198,7 @@ Route::get('/tintuc/chudetintuc', function(){
         $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
         $cartcount = DB::table('ctgiohang')
                         ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+                        ->where('TrangThaiCTGH', '=', 1)
                         ->get();
         return view('articletest', [
             'user1' => $user1,
@@ -245,6 +248,7 @@ Route::get('/giohang', [CartController::class, 'giohang'])->name('giohang');
 Route::get('/sach/{id}/{count}', [CartController::class, 'them'])->name('them.giohang');
 Route::patch('giohang/update', [CartController::class, 'capnhat'])->name('capnhat.giohang');
 Route::delete('giohang/xoa', [CartController::class, 'xoa'])->name('xoa.giohang');
+Route::delete('giohang/xoa/{id}', [CartController::class, 'delete'])->name('delete.giohang');
 /*end giỏ hàng*/
 
 /* Product */
@@ -259,14 +263,14 @@ Route::get('/collections/sach/{loai}/{tensach}/{ma}', function($loai, $tensach, 
     $sgks = DB::table("saches")
                         ->where([
                             ["MaLoaiSach", "=", "GK"],
-                            ["TrangThai", "=", 1,],
+                            ["TrangThaiS", "=", 1,],
                         ])
                         ->take(10)
                         ->get();
     $tks = DB::table("saches")
                         ->where([
                             ["MaLoaiSach", "=", "TK"],
-                            ["TrangThai", "=", 1,],
+                            ["TrangThaiS", "=", 1,],
                         ])
                         ->take(10)
                         ->get();
@@ -278,11 +282,16 @@ Route::get('/collections/sach/{loai}/{tensach}/{ma}', function($loai, $tensach, 
                     ->get();
     if(isset($_COOKIE['is_logged']) && $_COOKIE['is_logged']==1 ) {
         $user1 = DB::table("nguoidung")->where('MaNgDung', '=' ,$_COOKIE['id'])->get();
+        $cartcount = DB::table('ctgiohang')
+        ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+        ->where('TrangThaiCTGH', '=', 1)
+        ->get();
         return view('chitietsach', [
                 'user1' => $user1,
                 'chitietsach' => $chitietsach,
                 'sgks' => $sgks,
-                'tenloai' => $tenloai
+                'tenloai' => $tenloai,
+                'cartcount' =>$cartcount
         ]);
     } else {
         return view('chitietsach', [
@@ -321,6 +330,7 @@ Route::get('thanhtoan', function () {
         $user1 = DB::table("nguoidung")->where('MaNgDung', '=', $_COOKIE['id'])->get();
         $cartcount = DB::table('ctgiohang')
             ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+            ->where('TrangThaiCTGH', '=', 1)
             ->get();
         return view('thongtingiaohang', [
             'user1' => $user1,
@@ -335,6 +345,7 @@ Route::get('thongtinnguoidung', function () {
         $user1 = DB::table("nguoidung")->where('MaNgDung', '=', $_COOKIE['id'])->get();
         $cartcount = DB::table('ctgiohang')
             ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+            ->where('TrangThaiCTGH', '=', 1)
             ->get();
         return view('thongtinnguoidung', [
             'user1' => $user1,
@@ -349,6 +360,7 @@ Route::get('lichsumuahang', function () {
         $user1 = DB::table("nguoidung")->where('MaNgDung', '=', $_COOKIE['id'])->get();
         $cartcount = DB::table('ctgiohang')
             ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+            ->where('TrangThaiCTGH', '=', 1)
             ->get();
         return view('lichsumuahang', [
             'user1' => $user1,

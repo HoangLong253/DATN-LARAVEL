@@ -39,6 +39,7 @@ class BooksController extends Controller
             $user1 = DB::table("nguoidung")->where('MaNgDung', '=', $_COOKIE['id'])->get();
             $cartcount = DB::table('ctgiohang')
                 ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+                ->where('TrangThaiCTGH', '=', 1)
                 ->get();
             return view('index', array(
                 'user1' => $user1,
@@ -63,6 +64,7 @@ class BooksController extends Controller
             $user1 = DB::table("nguoidung")->where('MaNgDung', '=', $_COOKIE['id'])->get();
             $cartcount = DB::table('ctgiohang')
                 ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+                ->where('TrangThaiCTGH', '=', 1)
                 ->get();
             return view('collections', [
                 'user1' => $user1,
@@ -88,6 +90,7 @@ class BooksController extends Controller
             $user1 = DB::table("nguoidung")->where('MaNgDung', '=', $_COOKIE['id'])->get();
             $cartcount = DB::table('ctgiohang')
                 ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+                ->where('TrangThaiCTGH', '=', 1)
                 ->get();
             return view('GK', [
                 'user1' => $user1,
@@ -113,6 +116,7 @@ class BooksController extends Controller
             $user1 = DB::table("nguoidung")->where('MaNgDung', '=', $_COOKIE['id'])->get();
             $cartcount = DB::table('ctgiohang')
                 ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+                ->where('TrangThaiCTGH', '=', 1)
                 ->get();
             return view('TK', [
                 'user1' => $user1,
@@ -137,6 +141,7 @@ class BooksController extends Controller
             $user1 = DB::table("nguoidung")->where('MaNgDung', '=', $_COOKIE['id'])->get();
             $cartcount = DB::table('ctgiohang')
                 ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+                ->where('TrangThaiCTGH', '=', 1)
                 ->get();
             return view('KHTN', [
                 'user1' => $user1,
@@ -161,6 +166,7 @@ class BooksController extends Controller
             $user1 = DB::table("nguoidung")->where('MaNgDung', '=', $_COOKIE['id'])->get();
             $cartcount = DB::table('ctgiohang')
                 ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+                ->where('TrangThaiCTGH', '=', 1)
                 ->get();
             return view('GD', [
                 'user1' => $user1,
@@ -186,6 +192,7 @@ class BooksController extends Controller
             $user1 = DB::table("nguoidung")->where('MaNgDung', '=', $_COOKIE['id'])->get();
             $cartcount = DB::table('ctgiohang')
             ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+            ->where('TrangThaiCTGH', '=', 1)
             ->get();
             return view('DHQGHN', [
                 'user1' => $user1,
@@ -210,6 +217,7 @@ class BooksController extends Controller
             $user1 = DB::table("nguoidung")->where('MaNgDung', '=', $_COOKIE['id'])->get();
             $cartcount = DB::table('ctgiohang')
                 ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+                ->where('TrangThaiCTGH', '=', 1)
                 ->get();
             return view('DN', [
                 'user1' => $user1,
@@ -235,6 +243,7 @@ class BooksController extends Controller
             $user1 = DB::table("nguoidung")->where('MaNgDung', '=', $_COOKIE['id'])->get();
             $cartcount = DB::table('ctgiohang')
                 ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+                ->where('TrangThaiCTGH', '=', 1)
                 ->get();
             return view('TN', [
                 'user1' => $user1,
@@ -260,6 +269,7 @@ class BooksController extends Controller
             $user1 = DB::table("nguoidung")->where('MaNgDung', '=', $_COOKIE['id'])->get();
             $cartcount = DB::table('ctgiohang')
                 ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+                ->where('TrangThaiCTGH', '=', 1)
                 ->get();
             return view('THTPHCM', [
                 'user1' => $user1,
@@ -287,6 +297,7 @@ class BooksController extends Controller
             $user1 = DB::table("nguoidung")->where('MaNgDung', '=', $_COOKIE['id'])->get();
             $cartcount = DB::table('ctgiohang')
                 ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+                ->where('TrangThaiCTGH', '=', 1)
                 ->get();
             return view('timkiem', [
                 'user1' => $user1,
@@ -326,6 +337,7 @@ class BooksController extends Controller
             $user1 = DB::table("nguoidung")->where('MaNgDung', '=', $_COOKIE['id'])->get();
             $cartcount = DB::table('ctgiohang')
                 ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+                ->where('TrangThaiCTGH', '=', 1)
                 ->get();
             return view('c2', [
                 'user1' => $user1,
@@ -361,6 +373,7 @@ class BooksController extends Controller
             $user1 = DB::table("nguoidung")->where('MaNgDung', '=', $_COOKIE['id'])->get();
             $cartcount = DB::table('ctgiohang')
                 ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+                ->where('TrangThaiCTGH', '=', 1)
                 ->get();
             return view('c3', [
                 'user1' => $user1,
@@ -386,6 +399,7 @@ class BooksController extends Controller
             $user1 = DB::table("nguoidung")->where('MaNgDung', '=', $_COOKIE['id'])->get();
             $cartcount = DB::table('ctgiohang')
                 ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+                ->where('TrangThaiCTGH', '=', 1)
                 ->get();
             return view('l6', [
                 'user1' => $user1,
@@ -411,6 +425,7 @@ class BooksController extends Controller
             $user1 = DB::table("nguoidung")->where('MaNgDung', '=', $_COOKIE['id'])->get();
             $cartcount = DB::table('ctgiohang')
                 ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+                ->where('TrangThaiCTGH', '=', 1)
                 ->get();
             return view('l7', [
                 'user1' => $user1,
@@ -436,6 +451,7 @@ class BooksController extends Controller
             $user1 = DB::table("nguoidung")->where('MaNgDung', '=', $_COOKIE['id'])->get();
             $cartcount = DB::table('ctgiohang')
                 ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+                ->where('TrangThaiCTGH', '=', 1)
                 ->get();
             return view('l8', [
                 'user1' => $user1,
@@ -460,6 +476,7 @@ class BooksController extends Controller
             $user1 = DB::table("nguoidung")->where('MaNgDung', '=', $_COOKIE['id'])->get();
             $cartcount = DB::table('ctgiohang')
                 ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+                ->where('TrangThaiCTGH', '=', 1)
                 ->get();
             return view('l9', [
                 'user1' => $user1,
@@ -484,6 +501,7 @@ class BooksController extends Controller
             $user1 = DB::table("nguoidung")->where('MaNgDung', '=', $_COOKIE['id'])->get();
             $cartcount = DB::table('ctgiohang')
                 ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+                ->where('TrangThaiCTGH', '=', 1)
                 ->get();
             return view('l10', [
                 'user1' => $user1,
@@ -508,6 +526,7 @@ class BooksController extends Controller
             $user1 = DB::table("nguoidung")->where('MaNgDung', '=', $_COOKIE['id'])->get();
             $cartcount = DB::table('ctgiohang')
                 ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+                ->where('TrangThaiCTGH', '=', 1)
                 ->get();
             return view('l11', [
                 'user1' => $user1,
@@ -533,6 +552,7 @@ class BooksController extends Controller
             $user1 = DB::table("nguoidung")->where('MaNgDung', '=', $_COOKIE['id'])->get();
             $cartcount = DB::table('ctgiohang')
                 ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+                ->where('TrangThaiCTGH', '=', 1)
                 ->get();
             return view('l12', [
                 'user1' => $user1,

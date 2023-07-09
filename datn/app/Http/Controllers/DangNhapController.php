@@ -30,7 +30,7 @@ class DangNhapController extends Controller
                         ->exists();*/
         $nd = DB::table('nguoidung')
                         ->where("TenDangNhapND", $name)
-                        ->where("MatKhau", $pass)
+                        ->where("MatKhauND", $pass)
                         ->exists();
         /*$ship = DB::table('nggiaohang')
                         ->where("Email", $name)
@@ -41,7 +41,7 @@ class DangNhapController extends Controller
             $is_logged = 1;
             $id = (DB::table('nguoidung')
             ->where("TenDangNhapND", $name)
-            ->where("MatKhau", $pass)
+            ->where("MatKhauND", $pass)
             ->select('MaNgDung')
             ->get())[0]->MaNgDung;
             setcookie('is_logged', $is_logged, time() + 360000, '/');
@@ -63,19 +63,22 @@ class DangNhapController extends Controller
             'fullname.required' => 'Họ Và Tên Không Được Bỏ Trống',
             'password.required' => 'Mật Khẩu Không Được Bỏ Trống.',
             'password.min' => 'Mật Khẩu Phải Trên 8 ký tự.',
+            'password.regex' => 'Mật Khẩu Phải Chứa Kí Tự Đặc Biệt',
             'repassword.same' => 'Mật Khẩu Không Khớp.',
             'phone.required' => 'Số Điện Thoại Không Được Bỏ Trống.',
             'phone.alpha_num' => 'Số Điện Thoại Phải Là Dữ Liệu Số.',
-            'phone.digits' => 'Số Điện Thoại Phải Đủ 10 Chữ Số.',
+            'phone.digits' => 'Số Điện Thoại Phải Là Chữ Số.',
+            'phone.min' => 'Số Điện Thoại Phải Đủ 10 Chữ Số.',
             'email.required' => 'Email không được bỏ trống',
+            'email.regex' => 'Email phải chứa @',
         ];
-        $this->validate($request, [
+        $this->validate($request, [ 
             'username' => 'required',
             'fullname' => 'required',
             'password' => 'required|min:8',
             'repassword' => 'same:password',
-            'phone' => 'required|alpha_num',
-            'email' => 'required',
+            'phone' => 'required|alpha_num|min:10',
+            'email' => 'required|regex:/^.+@.+$/i',
         ], $messages);
 
         $username = $request->username;
@@ -85,38 +88,30 @@ class DangNhapController extends Controller
         $phone = $request->phone;
         $email = $request->email;
 
-        /*$check = DB::table('nhanvien')
-            ->create([
-                'MaNV' => $MaNV,
-                'HoTen' => $fullname,
-                'Email' => $email,
-                'MatKhau' => $password,
-                'SDT' => $phone,
-            ]);
-        if($check) {
-            return redirect()->route('dangnhap')->with('success', 'Đăng ký thành công.');
-        } else {
-            return redirect()->route('dangki')->with('fail', 'Đăng ký thất bại.');
-        }*/
-        /*DB::table('nhanvien')
-            ->create([
-                'MaNV' => $MaNV,
-                'HoTen' => $fullname,
-                'Email' => $email,
-                'MatKhau' => $password,
-                'SDT' => $phone,
-            ]);*/
         $check = DB::table('nguoidung')
         ->insert([
             'TenDangNhapND' => $username, 
             'MaNgDung' => $MaNV,
-            'HoTen' => $fullname,
-            'Email' => $email,
-            'MatKhau' => $password,
-            'SDT' => $phone,
-            'TrangThai' => 1
+            'HoTenND' => $fullname,
+            'EmailND' => $email,
+            'MatKhauND' => $password,
+            'SDTND' => $phone,
+            'TrangThaiND' => 1
         ]);
+
         if($check) {
+           $gd = DB::table('giohang')
+                    ->insert([
+                        'MaGioHang' => $MaNV,
+                        'MaNgDung' => $MaNV,
+                        'TongTienGH' => 0,
+                        'TrangThaiGH' => 1
+                    ]);
+            $nv = DB::table('nguoidung')
+            ->where('MaNgDung', '=', $MaNV)
+            ->update([
+                'MaGioHang' => $MaNV
+            ]);
             return redirect()->route('dangnhap')->with('success', 'Đăng ký thành công.');
         } else {
             return redirect()->route('dangki')->with('fail', 'Đăng ký thất bại.');

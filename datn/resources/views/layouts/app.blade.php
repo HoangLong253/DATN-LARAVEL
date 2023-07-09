@@ -19,7 +19,7 @@
             @yield('content')
 
             <!-- Footer -->
-            @include ('index_partials.footer')  
+            @include ('index_partials.footer')
         </div>
     </div>
 </body>

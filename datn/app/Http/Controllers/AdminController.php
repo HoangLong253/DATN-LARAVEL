@@ -46,7 +46,7 @@ class AdminController extends Controller
             ->exists();
         $admin = DB::table('nhanvien')
             ->where("TenDangNhapNV", $name)
-            ->where("MatKhau", $pass)
+            ->where("MatKhauNV", $pass)
             ->where("TrangThaiNV", 1)
             ->where("LaAdmin", '=', 1)
             ->exists();

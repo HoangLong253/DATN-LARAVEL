@@ -36,8 +36,8 @@
                             <span class="buttons_added">
                                 <input class="minus is-form" type="button" value="-"
                                     onclick="decreaseCount(event, this)">
-                                <input type="number" aria-label="quantity" class="input-qty" value="{{ $usercart->SL }}"
-                                    max="10" min="1" name="quantity">
+                                <input type="number" aria-label="quantity" class="input-qty"
+                                    value="{{ $usercart->SLCTGH }}" max="10" min="1" name="quantity">
                                 <input class="plus is-form" type="button" value="+"
                                     onclick="increaseCount(event, this)">
                             </span>
@@ -52,7 +52,7 @@
                             </a>
                         </td>
                     </tr>
-                    @php $total += $usercart->DonGiaSach * $usercart->SL @endphp
+                    @php $total += $usercart->DonGiaSach * $usercart->SLCTGH @endphp
                 @endforeach
             @else
                 @if (session('cart'))
@@ -133,61 +133,121 @@
     </table>
 @endsection
 @section('js')
-    <script type="text/javascript">
-        $(".edit-cart-info").change(function(e) {
-            e.preventDefault();
-            var ele = $(this);
+@if(isset($_COOKIE['is_logged']) && $_COOKIE['is_logged'] == 1)
+<script type="text/javascript">
+    $(".edit-cart-info").change(function(e) {
+        e.preventDefault();
+        var ele = $(this);
+        $.ajax({
+            url: '{{ route('capnhat.giohang') }}',
+            method: "patch",
+            data: {
+                _token: '{{ csrf_token() }}',
+                id: ele.parents("tr").attr("rowId"),
+            },
+            success: function(response) {
+                window.location.reload();
+            }
+        });
+    });
+
+    $(".delete-product").click(function(e) {
+        e.preventDefault();
+
+        var ele = $(this);
+
+        if (confirm("Bạn có chắc chắn?")) {
             $.ajax({
-                url: '{{ route('capnhat.giohang') }}',
-                method: "patch",
+                url: '{{ route('delete.giohang', ['id' => $usercart->id]) }}',
+                method: "DELETE",
                 data: {
                     _token: '{{ csrf_token() }}',
-                    id: ele.parents("tr").attr("rowId"),
+                    id: ele.parents("tr").attr("rowId")
                 },
                 success: function(response) {
                     window.location.reload();
                 }
             });
-        });
+        }
+    });
 
-        $(".delete-product").click(function(e) {
-            e.preventDefault();
+    function increaseCount(a, b) {
+        var input = b.previousElementSibling;
+        var value = parseInt(input.value, 10);
+        value = isNaN(value) ? 0 : value;
+        value++;
+        input.value = value;
+        changeHref(value);
+    }
 
-            var ele = $(this);
-
-            if (confirm("Bạn có chắc chắn?")) {
-                $.ajax({
-                    url: '{{ route('xoa.giohang') }}',
-                    method: "DELETE",
-                    data: {
-                        _token: '{{ csrf_token() }}',
-                        id: ele.parents("tr").attr("rowId")
-                    },
-                    success: function(response) {
-                        window.location.reload();
-                    }
-                });
-            }
-        });
-
-        function increaseCount(a, b) {
-            var input = b.previousElementSibling;
-            var value = parseInt(input.value, 10);
+    function decreaseCount(a, b) {
+        var input = b.nextElementSibling;
+        var value = parseInt(input.value, 10);
+        if (value > 1) {
             value = isNaN(value) ? 0 : value;
-            value++;
+            value--;
             input.value = value;
             changeHref(value);
         }
-
-        function decreaseCount(a, b) {
-            var input = b.nextElementSibling;
-            var value = parseInt(input.value, 10);
-            if (value > 1) {
-                value = isNaN(value) ? 0 : value;
-                value--;
-                input.value = value;
-                changeHref(value);
+    }
+</script>
+@else
+<script type="text/javascript">
+    $(".edit-cart-info").change(function(e) {
+        e.preventDefault();
+        var ele = $(this);
+        $.ajax({
+            url: '{{ route('capnhat.giohang') }}',
+            method: "patch",
+            data: {
+                _token: '{{ csrf_token() }}',
+                id: ele.parents("tr").attr("rowId"),
+            },
+            success: function(response) {
+                window.location.reload();
             }
+        });
+    });
+
+    $(".delete-product").click(function(e) {
+        e.preventDefault();
+
+        var ele = $(this);
+
+        if (confirm("Bạn có chắc chắn?")) {
+            $.ajax({
+                url: '{{ route('xoa.giohang') }}',
+                method: "DELETE",
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    id: ele.parents("tr").attr("rowId")
+                },
+                success: function(response) {
+                    window.location.reload();
+                }
+            });
         }
-    </script>
+    });
+
+    function increaseCount(a, b) {
+        var input = b.previousElementSibling;
+        var value = parseInt(input.value, 10);
+        value = isNaN(value) ? 0 : value;
+        value++;
+        input.value = value;
+        changeHref(value);
+    }
+
+    function decreaseCount(a, b) {
+        var input = b.nextElementSibling;
+        var value = parseInt(input.value, 10);
+        if (value > 1) {
+            value = isNaN(value) ? 0 : value;
+            value--;
+            input.value = value;
+            changeHref(value);
+        }
+    }
+</script>
+@endif
 @endsection
