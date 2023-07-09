@@ -332,6 +332,12 @@ class AdminController extends Controller
             'percent' => 'required',
         ], $messages);
 
+        $star = 0;
+
+        if($request->star == 'on'){
+            $star = 1;
+        }
+
         $bookid = $request->bookid;
         $bookname = $request->bookname;
         $booktype = $request->booktype;
@@ -339,10 +345,9 @@ class AdminController extends Controller
         $price = $request->price;
         $percent = $request->percent;
         $content = $request->content;
-        $star = $request->star;
         $checkexist = DB::table('saches')
             ->where('MaSach', '=', $bookid)
-            ->exist();
+            ->exists();
         if ($checkexist) {
             return redirect()->route('add_product')->with('fail', 'Mã sách đã tồn tại');
         } else {
@@ -355,7 +360,7 @@ class AdminController extends Controller
                     'DonGiaSach' => $price,
                     'PhanTramGiam' => $percent,
                     'MoTa' => $content,
-                    'TrangThai' => 1,
+                    'TrangThaiS' => 1,
                     'NoiBat' => $star,
                 ]);
             if ($check) {
@@ -384,6 +389,16 @@ class AdminController extends Controller
             'percent' => 'required',
         ], $messages);
 
+        $active = 0;
+        $star = 0;
+
+        if($request->active == 'on') {
+            $active = 1;
+        }
+        if($request->star == 'on'){
+            $star = 1;
+        }
+
         $bookid = $request->bookid;
         $bookname = $request->bookname;
         $booktype = $request->booktype;
@@ -391,12 +406,10 @@ class AdminController extends Controller
         $price = $request->price;
         $percent = $request->percent;
         $content = $request->content;
-        $active = $request->active;
-        $star = $request->star;
         $checkduplicate = ($sach[0]->MaSach == $bookid &&
             $sach[0]->TenSach == $bookname &&
             $sach[0]->MaLoaiSach == $booktype &&
-            $sach[0]->DonGia == $price &&
+            $sach[0]->DonGiaSach == $price &&
             $sach[0]->PhanTramGiam == $percent &&
             $sach[0]->MoTa == $content &&
             $sach[0]->TrangThaiS == $active &&
@@ -415,7 +428,7 @@ class AdminController extends Controller
                     'DonGiaSach' => $price,
                     'PhanTramGiam' => $percent,
                     'MoTa' => $content,
-                    'TrangThai' => $active,
+                    'TrangThaiS' => $active,
                     'NoiBat' => $star,
                 ]);
             if ($check) {
@@ -501,14 +514,14 @@ class AdminController extends Controller
                 'HoTenNV' => $emplname,
                 'EmailNV' => $emplemail,
                 'MatKhauNV' => $password,
-                'SDT' => $phone,
+                'SDTNV' => $phone,
                 'LaAdmin' => $isadmin,
-                'TrangThai' => 1,
+                'TrangThaiNV' => 1,
             ]);
         if ($check) {
-            return redirect()->route('add_empl')->with('success', 'Thêm nhân viên thành công.');
+            return redirect()->route('admin_employee')->with('success', 'Thêm nhân viên thành công.');
         } else {
-            return redirect()->route('add_empl')->with('fail', 'Thêm nhân viên không thành công.');
+            return redirect()->route('admin_employee')->with('fail', 'Thêm nhân viên không thành công.');
         }
     }
     public function func_edit_empl($id, Request $request)
@@ -539,9 +552,9 @@ class AdminController extends Controller
         $isadmin = $request->isadmin;
         $checkdup = ($id1 == $nv[0]->MaNV &&
             $emplname == $nv[0]->HoTenNV &&
-            $password == $nv[0]->MatKhau &&
-            $emplemail == $nv[0]->Email &&
-            $phone == $nv[0]->SDT &&
+            $password == $nv[0]->MatKhauNV &&
+            $emplemail == $nv[0]->EmailNV &&
+            $phone == $nv[0]->SDTNV &&
             $isadmin == $nv[0]->LaAdmin);
         if ($checkdup) {
             return redirect()->route('admin_employee')->with('fail', 'Dữ liệu trùng lặp');

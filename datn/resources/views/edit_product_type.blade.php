@@ -31,7 +31,7 @@
 @endsection
 @section('main_content')
     <!-- Form thêm nhân viên -->
-    <form action="#" method="POST">
+    <form action="{{route('func_edit_product_type', ['id' => $pt[0]->MaLoaiSach])}}" method="POST">
         @csrf
         <div class="form-add-staff">
             <div class="form-group">

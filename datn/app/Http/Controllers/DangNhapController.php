@@ -12,6 +12,7 @@ class DangNhapController extends Controller
 {
     public function check_login(Request $request)
     {
+        //các thông báo lỗi validate
         $messages = [
             'username.required' => 'Email không được để trống',
             'password.required' => 'Mật khẩu không được để trống',
@@ -21,33 +22,31 @@ class DangNhapController extends Controller
             'password' => 'required',
         ], $messages);
 
+        //tạo biến + lưu giá trị biến là giá trị request trên server đổ về
         $name = $request->username;
         $pass = $request->password;
-
-        /*$nv = DB::table('nhanvien')
-                        ->where("Email", $name)
-                        ->where("MatKhau", $pass)
-                        ->exists();*/
+        //query builder để kiểm tra người dùng đã có trên database chưa
         $nd = DB::table('nguoidung')
                         ->where("TenDangNhapND", $name)
                         ->where("MatKhauND", $pass)
                         ->exists();
-        /*$ship = DB::table('nggiaohang')
-                        ->where("Email", $name)
-                        ->where("MatKhau", $pass)
-                        ->exists();*/
-
+        //kiểm tra câu query đúng chưa
         if($nd == 1) {
+            //tạo biến is_logged
             $is_logged = 1;
+            //tạo biến lưu mã người dùng
             $id = (DB::table('nguoidung')
-            ->where("TenDangNhapND", $name)
-            ->where("MatKhauND", $pass)
-            ->select('MaNgDung')
-            ->get())[0]->MaNgDung;
+                        ->where("TenDangNhapND", $name)
+                        ->where("MatKhauND", $pass)
+                        ->select('MaNgDung')
+                        ->get())[0]->MaNgDung;
+            //tạo cookie để lưu giá trị đăng nhập
             setcookie('is_logged', $is_logged, time() + 360000, '/');
+            //tạo cookie để lưu mã người dùng vào cookie để xác thực đăng nhập
             setcookie('id', $id, time() + 360000, '/');
-            //setcookie('id', $id, time() + 360000, '/');
-            //tạo giỏ hàng nếu chưa có giỏ hàng
+            //xoá cart người vãng lai
+            session()->forget('cart');
+            session()->flush();
             return redirect()->route('index');
         } else {
             return redirect()->route('dangnhap')->with('fail', 'Tài khoản hoặc mật khẩu không chính xác.');
@@ -58,6 +57,10 @@ class DangNhapController extends Controller
 
     public function check_register(Request $request)
     {
+        //lấy tất cả người dùng để so sánh tên đăng nhập
+        $nvcheck = DB::table('nguoidung')->where('TrangThaiND', '=', 1)->get();
+
+        //các thông báo lỗi validate
         $messages = [
             'username.required' => 'Tên Đăng Nhập Không Được Bỏ Trống',
             'fullname.required' => 'Họ Và Tên Không Được Bỏ Trống',
@@ -81,41 +84,60 @@ class DangNhapController extends Controller
             'email' => 'required|regex:/^.+@.+$/i',
         ], $messages);
 
+        //tạo biến + lưu giá trị biến là giá trị request trên server đổ về
         $username = $request->username;
-        $MaNV = time();
+        $MaNV = (string)time();
         $fullname = $request->fullname;
         $password = $request->password;
         $phone = $request->phone;
         $email = $request->email;
 
-        $check = DB::table('nguoidung')
-        ->insert([
-            'TenDangNhapND' => $username, 
-            'MaNgDung' => $MaNV,
-            'HoTenND' => $fullname,
-            'EmailND' => $email,
-            'MatKhauND' => $password,
-            'SDTND' => $phone,
-            'TrangThaiND' => 1
-        ]);
+        //tạo biến đếm để kiểm tra trùng tên đăng nhập
+        $count = 0;
 
-        if($check) {
-           $gd = DB::table('giohang')
-                    ->insert([
-                        'MaGioHang' => $MaNV,
-                        'MaNgDung' => $MaNV,
-                        'TongTienGH' => 0,
-                        'TrangThaiGH' => 1
-                    ]);
+        //kiểm tra tên đăng nhập
+        foreach($nvcheck as $nvcheck) {
+            if($username == $nvcheck->TenDangNhapND) {
+                $count++;
+            }
+        }
+
+        //if để kiểm tra trùng tên đăng nhập, không thì lưu người dùng
+        if($count == 1) {
+            return redirect()->route('dangki')->with('fail', 'Trùng tên đăng nhập');
+        } else {
+            //lưu giá trị người dùng vào dtb
+            $check = DB::table('nguoidung')
+            ->insert([
+                'TenDangNhapND' => $username, 
+                'MaNgDung' => $MaNV,
+                'HoTenND' => $fullname,
+                'EmailND' => $email,
+                'MatKhauND' => $password,
+                'SDTND' => $phone,
+                'TrangThaiND' => 1,
+            ]);
+
+            //lưu giá trị giỏ hàng vào dtb
+            $gd = DB::table('giohang')
+            ->insert([
+                'MaGioHang' => $MaNV,
+                'MaNgDung' => $MaNV,
+                'TongTienGH' => 0,
+                'TrangThaiGH' => 1
+            ]);
+    
+            //cập nhật mã giỏ hàng vào người dùng mới thêm vào
             $nv = DB::table('nguoidung')
             ->where('MaNgDung', '=', $MaNV)
             ->update([
                 'MaGioHang' => $MaNV
             ]);
-            return redirect()->route('dangnhap')->with('success', 'Đăng ký thành công.');
-        } else {
-            return redirect()->route('dangki')->with('fail', 'Đăng ký thất bại.');
+            if($check) {
+                return redirect()->route('dangnhap')->with('success', 'Đăng ký thành công.');
+            } else {
+                return redirect()->route('dangki')->with('fail', 'Đăng ký thất bại.');
+            }
         }
-
     }
 }

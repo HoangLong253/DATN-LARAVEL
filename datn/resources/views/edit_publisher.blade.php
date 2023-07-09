@@ -30,7 +30,7 @@
     </div><!-- /.container-fluid -->
 @endsection
 @section('main_content')
-    <form action="#" method="POST">
+    <form action="{{route('func_edit_publisher', ['id' => $pl[0]->MaNXB])}}" method="POST">
         @csrf
         <div class="form-add-staff">
             <div class="form-group">

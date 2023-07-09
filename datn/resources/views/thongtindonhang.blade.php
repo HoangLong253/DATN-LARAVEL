@@ -2,34 +2,76 @@
 @section('content')
 <!-- Thông tin đơn hàng -->
 <div class="form-add-top">
+    <div>
+        <a href="{{route('lichsumuahang')}}">Thoát</a>
+    </div>
     <div class="title-name1">Thông tin đơn hàng</div>
-    <div class="title-bill">ĐƠN HÀNG: <span class="id-bill">#008000</span>, ĐẶT
-        LÚC: <span class="time-bill">10 06, 2023 09:05SA</span></div>
+    <div class="title-bill">ĐƠN HÀNG: <span class="id-bill">{{$hdb[0]->MaHDBan}}</span>, ĐẶT
+        LÚC: <span class="time-bill">{{$hdb[0]->created_at}}</span></div>
     <div class="flex-infor-bill">
         <div class="infor-bill">
-            <div class="title-name2">Địa chỉ nhận thanh toán</div>
             <div class="infor-bill-item">
-                Tình trạng thanh toán: <span>paid</span>
+                Tình trạng thanh toán: 
+                <span>
+                    @switch($hdb[0]->TrangThaiThanhToan)
+                    @case(0)
+                    Chưa thanh toán
+                    @break
+                    @case(1)
+                    Đã thanh toán
+                    @break
+                    @endswitch
+                </span>
             </div>
-            <div class="infor-bill-item">Âu Dương Hoàng Long </div>
-            <div class="infor-bill-item">39/8 Nhất Chi Mai, P13, Tân Bình, Tp,
-                HCM</div>
+            <div class="title-name2">Địa chỉ nhận hàng: {{$user1[0]->DiaChi}}</div>
+            <div class="infor-bill-item">
+                Vận chuyển: <span>
+                    @switch($hdb[0]->TrangThaiGiaoHang)
+                    @case(0)
+                        <td> Đơn hàng đang chờ duyệt </td>
+                    @break
+        
+                    @case(1)
+                        <td> Đơn hàng đã được duyệt </td>
+                    @break
+        
+                    @case(2)
+                        <td> Đơn hàng đang được vận chuyển </td>
+                    @break
+        
+                    @case(3)
+                        <td> Đơn hàng đã vận chuyển thành công</td>
+                    @break
+                    @endswitch
+                </span>
+            </div>
+            <div class="infor-bill-item">{{$user1[0]->HoTenND}} </div>
             <div class="infor-bill-item">Vietnam</div>
-            <div class="infor-bill-item">0768848015</div>
+            <div class="infor-bill-item">{{$user1[0]->SDTND}}</div>
         </div>
         <div class="infor-bill">
-            <div class="title-name2">Địa chỉ gửi hàng</div>
-            <div class="infor-bill-item">
-                Vận chuển: <span>fullfield</span>
-            </div>
-            <div class="infor-bill-item">Âu Dương Hoàng Long </div>
-            <div class="infor-bill-item">39/8 Nhất Chi Mai, P13, Tân Bình, Tp,
-                HCM</div>
-            <div class="infor-bill-item">Vietnam</div>
-            <div class="infor-bill-item">0768848015</div>
+ 
         </div>
     </div>
-    <div class="grid-product-inbill-list">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>HI</th>
+                <th>HI</th>
+                <th>HI</th>
+                <th>HI</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>hi</td>
+                <td>hi</td>
+                <td>hi</td>
+                <td>hi</td>
+            </tr>
+        </tbody>
+    </table>
+    <!--<div class="grid-product-inbill-list">
         <div class="gridspname">
             <div class="title-name2">Sản phẩm</div>
             <div class="grid-product-inbill-list-info">
@@ -69,7 +111,7 @@
                 <div>60000đ</div>
             </div>
         </div>
-    </div>
+    </div>-->
 </div>
 @include ('index_partials.js')   
 @endsection

@@ -30,8 +30,8 @@
     </div><!-- /.container-fluid -->
 @endsection
 @section('main_content')
-    <!-- Form thêm nhân viên -->
-<form action="" method="POST">
+    <!-- Form sửa nhân viên -->
+<form action="{{route('func_edit_empl', ['id' => $nv[0]->MaNV])}}" method="post">
     @csrf
     <div class="form-add-staff">
         <div class="form-group">
@@ -50,7 +50,6 @@
                 id="emplname" name="name"
                 value="{{$nv[0]->HoTenNV}}"
                 placeholder="Nhập tên nhân viên">
-            <small id="<!--  -->" class="form-text text-muted"> .</small>
         </div>
         @error('name')
             <p class="">{{ $message }}</p>
@@ -103,7 +102,6 @@
             </div>
             <div class="flex-btn">
                 <button type="submit" class="btn btn-primary">Sửa</button>
-                <!--<button type="button" class="btn btn-danger">Hủy</button>-->
                 <a href="{{route('admin_employee')}}" class="btn btn-danger">Huỷ</a>
             </div>
         </div>

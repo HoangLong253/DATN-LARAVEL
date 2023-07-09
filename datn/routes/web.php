@@ -87,9 +87,9 @@ Route::post('/them-sach', [AdminController::class, 'func_add_product'])->name('f
 
 Route::get('/admin/sach/sua-sach/{id}', [AdminController::class, 'edit_product'])->name('edit_product');
 
-Route::post('/sua-sach/{id}', [AdminController::class, 'func_edit_product'])->name('func_edit_product');
+Route::post('sua-sach/{id}', [AdminController::class, 'func_edit_product'])->name('func_edit_product');
 
-Route::get('/xoa-sach/{id}', [AdminController::class, 'func_delete_product'])->name('func_delete_product');
+Route::get('xoa-sach/{id}', [AdminController::class, 'func_delete_product'])->name('func_delete_product');
 /*end sách*/
 
 /*nhân viên*/
@@ -99,9 +99,9 @@ Route::post('/them-nhan-vien', [AdminController::class, 'func_add_empl'])->name(
 
 Route::get('/admin/nhan-vien/sua-nhan-vien/{id}', [AdminController::class, 'edit_empl'])->name('edit_empl');
 
-Route::post('/sua-nhan-vien', [AdminController::class, 'func_edit_empl'])->name('func_edit_empl');
+Route::post('/nhan-vien/sua-nhan-vien/{id}', [AdminController::class, 'func_edit_empl'])->name('func_edit_empl');
 
-Route::get('/xoa-nhan-vien/{id}', [AdminController::class, 'func_delete_empl'])->name('func_delete_empl');
+Route::get('/nhan-vien/xoa-nhan-vien/{id}', [AdminController::class, 'func_delete_empl'])->name('func_delete_empl');
 /*end nhân viên*/
 
 /*loại sách*/
@@ -111,7 +111,7 @@ Route::get('/admin/loai-sach/sua-loai-sach/{id}', [AdminController::class, 'edit
 
 Route::post('/them-loai-sach', [AdminController::class, 'func_add_product_type'])->name('func_add_product_type');
 
-Route::post('/sua-loai-sach', [AdminController::class, 'func_edit_product_type'])->name('func_edit_product_type');
+Route::post('/sua-loai-sach/{id}', [AdminController::class, 'func_edit_product_type'])->name('func_edit_product_type');
 
 Route::get('/xoa-loai-sach/{id}', [AdminController::class, 'func_delete_product_type'])->name('func_delete_product_type');
 /*end loại sách*/
@@ -123,7 +123,7 @@ Route::get('/admin/nha-xuat-ban/sua-nha-xuat-ban/{id}', [AdminController::class,
 
 Route::post('/them-nha-xuat-ban', [AdminController::class, 'func_add_publisher'])->name('func_add_publisher');
 
-Route::post('/sua-nha-xuat-ban', [AdminController::class, 'func_edit_publisher'])->name('func_edit_publisher');
+Route::post('/sua-nha-xuat-ban/{id}', [AdminController::class, 'func_edit_publisher'])->name('func_edit_publisher');
 
 Route::get('/xoa-nha-xuat-ban/{id}', [AdminController::class, 'func_delete_publisher'])->name('func_delete_publisher');
 /*end nhà xuất bản*/
@@ -362,11 +362,39 @@ Route::get('lichsumuahang', function () {
             ->where('MaGioHang', '=', $user1[0]->MaGioHang)
             ->where('TrangThaiCTGH', '=', 1)
             ->get();
+        $hdb = DB::table('hoadonban')
+                    ->where('MaNgDung', '=', $_COOKIE['id'])
+                    ->get();
         return view('lichsumuahang', [
             'user1' => $user1,
-            'cartcount' => $cartcount
+            'cartcount' => $cartcount,
+            'hdb' => $hdb
         ]);
     } else {
         return view('index');
     }
 })->name('lichsumuahang');
+
+Route::get('/lichsumuahang/chitietlichsumuahang/{id}', function($id) {
+    if (isset($_COOKIE['is_logged']) && $_COOKIE['is_logged'] == 1) {
+        $user1 = DB::table("nguoidung")->where('MaNgDung', '=', $_COOKIE['id'])->get();
+        $cartcount = DB::table('ctgiohang')
+            ->where('MaGioHang', '=', $user1[0]->MaGioHang)
+            ->where('TrangThaiCTGH', '=', 1)
+            ->get();
+        $hdb =  DB::table('hoadonban')
+        ->where('MaHDBan', '=', $id)
+        ->get();
+        $cthdb = DB::table('cthoadonban')
+                    ->where('MaHDBan', '=', $id)
+                    ->get();
+        return view('thongtindonhang', [
+            'user1' => $user1,
+            'cartcount' => $cartcount,
+            'cthdb' => $cthdb,
+            'hdb' => $hdb
+        ]);
+    } else {
+        return view('index');
+    }
+})->name('chitietlichsumuahang');

@@ -31,12 +31,12 @@
 @endsection
 @section('main_content')
     <!-- Form thêm nhân viên -->
-<form action="{{route('func_add_empl')}}" method="POST">
+<form action="{{route('func_add_empl')}}" method="post">
     @csrf
     <div class="form-add-staff">
         <div class="form-group">
             <label for="">Mã nhân viên: </label>
-            <input type="number" class="form-control" id="id" name="id" aria-describedby="<!--  -->"
+            <input type="text" class="form-control" id="id" name="id" aria-describedby="<!--  -->"
                 placeholder="Nhập Mã nhân viên">
             <small id="<!--  -->" class="form-text text-muted"> .</small>
         </div>
